@@ -1,0 +1,16 @@
+[package]
+name = "parano1d-soundness"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "parano1d-soundness"
+path = "src/main.rs"
+
+[profile.release]
+overflow-checks = true
+
