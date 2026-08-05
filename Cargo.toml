@@ -1,16 +1,27 @@
 [package]
 name = "parano1d-soundness"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
+license = "Apache-2.0"
 publish = false
+readme = "README.md"
+repository = "https://github.com/ignotusnemo/parano1d-soundness"
+description = "Standalone executable soundness certificates for a source-pinned Parano1d production profile."
 
 [lib]
+name = "parano1d_soundness"
 path = "src/lib.rs"
 
 [[bin]]
 name = "parano1d-soundness"
 path = "src/main.rs"
 
+[dependencies]
+num-bigint = "0.4"
+num-rational = "0.4"
+num-traits = "0.2"
+serde = { version = "1", features = ["derive"] }
+toml = "0.9"
+
 [profile.release]
 overflow-checks = true
-

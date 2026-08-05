@@ -1,0 +1,57 @@
+schema = 1
+name = "parano1d-production-soundness"
+description = "Standalone production-parameter snapshot for the executable soundness certificate"
+source_repository = "https://github.com/ignotusnemo/parano1d"
+source_revision = "afdce21b6125ae0487c71a9093ab089cb8e88d5a"
+continued_currentness_guaranteed = false
+
+[profile]
+challenge_min_entropy_bits = 255
+digest_bits = 256
+
+[profile.wallet]
+inverse_rate = 32
+queries = 65
+radius_numerator = 49
+radius_denominator = 64
+field_bad_numerator = 29163918888
+query_seed_lanes = 7
+
+[profile.history]
+inverse_rate = 4
+queries = 133
+zerocheck_k_skip = 6
+joint_sidecar_groups = 9
+
+[[profile.history.classes]]
+tier = 64
+message_log2 = 18
+codeword_log2 = 20
+codeword_len = 1048576
+inverse_rate = 4
+plaintext_tail_len = 256
+fri_arities = [4, 4, 4, 4, 2]
+
+[[profile.history.classes]]
+tier = 255
+message_log2 = 19
+codeword_log2 = 21
+codeword_len = 2097152
+inverse_rate = 4
+plaintext_tail_len = 512
+fri_arities = [4, 4, 4, 4, 3]
+
+[profile.poseidon2b]
+state_width = 4
+rate_lanes = 2
+sbox_exponent = 7
+full_rounds = 8
+partial_rounds = 58
+
+[correspondence]
+wallet_ledger_queries = 65
+wallet_geometry_queries = 65
+wallet_ledger_challenge_bits = 255
+c1_challenge_min_entropy_bits = 255
+history_step_queries = 133
+basefold_queries = 133
