@@ -63,7 +63,7 @@ traversal are deterministic and make no new oracle queries.
 The certificate reads every protocol input from
 [`model/production.toml`](../model/production.toml). The snapshot is pinned to
 Parano1d commit
-[`afdce21b6125ae0487c71a9093ab089cb8e88d5a`](https://github.com/ignotusnemo/parano1d/commit/afdce21b6125ae0487c71a9093ab089cb8e88d5a).
+[`39626b22d53cf2f2c480a7e28446c197dca68043`](https://github.com/ignotusnemo/parano1d/commit/39626b22d53cf2f2c480a7e28446c197dca68043).
 The complete repository-relative source map is recorded in
 [`docs/parameter-provenance.md`](parameter-provenance.md).
 
@@ -72,7 +72,7 @@ The complete repository-relative source map is recorded in
 | Wallet query geometry and Johnson ledger | `profile.wallet` | `ZK_AUTH_CAPSULE_GEOMETRY` and `conditional_selected_zk_auth_base_iop_ledger` |
 | C1 challenge support | `profile.challenge_min_entropy_bits` | `C1_CHALLENGE_MIN_ENTROPY_BITS` |
 | History query count | `profile.history.queries` | `HISTORY_STEP_FRI_QUERIES` |
-| Canonical B64 and B255 PCS profiles | `profile.history.classes` | `canonical_history_step_pcs_params` |
+| Canonical B25 and B255 PCS profiles | `profile.history.classes` | `canonical_history_step_pcs_params` |
 | BaseFold query count | `correspondence.basefold_queries` | `BASEFOLD_RATE_QUARTER_C1_QUERIES` |
 | Sidecar transcript groups | `profile.history.joint_sidecar_groups` | `JOINT_C1_GROUPS` |
 | Poseidon2b profile | `profile.poseidon2b` | `STATE_SIZE`, `RATE`, `SBOX_EXPONENT`, `F_ROUNDS`, `P_ROUNDS` |
@@ -86,7 +86,7 @@ History queries                = 133
 History queries = BaseFold queries
 challenge support              = 2^255
 digest width                   = 256 bits
-B64 codeword                   = 2^20 at rate 1/4
+B25 codeword                   = 2^19 at rate 1/4
 B255 codeword                  = 2^21 at rate 1/4
 Poseidon2b                     = t4, rate2, x^7, RF8, RP58
 joint sidecar groups           = 3 + 6 = 9
@@ -199,7 +199,7 @@ N\frac{2h^5+3h\gamma s_N^2}{3s_N^3}+\frac{h}{s_N}
 \[
 L_N(m)=\left\lceil\frac{h}{s_N}\right\rceil-1,
 \qquad
-L_{\max}(m)=\max\{L_{2^{20}}(m),L_{2^{21}}(m)\},
+L_{\max}(m)=\max\{L_{2^{19}}(m),L_{2^{21}}(m)\},
 \tag{7}
 \]
 
@@ -243,7 +243,7 @@ into the embedded `GF(2^128)` subfield.
 
 The maximum algebraic identity has 127 roots per candidate. The joint sidecar
 has nine groups across four Poseidon lanes, hence 36 roots per candidate. For
-all B64 and B255 layers,
+all B25 and B255 layers,
 
 \[
 \begin{aligned}
@@ -588,7 +588,7 @@ The certificate evaluates these production event families:
 wallet.query
 wallet.field
 history.query
-history.b64.proximity
+history.b25.proximity
 history.b255.proximity
 history.candidate-switching
 history.joint-sidecar

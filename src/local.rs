@@ -303,12 +303,12 @@ mod tests {
     }
 
     #[test]
-    fn history_certificate_covers_b64_and_b255() {
+    fn history_certificate_covers_b25_and_b255() {
         let parameters = ProductionParameters::load().unwrap();
         let certificate = history_local_certificate(&parameters, 5);
         assert_eq!(
             [certificate.classes[0].tier, certificate.classes[1].tier],
-            [64, 255]
+            [25, 255]
         );
         assert!(
             certificate.classes[1].proximity_exception > certificate.classes[0].proximity_exception

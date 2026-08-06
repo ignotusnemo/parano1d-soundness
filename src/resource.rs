@@ -271,7 +271,7 @@ pub fn certificate(parameters: &ProductionParameters) -> CategoryOneCertificate 
             history_query,
         ),
         resource_event(
-            "history.b64.proximity",
+            "history.b25.proximity",
             history.certificate.classes[0].proximity_exception.clone(),
             scalar.clone(),
         ),

@@ -2,7 +2,7 @@ schema = 1
 name = "parano1d-production-soundness"
 description = "Standalone production-parameter snapshot for the executable soundness certificate"
 source_repository = "https://github.com/ignotusnemo/parano1d"
-source_revision = "afdce21b6125ae0487c71a9093ab089cb8e88d5a"
+source_revision = "39626b22d53cf2f2c480a7e28446c197dca68043"
 continued_currentness_guaranteed = false
 
 [profile]
@@ -24,13 +24,13 @@ zerocheck_k_skip = 6
 joint_sidecar_groups = 9
 
 [[profile.history.classes]]
-tier = 64
-message_log2 = 18
-codeword_log2 = 20
-codeword_len = 1048576
+tier = 25
+message_log2 = 17
+codeword_log2 = 19
+codeword_len = 524288
 inverse_rate = 4
-plaintext_tail_len = 256
-fri_arities = [4, 4, 4, 4, 2]
+plaintext_tail_len = 128
+fri_arities = [4, 4, 4, 4, 1]
 
 [[profile.history.classes]]
 tier = 255

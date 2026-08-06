@@ -6,7 +6,7 @@
 use serde::Deserialize;
 
 pub const PINNED_SOURCE_REPOSITORY: &str = "https://github.com/ignotusnemo/parano1d";
-pub const PINNED_SOURCE_REVISION: &str = "afdce21b6125ae0487c71a9093ab089cb8e88d5a";
+pub const PINNED_SOURCE_REVISION: &str = "39626b22d53cf2f2c480a7e28446c197dca68043";
 pub const PRODUCTION_SNAPSHOT_PATH: &str = "model/production.toml";
 pub const PRODUCTION_SNAPSHOT: &str = include_str!("../model/production.toml");
 
@@ -161,7 +161,7 @@ fn checked_history_class(
     {
         return Err(format!("B{} plaintext tail is invalid", class.tier));
     }
-    if class.fri_arities.is_empty() || class.fri_arities.iter().any(|arity| *arity < 2) {
+    if class.fri_arities.is_empty() || class.fri_arities.contains(&0) {
         return Err(format!("B{} FRI arity schedule is invalid", class.tier));
     }
     Ok(HistoryClassParameters {
@@ -258,8 +258,8 @@ fn load_snapshot(input: &str) -> Result<ProductionParameters, String> {
         checked_history_class(classes[0].to_owned(), profile.history.inverse_rate)?,
         checked_history_class(classes[1].to_owned(), profile.history.inverse_rate)?,
     ];
-    if history_classes[0].tier != 64 || history_classes[1].tier != 255 {
-        return Err("canonical History classes must be ordered B64 then B255".to_string());
+    if history_classes[0].tier != 25 || history_classes[1].tier != 255 {
+        return Err("canonical History classes must be ordered B25 then B255".to_string());
     }
 
     let history_max_algebraic_roots = 1u32
@@ -348,13 +348,13 @@ mod tests {
     #[test]
     fn both_recursive_history_classes_are_covered() {
         let classes = ProductionParameters::load().unwrap().history_classes;
-        assert_eq!(classes[0].tier, 64);
-        assert_eq!(classes[0].message_log2, 18);
-        assert_eq!(classes[0].codeword_log2, 20);
-        assert_eq!(classes[0].codeword_len, 1 << 20);
+        assert_eq!(classes[0].tier, 25);
+        assert_eq!(classes[0].message_log2, 17);
+        assert_eq!(classes[0].codeword_log2, 19);
+        assert_eq!(classes[0].codeword_len, 1 << 19);
         assert_eq!(classes[0].inverse_rate, 4);
-        assert_eq!(classes[0].plaintext_tail_len, 256);
-        assert_eq!(classes[0].fri_arities, [4, 4, 4, 4, 2]);
+        assert_eq!(classes[0].plaintext_tail_len, 128);
+        assert_eq!(classes[0].fri_arities, [4, 4, 4, 4, 1]);
         assert_eq!(classes[1].tier, 255);
         assert_eq!(classes[1].message_log2, 19);
         assert_eq!(classes[1].codeword_log2, 21);

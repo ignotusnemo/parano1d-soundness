@@ -59,8 +59,8 @@ The calculator reads the following values from production source definitions.
 
 | Input | Production value |
 |---|---:|
-| History classes | B64 and B255 |
-| Codeword lengths | `2^20` and `2^21` |
+| History classes | B25 and B255 |
+| Codeword lengths | `2^19` and `2^21` |
 | Code rate | `1/4` |
 | BaseFold queries | 133 |
 | C1 challenge support | `2^255` |
@@ -68,7 +68,7 @@ The calculator reads the following values from production source definitions.
 | Maximum algebraic roots per list candidate | 127 |
 | Joint sidecar roots per list candidate | 36 |
 
-The B64 layer domains run from `2^8` through `2^20`; the B255 layer
+The B25 layer domains run from `2^7` through `2^19`; the B255 layer
 domains run from `2^9` through `2^21`. Every domain in both schedules is
 included in the local theorem calculation.
 
@@ -133,7 +133,7 @@ Only the initial committed codeword supplies the candidate list used by later
 algebraic checks. Define
 
 \[
-L_{\max}(m)=\max\{L_{2^{20}}(m),L_{2^{21}}(m)\}.
+L_{\max}(m)=\max\{L_{2^{19}}(m),L_{2^{21}}(m)\}.
 \]
 
 The list-decoding query escape term for 133 independently sampled positions is
@@ -158,7 +158,7 @@ L_{\max}(m)\cdot36/2^{255}\}.
 \tag{8}
 \]
 
-The maxima range over every B64 and B255 layer described above. Equation (8)
+The maxima range over every B25 and B255 layer described above. Equation (8)
 accounts for candidate switching explicitly. It does not assume that a decoder
 keeps the same candidate after later challenges.
 
@@ -287,7 +287,7 @@ to the production parameters derived above.
 | Lambda Class | lambdaworks | 80 / 100 / 128 | 81 / 99 / 127 | 81 / 101 / 129 |
 | RISC Zero | RISC Zero | 100 | 37 | 99 |
 | Matter Labs | era-boojum | 100 | 50 | 99 |
-| **Parano1d** | History B64 / B255 | **128** | **127** | **127** |
+| **Parano1d** | History B25 / B255 | **128** | **127** | **127** |
 
 The Parano1d provable value matches the highest provable whole-bit value in
 the published table. Its conjectured value is one bit below Miden's 128-bit

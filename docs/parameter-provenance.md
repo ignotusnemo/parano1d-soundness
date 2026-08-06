@@ -3,7 +3,7 @@
 The executable certificate reads its complete protocol input from
 [`model/production.toml`](../model/production.toml). That snapshot is pinned to
 Parano1d commit
-[`afdce21b6125ae0487c71a9093ab089cb8e88d5a`](https://github.com/ignotusnemo/parano1d/commit/afdce21b6125ae0487c71a9093ab089cb8e88d5a).
+[`39626b22d53cf2f2c480a7e28446c197dca68043`](https://github.com/ignotusnemo/parano1d/commit/39626b22d53cf2f2c480a7e28446c197dca68043).
 
 The paths and symbols below are relative to that revision. They identify the
 production definitions from which each snapshot field was taken. The
@@ -39,7 +39,7 @@ geometry. Snapshot loading fails if either copy differs from the W65 profile.
 
 | Snapshot input | Production source |
 |---|---|
-| B64 and B255 class selection | `noid_recursive/src/acceptance/history_step_bank.rs::{HISTORY_STEP_CURRENT_CLASS_MS,canonical_history_step_class_id}` |
+| B25 and B255 class selection | `noid_recursive/src/acceptance/history_step_bank.rs::{HISTORY_STEP_CURRENT_CLASS_MS,canonical_history_step_class_id}` |
 | message dimensions, rate, codeword lengths and FRI arities | `noid_recursive/src/acceptance/history_step_bank.rs::canonical_history_step_pcs_params` and `noid_ivc_core/src/pcs/commit.rs::PcsParams` |
 | plaintext tail lengths | `noid_ivc_core/src/pcs/basefold.rs::fri_commit_layout` |
 | `history_step_queries = 133` | `noid_recursive/src/acceptance/history_step_bank.rs::HISTORY_STEP_FRI_QUERIES` |
