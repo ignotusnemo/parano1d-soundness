@@ -1,8 +1,8 @@
-schema = 1
+schema = 2
 name = "parano1d-production-soundness"
 description = "Standalone production-parameter snapshot for the executable soundness certificate"
 source_repository = "https://github.com/ignotusnemo/parano1d"
-source_revision = "39626b22d53cf2f2c480a7e28446c197dca68043"
+source_revision = "a1187ee01b74f889560bac0eb813d5ca49c6fe0d"
 continued_currentness_guaranteed = false
 
 [profile]
@@ -47,6 +47,19 @@ rate_lanes = 2
 sbox_exponent = 7
 full_rounds = 8
 partial_rounds = 58
+external_matrix = [
+  [5, 7, 1, 3],
+  [4, 6, 1, 1],
+  [1, 3, 5, 7],
+  [1, 1, 4, 6],
+]
+internal_matrix = [
+  [32, 1, 1, 1],
+  [1, 8192, 1, 1],
+  [1, 1, 512, 1],
+  [1, 1, 1, 2048],
+]
+merkle_compression = "truncated-permutation-feed-forward"
 
 [correspondence]
 wallet_ledger_queries = 65

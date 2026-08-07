@@ -63,7 +63,7 @@ traversal are deterministic and make no new oracle queries.
 The certificate reads every protocol input from
 [`model/production.toml`](../model/production.toml). The snapshot is pinned to
 Parano1d commit
-[`39626b22d53cf2f2c480a7e28446c197dca68043`](https://github.com/ignotusnemo/parano1d/commit/39626b22d53cf2f2c480a7e28446c197dca68043).
+[`a1187ee01b74f889560bac0eb813d5ca49c6fe0d`](https://github.com/ignotusnemo/parano1d/commit/a1187ee01b74f889560bac0eb813d5ca49c6fe0d).
 The complete repository-relative source map is recorded in
 [`docs/parameter-provenance.md`](parameter-provenance.md).
 
@@ -76,6 +76,7 @@ The complete repository-relative source map is recorded in
 | BaseFold query count | `correspondence.basefold_queries` | `BASEFOLD_RATE_QUARTER_C1_QUERIES` |
 | Sidecar transcript groups | `profile.history.joint_sidecar_groups` | `JOINT_C1_GROUPS` |
 | Poseidon2b profile | `profile.poseidon2b` | `STATE_SIZE`, `RATE`, `SBOX_EXPONENT`, `F_ROUNDS`, `P_ROUNDS` |
+| Poseidon2b linear layers and Merkle compression | `profile.poseidon2b` | `MDS_FULL`, `MDS_PARTIAL`, `compress_flat_feed_forward_with_tag` |
 | Digest width | `profile.digest_bits` | `Digest` |
 
 The pinned definitions resolve to:
@@ -676,6 +677,96 @@ The finite envelope is largest at `MAXDEPTH=2^40`; the calculator also checks
 
 The remaining half-success headroom proves equation (2).
 
+## Current Poseidon2b cryptanalysis
+
+Merz and Rodríguez García give improved algebraic attacks on Poseidon2 and
+Poseidon2b in ePrint 2026/306. The executable audit pins the reviewed
+2026-02-18 PDF with SHA-256
+`8297df539a48859678ad2e4ba79d005a544e1a9686770a4f72a30ad358f76249`.
+Their analysis distinguishes the CICO problem from the concrete compression
+and sponge modes, so it must be matched to the mode used by production code
+rather than cited only as permutation cryptanalysis.
+
+The snapshotted production instance is
+
+```text
+field       GF(2^128)
+state       t = 4
+rate        r = 2
+capacity    c = 2
+digest      d = 2 field elements
+S-box       x^7
+rounds      RF = 8, RP = 58
+```
+
+The main round skips in Sections 3 through 5 exploit the tensor structure of
+wide non-MDS external matrices. Section 3.4 explicitly limits that attack
+family to `t` in `{12, 16, 20, 24}`. The production `t=4` external layer is the
+binary MDS matrix `M4` itself, so the paper's wide attack tables and the
+headline `2^106` improvement do not apply to this instance. That improvement
+is for the binary `(n,t,c,d)=(32,24,8,8)` sponge with `RP=15`.
+
+Appendix A is relevant. It treats MDS two-to-one feed-forward compression. A
+production flat Merkle node has input
+
+\[
+x=(a_0,a_1,b_0+\mathsf{IV}_0,b_1+\mathsf{IV}_1)
+\]
+
+and returns
+
+\[
+\operatorname{Tr}_2(P(x)+x).
+\]
+
+The capacity tag is a fixed affine shift and does not change the Appendix A
+model. For `t=4` and `alpha=7`, its round skip is
+
+\[
+(1,[1]+[7]^{t/2-1})=(1,[1,7]).
+\tag{33}
+\]
+
+Specializing Theorem 5.1 with `d=2`, `r_F=1` and `r_P=0` gives
+
+\[
+\begin{aligned}
+d_I
+&\le 7^{d(R_F-r_F)+(R_P-r_P)}\prod_i\delta_i \\
+&=7^{2(8-1)+58}\cdot7 \\
+&=7^{73}.
+\end{aligned}
+\tag{34}
+\]
+
+The exact integer is
+
+\[
+7^{73}=
+49\,221\,735\,352\,184\,872\,959\,961\,855\,190\,338\,177\,606\,846\,542\,622\,561\,400\,857\,262\,407.
+\tag{35}
+\]
+
+The paper models Gröbner-basis work as proportional to `d_I^omega` and uses
+`omega=2` as its conservative projection. For this instance,
+
+\[
+\log_2(d_I^2)=146\log_2 7
+=409.873818620410\ldots.
+\tag{36}
+\]
+
+The conclusion is direct: ePrint 2026/306 identifies no attack that lowers the
+production security target. Equation (36) is the paper's classical
+dedicated-attack projection derived from an upper bound on the ideal degree.
+The event-specific fixed-Poseidon2b quantum condition is represented separately
+by `Delta_P2b` below.
+
+`poseidon2b_cryptanalysis::audit` reads the snapshotted production tuple,
+linear matrices and Merkle mode before evaluating equations (34) through (36).
+Any change to the field width, state geometry, round schedule, matrices or
+compression mode makes the executable certificate reject the old audit.
+
 ## Fixed Poseidon2b boundary
 
 The production assumption is defined on compiler events, not on the desired
@@ -708,15 +799,16 @@ once to the complete all-root bound:
 \[
 \Pr[\mathsf{BadState}]_{\rm production}
 \le\varepsilon_{\rm ideal}+\Delta_{\rm P2b}.
-\tag{33}
+\tag{37}
 \]
 
 It is not defined as a qPRP advantage between a public fixed permutation and a
 secret random permutation. Direct evaluation would distinguish those games.
-The Poseidon2b paper supplies the production parameters and the current
-classical cryptanalysis of the permutation. Equations (1) and (2) state the
-additional event-specific quantum instantiation bounds sufficient for the two
-production conclusions.
+The Poseidon2b specification supplies the production parameters. The audit
+above incorporates the published classical cryptanalysis of the permutation
+and its concrete modes. The ideal-degree model and the event-specific quantum
+condition are evaluated separately. Equations (1) and (2) state the additional
+quantum instantiation bounds sufficient for the two production conclusions.
 
 ## Exact arithmetic and reproduction
 
@@ -761,6 +853,9 @@ headroom as a reduced rational number.
 - Lorenzo Grassi, Dmitry Khovratovich, Katharina Koschatko, Christian
   Rechberger, Markus Schofnegger, Verena Schröppel and Zhuo Wu,
   [*Poseidon(2)b: Binary Field Versions of Poseidon/Poseidon2*](https://cic.iacr.org/p/2/4/15/pdf).
+- Simon-Philipp Merz and Àlex Rodríguez García,
+  [*Skipping Class: Algebraic Attacks exploiting weak matrices and operation modes of Poseidon2(b)*](https://eprint.iacr.org/2026/306),
+  especially Section 3.4, Theorem 5.1, Section 6 and Appendix A.
 - Kyungbae Jang, Wonwoong Kim, Sejin Lim, Yeajun Kang, Yujin Yang, Hwajeong
   Seo and Ilsun You,
   [*Quantum Binary Field Multiplication with Optimized Toffoli Depth and Extension to Quantum Inversion*](https://pmc.ncbi.nlm.nih.gov/articles/PMC10055756/),

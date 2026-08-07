@@ -23,6 +23,7 @@ fn main() -> Result<(), String> {
     let certificate = calculate()?;
     let parameters = &certificate.parameters;
     let block_tiwari = &certificate.block_tiwari;
+    let poseidon2b_cryptanalysis = &certificate.poseidon2b_cryptanalysis;
     let ideal = &certificate.ideal_qrom;
     let category_one = &certificate.category_one;
 
@@ -103,6 +104,72 @@ fn main() -> Result<(), String> {
         "conjectured descriptive log2(work): {:.12}\n",
         block_tiwari.conjectured.descriptive_bits()
     );
+
+    println!("POSEIDON2B PUBLISHED CLASSICAL CRYPTANALYSIS");
+    println!("source: https://eprint.iacr.org/2026/306");
+    if exact {
+        println!(
+            "reviewed PDF: version={} sha256={}",
+            parano1d_soundness::poseidon2b_cryptanalysis::SKIPPING_CLASS_REVIEWED_VERSION,
+            parano1d_soundness::poseidon2b_cryptanalysis::SKIPPING_CLASS_PDF_SHA256
+        );
+    }
+    println!(
+        "production tuple: GF(2^{}), t={}, rate={}, capacity={}, digest={} lanes, x^{}, RF={}, RP={}",
+        poseidon2b_cryptanalysis.field_bits,
+        poseidon2b_cryptanalysis.state_width,
+        poseidon2b_cryptanalysis.rate_lanes,
+        poseidon2b_cryptanalysis.capacity_lanes,
+        poseidon2b_cryptanalysis.digest_lanes,
+        poseidon2b_cryptanalysis.sbox_exponent,
+        poseidon2b_cryptanalysis.full_rounds,
+        poseidon2b_cryptanalysis.partial_rounds,
+    );
+    println!(
+        "ePrint 2026/306 wide tensor scope: t in {{12,16,20,24}}; production t={} {} scope",
+        poseidon2b_cryptanalysis.state_width,
+        if poseidon2b_cryptanalysis.wide_tensor_round_skips_apply {
+            "inside"
+        } else {
+            "outside"
+        }
+    );
+    println!(
+        "Appendix A MDS two-to-one compression model: {}",
+        if poseidon2b_cryptanalysis.appendix_a_compression_applies {
+            "applicable"
+        } else {
+            "not applicable"
+        }
+    );
+    println!(
+        "round skip: ({}, [1, {}])",
+        poseidon2b_cryptanalysis.skipped_full_rounds, poseidon2b_cryptanalysis.sbox_exponent
+    );
+    println!(
+        "ideal-degree upper bound: {}^{}",
+        poseidon2b_cryptanalysis.ideal_degree_base, poseidon2b_cryptanalysis.ideal_degree_exponent
+    );
+    println!(
+        "descriptive log2(d_I): {:.12}",
+        poseidon2b_cryptanalysis.descriptive_ideal_degree_bits()
+    );
+    println!(
+        "descriptive log2(d_I^2) dedicated algebraic projection: {:.12}",
+        poseidon2b_cryptanalysis.descriptive_quadratic_projection_bits()
+    );
+    if exact {
+        println!(
+            "ideal-degree upper bound exact: {}",
+            poseidon2b_cryptanalysis.ideal_degree_upper_bound
+        );
+        println!(
+            "quadratic dedicated algebraic projection exact: {}",
+            poseidon2b_cryptanalysis.quadratic_work_projection
+        );
+    }
+    println!("conclusion: no attack in ePrint 2026/306 lowers the production security target");
+    println!("scope: classical dedicated-attack projection from an ideal-degree upper bound\n");
 
     println!("END TO END IDEAL QROM, FROM GENESIS INVALID STATE GAME");
     println!(

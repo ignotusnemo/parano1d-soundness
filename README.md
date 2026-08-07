@@ -6,7 +6,7 @@ inequalities are evaluated with arbitrary-precision integer or rational
 arithmetic.
 
 The analysis inputs are pinned to Parano1d commit
-[`39626b22d53cf2f2c480a7e28446c197dca68043`](https://github.com/ignotusnemo/parano1d/commit/39626b22d53cf2f2c480a7e28446c197dca68043).
+[`a1187ee01b74f889560bac0eb813d5ca49c6fe0d`](https://github.com/ignotusnemo/parano1d/commit/a1187ee01b74f889560bac0eb813d5ca49c6fe0d).
 The complete standalone snapshot is
 [`model/production.toml`](model/production.toml), and its repository-relative
 source-symbol map is
@@ -56,6 +56,25 @@ The Category 1 result also states the coherent response-cost premise used to
 translate oracle queries into logical gates and circuit depth. These conditions
 are part of the theorem, not omitted implementation notes.
 
+The certificate also instantiates the algebraic cryptanalysis published in
+ePrint 2026/306. Its headline wide-tensor attack family is structurally outside
+the production width-four permutation. Appendix A applies to the MDS two-to-one
+feed-forward compression used by production Merkle trees. For the snapshotted
+`GF(2^128)`, `t=4`, `x^7`, `RF=8`, `RP=58` instance, Theorem 5.1 gives
+
+```text
+round skip                 (1, [1, 7])
+ideal-degree upper bound   7^73
+log2(d_I^2) dedicated algebraic projection   409.873818620410
+```
+
+The conclusion is direct: ePrint 2026/306 identifies no attack that lowers the
+production security target. The final value is the paper's classical
+dedicated-attack projection with `omega=2`, derived from an ideal-degree upper
+bound. The fixed-Poseidon2b QROM delta remains the separate premise stated by
+the end-to-end theorem. The exact correspondence and calculation are included
+in [the Category 1 proof](docs/category-one.md#current-poseidon2b-cryptanalysis).
+
 The complete derivations are in:
 
 - [Block–Tiwari FS-FRI security](docs/block-tiwari.md);
@@ -99,9 +118,10 @@ premises, exact optimizer and primary sources.
 constructs the typed analysis tuple. It validates the full source revision,
 the independent wallet ledger and geometry values, the HistoryStep and
 BaseFold query counts, both canonical History PCS profiles, the
-wide-challenge support, the derived algebraic root bounds and the fixed
-Poseidon2b profile. Construction fails before any security calculation if a
-required equality or geometry invariant does not hold.
+wide-challenge support, the derived algebraic root bounds, the fixed Poseidon2b
+profile, both linear matrices and the Merkle compression mode. Construction
+fails before any security calculation if a required equality or geometry
+invariant does not hold.
 
 The documents define the security games, identify the applicable published
 theorems and derive every Parano1d-specific term. Separate Rust types preserve
@@ -131,6 +151,7 @@ soundness game. It does not claim that NIST reviewed or certified Parano1d.
 | Sequential QROM lifting and adaptive all-root composition | Chiesa, Manohar and Spooner together with FRACTAL, specialized in [`docs/category-one.md`](docs/category-one.md) |
 | Parallel compressed-oracle transition and collision bounds | Chung, Fehr, Huang and Liao, specialized to typed production responses in the Category 1 document |
 | Category 1 reference resources | NIST Section 4.A.5, evaluated at every stated `MAXDEPTH` point |
+| Published classical Poseidon2b cryptanalysis | Merz and Rodríguez García, specialized to the production permutation and compression mode in [`src/poseidon2b_cryptanalysis.rs`](src/poseidon2b_cryptanalysis.rs) |
 | Production correspondence | the full revision pin, standalone snapshot and source-symbol map in [`docs/parameter-provenance.md`](docs/parameter-provenance.md) |
 | Numerical conclusions | exact rational arithmetic and release regression tests in this crate |
 
@@ -166,6 +187,7 @@ cargo test --release --locked
 | [`src/parameters.rs`](src/parameters.rs) | parse and cross-check the embedded snapshot |
 | [`src/local.rs`](src/local.rs) | wallet and History generalized RBR bounds |
 | [`src/block_tiwari.rs`](src/block_tiwari.rs) | exact classical-ROM expected-work optimizer |
+| [`src/poseidon2b_cryptanalysis.rs`](src/poseidon2b_cryptanalysis.rs) | source-pinned specialization of published Poseidon2b algebraic attacks |
 | [`src/qrom.rs`](src/qrom.rs) | sequential ideal-QROM all-root bound |
 | [`src/resource.rs`](src/resource.rs) | depth-aware Category 1 resource calculation |
 | [`src/exact.rs`](src/exact.rs) | arbitrary-size rational arithmetic and directed decimals |

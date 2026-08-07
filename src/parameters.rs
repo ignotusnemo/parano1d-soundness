@@ -6,11 +6,12 @@
 use serde::Deserialize;
 
 pub const PINNED_SOURCE_REPOSITORY: &str = "https://github.com/ignotusnemo/parano1d";
-pub const PINNED_SOURCE_REVISION: &str = "39626b22d53cf2f2c480a7e28446c197dca68043";
+pub const PINNED_SOURCE_REVISION: &str = "a1187ee01b74f889560bac0eb813d5ca49c6fe0d";
 pub const PRODUCTION_SNAPSHOT_PATH: &str = "model/production.toml";
 pub const PRODUCTION_SNAPSHOT: &str = include_str!("../model/production.toml");
+pub const MERKLE_COMPRESSION_MODE: &str = "truncated-permutation-feed-forward";
 
-const SNAPSHOT_SCHEMA: u32 = 1;
+const SNAPSHOT_SCHEMA: u32 = 2;
 const SNAPSHOT_NAME: &str = "parano1d-production-soundness";
 
 #[derive(Clone, Debug, PartialEq, Eq)]
@@ -46,6 +47,9 @@ pub struct ProductionParameters {
     pub poseidon_sbox_exponent: usize,
     pub poseidon_full_rounds: usize,
     pub poseidon_partial_rounds: usize,
+    pub poseidon_external_matrix: [[u128; 4]; 4],
+    pub poseidon_internal_matrix: [[u128; 4]; 4],
+    pub poseidon_merkle_compression: String,
 }
 
 #[derive(Debug, Deserialize)]
@@ -106,6 +110,9 @@ struct Poseidon2bSnapshot {
     sbox_exponent: usize,
     full_rounds: usize,
     partial_rounds: usize,
+    external_matrix: [[u128; 4]; 4],
+    internal_matrix: [[u128; 4]; 4],
+    merkle_compression: String,
 }
 
 #[derive(Debug, Deserialize)]
@@ -225,6 +232,7 @@ fn load_snapshot(input: &str) -> Result<ProductionParameters, String> {
         || profile.poseidon2b.sbox_exponent == 0
         || profile.poseidon2b.full_rounds == 0
         || profile.poseidon2b.partial_rounds == 0
+        || profile.poseidon2b.merkle_compression != MERKLE_COMPRESSION_MODE
     {
         return Err("Poseidon2b snapshot parameters are invalid".to_string());
     }
@@ -302,6 +310,9 @@ fn load_snapshot(input: &str) -> Result<ProductionParameters, String> {
         poseidon_sbox_exponent: profile.poseidon2b.sbox_exponent,
         poseidon_full_rounds: profile.poseidon2b.full_rounds,
         poseidon_partial_rounds: profile.poseidon2b.partial_rounds,
+        poseidon_external_matrix: profile.poseidon2b.external_matrix,
+        poseidon_internal_matrix: profile.poseidon2b.internal_matrix,
+        poseidon_merkle_compression: profile.poseidon2b.merkle_compression,
     })
 }
 
@@ -372,6 +383,23 @@ mod tests {
         assert_eq!(parameters.poseidon_sbox_exponent, 7);
         assert_eq!(parameters.poseidon_full_rounds, 8);
         assert_eq!(parameters.poseidon_partial_rounds, 58);
+        assert_eq!(
+            parameters.poseidon_external_matrix,
+            [[5, 7, 1, 3], [4, 6, 1, 1], [1, 3, 5, 7], [1, 1, 4, 6],]
+        );
+        assert_eq!(
+            parameters.poseidon_internal_matrix,
+            [
+                [32, 1, 1, 1],
+                [1, 8192, 1, 1],
+                [1, 1, 512, 1],
+                [1, 1, 1, 2048],
+            ]
+        );
+        assert_eq!(
+            parameters.poseidon_merkle_compression,
+            MERKLE_COMPRESSION_MODE
+        );
     }
 
     #[test]

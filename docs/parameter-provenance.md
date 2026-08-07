@@ -3,7 +3,7 @@
 The executable certificate reads its complete protocol input from
 [`model/production.toml`](../model/production.toml). That snapshot is pinned to
 Parano1d commit
-[`39626b22d53cf2f2c480a7e28446c197dca68043`](https://github.com/ignotusnemo/parano1d/commit/39626b22d53cf2f2c480a7e28446c197dca68043).
+[`a1187ee01b74f889560bac0eb813d5ca49c6fe0d`](https://github.com/ignotusnemo/parano1d/commit/a1187ee01b74f889560bac0eb813d5ca49c6fe0d).
 
 The paths and symbols below are relative to that revision. They identify the
 production definitions from which each snapshot field was taken. The
@@ -58,11 +58,14 @@ and BaseFold query counts.
 |---|---|
 | width 4, exponent 7, 8 full rounds and 58 partial rounds | `noid_poseidon2b/src/native/permutation.rs::{STATE_SIZE,SBOX_EXPONENT,F_ROUNDS,P_ROUNDS}` |
 | rate 2 | `noid_poseidon2b/src/native/compression.rs::RATE` |
+| external and internal matrices | `noid_poseidon2b/src/native/permutation.rs::{MDS_FULL,MDS_PARTIAL}` |
+| truncated-permutation feed-forward Merkle compression | `noid_poseidon2b/src/native/compression.rs::compress_flat_feed_forward_with_tag` |
 
 These values feed the coherent response-cost calculation in
-[`src/resource.rs`](../src/resource.rs). The fixed-permutation delta and
-coherent response-cost premises are stated explicitly in
-[`docs/category-one.md`](category-one.md).
+[`src/resource.rs`](../src/resource.rs) and the published-cryptanalysis audit in
+[`src/poseidon2b_cryptanalysis.rs`](../src/poseidon2b_cryptanalysis.rs). The
+fixed-permutation delta and coherent response-cost premises are stated
+explicitly in [`docs/category-one.md`](category-one.md).
 
 ## Snapshot integrity
 
@@ -70,4 +73,5 @@ The snapshot is compiled into the binary with `include_str!`. Runtime loading
 checks its schema, repository and full revision identifiers, validates every
 cross-component equality above and rejects malformed class geometry. Release
 tests pin the complete W65/H133 tuple, both History classes, the Poseidon2b
-profile and the derived root bounds before evaluating any security result.
+profile, both linear matrices, the Merkle compression mode and the derived root
+bounds before evaluating any security result.
