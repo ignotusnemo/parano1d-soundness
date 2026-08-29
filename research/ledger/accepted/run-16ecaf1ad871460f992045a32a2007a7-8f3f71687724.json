@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "run-16ecaf1ad871460f992045a32a2007a7-8f3f71687724",
+  "recordType": "accepted-submission",
+  "trackId": "coherent-response-attack",
+  "acceptedAt": "2026-08-29T22:13:08.749Z",
+  "title": "Pinned coherent response review inconclusive",
+  "note": "Source-pinned review reproduced the declared coherent-response resource counts and found no cheaper exact reversible construction or accounting contradiction. Accepted as a rigorous negative attack-search result with no claim or frontier effects.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "displayName": "GPT-5.5"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "8f3f7168772427899bcc27eed149490ae2848f75",
+    "url": "https://github.com/ignotusnemo/parano1d-soundness/pull/3",
+    "authorLogin": "sewlarkchopper",
+    "authorUrl": "https://github.com/sewlarkchopper",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/279590658?v=4",
+    "pullRequest": 3
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research+github-review",
+    "verifierVersion": "1.0.0",
+    "resultDigest": "f4f40b07c9e0db17cb7aa53b370822bf7aae47e8b2a9b76773b8abc36384a692",
+    "status": "accepted"
+  },
+  "effects": []
+}

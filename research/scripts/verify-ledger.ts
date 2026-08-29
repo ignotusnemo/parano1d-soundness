@@ -57,7 +57,8 @@ async function main(): Promise<void> {
       if (!existsSync(path.join(submissionDirectory, "submission.json"))) throw new Error(`reviewed submission ${decision.submissionId} is missing`);
       const manifest = loadSubmission(submissionDirectory);
       const track = loadTrack(root, manifest.track);
-      const result = verifySubmission({ root, submissionDirectory, context: decision.context, checkedAt: decision.verificationCheckedAt });
+      const { researcher: _signedResearcher, ...eventContext } = decision.context;
+      const result = verifySubmission({ root, submissionDirectory, context: eventContext, checkedAt: decision.verificationCheckedAt });
       expected = evidenceFromReviewedDecision(manifest, result, track, decision);
       if (verifyGitHub) await verifyGitHubReviewApprovals(decision, token!);
     } else {

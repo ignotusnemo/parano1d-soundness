@@ -51,7 +51,7 @@ const decision = reviewDecisionSchema.parse({
   verificationCheckedAt,
   verificationResultDigest: result.resultDigest,
   note: requiredOption("--note"),
-  context,
+  context: result.context,
   reviewers: [
     ...options("--maintainer").map((value) => approval(value, "maintainer")),
     ...options("--independent").map((value) => approval(value, "independent"))
