@@ -2,7 +2,7 @@ schema = 2
 name = "parano1d-production-soundness"
 description = "Standalone production-parameter snapshot for the executable soundness certificate"
 source_repository = "https://github.com/ignotusnemo/parano1d"
-source_revision = "a1187ee01b74f889560bac0eb813d5ca49c6fe0d"
+source_revision = "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0"
 continued_currentness_guaranteed = false
 
 [profile]

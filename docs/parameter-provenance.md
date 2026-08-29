@@ -3,13 +3,15 @@
 The executable certificate reads its complete protocol input from
 [`model/production.toml`](../model/production.toml). That snapshot is pinned to
 Parano1d commit
-[`a1187ee01b74f889560bac0eb813d5ca49c6fe0d`](https://github.com/ignotusnemo/parano1d/commit/a1187ee01b74f889560bac0eb813d5ca49c6fe0d).
+[`fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0`](https://github.com/ignotusnemo/parano1d/commit/fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0), the v1.0.4 release.
 
-The paths and symbols below are relative to that revision. They identify the
-production definitions from which each snapshot field was taken. The
-standalone calculator does not open or build another checkout. Updating the
-production source therefore requires a new revision pin, a new snapshot and a
-renewed source map in the same change.
+The paths and symbols below are relative to that revision. They identify the production definitions from which each snapshot field was taken and the production paths that can accept a terminal State. The standalone calculator does not open or build another checkout. Updating the production source therefore requires a new revision pin, a renewed snapshot and a renewed correspondence audit in the same change.
+
+## Revision renewal audit
+
+The preceding certificate pinned commit [`a1187ee01b74f889560bac0eb813d5ca49c6fe0d`](https://github.com/ignotusnemo/parano1d/commit/a1187ee01b74f889560bac0eb813d5ca49c6fe0d). A direct Git object comparison from that revision to the v1.0.4 pin found identical blobs for every parameter source listed below, `noid_recursive/src/accumulator.rs`, `noid_chain/src/consensus/validation.rs` and `noid_chain/src/block.rs`. The only change in `noid_recursive/src/acceptance/history_step/relation.rs` adds cooperative cancellation to the prover path. The existing `verify_history_step_terminal` implementation and its validation path are unchanged.
+
+The production workspace's integrated `noid_soundness` release tests pass against the v1.0.4 source definitions, and its exact numerical conclusions match this standalone snapshot field for field. The acceptance routing changed after the preceding pin, so the current ordinary block, recursive suffix, reorg, snapshot and local-producer paths were audited separately below.
 
 ## Challenge and digest widths
 
@@ -66,6 +68,20 @@ These values feed the coherent response-cost calculation in
 [`src/poseidon2b_cryptanalysis.rs`](../src/poseidon2b_cryptanalysis.rs). The
 fixed-permutation delta and coherent response-cost premises are stated
 explicitly in [`docs/category-one.md`](category-one.md).
+
+## Production acceptance correspondence
+
+The cryptographic theorem is connected to production acceptance by the following exact paths at the pinned revision.
+
+| Acceptance path | Required authority and checks |
+|---|---|
+| Ordinary inbound block | `noid_chain/src/storage/mdbx_context.rs::MdbxChainContext::apply_next_block` binds terminal metadata to the uncommitted candidate header, invokes the node's pinned `decode_verify_history_step_terminal`, performs native header, PoW and epoch checks, materializes the public body and requires the resulting exact State root to equal `header.state_root` before commit. |
+| Exact live suffix | `verify_history_step_terminal_candidate` verifies the selected tip and returns a non-cloneable `VerifiedHistoryStepTerminal`. `begin_preverified_recursive_suffix` binds it to the current canonical boundary and returns a non-cloneable `VerifiedRecursiveSuffix`. `apply_verified_recursive_suffix_block` advances only along that exact parent/hash sequence, applies the ordinary native checks and exact State materialization to every body, and stores the complete verified terminal only at the selected final tip. |
+| Reorg suffix | `authorize_preverified_reorg_suffix` binds the verified terminal to the exact current tip, finalized checkpoint and non-final ancestor. `apply_verified_reorg_suffix_with_applier_indexed` requires a linked replacement ending at the verified tip, requires it to win normal cumulative-work fork choice, applies every body through `apply_verified_recursive_suffix_block`, and commits the complete replacement atomically. |
+| Snapshot boundary | `noid_node/src/snapshot_header_staging.rs::SnapshotHeaderStaging::validate_complete` seals a native-validated header chain. `MdbxChainContext::verify_snapshot_boundary` verifies the terminal against its exact boundary and epoch anchor. `noid_chain/src/storage/snapshot_staging.rs::SnapshotStagingSession::finalize` independently reconstructs the streamed State root and live count and requires both to equal the boundary header. `apply_staged_state_snapshot` accepts only matching typed header, terminal and State authorities into one durable State epoch. |
+| Local block production | The only non-test production caller of `seal_after_trusted_history_step_proof_unchecked` is `noid_miner/src/block_production.rs::PreparedBlockAttempt::prove`, immediately after the pinned prover returns the terminal for the immutable prepared template. The typed commit rechecks template binding, exact post-State, current parent and PoW. This trusted local-prover bridge is not reachable from inbound, reorg or snapshot acceptance, all of which invoke the verifier. |
+
+The shared semantic core is `noid_recursive/src/accumulator.rs::ChainAccumulator::advance`, `noid_recursive/src/acceptance/history_step/relation.rs::verify_history_step_terminal`, the predicates in `noid_chain/src/consensus/validation.rs` and `noid_chain/src/block.rs::materialize_accepted_block_state`. Together they bind an accepted terminal to one exact native State transition. The typed suffix and snapshot authorities change when that verification is performed, not what terminal or State can be accepted.
 
 ## Snapshot integrity
 

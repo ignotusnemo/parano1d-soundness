@@ -2,9 +2,7 @@
 
 ## Result
 
-The security game asks whether a quantum adversary can make Parano1d accept an
-invalid terminal State at the end of a recursive proof chain beginning at
-genesis.
+The security game asks whether a quantum adversary can make Parano1d accept an invalid terminal State whose recursive ancestry starts at genesis.
 
 For the pinned W65/H133 production profile, the executable theorem gives:
 
@@ -44,26 +42,21 @@ certified Parano1d.
 
 ## The security game
 
-The public instance is a terminal `HistoryStep` State. The adversary wins when
-the production verifier accepts its terminal proof but no valid execution from
-genesis ends in that State. Failure may occur in a wallet authorization, block
-relation, parent link, exact State transition, recursive verification step or
-the claimed proof chain itself.
+The public instance is a terminal `HistoryStep` State. The adversary wins when the production verifier accepts its terminal proof but no valid execution from genesis ends in that State. Failure may occur in a wallet authorization, block relation, parent link, exact State transition, recursive verification step or the claimed ancestry itself.
 
 The adversary is one stateful quantum algorithm. All oracle interactions used
 to construct the terminal proof and every adversarial ancestor on which it
 depends belong to the same resource budget. Genesis is checked
 deterministically, so this game has no checkpoint-certification error term.
 
-After the compressed-oracle database is measured, extraction and proof-chain
-traversal are deterministic and make no new oracle queries.
+After the compressed-oracle database is measured, extraction and ancestry walking are deterministic and make no new oracle queries.
 
 ## Production parameter snapshot
 
 The certificate reads every protocol input from
 [`model/production.toml`](../model/production.toml). The snapshot is pinned to
 Parano1d commit
-[`a1187ee01b74f889560bac0eb813d5ca49c6fe0d`](https://github.com/ignotusnemo/parano1d/commit/a1187ee01b74f889560bac0eb813d5ca49c6fe0d).
+[`fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0`](https://github.com/ignotusnemo/parano1d/commit/fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0).
 The complete repository-relative source map is recorded in
 [`docs/parameter-provenance.md`](parameter-provenance.md).
 
@@ -104,7 +97,7 @@ certificate rather than silently retaining these numbers.
 
 The local theorem is stated for the de-Merkleized and de-grinded public-coin
 IOP. Every production algebraic move remains in its original order, but each
-Fiat–Shamir squeeze is replaced by its corresponding independent verifier
+Fiat-Shamir squeeze is replaced by its corresponding independent verifier
 coin and authenticated arrays are exposed as ideal oracles. The final nonce
 predicate is removed. Removing that predicate can only help a cheating prover,
 so it supplies no security credit.
@@ -154,7 +147,7 @@ s_N=\frac{N-4}{2N}.
 \tag{5}
 \]
 
-At a layer of length `N`, the production Reed–Solomon code has dimension
+At a layer of length `N`, the production Reed-Solomon code has dimension
 `N/4` and the degree convention of the list-correlated theorem gives reduced
 rate
 
@@ -187,7 +180,7 @@ is strictly smaller than `1/2`, so the ratio is strictly smaller than `m`.
 This verifies the theorem range for every `m >= 3` and every production
 layer, rather than extrapolating one asymptotic radius.
 
-For every rate-one-quarter Reed–Solomon layer, the exact proximity envelope,
+For every rate-one-quarter Reed-Solomon layer, the exact proximity envelope,
 strict list bound and query escape term are
 
 \[
@@ -217,7 +210,7 @@ switching is bounded rather than assumed away.
 
 ### Fold provenance and the single initial list
 
-The initial commitment contains 32 interleaved `GF(2^128)` Reed–Solomon
+The initial commitment contains 32 interleaved `GF(2^128)` Reed-Solomon
 rows. During the five row-batch moves, pack each live half into a fixed
 extension of `GF(2^256)`. The production fold is an affine combination
 `f_0 + r f_1`, up to an invertible coordinate-wise change of basis. Restricting
@@ -233,7 +226,7 @@ an invertible additive-NTT butterfly and then the same affine combination.
 Haböck's additive-FFT specialization gives the identical backward step.
 
 Fixing a degree-32 extension and a basis identifies the 32-row initial oracle
-with one Reed–Solomon word over that extension. Column Hamming distance is
+with one Reed-Solomon word over that extension. Column Hamming distance is
 preserved exactly. The strict integral list bound in equation (7) is therefore
 the size of one packed list, not 32 independent lists. Every candidate that
 survives a nonexceptional fold trace originates in that fixed initial list.
@@ -325,7 +318,7 @@ BadTypedBind  a collision, ambiguous encoding or domain confusion changes
               the typed semantic graph
 ```
 
-The event `BadAll` quantifies over all represented roots before proof-chain reachability is
+The event `BadAll` quantifies over all represented roots before ancestry is
 traversed. This ordering matters because inserting one database entry can make
 an already present subgraph reachable. The probability theorem is applied to
 the reachability-free all-root property; reachability is used only after the
@@ -338,14 +331,7 @@ required wallet and joint-sidecar obligation. No step makes another oracle
 query. The History rank decreases at each recursive edge, so the worklist
 terminates at genesis.
 
-The production semantic correspondence is the following deterministic
-implication. A valid extracted class witness, the canonical parent and wallet
-projection, `ChainAccumulator::advance`, `verify_history_step_terminal`, the
-native consensus predicates and `materialize_accepted_block_state` together
-imply one exact valid State transition. Applying that implication in reverse
-topological order gives a valid execution from genesis to the accepted State.
-The exact source symbols and paths for this implication are listed in the
-[provenance map](parameter-provenance.md).
+The production semantic correspondence is the following deterministic implication. A valid extracted class witness, the canonical parent and wallet projection, `ChainAccumulator::advance`, `verify_history_step_terminal`, the native consensus predicates and `materialize_accepted_block_state` together imply one exact valid State transition. Ordinary inbound blocks verify that terminal directly. Live suffixes, reorgs and snapshots can consume only typed authorities created after the same terminal verification and bound to an exact header sequence or snapshot boundary. Applying the implication in reverse topological order gives a valid execution from genesis to the accepted State. The exact source symbols, acceptance paths and local-producer trust boundary are listed in the [provenance map](parameter-provenance.md).
 Therefore
 
 \[
@@ -471,7 +457,7 @@ d_j      logical depth needed for one coherent response
 
 The parallel compressed-oracle transition bound of Chung, Fehr, Huang and Liao
 has constant 10. Specializing it to the typed all-root event and combining
-query types by Cauchy–Schwarz gives
+query types by Cauchy-Schwarz gives
 
 \[
 \Pr[\mathsf{BadState}]_{\rm main}
@@ -505,7 +491,7 @@ The compressed-oracle transition amplitude is at most
 \tag{19}
 \]
 
-Weighted Cauchy–Schwarz, followed by `delta_s >= d_j` for every active type in
+Weighted Cauchy-Schwarz, followed by `delta_s >= d_j` for every active type in
 round `s`, gives
 
 \[
@@ -756,11 +742,7 @@ The paper models Gröbner-basis work as proportional to `d_I^omega` and uses
 \tag{36}
 \]
 
-The conclusion is direct: ePrint 2026/306 identifies no attack that lowers the
-production security target. Equation (36) is the paper's classical
-dedicated-attack projection derived from an upper bound on the ideal degree.
-The event-specific fixed-Poseidon2b quantum condition is represented separately
-by `Delta_P2b` below.
+The formal scope of equation (36) is a classical attack-cost projection derived from an upper bound on the ideal degree. The paper concludes that its attacks do not reduce the claimed 128-bit security of the full-round recommended instances. The event-specific fixed-Poseidon2b quantum condition is represented separately by `Delta_P2b` below.
 
 `poseidon2b_cryptanalysis::audit` reads the snapshotted production tuple,
 linear matrices and Merkle mode before evaluating equations (34) through (36).
@@ -804,11 +786,7 @@ once to the complete all-root bound:
 
 It is not defined as a qPRP advantage between a public fixed permutation and a
 secret random permutation. Direct evaluation would distinguish those games.
-The Poseidon2b specification supplies the production parameters. The audit
-above incorporates the published classical cryptanalysis of the permutation
-and its concrete modes. The ideal-degree model and the event-specific quantum
-condition are evaluated separately. Equations (1) and (2) state the additional
-quantum instantiation bounds sufficient for the two production conclusions.
+The Poseidon2b specification supplies the production parameters. The audit above incorporates the cited published classical cryptanalysis of the permutation and its concrete modes. It does not evaluate `Delta_P2b`, because the ideal-degree attack model neither bounds every fixed-permutation failure event nor supplies the required coherent quantum statement. Equations (1) and (2) state the additional event-specific quantum instantiation bounds sufficient for the two production conclusions.
 
 ## Exact arithmetic and reproduction
 

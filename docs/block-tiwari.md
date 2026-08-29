@@ -1,4 +1,4 @@
-# Block–Tiwari concrete security of production FS-FRI
+# Block-Tiwari concrete security of production FS-FRI
 
 ## Result
 
@@ -92,7 +92,7 @@ s_N=\frac{N-4}{2N}.
 \tag{4}
 \]
 
-For the production rate-one-quarter Reed–Solomon layers, the reduced rate in
+For the production rate-one-quarter Reed-Solomon layers, the reduced rate in
 the degree convention of the list-correlated theorem is
 
 \[

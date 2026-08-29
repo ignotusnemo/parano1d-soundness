@@ -1,39 +1,25 @@
 # Parano1d soundness certificate
 
-This standalone repository instantiates the security analysis for a pinned
-Parano1d production proof profile. Cross-component invariants and security
-inequalities are evaluated with arbitrary-precision integer or rational
-arithmetic.
+This standalone repository instantiates the security analysis for a pinned Parano1d production proof profile. Cross-component invariants and security inequalities are evaluated with arbitrary-precision integer or rational arithmetic.
 
-The analysis inputs are pinned to Parano1d commit
-[`a1187ee01b74f889560bac0eb813d5ca49c6fe0d`](https://github.com/ignotusnemo/parano1d/commit/a1187ee01b74f889560bac0eb813d5ca49c6fe0d).
-The complete standalone snapshot is
-[`model/production.toml`](model/production.toml), and its repository-relative
-source-symbol map is
-[`docs/parameter-provenance.md`](docs/parameter-provenance.md). The executable
-embeds this snapshot and does not import another checkout. A later production
-revision requires an explicit snapshot and provenance update.
+The analysis inputs and production acceptance correspondence are pinned to Parano1d v1.0.4 commit [`fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0`](https://github.com/ignotusnemo/parano1d/commit/fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0). The complete standalone snapshot is [`model/production.toml`](model/production.toml), and its repository-relative source-symbol and acceptance-path map is [`docs/parameter-provenance.md`](docs/parameter-provenance.md). The executable embeds this snapshot and does not import another checkout. A later production revision requires an explicit snapshot and provenance renewal.
 
-The repository pins the same Rust `1.96.0` toolchain used by the source
-revision.
+The repository pins the same Rust `1.96.0` toolchain used by the source revision.
 
 ## Results
 
 | Security statement | Current production result |
 |---|---:|
 | Target FRI security | **128 bits** |
-| Provable Block–Tiwari FS-FRI security | **127 bits** |
-| Conjectured Block–Tiwari FS-FRI security | **127 bits** |
+| Provable Block-Tiwari FS-FRI security | **127 bits** |
+| Conjectured Block-Tiwari FS-FRI security | **127 bits** |
 | Sequential ideal-QROM half-success boundary | **64.707407428576 bits** |
 | NIST Post-Quantum Cryptography Category | **Category 1** |
 | Dominant Category 1 gate-depth floor | **173.273866314232 bits** |
 | Margin over the NIST `2^170` reference | **3.273866314232 bits** |
 | Complete ideal bound at the Category 1 envelope | **0.053364140323608411** |
 
-The first three rows use the classical random-oracle definitions and integer
-presentation of Block and Tiwari. The remaining rows concern a different game:
-acceptance by a quantum adversary of an invalid terminal State at the end of a
-recursive proof chain beginning at genesis.
+The first three rows use the classical random-oracle definitions and integer presentation of Block and Tiwari. The remaining rows concern a different game: acceptance of an invalid terminal State whose recursive ancestry starts at genesis by a quantum adversary.
 
 `C1` is the source identifier for the production wide-challenge profile. Its
 algebraic challenges are elements of `GF(2^256)`, sampled uniformly from a
@@ -68,20 +54,15 @@ ideal-degree upper bound   7^73
 log2(d_I^2) dedicated algebraic projection   409.873818620410
 ```
 
-The conclusion is direct: ePrint 2026/306 identifies no attack that lowers the
-production security target. The final value is the paper's classical
-dedicated-attack projection with `omega=2`, derived from an ideal-degree upper
-bound. The fixed-Poseidon2b QROM delta remains the separate premise stated by
-the end-to-end theorem. The exact correspondence and calculation are included
-in [the Category 1 proof](docs/category-one.md#current-poseidon2b-cryptanalysis).
+The final value is the paper's classical dedicated-attack projection with `omega=2`, derived from an ideal-degree upper bound. The paper concludes that its attacks do not reduce the claimed 128-bit security of the full-round recommended instances. This projection does not evaluate the fixed-Poseidon2b QROM delta, which remains a separate premise of the end-to-end theorem. The exact correspondence and scope are included in [the Category 1 proof](docs/category-one.md#current-poseidon2b-cryptanalysis).
 
 The complete derivations are in:
 
-- [Block–Tiwari FS-FRI security](docs/block-tiwari.md);
+- [Block-Tiwari FS-FRI security](docs/block-tiwari.md);
 - [end-to-end QROM soundness and the Category 1 assessment](docs/category-one.md);
 - [production snapshot provenance](docs/parameter-provenance.md).
 
-## Block–Tiwari comparison
+## Block-Tiwari comparison
 
 Block and Tiwari define concrete FS-FRI security as the minimum expected
 classical random-oracle query work over every positive integer query budget.
@@ -125,7 +106,7 @@ invariant does not hold.
 
 The documents define the security games, identify the applicable published
 theorems and derive every Parano1d-specific term. Separate Rust types preserve
-the distinction between the Block–Tiwari, sequential QROM and depth-aware
+the distinction between the Block-Tiwari, sequential QROM and depth-aware
 Category 1 statements. Probabilities, optimizer boundaries and resource
 inequalities are evaluated with arbitrary-size integers and reduced rational
 numbers. Floating point is confined to descriptive logarithms. Upper bounds
@@ -147,7 +128,7 @@ soundness game. It does not claim that NIST reviewed or certified Parano1d.
 | Layer | Evidence |
 |---|---|
 | Classical FS-FRI compiler and expected-work definition | Block and Tiwari, linked and instantiated in [`docs/block-tiwari.md`](docs/block-tiwari.md) |
-| RBR foundation and Reed–Solomon proximity bounds | Block et al., Ben-Sasson et al. and Haböck, specialized to both production History classes in the same document |
+| RBR foundation and Reed-Solomon proximity bounds | Block et al., Ben-Sasson et al. and Haböck, specialized to both production History classes in the same document |
 | Sequential QROM lifting and adaptive all-root composition | Chiesa, Manohar and Spooner together with FRACTAL, specialized in [`docs/category-one.md`](docs/category-one.md) |
 | Parallel compressed-oracle transition and collision bounds | Chung, Fehr, Huang and Liao, specialized to typed production responses in the Category 1 document |
 | Category 1 reference resources | NIST Section 4.A.5, evaluated at every stated `MAXDEPTH` point |

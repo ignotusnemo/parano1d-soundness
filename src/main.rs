@@ -168,7 +168,6 @@ fn main() -> Result<(), String> {
             poseidon2b_cryptanalysis.quadratic_work_projection
         );
     }
-    println!("conclusion: no attack in ePrint 2026/306 lowers the production security target");
     println!("scope: classical dedicated-attack projection from an ideal-degree upper bound\n");
 
     println!("END TO END IDEAL QROM, FROM GENESIS INVALID STATE GAME");

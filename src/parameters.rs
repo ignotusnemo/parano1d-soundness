@@ -6,7 +6,7 @@
 use serde::Deserialize;
 
 pub const PINNED_SOURCE_REPOSITORY: &str = "https://github.com/ignotusnemo/parano1d";
-pub const PINNED_SOURCE_REVISION: &str = "a1187ee01b74f889560bac0eb813d5ca49c6fe0d";
+pub const PINNED_SOURCE_REVISION: &str = "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0";
 pub const PRODUCTION_SNAPSHOT_PATH: &str = "model/production.toml";
 pub const PRODUCTION_SNAPSHOT: &str = include_str!("../model/production.toml");
 pub const MERKLE_COMPRESSION_MODE: &str = "truncated-permutation-feed-forward";
