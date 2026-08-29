@@ -4,7 +4,7 @@ on:
   pull_request_target:
     types: [opened, reopened, synchronize, ready_for_review]
     paths:
-      - "platform/submissions/**"
+      - "research/submissions/**"
 
 permissions:
   contents: read
@@ -35,16 +35,16 @@ jobs:
         with:
           node-version: 22.19.0
           cache: npm
-          cache-dependency-path: platform/package-lock.json
+          cache-dependency-path: research/package-lock.json
 
       - name: Install trusted locked dependencies
-        working-directory: platform
+        working-directory: research
         run: npm ci
 
       - name: Verify submission data through the GitHub API
         id: verify
         continue-on-error: true
-        working-directory: platform
+        working-directory: research
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SUBMISSION_REPOSITORY: ${{ github.repository }}

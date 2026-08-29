@@ -2,7 +2,7 @@
 
 This standalone repository instantiates the security analysis for a pinned Parano1d production proof profile. Cross-component invariants and security inequalities are evaluated with arbitrary-precision integer or rational arithmetic.
 
-The public claim graph, open research contracts, accepted evidence and contributor record are published at [noid.network](https://noid.network/) from the static platform in [`platform/`](platform/). The certificate and its public verification process are versioned in this repository together.
+The public claim graph, open research contracts, accepted evidence and contributor record are versioned in [`research/`](research/). The service at [noid.network](https://noid.network/) uses this public verification layer but is not part of the certificate or its acceptance boundary.
 
 The analysis inputs and production acceptance correspondence are pinned to Parano1d v1.0.4 commit [`fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0`](https://github.com/ignotusnemo/parano1d/commit/fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0). The complete standalone snapshot is [`model/production.toml`](model/production.toml), and its repository-relative source-symbol and acceptance-path map is [`docs/parameter-provenance.md`](docs/parameter-provenance.md). The executable embeds this snapshot and does not import another checkout. A later production revision requires an explicit snapshot and provenance renewal.
 
@@ -176,4 +176,4 @@ cargo test --release --locked
 | [`src/exact.rs`](src/exact.rs) | arbitrary-size rational arithmetic and directed decimals |
 | [`src/main.rs`](src/main.rs) | human-readable and exact certificate output |
 | [`rust-toolchain.toml`](rust-toolchain.toml) | pinned compiler and formatter toolchain |
-| [`platform/`](platform/) | public verification website, research contracts, submission verifier and evidence ledger |
+| [`research/`](research/) | public research contracts, submission verifier and evidence ledger |

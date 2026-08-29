@@ -1,0 +1,23 @@
+{
+  "id": "certificate-reproduction",
+  "title": "Independent certificate reproduction",
+  "description": "Reproduce the exact protected calculator at its pinned commits. This validates reproducibility and cannot alter any security bound.",
+  "kind": "reproduction",
+  "direction": "non-ranked",
+  "targetClaimId": "production-profile-snapshot",
+  "contractVersion": "1.0.0",
+  "validator": "certificate-reproduction",
+  "state": "active",
+  "acceptance": "The trusted verifier proves that every protected certificate source matches the exact certificate commit, runs cargo in release mode with the lockfile, parses the report and compares every declared value.",
+  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/research/contracts/certificate-reproduction-v1.0.0.md",
+  "expected": {
+    "certificateCommit": "c3ea3342fbe27111c84046613010f14f13b917c6",
+    "productionCommit": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",
+    "reportSha256": "1466dec6e33a262997810b05a497dee875b5086525c9bfb073e4bbdbdc90d73b",
+    "blockTiwariProvableBits": "127.194502224322",
+    "sequentialIdealQromBits": "64.707407428576",
+    "categoryOneGateDepthBits": "173.273866314232",
+    "categoryOneIdealEnvelope": "0.053364140323608411",
+    "poseidonClassicalProjectionBits": "409.873818620410"
+  }
+}
