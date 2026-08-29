@@ -8,7 +8,7 @@
   "contractVersion": "1.0.0",
   "validator": "manual-audit",
   "state": "active",
-  "acceptance": "The submission must bind to the exact production response relation and declared reversible cost model. Schema and source pins are checked automatically; two reviewers confirm equivalence and resource accounting before promotion.",
+  "acceptance": "The submission must bind to the exact production response relation and declared reversible cost model. Schema and source pins are checked automatically. A maintainer may accept a rigorous inconclusive result with no effects; changing a claim or frontier requires the full two-reviewer equivalence and resource-accounting policy.",
   "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/research/contracts/coherent-response-minimum-v1.0.0.md",
   "reviewPolicy": {
     "minimumApprovals": 2,

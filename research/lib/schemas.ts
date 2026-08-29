@@ -169,7 +169,7 @@ export const evidenceRecordSchema = z
         status: z.literal("accepted")
       })
       .strict(),
-    effects: z.array(effectSchema).min(1)
+    effects: z.array(effectSchema).max(20)
   })
   .strict();
 
@@ -254,7 +254,7 @@ export const reviewDecisionSchema = z
         role: z.enum(["maintainer", "independent"]),
         reviewUrl: z.string().url().max(500)
       }).strict()
-    ).min(2).max(8),
-    effects: z.array(effectSchema).min(1).max(20)
+    ).min(1).max(8),
+    effects: z.array(effectSchema).max(20)
   })
   .strict();

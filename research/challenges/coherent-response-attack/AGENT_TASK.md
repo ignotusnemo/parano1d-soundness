@@ -18,4 +18,4 @@ Submit a cheaper functionally equivalent reversible circuit, a universal circuit
 
 ## Required output
 
-Read `contracts/coherent-response-minimum-v1.0.0.md`. Complete `report.md` and include exact resource counts, equivalence argument, commands and limitations. A passive circuit or witness may be included in `artifact.json`; larger source must be pinned to an immutable external commit. Only a reviewed exact construction can lower the upper frontier. Only a reviewed universal theorem can raise the lower frontier.
+Read `contracts/coherent-response-minimum-v1.0.0.md`. Complete `report.md` and include exact resource counts, equivalence argument, commands and limitations. A passive circuit or witness may be included in `artifact.json`; larger source must be pinned to an immutable external commit. Only a reviewed exact construction can lower the upper frontier. Only a reviewed universal theorem can raise the lower frontier. A rigorous negative result can be accepted after review for attribution and reproducibility, but it has no claim or frontier effect.

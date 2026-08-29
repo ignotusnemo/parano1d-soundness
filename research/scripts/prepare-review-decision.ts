@@ -20,7 +20,6 @@ const manifest = loadSubmission(submissionDirectory);
 const track = loadTrack(root, manifest.track);
 if (track.validator !== "manual-audit") throw new Error("review decisions apply only to human-reviewed tracks");
 const payload = manualAuditPayloadSchema.parse(manifest.payload);
-if (payload.finding === "inconclusive") throw new Error("an inconclusive submission cannot be prepared for promotion");
 const verificationCheckedAt = option("--checked-at") ?? new Date().toISOString();
 const acceptedAt = option("--accepted-at") ?? new Date().toISOString();
 const pullRequest = Number(requiredOption("--pull-request"));
@@ -34,15 +33,15 @@ const context = {
 const result = verifySubmission({ root, submissionDirectory, context, checkedAt: verificationCheckedAt });
 if (result.status !== "pending-review") throw new Error(`submission cannot enter review promotion: ${result.status}`);
 const effectsPath = option("--effects");
-const findingStatuses = track.reviewPolicy?.statusRules[payload.finding];
-if (!findingStatuses?.[0]) throw new Error(`track has no status rule for ${payload.finding}`);
 const effects = effectsPath
   ? effectSchema.array().min(1).parse(readStrictJsonFile(path.resolve(effectsPath)))
-  : [{
-      claimId: track.targetClaimId,
-      status: findingStatuses[0],
-      metrics: []
-    }];
+  : payload.finding === "inconclusive"
+    ? []
+    : (() => {
+        const findingStatuses = track.reviewPolicy?.statusRules[payload.finding];
+        if (!findingStatuses?.[0]) throw new Error(`track has no status rule for ${payload.finding}`);
+        return [{ claimId: track.targetClaimId, status: findingStatuses[0], metrics: [] }];
+      })();
 const decision = reviewDecisionSchema.parse({
   schemaVersion: 1,
   id: `${manifest.id}-${context.commit.slice(0, 12)}`,

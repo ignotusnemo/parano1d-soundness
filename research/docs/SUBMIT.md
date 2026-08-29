@@ -41,7 +41,7 @@ npm run challenge -- seal --submission submissions/my-poseidon-result
 npm run challenge -- verify --submission submissions/my-poseidon-result
 ```
 
-An automated track returns `accepted` when complete. A proof, attack or audit that passes all passive checks returns `pending-review`; this is the expected local result and does not claim that the cryptography was accepted.
+An automated track returns `accepted` when complete. A proof, attack or audit that passes all passive checks returns `pending-review`; this is the expected local result and does not claim that the cryptography was accepted. A rigorous inconclusive result may still be accepted after maintainer review as a public negative research record. Such a record has no claim effects and cannot move a frontier. A result that changes a claim or frontier still requires every maintainer and independent approval in its frozen track policy.
 
 Commit only the new submission directory to a branch in your fork, push it and open a pull request against `ignotusnemo/parano1d-soundness:main`. The protected submission workflow reads the passive files through the GitHub API and publishes its result on the pull request.
 
@@ -51,4 +51,4 @@ The verifier reads the pull request files as passive data through the GitHub API
 
 ## Promotion
 
-A successful automated check proves only that passive submission data matches the frozen schema and source pins. It does not replace the semantic cryptographic review required by a review contract. Every required reviewer must approve the exact pull request commit on GitHub. Promotion binds those live approval records, the verifier digest and the contract-defined effects into `reviews/accepted/`, then derives the immutable evidence record in `ledger/accepted/`. Machine-accepted reproductions are derived directly from their protected verifier result. CI reconstructs every ledger record from its source before publishing. Derived conclusions, frontier history and both researcher and model leaderboards are rebuilt from that ledger.
+A successful automated check proves only that passive submission data matches the frozen schema and source pins. It does not replace the semantic cryptographic review required by a review contract. Every required reviewer must approve the exact pull request commit on GitHub. Promotion binds those live approval records, the verifier digest and the contract-defined effects into `reviews/accepted/`, then derives the immutable evidence record in `ledger/accepted/`. A reviewed inconclusive result enters the same ledger with an empty effects list, so it remains attributable and reproducible without changing any claim or frontier. Machine-accepted reproductions are derived directly from their protected verifier result. CI reconstructs every ledger record from its source before publishing. Derived conclusions, frontier history and both researcher and model leaderboards are rebuilt from that ledger.

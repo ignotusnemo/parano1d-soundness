@@ -20,4 +20,4 @@ The PR contains `submission.json`, `report.md` and optionally one passive `artif
 
 ## Effect
 
-A confirmed cheaper construction lowers the best known construction and may challenge a claimed minimum at or above its cost. Only a confirmed universal lower bound can strengthen the premise itself. Reviewed evidence that moves one side without proving or refuting the declared minimum preserves the public `premise` status. A correction updates only the affected resource terms and dependent Category 1 calculation. Failed searches do not raise the bound.
+A confirmed cheaper construction lowers the best known construction and may challenge a claimed minimum at or above its cost. Only a confirmed universal lower bound can strengthen the premise itself. Reviewed evidence that moves one side without proving or refuting the declared minimum preserves the public `premise` status. A correction updates only the affected resource terms and dependent Category 1 calculation. A rigorous source-pinned negative result may be accepted as an attributable research record with no claim effects. It does not raise or lower either frontier.

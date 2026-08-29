@@ -50,6 +50,51 @@ test("a bound GitHub review decision promotes a pending report into immutable ev
   assert.deepEqual(evidence.effects, fixture.decision.effects);
 });
 
+test("a reviewed inconclusive result is accepted without changing claims or frontiers", () => {
+  const fixture = reviewedFixture();
+  fixture.manifest.payload = { ...fixture.manifest.payload, finding: "inconclusive" };
+  fixture.decision.effects = [];
+  const evidence = evidenceFromReviewedDecision(fixture.manifest, fixture.result, fixture.track, fixture.decision);
+  assert.deepEqual(evidence.effects, []);
+  assert.equal(evidence.source.authorLogin, "outside-researcher");
+});
+
+test("a maintainer alone may accept a rigorous inconclusive result with no effects", () => {
+  const fixture = reviewedFixture();
+  fixture.manifest.payload = { ...fixture.manifest.payload, finding: "inconclusive" };
+  fixture.decision.effects = [];
+  fixture.decision.reviewers = [fixture.decision.reviewers[0]!];
+  const evidence = evidenceFromReviewedDecision(fixture.manifest, fixture.result, fixture.track, fixture.decision);
+  assert.deepEqual(evidence.effects, []);
+});
+
+test("a claim-changing result still requires the frozen independent review policy", () => {
+  const fixture = reviewedFixture();
+  fixture.decision.reviewers = [fixture.decision.reviewers[0]!];
+  assert.throws(
+    () => evidenceFromReviewedDecision(fixture.manifest, fixture.result, fixture.track, fixture.decision),
+    /requires 2 approvals/u
+  );
+});
+
+test("an inconclusive result cannot smuggle a claim effect into the ledger", () => {
+  const fixture = reviewedFixture();
+  fixture.manifest.payload = { ...fixture.manifest.payload, finding: "inconclusive" };
+  assert.throws(
+    () => evidenceFromReviewedDecision(fixture.manifest, fixture.result, fixture.track, fixture.decision),
+    /cannot change a claim or frontier/u
+  );
+});
+
+test("a conclusive result cannot enter the ledger without a reviewed effect", () => {
+  const fixture = reviewedFixture();
+  fixture.decision.effects = [];
+  assert.throws(
+    () => evidenceFromReviewedDecision(fixture.manifest, fixture.result, fixture.track, fixture.decision),
+    /requires at least one reviewed effect/u
+  );
+});
+
 test("review promotion rejects self-review and duplicated reviewers", () => {
   const fixture = reviewedFixture();
   fixture.decision.reviewers[1] = {

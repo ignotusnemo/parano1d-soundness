@@ -55,7 +55,11 @@ export function validateReviewDecision(
   requireCondition(Date.parse(decision.acceptedAt) >= Date.parse(decision.verificationCheckedAt), "review acceptance predates automated verification");
 
   const payload = manualAuditPayloadSchema.parse(manifest.payload);
-  requireCondition(payload.finding !== "inconclusive", "an inconclusive report cannot enter the accepted ledger");
+  if (payload.finding === "inconclusive") {
+    requireCondition(decision.effects.length === 0, "an inconclusive result cannot change a claim or frontier");
+  } else {
+    requireCondition(decision.effects.length > 0, `${payload.finding} evidence requires at least one reviewed effect`);
+  }
 
   const submitterLogin = decision.context.researcher?.login ?? decision.context.actor;
   const logins = new Set<string>();
@@ -71,8 +75,10 @@ export function validateReviewDecision(
   const policy = track.reviewPolicy!;
   const maintainers = decision.reviewers.filter((reviewer) => reviewer.role === "maintainer");
   const independent = decision.reviewers.filter((reviewer) => reviewer.role === "independent");
-  requireCondition(decision.reviewers.length >= policy.minimumApprovals, `review decision requires ${policy.minimumApprovals} approvals`);
-  requireCondition(independent.length >= policy.minimumIndependentApprovals, `review decision requires ${policy.minimumIndependentApprovals} independent approvals`);
+  const minimumApprovals = payload.finding === "inconclusive" ? 1 : policy.minimumApprovals;
+  const minimumIndependentApprovals = payload.finding === "inconclusive" ? 0 : policy.minimumIndependentApprovals;
+  requireCondition(decision.reviewers.length >= minimumApprovals, `review decision requires ${minimumApprovals} approvals`);
+  requireCondition(independent.length >= minimumIndependentApprovals, `review decision requires ${minimumIndependentApprovals} independent approvals`);
   requireCondition(maintainers.some((reviewer) => policy.maintainerLogins.includes(reviewer.login)), "review decision has no approved maintainer");
   requireCondition(maintainers.every((reviewer) => policy.maintainerLogins.includes(reviewer.login)), "maintainer role was assigned to an untrusted login");
   requireCondition(independent.every((reviewer) => !policy.maintainerLogins.includes(reviewer.login)), "a maintainer cannot satisfy an independent review slot");
@@ -84,7 +90,7 @@ export function validateReviewDecision(
     requireCondition(effect.claimId === track.targetClaimId, `review effect may only target ${track.targetClaimId}`);
     requireCondition(!effectClaims.has(effect.claimId), `review effect for ${effect.claimId} is duplicated`);
     effectClaims.add(effect.claimId);
-    const permittedStatuses = policy.statusRules[payload.finding];
+    const permittedStatuses = policy.statusRules[payload.finding as "supports" | "challenges"];
     requireCondition(permittedStatuses.some((status) => status === effect.status), `${payload.finding} evidence cannot assign status ${effect.status} under this track contract`);
     for (const metric of effect.metrics) {
       const rule = metricRules.get(metric.id);
