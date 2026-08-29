@@ -1,0 +1,85 @@
+name: Publish accepted evidence
+
+on:
+  pull_request_target:
+    types: [closed]
+    paths:
+      - "research/submissions/**"
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: accepted-evidence-ledger
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out the trusted pre-merge verifier
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 22.19.0
+          cache: npm
+          cache-dependency-path: research/package-lock.json
+
+      - name: Install trusted locked dependencies
+        working-directory: research
+        run: npm ci
+
+      - name: Recheck the exact merged passive submission
+        id: verify
+        working-directory: research
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SUBMISSION_REPOSITORY: ${{ github.repository }}
+          SUBMISSION_PULL_REQUEST: ${{ github.event.pull_request.number }}
+          SUBMISSION_BASE: ${{ github.event.pull_request.base.sha }}
+          SUBMISSION_HEAD: ${{ github.event.pull_request.head.sha }}
+          SUBMISSION_ACTOR: ${{ github.event.pull_request.user.login }}
+          PARANO1D_SOUNDNESS_DIR: ..
+        run: npm run verify:github-pr
+
+      - name: Check out current main
+        if: steps.verify.outputs.verification_status == 'accepted'
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Reinstall locked dependencies
+        if: steps.verify.outputs.verification_status == 'accepted'
+        working-directory: research
+        run: npm ci
+
+      - name: Derive and verify the accepted ledger record
+        if: steps.verify.outputs.verification_status == 'accepted'
+        working-directory: research
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PARANO1D_SOUNDNESS_DIR: ..
+        run: |
+          npm run promote -- --submission "submissions/${{ steps.verify.outputs.submission_id }}" --repository "${{ github.repository }}" --commit "${{ github.event.pull_request.head.sha }}" --actor "${{ github.event.pull_request.user.login }}" --pull-request "${{ github.event.pull_request.number }}"
+          npm run ledger:verify -- --github
+
+      - name: Publish the derived record
+        if: steps.verify.outputs.verification_status == 'accepted'
+        env:
+          SUBMISSION_ID: ${{ steps.verify.outputs.submission_id }}
+        run: |
+          git config user.name "parano1d-soundness[bot]"
+          git config user.email "parano1d-soundness[bot]@users.noreply.github.com"
+          git add research/ledger/accepted
+          git commit -m "Record accepted evidence ${SUBMISSION_ID}"
+          git push origin HEAD:main

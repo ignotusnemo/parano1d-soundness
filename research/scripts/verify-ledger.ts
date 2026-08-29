@@ -2,6 +2,7 @@ import { existsSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 import { canonicalJson } from "@/lib/canonical-json";
 import { loadTrack } from "@/lib/catalog";
+import { DELEGATION_FILE_NAME, serviceDelegationActor } from "@/lib/delegation";
 import { jsonFiles, readStrictJsonFile } from "@/lib/files";
 import { verifyGitHubPullRequestContext, verifyGitHubReviewApprovals } from "@/lib/github-review";
 import { evidenceFromAcceptedResult } from "@/lib/promotion";
@@ -9,11 +10,18 @@ import { evidenceFromReviewedDecision } from "@/lib/review";
 import { evidenceRecordSchema, reviewDecisionSchema } from "@/lib/schemas";
 import { loadSubmission, verifySubmission } from "@/lib/verifier";
 
-function contextFromRecord(record: ReturnType<typeof evidenceRecordSchema.parse>) {
+function contextFromRecord(
+  record: ReturnType<typeof evidenceRecordSchema.parse>,
+  submissionDirectory: string,
+  keyDirectory: string
+) {
+  const actor = existsSync(path.join(submissionDirectory, DELEGATION_FILE_NAME))
+    ? serviceDelegationActor(submissionDirectory, keyDirectory)
+    : record.source.authorLogin;
   return {
     repository: record.source.repository,
     commit: record.source.commit,
-    actor: record.source.authorLogin,
+    actor,
     ...(record.source.pullRequest ? { pullRequest: record.source.pullRequest } : {})
   };
 }
@@ -59,7 +67,12 @@ async function main(): Promise<void> {
       });
       if (!submissionDirectory) throw new Error(`automatic submission for ledger record ${record.id} is missing`);
       const manifest = loadSubmission(submissionDirectory);
-      const result = verifySubmission({ root, submissionDirectory, context: contextFromRecord(record), checkedAt: record.acceptedAt });
+      const result = verifySubmission({
+        root,
+        submissionDirectory,
+        context: contextFromRecord(record, submissionDirectory, path.join(root, "keys")),
+        checkedAt: record.acceptedAt
+      });
       expected = evidenceFromAcceptedResult(manifest, result);
       if (verifyGitHub) await verifyGitHubPullRequestContext(result.context, token!);
     }

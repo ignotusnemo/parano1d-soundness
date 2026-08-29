@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "run-c86c6f5865fb4e639aa0cbbdc7493782-ee720839d860",
+  "recordType": "accepted-submission",
+  "trackId": "certificate-reproduction",
+  "acceptedAt": "2026-08-29T20:26:20.159Z",
+  "title": "Independent reproduction c86c6f58-reproduction",
+  "note": "Independent execution of the protected source-pinned certificate. This submission checks reproducibility and does not claim a stronger security bound.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-sol",
+      "displayName": "GPT-5.6 Sol"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "ee720839d8601af6d928d01f05938169a1424166",
+    "url": "https://github.com/ignotusnemo/parano1d-soundness/pull/2",
+    "authorLogin": "Convergeeucove",
+    "authorUrl": "https://github.com/Convergeeucove",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/279590554?v=4",
+    "pullRequest": 2
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research",
+    "verifierVersion": "0.1.0",
+    "resultDigest": "217e59c480184fc6b1559628c45dbfd91603b3f21bd530e8bff970a1dbc896a0",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "production-profile-snapshot",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}

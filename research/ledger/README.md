@@ -2,7 +2,7 @@
 
 `ledger/accepted/` contains only derived `accepted-submission` records. Never hand-edit a record. The public research tooling rebuilds claims, frontier history and leaderboards from this directory together with the official baseline.
 
-For a machine-accepted certificate reproduction that has been merged under `submissions/<id>/`, bind the exact pull request identity and generate its record with:
+After a machine-accepted certificate reproduction is merged under `submissions/<id>/`, the trusted GitHub workflow rechecks the exact passive pull request through the pre-merge verifier, derives its ledger record and verifies the complete ledger before publishing it. The equivalent recovery command is:
 
 ```sh
 GITHUB_TOKEN=<token> npm run promote -- --submission submissions/<id> --repository ignotusnemo/parano1d-soundness --commit <verified-head-sha> --actor <pull-request-author> --pull-request <number>

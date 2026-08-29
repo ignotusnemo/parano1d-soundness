@@ -40,6 +40,26 @@ const keyDescriptorSchema = z.object({
   validUntil: z.string().datetime({ offset: true }).optional()
 }).strict();
 
+type ServiceDelegation = z.infer<typeof delegationSchema>;
+type ServiceDelegationKey = z.infer<typeof keyDescriptorSchema>;
+
+function loadServiceDelegation(directory: string): ServiceDelegation {
+  return delegationSchema.parse(parseStrictJson(readFileSync(path.join(directory, DELEGATION_FILE_NAME), "utf8")));
+}
+
+function loadServiceDelegationKey(delegation: ServiceDelegation, keyDirectory: string): ServiceDelegationKey {
+  const descriptor = keyDescriptorSchema.parse(parseStrictJson(readFileSync(path.join(keyDirectory, `${delegation.keyId}.json`), "utf8")));
+  if (descriptor.keyId !== delegation.keyId || descriptor.issuer !== delegation.issuer) {
+    throw new Error("delegation key descriptor does not match its issuer");
+  }
+  return descriptor;
+}
+
+export function serviceDelegationActor(directory: string, keyDirectory: string): string {
+  const delegation = loadServiceDelegation(directory);
+  return loadServiceDelegationKey(delegation, keyDirectory).botLogin;
+}
+
 function fileDigest(filename: string): string {
   return createHash("sha256").update(readFileSync(filename)).digest("hex");
 }
@@ -69,12 +89,11 @@ export interface VerifyDelegationOptions {
 }
 
 export function verifyServiceDelegation(options: VerifyDelegationOptions): VerificationContext["researcher"] {
-  const delegation = delegationSchema.parse(parseStrictJson(readFileSync(path.join(options.directory, DELEGATION_FILE_NAME), "utf8")));
+  const delegation = loadServiceDelegation(options.directory);
   if (delegation.submissionId !== options.submissionId) throw new Error("delegation names another submission");
   if (delegation.repository !== options.context.repository) throw new Error("delegation names another repository");
   if (delegation.contentDigest !== delegatedContentDigest(options.directory)) throw new Error("delegation does not match the passive submission bytes");
-  const descriptor = keyDescriptorSchema.parse(parseStrictJson(readFileSync(path.join(options.keyDirectory, `${delegation.keyId}.json`), "utf8")));
-  if (descriptor.keyId !== delegation.keyId || descriptor.issuer !== delegation.issuer) throw new Error("delegation key descriptor does not match its issuer");
+  const descriptor = loadServiceDelegationKey(delegation, options.keyDirectory);
   if (options.context.actor !== descriptor.botLogin) throw new Error("delegation was not submitted by the pinned GitHub App bot");
   const issuedAt = Date.parse(delegation.issuedAt);
   const checkedAt = Date.parse(options.checkedAt);

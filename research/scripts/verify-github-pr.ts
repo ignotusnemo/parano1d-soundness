@@ -104,7 +104,10 @@ async function main(): Promise<void> {
       context: { repository, commit: head, actor, pullRequest: pullRequestNumber }
     });
     process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
-    if (process.env.GITHUB_OUTPUT) appendFileSync(process.env.GITHUB_OUTPUT, `verification_status=${result.status}\n`);
+    if (process.env.GITHUB_OUTPUT) {
+      appendFileSync(process.env.GITHUB_OUTPUT, `verification_status=${result.status}\n`);
+      appendFileSync(process.env.GITHUB_OUTPUT, `submission_id=${id}\n`);
+    }
     if (result.status === "rejected") process.exitCode = 1;
   } finally {
     rmSync(temporaryRoot, { recursive: true, force: true });

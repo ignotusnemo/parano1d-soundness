@@ -5,7 +5,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import test from "node:test";
 import { canonicalJson } from "@/lib/canonical-json";
-import { delegatedContentDigest } from "@/lib/delegation";
+import { delegatedContentDigest, serviceDelegationActor } from "@/lib/delegation";
 import { CERTIFICATE_REVISION, PRODUCTION_REVISION } from "@/lib/pins";
 import { verifySubmission } from "@/lib/verifier";
 
@@ -97,6 +97,18 @@ test("a signed hosted delegation binds the GitHub researcher to exact passive by
         runId: "d98b8ce8-f013-4b9a-95ea-b85cf876e64a"
       }
     });
+  } finally {
+    rmSync(submission.root, { recursive: true, force: true });
+  }
+});
+
+test("the accepted ledger reconstructs the bot actor from the pinned delegation key", () => {
+  const submission = hostedSubmission();
+  try {
+    assert.equal(serviceDelegationActor(submission.directory, submission.keyDirectory), botActor);
+    const result = verifyHosted(submission, serviceDelegationActor(submission.directory, submission.keyDirectory));
+    assert.equal(result.status, "pending-review");
+    assert.equal(result.context.researcher?.login, "alice-researcher");
   } finally {
     rmSync(submission.root, { recursive: true, force: true });
   }
