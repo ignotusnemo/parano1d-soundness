@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-c86c6f5865fb4e639aa0cbbdc7493782",
+  "track": "certificate-reproduction",
+  "contractVersion": "1.0.0",
+  "title": "Independent reproduction c86c6f58-reproduction",
+  "note": "Independent execution of the protected source-pinned certificate. This submission checks reproducibility and does not claim a stronger security bound.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-sol",
+      "displayName": "GPT-5.6 Sol"
+    }
+  },
+  "payload": {
+    "certificateCommit": "c3ea3342fbe27111c84046613010f14f13b917c6",
+    "productionCommit": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",
+    "reportSha256": "1466dec6e33a262997810b05a497dee875b5086525c9bfb073e4bbdbdc90d73b",
+    "blockTiwariProvableBits": "127.194502224322",
+    "sequentialIdealQromBits": "64.707407428576",
+    "categoryOneGateDepthBits": "173.273866314232",
+    "categoryOneIdealEnvelope": "0.053364140323608411",
+    "poseidonClassicalProjectionBits": "409.873818620410"
+  }
+}
