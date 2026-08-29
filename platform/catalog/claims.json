@@ -1,0 +1,230 @@
+[
+  {
+    "id": "production-profile-snapshot",
+    "title": "Pinned production profile",
+    "statement": "The certificate input is an exact standalone snapshot of Parano1d v1.0.4 revision fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0.",
+    "scope": "Parameter extraction and source provenance for the snapshotted revision only.",
+    "initialStatus": "verified",
+    "derived": false,
+    "dependencies": [],
+    "sources": [
+      {
+        "label": "Parameter provenance",
+        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/parameter-provenance.md"
+      }
+    ]
+  },
+  {
+    "id": "block-tiwari-fs-fri",
+    "title": "Block-Tiwari FS-FRI bound",
+    "statement": "The pinned production profile has a provable classical-ROM expected-work bound in the exact interval from 127 to 128 bits.",
+    "scope": "Classical random-oracle FS-FRI game for the pinned W65/H133 profile.",
+    "initialStatus": "verified",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "production-profile-snapshot",
+        "role": "required",
+        "note": "The calculation is parameter-specific."
+      }
+    ],
+    "sources": [
+      {
+        "label": "FS-FRI calculation",
+        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/block-tiwari.md"
+      }
+    ]
+  },
+  {
+    "id": "local-rbr-extraction",
+    "title": "Local RBR extraction",
+    "statement": "The wallet and both History classes satisfy the stated generalized round-by-round extraction bounds for the pinned profile.",
+    "scope": "De-Merkleized and de-grinded public-coin IOP with the production move schedule.",
+    "initialStatus": "verified",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "production-profile-snapshot",
+        "role": "required",
+        "note": "The theorem instantiation uses the pinned query geometry and challenge support."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Local theorem",
+        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#exact-local-theorem"
+      }
+    ]
+  },
+  {
+    "id": "adaptive-all-root-qrom",
+    "title": "Adaptive recursive all-root QROM theorem",
+    "statement": "One typed all-root event covers adaptively selected recursive statements without a multiplier for chain height, wallet count or represented-root count.",
+    "scope": "Typed compressed-oracle recursion from genesis with deterministic post-measurement traversal.",
+    "initialStatus": "open",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "local-rbr-extraction",
+        "role": "required",
+        "note": "The lift consumes the local bad-response density."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Published specialization",
+        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#one-all-root-event"
+      }
+    ]
+  },
+  {
+    "id": "coherent-response-minimum",
+    "title": "Minimum coherent response cost",
+    "statement": "A coherent production oracle response requires at least the logical gate and depth costs used by the resource theorem.",
+    "scope": "Reversible GF(2^128) response circuits in the declared NIST resource model.",
+    "initialStatus": "assumed",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "production-profile-snapshot",
+        "role": "required",
+        "note": "The schedule depends on the exact Poseidon2b instance."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Coherent response cost",
+        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#coherent-response-cost"
+      }
+    ]
+  },
+  {
+    "id": "fixed-poseidon2b-delta",
+    "title": "Fixed production Poseidon2b delta",
+    "statement": "The fixed production Poseidon2b compiler game differs from the typed ideal game by less than the stated Category 1 headroom.",
+    "scope": "Exact FsLaneChallenger framing, fixed constants, typed domains and production verifier semantics.",
+    "initialStatus": "assumed",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "production-profile-snapshot",
+        "role": "required",
+        "note": "The boundary is for one exact permutation profile and compiler."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Fixed Poseidon2b boundary",
+        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#fixed-poseidon2b-boundary"
+      }
+    ]
+  },
+  {
+    "id": "poseidon2b-classical-audit",
+    "title": "Published Poseidon2b classical cryptanalysis",
+    "statement": "The attack family in ePrint 2026/306 does not lower the target for the pinned width-four production instance, and its relevant Appendix A projection is recorded separately.",
+    "scope": "Classical dedicated algebraic projection in the paper's ideal-degree model, not the QROM production delta.",
+    "initialStatus": "verified",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "production-profile-snapshot",
+        "role": "required",
+        "note": "The audit matches the exact field, width, rounds, matrices and compression mode."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Reviewed cryptanalysis",
+        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#current-poseidon2b-cryptanalysis"
+      }
+    ]
+  },
+  {
+    "id": "ideal-category-one-bound",
+    "title": "Ideal-model Category 1 calculation",
+    "statement": "The exact resource calculation gives a dominant half-success gate-depth floor of 173.273866314232 bits for the pinned profile.",
+    "scope": "Typed ideal QROM under the all-root theorem and minimum coherent response-cost premise.",
+    "initialStatus": "conditional",
+    "derived": true,
+    "dependencies": [
+      {
+        "claimId": "local-rbr-extraction",
+        "role": "required",
+        "note": "Supplies the local bad-response densities."
+      },
+      {
+        "claimId": "adaptive-all-root-qrom",
+        "role": "required",
+        "note": "Supplies recursive adaptive composition."
+      },
+      {
+        "claimId": "coherent-response-minimum",
+        "role": "required",
+        "note": "Translates oracle responses into gate-depth resources."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Category 1 calculation",
+        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#category-1-calculation"
+      }
+    ]
+  },
+  {
+    "id": "current-production-correspondence",
+    "title": "Pinned production correspondence",
+    "statement": "The certificate snapshot and theorem provenance are validated against Parano1d v1.0.4 revision fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0.",
+    "scope": "The v1.0.4 parameter sources, recursive verifier, ordinary acceptance, live suffix, reorg, snapshot and trusted local-producer paths.",
+    "initialStatus": "open",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "production-profile-snapshot",
+        "role": "context",
+        "note": "The correspondence is specific to the same pinned production snapshot and must not silently move with later revisions."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Pinned production revision",
+        "url": "https://github.com/ignotusnemo/parano1d/commit/fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0"
+      },
+      {
+        "label": "Acceptance correspondence audit",
+        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/parameter-provenance.md#production-acceptance-correspondence"
+      }
+    ]
+  },
+  {
+    "id": "production-category-one",
+    "title": "Conditional production Category 1 assessment",
+    "statement": "For pinned Parano1d v1.0.4, the exact ideal-model calculation exceeds the NIST Category 1 reference. The end-to-end production conclusion is conditional on the three listed obligations.",
+    "scope": "End-to-end Parano1d acceptance from genesis to the current terminal State.",
+    "initialStatus": "conditional",
+    "derived": true,
+    "dependencies": [
+      {
+        "claimId": "ideal-category-one-bound",
+        "role": "required",
+        "note": "Supplies the ideal-game resource bound."
+      },
+      {
+        "claimId": "fixed-poseidon2b-delta",
+        "role": "required",
+        "note": "Closes the fixed-permutation compiler boundary."
+      },
+      {
+        "claimId": "current-production-correspondence",
+        "role": "required",
+        "note": "Binds the certificate to the current release code."
+      }
+    ],
+    "sources": [
+      {
+        "label": "End-to-end security game",
+        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#the-security-game"
+      }
+    ]
+  }
+]

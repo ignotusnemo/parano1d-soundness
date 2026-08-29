@@ -1,0 +1,14 @@
+{
+  "id": "recursive-all-root-proof",
+  "title": "Adaptive recursive all-root proof",
+  "description": "Submit a machine-checked proof for the exact typed recursive composition contract. The contract is being formalized and does not yet accept submissions.",
+  "kind": "proof",
+  "direction": "maximize",
+  "targetClaimId": "adaptive-all-root-qrom",
+  "contractVersion": "0.1.0-draft",
+  "validator": "reserved-formal-proof",
+  "state": "contract-draft",
+  "acceptance": "Activation requires a frozen theorem statement, pinned proof checker, import allowlist, axiom audit and independent kernel replay.",
+  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/platform/contracts/adaptive-all-root-qrom-v0.1.0-draft.md",
+  "scoreMetricId": "all-root-qrom.proved-resource-bits"
+}

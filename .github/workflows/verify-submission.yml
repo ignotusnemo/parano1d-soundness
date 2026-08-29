@@ -1,0 +1,73 @@
+name: Verify submission
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize, ready_for_review]
+    paths:
+      - "platform/submissions/**"
+
+permissions:
+  contents: read
+  statuses: write
+
+jobs:
+  verify:
+    name: Verify submission
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mark verification pending
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: gh api --method POST "repos/${REPOSITORY}/statuses/${HEAD_SHA}" -f state=pending -f context=parano1d/verify-submission -f description="Trusted verifier is checking passive submission data"
+
+      - name: Check out trusted base repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 22.19.0
+          cache: npm
+          cache-dependency-path: platform/package-lock.json
+
+      - name: Install trusted locked dependencies
+        working-directory: platform
+        run: npm ci
+
+      - name: Verify submission data through the GitHub API
+        id: verify
+        continue-on-error: true
+        working-directory: platform
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SUBMISSION_REPOSITORY: ${{ github.repository }}
+          SUBMISSION_PULL_REQUEST: ${{ github.event.pull_request.number }}
+          SUBMISSION_BASE: ${{ github.event.pull_request.base.sha }}
+          SUBMISSION_HEAD: ${{ github.event.pull_request.head.sha }}
+          SUBMISSION_ACTOR: ${{ github.event.pull_request.user.login }}
+          PARANO1D_SOUNDNESS_DIR: ..
+        run: npm run verify:github-pr
+
+      - name: Publish final verification status
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          VERIFY_OUTCOME: ${{ steps.verify.outcome }}
+        run: |
+          if [ "$VERIFY_OUTCOME" = "success" ]; then
+            gh api --method POST "repos/${REPOSITORY}/statuses/${HEAD_SHA}" -f state=success -f context=parano1d/verify-submission -f description="Automated checks completed under the frozen contract"
+          else
+            gh api --method POST "repos/${REPOSITORY}/statuses/${HEAD_SHA}" -f state=failure -f context=parano1d/verify-submission -f description="Submission does not satisfy its frozen verification contract"
+          fi
+
+      - name: Fail rejected verification
+        if: steps.verify.outcome != 'success'
+        run: exit 1

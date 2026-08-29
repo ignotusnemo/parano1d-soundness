@@ -1,0 +1,46 @@
+name: Soundness
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  certificate:
+    name: Release certificate tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Run exact certificate tests
+        run: cargo test --release --locked
+
+  platform:
+    name: Static platform tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: platform
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: 22.19.0
+          cache: npm
+          cache-dependency-path: platform/package-lock.json
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Check TypeScript
+        run: npm run typecheck
+      - name: Run platform tests
+        run: npm test
+      - name: Build static export without live GitHub state
+        env:
+          GITHUB_REPOSITORY: ""
+        run: npm run build

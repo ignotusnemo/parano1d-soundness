@@ -1,0 +1,12 @@
+{
+  "id": "production-correspondence-audit",
+  "title": "Production correspondence audit",
+  "description": "Review the exact correspondence from current production acceptance code to the certificate snapshot and report a scoped finding.",
+  "kind": "audit",
+  "direction": "non-ranked",
+  "targetClaimId": "current-production-correspondence",
+  "contractVersion": "1.0.0",
+  "validator": "manual-audit",
+  "state": "active",
+  "acceptance": "The schema and source pin are checked automatically. A maintainer and an independent reviewer must confirm the semantic finding before it changes a claim."
+}

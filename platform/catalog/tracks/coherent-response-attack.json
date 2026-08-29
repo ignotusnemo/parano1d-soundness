@@ -1,0 +1,14 @@
+{
+  "id": "coherent-response-attack",
+  "title": "Coherent response circuit attack",
+  "description": "Submit a cheaper exact coherent response construction that challenges the assumed minimum resource cost. The witness contract is not yet frozen.",
+  "kind": "attack",
+  "direction": "minimize",
+  "targetClaimId": "coherent-response-minimum",
+  "contractVersion": "0.1.0-draft",
+  "validator": "reserved-attack-witness",
+  "state": "contract-draft",
+  "acceptance": "Activation requires exact circuit semantics, a non-probabilistic equivalence check and a fixed reversible cost model.",
+  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/platform/contracts/coherent-response-minimum-v0.1.0-draft.md",
+  "scoreMetricId": "coherent-response.gate-depth"
+}

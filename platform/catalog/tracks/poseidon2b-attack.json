@@ -1,0 +1,14 @@
+{
+  "id": "poseidon2b-attack",
+  "title": "Production Poseidon2b attack",
+  "description": "Submit a concrete attack or bound against the exact width-four production permutation and compiler event. The witness contract is not yet frozen.",
+  "kind": "attack",
+  "direction": "minimize",
+  "targetClaimId": "fixed-poseidon2b-delta",
+  "contractVersion": "0.1.0-draft",
+  "validator": "reserved-attack-witness",
+  "state": "contract-draft",
+  "acceptance": "Activation requires a game-specific verifier. Classical CICO, compression, sponge and fixed-compiler claims are kept as separate metrics.",
+  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/platform/contracts/poseidon2b-attack-v0.1.0-draft.md",
+  "scoreMetricId": "poseidon2b.attack-work-bits"
+}

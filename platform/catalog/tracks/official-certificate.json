@@ -1,0 +1,12 @@
+{
+  "id": "official-certificate",
+  "title": "Official certificate baseline",
+  "description": "Protected baseline imported from the source-pinned Parano1d soundness certificate.",
+  "kind": "reproduction",
+  "direction": "non-ranked",
+  "targetClaimId": "production-profile-snapshot",
+  "contractVersion": "1.0.0",
+  "validator": "certificate-reproduction",
+  "state": "active",
+  "acceptance": "Protected project baseline. Public reproductions use the certificate-reproduction track."
+}

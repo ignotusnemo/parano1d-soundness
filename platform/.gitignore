@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+.env
+.env.local
+verification-result.json
+.local-flow/
+npm-debug.log*
+*.tsbuildinfo
+public/data/state.json
