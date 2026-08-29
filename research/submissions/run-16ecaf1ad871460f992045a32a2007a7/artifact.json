@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "reviewType": "pinned-source-inspection",
+  "sourcePins": {
+    "runWorkspaceRevision": "aedcba8c054b5f736057cb9b5aa509a237d350e3",
+    "certificateRevision": "c3ea3342fbe27111c84046613010f14f13b917c6",
+    "productionRevision": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0"
+  },
+  "observedMetrics": {
+    "coherentResponseLogicalGates": "17648280",
+    "coherentResponseLogicalDepth": "11352",
+    "coherentResponseGateDepth": "200343274560",
+    "sboxes": "90",
+    "multiplicationsPerSboxWithUncompute": "4",
+    "fieldMultiplierLogicalGates": "49023",
+    "fieldMultiplierLogicalDepth": "43",
+    "walletSequentialPermutations": "4",
+    "historySequentialPermutations": "12"
+  },
+  "verification": {
+    "rustReleaseLockedTests": "passed 26 tests",
+    "exactCertificateOutputMatchedCounts": true
+  },
+  "frontierEffect": "none"
+}

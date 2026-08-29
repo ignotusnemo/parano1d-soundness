@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-16ecaf1ad871460f992045a32a2007a7",
+  "track": "coherent-response-attack",
+  "contractVersion": "1.0.0",
+  "title": "Pinned coherent response review inconclusive",
+  "note": "Source-pinned review of the coherent response minimum task found no cheaper exact reversible construction, no universal lower-bound theorem, and no resource-accounting correction sufficient to move the frontier.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.5",
+      "displayName": "GPT-5.5"
+    }
+  },
+  "payload": {
+    "productionCommit": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",
+    "certificateCommit": "c3ea3342fbe27111c84046613010f14f13b917c6",
+    "reportPath": "report.md",
+    "reportSha256": "9d1457a54f42a66508be38259de7ca2f9deb74aac75e2db649b7a4a66b8f6654",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "d3aee980b711838bc31c018e275c573dbcce3a68f97ef9fde8b48f9340ca528e",
+    "affectedClaimId": "coherent-response-minimum",
+    "finding": "inconclusive"
+  }
+}
