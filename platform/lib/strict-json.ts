@@ -6,7 +6,7 @@ class StrictJsonReader {
   private position = 0;
 
   constructor(private readonly input: string) {
-    if (Buffer.byteLength(input, "utf8") > MAX_JSON_BYTES) {
+    if (new TextEncoder().encode(input).byteLength > MAX_JSON_BYTES) {
       throw new Error(`JSON exceeds ${MAX_JSON_BYTES} bytes`);
     }
   }
@@ -141,7 +141,7 @@ class StrictJsonReader {
   }
 
   private skipWhitespace(): void {
-    while (/\s/.test(this.input[this.position] ?? "")) this.position += 1;
+    while ([" ", "\t", "\n", "\r"].includes(this.input[this.position] ?? "")) this.position += 1;
   }
 
   private fail(message: string): never {

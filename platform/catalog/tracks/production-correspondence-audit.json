@@ -8,5 +8,16 @@
   "contractVersion": "1.0.0",
   "validator": "manual-audit",
   "state": "active",
-  "acceptance": "The schema and source pin are checked automatically. A maintainer and an independent reviewer must confirm the semantic finding before it changes a claim."
+  "acceptance": "The schema and source pin are checked automatically. A maintainer and an independent reviewer must confirm the semantic finding before it changes a claim.",
+  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/platform/contracts/production-correspondence-v1.0.0.md",
+  "reviewPolicy": {
+    "minimumApprovals": 2,
+    "minimumIndependentApprovals": 1,
+    "maintainerLogins": ["ignotusnemo"],
+    "statusRules": {
+      "supports": ["verified"],
+      "challenges": ["refuted"]
+    },
+    "metricRules": []
+  }
 }

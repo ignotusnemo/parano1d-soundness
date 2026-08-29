@@ -20,6 +20,7 @@ const CERTIFICATE_PATHS = [
   "model",
   "src"
 ];
+const observationCache = new Map<string, CertificateObservation>();
 
 function run(directory: string, command: string, args: string[]): string {
   const result = spawnSync(command, args, {
@@ -56,9 +57,12 @@ function assertPinnedCertificateTree(root: string, revision: string): void {
 
 export function runCertificate(directory: string, certificateRevision: string): CertificateObservation {
   const root = path.resolve(directory);
+  const cacheKey = `${root}:${certificateRevision}`;
+  const cached = observationCache.get(cacheKey);
+  if (cached) return { ...cached };
   assertPinnedCertificateTree(root, certificateRevision);
   const report = run(root, "cargo", ["run", "--release", "--locked", "--", "--exact"]);
-  return {
+  const observation = {
     certificateCommit: certificateRevision,
     productionCommit: one(report, /^source revision: ([0-9a-f]{40})$/gmu, "production revision"),
     reportSha256: createHash("sha256").update(report).digest("hex"),
@@ -88,4 +92,6 @@ export function runCertificate(directory: string, certificateRevision: string): 
       "Poseidon2b classical projection"
     )
   };
+  observationCache.set(cacheKey, observation);
+  return { ...observation };
 }

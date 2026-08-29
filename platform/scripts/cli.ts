@@ -11,3 +11,14 @@ export function requiredOption(name: string): string {
   if (!value) throw new Error(`required option ${name} is missing`);
   return value;
 }
+
+export function options(name: string): string[] {
+  const values: string[] = [];
+  for (let index = 0; index < process.argv.length; index += 1) {
+    if (process.argv[index] !== name) continue;
+    const value = process.argv[index + 1];
+    if (!value || value.startsWith("--")) throw new Error(`missing value for ${name}`);
+    values.push(value);
+  }
+  return values;
+}

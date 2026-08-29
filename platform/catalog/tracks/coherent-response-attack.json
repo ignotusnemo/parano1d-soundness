@@ -1,14 +1,26 @@
 {
   "id": "coherent-response-attack",
-  "title": "Coherent response circuit attack",
-  "description": "Submit a cheaper exact coherent response construction that challenges the assumed minimum resource cost. The witness contract is not yet frozen.",
+  "title": "Coherent response circuit challenge",
+  "description": "Submit a cheaper exact coherent response circuit, a universal lower bound or a resource-model correction against the declared production response-cost premise.",
   "kind": "attack",
-  "direction": "minimize",
+  "direction": "bidirectional",
   "targetClaimId": "coherent-response-minimum",
-  "contractVersion": "0.1.0-draft",
-  "validator": "reserved-attack-witness",
-  "state": "contract-draft",
-  "acceptance": "Activation requires exact circuit semantics, a non-probabilistic equivalence check and a fixed reversible cost model.",
-  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/platform/contracts/coherent-response-minimum-v0.1.0-draft.md",
-  "scoreMetricId": "coherent-response.gate-depth"
+  "contractVersion": "1.0.0",
+  "validator": "manual-audit",
+  "state": "active",
+  "acceptance": "The submission must bind to the exact production response relation and declared reversible cost model. Schema and source pins are checked automatically; two reviewers confirm equivalence and resource accounting before promotion.",
+  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/platform/contracts/coherent-response-minimum-v1.0.0.md",
+  "reviewPolicy": {
+    "minimumApprovals": 2,
+    "minimumIndependentApprovals": 1,
+    "maintainerLogins": ["ignotusnemo"],
+    "statusRules": {
+      "supports": ["premise", "proved"],
+      "challenges": ["premise", "refuted"]
+    },
+    "metricRules": [
+      { "id": "coherent-response.gate-depth", "kind": "upper-bound", "direction": "minimize", "unit": "logical gate-depth", "valueFormat": "non-negative-integer" },
+      { "id": "coherent-response.minimum-gate-depth-lower", "kind": "lower-bound", "direction": "maximize", "unit": "logical gate-depth", "valueFormat": "non-negative-integer" }
+    ]
+  }
 }

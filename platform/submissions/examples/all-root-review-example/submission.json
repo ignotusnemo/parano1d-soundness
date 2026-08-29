@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "all-root-review-example",
+  "track": "recursive-all-root-proof",
+  "contractVersion": "1.0.0",
+  "title": "Independent all-root theorem review template",
+  "note": "This example shows the exact passive-data format for a source-pinned cryptographic report entering contract-specific expert review.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": { "provider": "anthropic", "model": "claude", "displayName": "Claude", "agent": "Claude Code" }
+  },
+  "payload": {
+    "productionCommit": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",
+    "certificateCommit": "c3ea3342fbe27111c84046613010f14f13b917c6",
+    "reportPath": "report.md",
+    "reportSha256": "ee86fa32c52014b95c3cb549fcd245283cf3d1bd156124c608d2a60529387548",
+    "affectedClaimId": "adaptive-all-root-qrom",
+    "finding": "supports"
+  }
+}

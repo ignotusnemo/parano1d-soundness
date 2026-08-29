@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import type { ClaimStatus, PlatformState } from "@/lib/types";
 import { BoundChart } from "@/components/bound-chart";
+import type { ClaimStatus, PlatformState } from "@/lib/types";
 
-function Status({ value }: { value: ClaimStatus | "active" | "contract-draft" | "queued" | "checking" | "ready" | "rejected" }) {
+function Status({ value }: { value: ClaimStatus | "active" | "contract-draft" | "queued" | "checking" | "ready" | "rejected" | "awaiting-review" }) {
   return <span className={`status status-${value}`}>{value.replaceAll("-", " ").toUpperCase()}</span>;
 }
 
@@ -19,7 +19,6 @@ function date(value: string): string {
 
 export function Dashboard({ initialState }: { initialState: PlatformState }) {
   const [state, setState] = useState(initialState);
-  const [lastRefresh, setLastRefresh] = useState(() => new Date());
   useEffect(() => {
     let cancelled = false;
     const refresh = async () => {
@@ -29,7 +28,6 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
         const next = (await response.json()) as PlatformState;
         if (!cancelled) {
           setState(next);
-          setLastRefresh(new Date());
         }
       } catch {
         // The last verified state stays visible during a transient refresh failure.
@@ -44,38 +42,52 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
   }, []);
 
   const claimsById = useMemo(() => new Map(state.claims.map((claim) => [claim.id, claim])), [state.claims]);
-  const verifiedClaims = state.claims.filter((claim) => claim.status === "verified");
+  const proofChainIds = [
+    "production-profile-snapshot",
+    "local-rbr-extraction",
+    "adaptive-all-root-qrom",
+    "sequential-ideal-qrom",
+    "typed-parallel-qrom",
+    "coherent-response-schedule",
+    "ideal-category-one-bound",
+    "current-production-correspondence",
+    "production-category-one"
+  ];
+  const proofChain = proofChainIds.map((id) => claimsById.get(id)).filter((claim) => claim !== undefined);
+  const premiseClaims = state.conclusion.premiseClaims.map((id) => claimsById.get(id)).filter((claim) => claim !== undefined);
+  const additionalClaims = ["block-tiwari-fs-fri", "poseidon2b-classical-audit"]
+    .map((id) => claimsById.get(id))
+    .filter((claim) => claim !== undefined);
   const accepted = state.records.filter((record) => record.recordType === "accepted-submission");
   const audits = state.records.filter((record) => {
     const track = state.tracks.find((candidate) => candidate.id === record.trackId);
     return track?.kind === "audit";
   });
-
   return (
     <main>
-      <section className="state-bar verified-record" aria-labelledby="verified-record">
-        <div>
-          <div className="eyebrow">VERIFIED PUBLIC RECORD</div>
-          <h1 id="verified-record">Verified results for Parano1d v1.0.4</h1>
-          <p>The public record verifies the production parameter snapshot, its source correspondence to v1.0.4, the 127.194502224322-bit provable classical-ROM FS-FRI bound, local RBR extraction for the wallet and both History classes, and the published Poseidon2b attack audit for the exact production instance.</p>
-          <div className="verified-list" aria-label="Verified claims">
-            {verifiedClaims.map((claim) => (
-              <a key={claim.id} href={`#claim-${claim.id}`}>
-                {claim.title}
-              </a>
-            ))}
+      <section className="platform-intro" aria-labelledby="platform-purpose">
+        <div className="platform-intro-main">
+          <div className="eyebrow">OPEN CRYPTOGRAPHIC AUTORESEARCH PLATFORM</div>
+          <h1 id="platform-purpose">Use any AI agent to test and improve Parano1d soundness</h1>
+          <p>Choose a pinned research challenge, give its ready task to Codex, Claude, Grok or another agent, verify the submission locally and open a GitHub pull request. Accepted proofs raise a lower frontier, accepted attacks lower an upper frontier, and every contribution is attributed to both the GitHub researcher and the declared model.</p>
+          <div className="intro-actions">
+            <Link className="button" href="/submit">Choose a challenge</Link>
+            <a className="button button-secondary" href="#frontier">View current frontier</a>
           </div>
         </div>
-        <div className="state-status">
-          <span className="status status-verified">{verifiedClaims.length} VERIFIED CLAIMS</span>
-          <span>Last state refresh {lastRefresh.toISOString().slice(11, 19)} UTC</span>
-        </div>
+        <ol className="entry-steps" aria-label="How to participate">
+          <li><span>1</span><div><strong>Choose a challenge</strong><p>Select a proof, attack, audit or exact reproduction with a frozen target and acceptance contract.</p></div></li>
+          <li><span>2</span><div><strong>Run your agent</strong><p>One setup command creates the correct files and an agent-ready task. Work manually if preferred.</p></div></li>
+          <li><span>3</span><div><strong>Sign in and submit</strong><p>GitHub identifies the researcher. CI checks passive data before automatic acceptance or expert review.</p></div></li>
+        </ol>
       </section>
 
-      <section className="revision-pin">
-        <div>
-          <strong>Production correspondence verified for Parano1d v1.0.4.</strong>
-          <span>A later production revision must renew this pin before inheriting the assessment.</span>
+      <section className={`revision-pin revision-${state.conclusion.status}`} aria-label="Current accepted soundness conclusion">
+        <div className="revision-conclusion">
+          <div><Status value={state.conclusion.status} /><strong>{state.conclusion.title}</strong></div>
+          <p>{state.conclusion.statement}</p>
+          <span>Production correspondence is verified for Parano1d v1.0.4. A later production revision must renew this pin before inheriting the assessment.</span>
+          {state.conclusion.blockingClaims.length > 0 ? <span>Unresolved required claims: {state.conclusion.blockingClaims.join(", ")}</span> : null}
         </div>
         <dl>
           <div>
@@ -89,32 +101,24 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
         </dl>
       </section>
 
-      <section className="scope-boundary" aria-labelledby="current-conclusion">
-        <div>
-          <div className="eyebrow">EXACT END-TO-END BOUNDARY</div>
-          <h2 id="current-conclusion">{state.conclusion.title}</h2>
-          <p>The exact ideal-model calculation gives a 173.273866314232-bit logical gate-depth floor, above the NIST Category 1 reference, under the named all-root QROM and coherent-response premises. A fixed Poseidon2b delta is additionally required to carry that result to the production permutation. Conditional applies to this final end-to-end promotion, not to the verified results above.</p>
-          <div className="blocker-list" aria-label="Remaining obligations for an unconditional production conclusion">
-            <span>REMAINING FOR AN UNCONDITIONAL PRODUCTION CLAIM</span>
-            {state.conclusion.blockingClaims.map((claimId) => (
-              <a key={claimId} href={`#claim-${claimId}`}>
-                {claimsById.get(claimId)?.title ?? claimId}
-              </a>
-            ))}
-          </div>
-        </div>
-        <div className="state-status">
-          <Status value={state.conclusion.status} />
-        </div>
-      </section>
-
-      <section id="bounds" className="section">
+      <section id="frontier" className="section frontier-section">
         <div className="section-heading">
           <div>
-            <div className="eyebrow">EXACT CURRENT RECORD</div>
-            <h2>Bounds</h2>
+            <div className="eyebrow">PUBLIC BOUND FRONTIER</div>
+            <h2>Accepted proofs and attacks move the interval</h2>
           </div>
-          <p>Each number keeps its own game and direction. Values from different games are not ranked against each other.</p>
+          <p>Every point comes from the versioned accepted ledger. Researchers may work manually or run any local AI agent. Accepted records preserve the GitHub author, declared model, exact source commit and verifier result.</p>
+        </div>
+        <BoundChart records={state.records} />
+      </section>
+
+      <section id="bounds" className="section compact-section">
+        <div className="section-heading">
+          <div>
+            <div className="eyebrow">EXECUTABLE CATEGORY 1 CERTIFICATE</div>
+            <h2>Exact post-quantum result</h2>
+          </div>
+          <p>All NIST MAXDEPTH points are evaluated with exact integer and rational arithmetic. Floating point is descriptive only and never decides a result.</p>
         </div>
         <div className="metrics">
           {state.metrics.map((metric) => (
@@ -127,57 +131,37 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
             </article>
           ))}
         </div>
-        <div className="panel chart-panel">
-          <div className="panel-title">
-            <div>
-              <h3>Exact ideal Category 1 calculation history</h3>
-              <p>Accepted records only. The calculation is exact under its named premises; production promotion remains conditional.</p>
-            </div>
-            <span>bits of logical gate-depth</span>
-          </div>
-          <BoundChart records={state.records} />
-        </div>
       </section>
 
       <section id="claims" className="section">
         <div className="section-heading">
           <div>
-            <div className="eyebrow">DEPENDENCY-AWARE</div>
-            <h2>Claims and obligations</h2>
+            <div className="eyebrow">PUBLISHED PROOF CHAIN</div>
+            <h2>Theorem and certificate layers</h2>
           </div>
-          <p>An accepted result changes only the claim named by its frozen contract. Derived conclusions are recalculated from required dependencies.</p>
+          <p>Each layer is tied to the exact proof section, production revision and accepted evidence. The all-root theorem covers recursive ancestry without a probability multiplier for chain height.</p>
         </div>
         <div className="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Claim</th>
+                <th>Layer</th>
                 <th>Status</th>
+                <th>Established result</th>
                 <th>Exact scope</th>
-                <th>Required dependencies</th>
-                <th>Evidence</th>
+                <th>Source</th>
               </tr>
             </thead>
             <tbody>
-              {state.claims.map((claim) => (
+              {proofChain.map((claim) => (
                 <tr key={claim.id} id={`claim-${claim.id}`}>
-                  <td>
-                    <strong>{claim.title}</strong>
-                    <span className="cell-note">{claim.statement}</span>
-                  </td>
+                  <td><strong>{claim.title}</strong></td>
                   <td>
                     <Status value={claim.status} />
                   </td>
+                  <td>{claim.statement}</td>
                   <td>{claim.scope}</td>
-                  <td>
-                    {claim.dependencies.filter((dependency) => dependency.role === "required").length === 0
-                      ? "None"
-                      : claim.dependencies
-                          .filter((dependency) => dependency.role === "required")
-                          .map((dependency) => claimsById.get(dependency.claimId)?.title ?? dependency.claimId)
-                          .join(", ")}
-                  </td>
-                  <td>{claim.evidenceIds.length}</td>
+                  <td>{claim.sources.map((source) => <span className="cell-note" key={source.url}><a href={source.url}>{source.label}</a></span>)}</td>
                 </tr>
               ))}
             </tbody>
@@ -188,8 +172,62 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
       <section className="section">
         <div className="section-heading">
           <div>
-            <div className="eyebrow">FROZEN VERIFICATION CONTRACTS</div>
-            <h2>Research tracks</h2>
+            <div className="eyebrow">DECLARED PRODUCTION PREMISES</div>
+            <h2>Public attack surface</h2>
+          </div>
+          <p>The end-to-end result is a proved implication with these premises stated in the theorem itself. They are exposed for concrete attacks and stronger bounds, not mislabeled as missing recursive soundness work.</p>
+        </div>
+        <div className="table-wrap premise-table">
+          <table>
+            <thead><tr><th>Premise</th><th>Role in the theorem</th><th>Current concrete evidence</th><th>Active track</th></tr></thead>
+            <tbody>
+              {premiseClaims.map((claim) => {
+                const context = claim.dependencies.filter((dependency) => dependency.role === "context").map((dependency) => claimsById.get(dependency.claimId)).filter((candidate) => candidate !== undefined);
+                const track = state.tracks.find((candidate) => candidate.targetClaimId === claim.id);
+                return (
+                  <tr key={claim.id} id={`claim-${claim.id}`}>
+                    <td><strong>{claim.title}</strong><Status value={claim.status} /></td>
+                    <td>{claim.statement}</td>
+                    <td>{context.map((candidate) => <span className="cell-note" key={candidate.id}><a href={`#claim-${candidate.id}`}>{candidate.title}</a>: {candidate.statement}</span>)}</td>
+                    <td>{track ? <><strong>{track.title}</strong><span className="cell-note"><a href={track.contractUrl}>Read exact contract</a></span></> : "No track"}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="section compact-section">
+        <div className="section-heading">
+          <div>
+            <div className="eyebrow">SEPARATE CERTIFIED ANALYSES</div>
+            <h2>Additional evidence</h2>
+          </div>
+          <p>These results are useful evidence but are not presented as substitutes for the end-to-end post-quantum theorem.</p>
+        </div>
+        <div className="table-wrap">
+          <table>
+            <thead><tr><th>Analysis</th><th>Status</th><th>Exact result and scope</th><th>Source</th></tr></thead>
+            <tbody>
+              {additionalClaims.map((claim) => (
+                <tr key={claim.id} id={`claim-${claim.id}`}>
+                  <td><strong>{claim.title}</strong></td>
+                  <td><Status value={claim.status} /></td>
+                  <td>{claim.statement}<span className="cell-note">{claim.scope}</span></td>
+                  <td>{claim.sources.map((source) => <span className="cell-note" key={source.url}><a href={source.url}>{source.label}</a></span>)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="challenges" className="section">
+        <div className="section-heading">
+          <div>
+            <div className="eyebrow">LIVE GITHUB WORKFLOW</div>
+            <h2>Choose a challenge for yourself or your AI agent</h2>
           </div>
           <Link className="button" href="/submit">
             Participate
@@ -226,6 +264,7 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
                     <td>
                       {track.acceptance}
                       {track.contractUrl ? <span className="cell-note"><a href={track.contractUrl}>Read exact contract</a></span> : null}
+                      <span className="cell-note"><Link href={`/challenges/${track.id}/`}>Open challenge and copy the agent task</Link></span>
                     </td>
                   </tr>
                 ))}
@@ -277,7 +316,7 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
                   <img src={record.source.avatarUrl} alt="" />
                   <span>
                     <strong>{record.title}</strong>
-                    <small>{record.source.authorLogin} / {date(record.acceptedAt)}</small>
+                    <small>{record.source.authorLogin} / {record.attribution.mode === "ai-assisted" ? record.attribution.model.displayName : "Human research"} / {date(record.acceptedAt)}</small>
                   </span>
                   <Status value="verified" />
                 </Link>
@@ -292,8 +331,9 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
           <div className="panel-title">
             <div>
               <div className="eyebrow">VERIFIED CONTRIBUTIONS ONLY</div>
-              <h2>Leaderboard</h2>
+              <h2>Researchers</h2>
             </div>
+            <span>ranked by frontier moves, then accepted work</span>
           </div>
           {state.leaderboard.length === 0 ? (
             <div className="empty">The leaderboard starts with the first accepted public contribution. Official project baselines do not count.</div>
@@ -304,6 +344,7 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
                   <tr>
                     <th>Researcher</th>
                     <th>Accepted</th>
+                    <th>Frontier moves</th>
                     <th>Proofs</th>
                     <th>Attacks</th>
                     <th>Audits</th>
@@ -315,6 +356,7 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
                     <tr key={entry.login}>
                       <td><a href={entry.url} target="_blank" rel="noreferrer">{entry.login}</a></td>
                       <td>{entry.accepted}</td>
+                      <td>{entry.frontierMoves ?? 0}</td>
                       <td>{entry.proofs}</td>
                       <td>{entry.attacks}</td>
                       <td>{entry.audits}</td>
@@ -329,20 +371,50 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
         <div className="panel">
           <div className="panel-title">
             <div>
-              <div className="eyebrow">SEMANTIC REVIEW</div>
-              <h2>Audit ledger</h2>
+              <div className="eyebrow">SELF-DECLARED MODEL ATTRIBUTION</div>
+              <h2>AI models and agents</h2>
             </div>
           </div>
+          {(state.modelLeaderboard ?? []).length === 0 ? (
+            <div className="empty">Model statistics start with the first accepted AI-assisted public contribution. Cryptographic validity never depends on the declared model.</div>
+          ) : (
+            <div className="table-wrap">
+              <table>
+                <thead><tr><th>Declared model</th><th>Agent</th><th>Accepted</th><th>Frontier moves</th><th>Researchers</th><th>Proofs</th><th>Attacks</th></tr></thead>
+                <tbody>
+                  {(state.modelLeaderboard ?? []).map((entry) => (
+                    <tr key={entry.key}>
+                      <td><strong>{entry.displayName}</strong><span className="cell-note">{entry.provider}/{entry.model}</span></td>
+                      <td>{entry.agent ?? "Not declared"}</td>
+                      <td>{entry.accepted}</td>
+                      <td>{entry.frontierMoves ?? 0}</td>
+                      <td>{entry.researchers}</td>
+                      <td>{entry.proofs}</td>
+                      <td>{entry.attacks}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="section compact-section reward-strip">
+        <div><div className="eyebrow">VERIFIED IMPACT</div><h2>Research rewards follow accepted contribution, not generated volume</h2></div>
+        <p>Top contributors may receive Parano1d research rewards according to the verified impact of accepted work. Frontier movement, a confirmed theorem or counterexample, production findings and reproducibility are recorded separately because unlike quantities are never collapsed into one artificial score. Any funded bounty and its terms are published with the relevant challenge.</p>
+      </section>
+
+      <section className="section compact-section">
+        <div className="panel">
+          <div className="panel-title"><div><div className="eyebrow">SEMANTIC REVIEW</div><h2>Accepted audit findings</h2></div></div>
           {audits.length === 0 ? (
             <div className="empty">No independent public audit finding has been confirmed after the official v1.0.4 correspondence audit.</div>
           ) : (
             <div className="record-list">
               {audits.map((record) => (
                 <Link key={record.id} href={`/submissions/${record.id}`} className="record-row text-only">
-                  <span>
-                    <strong>{record.title}</strong>
-                    <small>{record.source.authorLogin} / {date(record.acceptedAt)}</small>
-                  </span>
+                  <span><strong>{record.title}</strong><small>{record.source.authorLogin} / {date(record.acceptedAt)}</small></span>
                 </Link>
               ))}
             </div>
@@ -366,6 +438,7 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
                   <th>Record</th>
                   <th>Track</th>
                   <th>Author</th>
+                  <th>Declared model</th>
                   <th>Commit</th>
                   <th>Verifier</th>
                   <th>Accepted</th>
@@ -377,6 +450,7 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
                     <td><Link href={`/submissions/${record.id}`}>{record.title}</Link></td>
                     <td>{record.trackId}</td>
                     <td><a href={record.source.authorUrl} target="_blank" rel="noreferrer">{record.source.authorLogin}</a></td>
+                    <td>{record.attribution.mode === "ai-assisted" ? <>{record.attribution.model.displayName}<span className="cell-note">{record.attribution.model.agent ?? "Agent not declared"}</span></> : "Human"}</td>
                     <td><a href={record.source.url} target="_blank" rel="noreferrer" className="mono">{shortCommit(record.source.commit)}</a></td>
                     <td>{record.verification.verifier}</td>
                     <td>{date(record.acceptedAt)}</td>

@@ -8,7 +8,8 @@
   "contractVersion": "1.0.0",
   "validator": "certificate-reproduction",
   "state": "active",
-  "acceptance": "The trusted verifier checks out the exact certificate commit, runs cargo in release mode with the lockfile, parses the report and compares every declared value.",
+  "acceptance": "The trusted verifier proves that every protected certificate source matches the exact certificate commit, runs cargo in release mode with the lockfile, parses the report and compares every declared value.",
+  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/platform/contracts/certificate-reproduction-v1.0.0.md",
   "expected": {
     "certificateCommit": "c3ea3342fbe27111c84046613010f14f13b917c6",
     "productionCommit": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",

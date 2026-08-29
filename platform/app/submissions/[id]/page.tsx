@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
           url: "/opengraph-image.png",
           width: 1200,
           height: 630,
-          alt: "Parano1d Open Verification"
+          alt: "Parano1d Autoresearch"
         }
       ]
     }
@@ -53,8 +53,11 @@ export default async function SubmissionPage({ params }: { params: Promise<{ id:
           <dl className="facts">
             <div><dt>Track</dt><dd>{track?.title ?? record.trackId}</dd></div>
             <div><dt>GitHub author</dt><dd><a href={record.source.authorUrl}>{record.source.authorLogin}</a></dd></div>
+            <div><dt>Research mode</dt><dd>{record.attribution.mode === "ai-assisted" ? "AI-assisted" : "Human"}</dd></div>
+            {record.attribution.mode === "ai-assisted" ? <><div><dt>Declared model</dt><dd>{record.attribution.model.displayName}<span className="cell-note">{record.attribution.model.provider}/{record.attribution.model.model}</span></dd></div><div><dt>Agent</dt><dd>{record.attribution.model.agent ?? "Not declared"}</dd></div></> : null}
             <div><dt>Repository</dt><dd>{record.source.repository}</dd></div>
-            <div><dt>Commit</dt><dd><a href={record.source.url} className="mono">{record.source.commit}</a></dd></div>
+            {record.source.pullRequest ? <div><dt>Pull request</dt><dd><a href={record.source.url}>#{record.source.pullRequest}</a></dd></div> : null}
+            <div><dt>Commit</dt><dd><a href={`https://github.com/${record.source.repository}/commit/${record.source.commit}`} className="mono">{record.source.commit}</a></dd></div>
             <div><dt>Accepted</dt><dd>{new Date(record.acceptedAt).toISOString()}</dd></div>
           </dl>
         </section>
@@ -65,6 +68,7 @@ export default async function SubmissionPage({ params }: { params: Promise<{ id:
             <div><dt>Version</dt><dd className="mono">{record.verification.verifierVersion}</dd></div>
             <div><dt>Status</dt><dd><span className="status status-verified">ACCEPTED</span></dd></div>
             <div><dt>Result digest</dt><dd className="mono break">{record.verification.resultDigest}</dd></div>
+            {record.verification.verifier.includes("github-review") ? <div><dt>Review decision</dt><dd><a href={`https://github.com/ignotusnemo/parano1d-soundness/blob/main/platform/reviews/accepted/${record.id}.json`}>Open approvals and effects</a></dd></div> : null}
           </dl>
         </section>
       </div>

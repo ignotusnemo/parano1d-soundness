@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f5f2"/>
+  <rect x="42" y="42" width="1116" height="546" fill="#ffffff" stroke="#9da69a" stroke-width="2"/>
+  <rect x="42" y="42" width="1116" height="72" fill="#e7f4eb" stroke="#9da69a" stroke-width="2"/>
+  <text x="78" y="87" fill="#111410" font-family="monospace" font-size="24" font-weight="700">PARANO1D</text>
+  <text x="240" y="87" fill="#5d655b" font-family="monospace" font-size="24">AUTORESEARCH</text>
+  <text x="78" y="220" fill="#111410" font-family="Arial, sans-serif" font-size="58" font-weight="700">Use any AI agent to test and</text>
+  <text x="78" y="288" fill="#111410" font-family="Arial, sans-serif" font-size="58" font-weight="700">improve Parano1d soundness</text>
+  <text x="78" y="352" fill="#5d655b" font-family="Arial, sans-serif" font-size="24">Pinned challenges. Passive evidence. Public verification. Versioned results.</text>
+  <line x1="78" y1="410" x2="1122" y2="410" stroke="#cfd3cc" stroke-width="2"/>
+  <g fill="#111410" font-family="monospace" font-size="18" font-weight="700">
+    <text x="78" y="462">PROOFS</text>
+    <text x="268" y="462">ATTACKS</text>
+    <text x="468" y="462">AUDITS</text>
+    <text x="648" y="462">REPRODUCTIONS</text>
+  </g>
+  <text x="78" y="548" fill="#136f3a" font-family="monospace" font-size="22" font-weight="700">noid.network</text>
+  <text x="1122" y="548" text-anchor="end" fill="#5d655b" font-family="monospace" font-size="18">OPEN CRYPTOGRAPHIC RESEARCH</text>
+</svg>

@@ -1,10 +1,14 @@
 {
   "schemaVersion": 1,
-  "id": "example-reproduction-valid",
+  "id": "reproduction-valid",
   "track": "certificate-reproduction",
   "contractVersion": "1.0.0",
   "title": "Independent reproduction of certificate c3ea3342",
   "note": "This example declares the values independently reproduced by the protected verifier. It affects only reproducibility and cannot change a security bound.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": { "provider": "openai", "model": "gpt-5", "displayName": "GPT-5", "agent": "Codex" }
+  },
   "payload": {
     "certificateCommit": "c3ea3342fbe27111c84046613010f14f13b917c6",
     "productionCommit": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",

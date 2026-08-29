@@ -19,6 +19,7 @@ interface GitHubPullRequestFile {
 interface GitHubCommitStatus {
   context: string;
   state: "error" | "failure" | "pending" | "success";
+  description?: string | null;
 }
 
 let cache: { repository: string; expiresAt: number; value: PendingSubmission[] } | undefined;
@@ -35,7 +36,8 @@ async function isSubmissionPullRequest(repository: string, pull: GitHubPullReque
   if (pull.labels.some((label) => label.name === "submission")) return true;
   const response = await fetch(`https://api.github.com/repos/${repository}/pulls/${pull.number}/files?per_page=100`, {
     headers: headers(),
-    cache: "no-store"
+    cache: "no-store",
+    signal: AbortSignal.timeout(30_000)
   });
   if (!response.ok) throw new Error(`GitHub pull request file query failed with ${response.status}`);
   const files = (await response.json()) as GitHubPullRequestFile[];
@@ -45,14 +47,17 @@ async function isSubmissionPullRequest(repository: string, pull: GitHubPullReque
 async function verificationStatus(repository: string, sha: string): Promise<PendingSubmission["status"]> {
   const response = await fetch(`https://api.github.com/repos/${repository}/commits/${sha}/status`, {
     headers: headers(),
-    cache: "no-store"
+    cache: "no-store",
+    signal: AbortSignal.timeout(30_000)
   });
   if (!response.ok) throw new Error(`GitHub commit status query failed with ${response.status}`);
   const body = (await response.json()) as { statuses?: GitHubCommitStatus[] };
   const status = body.statuses?.find((candidate) => candidate.context === "parano1d/verify-submission");
   if (!status) return "queued";
   if (status.state === "pending") return "checking";
-  if (status.state === "success") return "ready";
+  if (status.state === "success") {
+    return status.description?.includes("expert review required") ? "awaiting-review" : "ready";
+  }
   return "rejected";
 }
 
@@ -63,7 +68,8 @@ export async function fetchPendingSubmissions(): Promise<PendingSubmission[]> {
   if (cache?.repository === repository && cache.expiresAt > now) return cache.value;
   const response = await fetch(`https://api.github.com/repos/${repository}/pulls?state=open&per_page=30`, {
     headers: headers(),
-    cache: "no-store"
+    cache: "no-store",
+    signal: AbortSignal.timeout(30_000)
   });
   if (!response.ok) {
     if (cache?.repository === repository) return cache.value;

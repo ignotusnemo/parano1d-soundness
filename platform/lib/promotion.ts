@@ -28,6 +28,7 @@ export function evidenceFromAcceptedResult(
     acceptedAt: result.checkedAt,
     title: manifest.title,
     note: manifest.note,
+    attribution: manifest.attribution,
     source: {
       repository: context.repository,
       commit: context.commit,
@@ -36,7 +37,7 @@ export function evidenceFromAcceptedResult(
         : commitUrl,
       authorLogin: context.actor,
       authorUrl: `https://github.com/${context.actor}`,
-      avatarUrl: `https://github.com/${context.actor}.png`,
+      avatarUrl: `https://avatars.githubusercontent.com/${context.actor}`,
       ...(context.pullRequest ? { pullRequest: context.pullRequest } : {})
     },
     verification: {

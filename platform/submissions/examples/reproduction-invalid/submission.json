@@ -1,10 +1,11 @@
 {
   "schemaVersion": 1,
-  "id": "example-reproduction-invalid",
+  "id": "reproduction-invalid",
   "track": "certificate-reproduction",
   "contractVersion": "1.0.0",
   "title": "Incorrect reproduction for rejection testing",
   "note": "This example deliberately changes the Category 1 result and must always be rejected by the protected verifier.",
+  "attribution": { "mode": "human" },
   "payload": {
     "certificateCommit": "c3ea3342fbe27111c84046613010f14f13b917c6",
     "productionCommit": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",

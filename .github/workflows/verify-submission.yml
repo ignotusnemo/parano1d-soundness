@@ -14,6 +14,7 @@ jobs:
   verify:
     name: Verify submission
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Mark verification pending
         env:
@@ -61,9 +62,14 @@ jobs:
           REPOSITORY: ${{ github.repository }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
           VERIFY_OUTCOME: ${{ steps.verify.outcome }}
+          VERIFICATION_STATUS: ${{ steps.verify.outputs.verification_status }}
         run: |
           if [ "$VERIFY_OUTCOME" = "success" ]; then
-            gh api --method POST "repos/${REPOSITORY}/statuses/${HEAD_SHA}" -f state=success -f context=parano1d/verify-submission -f description="Automated checks completed under the frozen contract"
+            if [ "$VERIFICATION_STATUS" = "pending-review" ]; then
+              gh api --method POST "repos/${REPOSITORY}/statuses/${HEAD_SHA}" -f state=success -f context=parano1d/verify-submission -f description="Passive checks passed; expert review required"
+            else
+              gh api --method POST "repos/${REPOSITORY}/statuses/${HEAD_SHA}" -f state=success -f context=parano1d/verify-submission -f description="Machine verification accepted"
+            fi
           else
             gh api --method POST "repos/${REPOSITORY}/statuses/${HEAD_SHA}" -f state=failure -f context=parano1d/verify-submission -f description="Submission does not satisfy its frozen verification contract"
           fi

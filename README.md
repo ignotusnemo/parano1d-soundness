@@ -14,14 +14,14 @@ The repository pins the same Rust `1.96.0` toolchain used by the source revision
 |---|---:|
 | Target FRI security | **128 bits** |
 | Provable Block-Tiwari FS-FRI security | **127 bits** |
-| Conjectured Block-Tiwari FS-FRI security | **127 bits** |
+| Block-Tiwari conjectured comparison, reference only | **127 bits** |
 | Sequential ideal-QROM half-success boundary | **64.707407428576 bits** |
 | NIST Post-Quantum Cryptography Category | **Category 1** |
 | Dominant Category 1 gate-depth floor | **173.273866314232 bits** |
 | Margin over the NIST `2^170` reference | **3.273866314232 bits** |
 | Complete ideal bound at the Category 1 envelope | **0.053364140323608411** |
 
-The first three rows use the classical random-oracle definitions and integer presentation of Block and Tiwari. The remaining rows concern a different game: acceptance of an invalid terminal State whose recursive ancestry starts at genesis by a quantum adversary.
+The provable FS-FRI row is the certified classical lower bound. The conjectured row is shown only to compare against the corresponding literature estimate and is not used by the certificate. The remaining rows concern a different game: acceptance of an invalid terminal State whose recursive ancestry starts at genesis by a quantum adversary.
 
 `C1` is the source identifier for the production wide-challenge profile. Its
 algebraic challenges are elements of `GF(2^256)`, sampled uniformly from a
@@ -88,8 +88,8 @@ minimum expected-work scale in both calculations. The descriptive logarithms
 of the two exact rational work values are different:
 
 ```text
-provable    127.194502224322
-conjectured 127.207518749639
+proved lower bound          127.194502224322
+conjectured reference only  127.207518749639
 ```
 
 See [the full calculation](docs/block-tiwari.md) for the metric, local RBR

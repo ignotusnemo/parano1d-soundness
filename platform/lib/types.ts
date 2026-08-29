@@ -1,9 +1,10 @@
 export const CLAIM_STATUSES = [
   "verified",
-  "published",
-  "conditional",
-  "assumed",
-  "open",
+  "proved",
+  "premise",
+  "under-review",
+  "premise-failed",
+  "conflicted",
   "refuted"
 ] as const;
 
@@ -28,7 +29,7 @@ export interface Metric {
 
 export interface ClaimDependency {
   claimId: string;
-  role: "required" | "context";
+  role: "required" | "premise" | "context";
   note: string;
 }
 
@@ -48,15 +49,31 @@ export interface TrackDefinition {
   title: string;
   description: string;
   kind: "proof" | "attack" | "audit" | "reproduction";
-  direction: "maximize" | "minimize" | "non-ranked";
+  direction: "maximize" | "minimize" | "bidirectional" | "non-ranked";
   targetClaimId: string;
   contractVersion: string;
-  validator: "certificate-reproduction" | "reserved-formal-proof" | "reserved-attack-witness" | "manual-audit";
+  validator: "certificate-reproduction" | "manual-audit";
   state: "active" | "contract-draft";
   acceptance: string;
   contractUrl?: string;
   scoreMetricId?: string;
   expected?: Record<string, string>;
+  reviewPolicy?: {
+    minimumApprovals: number;
+    minimumIndependentApprovals: number;
+    maintainerLogins: string[];
+    statusRules: {
+      supports: Array<"verified" | "proved" | "premise">;
+      challenges: Array<"premise" | "refuted">;
+    };
+    metricRules: Array<{
+      id: string;
+      kind: MetricKind;
+      direction: "maximize" | "minimize";
+      unit: string;
+      valueFormat: "non-negative-integer" | "non-negative-decimal" | "unit-interval-decimal";
+    }>;
+  };
 }
 
 export interface EvidenceEffect {
@@ -75,6 +92,17 @@ export interface EvidenceSource {
   pullRequest?: number;
 }
 
+export interface ModelAttribution {
+  provider: string;
+  model: string;
+  displayName: string;
+  agent?: string;
+}
+
+export type ResearchAttribution =
+  | { mode: "human" }
+  | { mode: "ai-assisted"; model: ModelAttribution };
+
 export interface EvidenceRecord {
   schemaVersion: 1;
   id: string;
@@ -83,6 +111,7 @@ export interface EvidenceRecord {
   acceptedAt: string;
   title: string;
   note: string;
+  attribution: ResearchAttribution;
   source: EvidenceSource;
   verification: {
     verifier: string;
@@ -100,6 +129,7 @@ export interface SubmissionManifest {
   contractVersion: string;
   title: string;
   note: string;
+  attribution: ResearchAttribution;
   payload: Record<string, unknown>;
 }
 
@@ -124,6 +154,26 @@ export interface VerificationResult {
   context: VerificationContext;
 }
 
+export interface ReviewApproval {
+  login: string;
+  role: "maintainer" | "independent";
+  reviewUrl: string;
+}
+
+export interface ReviewDecision {
+  schemaVersion: 1;
+  id: string;
+  submissionId: string;
+  trackId: string;
+  acceptedAt: string;
+  verificationCheckedAt: string;
+  verificationResultDigest: string;
+  note: string;
+  context: VerificationContext;
+  reviewers: ReviewApproval[];
+  effects: EvidenceEffect[];
+}
+
 export interface DerivedClaim extends ClaimDefinition {
   status: ClaimStatus;
   metrics: Metric[];
@@ -140,6 +190,23 @@ export interface LeaderboardEntry {
   attacks: number;
   audits: number;
   reproductions: number;
+  frontierMoves: number;
+  lastAcceptedAt: string;
+}
+
+export interface ModelLeaderboardEntry {
+  key: string;
+  provider: string;
+  model: string;
+  displayName: string;
+  agent?: string;
+  accepted: number;
+  proofs: number;
+  attacks: number;
+  audits: number;
+  reproductions: number;
+  frontierMoves: number;
+  researchers: number;
   lastAcceptedAt: string;
 }
 
@@ -152,7 +219,7 @@ export interface PendingSubmission {
   authorUrl: string;
   avatarUrl: string;
   updatedAt: string;
-  status: "queued" | "checking" | "rejected" | "ready";
+  status: "queued" | "checking" | "rejected" | "ready" | "awaiting-review";
 }
 
 export interface PlatformState {
@@ -165,11 +232,13 @@ export interface PlatformState {
     title: string;
     statement: string;
     blockingClaims: string[];
+    premiseClaims: string[];
   };
   metrics: Metric[];
   claims: DerivedClaim[];
   tracks: TrackDefinition[];
   records: EvidenceRecord[];
   leaderboard: LeaderboardEntry[];
+  modelLeaderboard: ModelLeaderboardEntry[];
   pending: PendingSubmission[];
 }

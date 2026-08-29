@@ -1,14 +1,32 @@
 {
   "id": "poseidon2b-attack",
   "title": "Production Poseidon2b attack",
-  "description": "Submit a concrete attack or bound against the exact width-four production permutation and compiler event. The witness contract is not yet frozen.",
+  "description": "Submit concrete cryptanalysis, a fixed-compiler QROM bound or a counterexample against the exact width-four production Poseidon2b instance and framing.",
   "kind": "attack",
-  "direction": "minimize",
+  "direction": "non-ranked",
   "targetClaimId": "fixed-poseidon2b-delta",
-  "contractVersion": "0.1.0-draft",
-  "validator": "reserved-attack-witness",
-  "state": "contract-draft",
-  "acceptance": "Activation requires a game-specific verifier. Classical CICO, compression, sponge and fixed-compiler claims are kept as separate metrics.",
-  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/platform/contracts/poseidon2b-attack-v0.1.0-draft.md",
-  "scoreMetricId": "poseidon2b.attack-work-bits"
+  "contractVersion": "1.0.0",
+  "validator": "manual-audit",
+  "state": "active",
+  "acceptance": "The submission must pin the exact field, matrices, round schedule, framing and attack game. Schema and source pins are checked automatically; two cryptographic reviewers confirm the result before it changes the public record.",
+  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/platform/contracts/poseidon2b-attack-v1.0.0.md",
+  "reviewPolicy": {
+    "minimumApprovals": 3,
+    "minimumIndependentApprovals": 2,
+    "maintainerLogins": ["ignotusnemo"],
+    "statusRules": {
+      "supports": ["premise", "proved"],
+      "challenges": ["premise", "refuted"]
+    },
+    "metricRules": [
+      { "id": "poseidon2b.permutation-collision-work-bits", "kind": "upper-bound", "direction": "minimize", "unit": "bits", "valueFormat": "non-negative-decimal" },
+      { "id": "poseidon2b.permutation-preimage-work-bits", "kind": "upper-bound", "direction": "minimize", "unit": "bits", "valueFormat": "non-negative-decimal" },
+      { "id": "poseidon2b.permutation-second-preimage-work-bits", "kind": "upper-bound", "direction": "minimize", "unit": "bits", "valueFormat": "non-negative-decimal" },
+      { "id": "poseidon2b.permutation-cico-work-bits", "kind": "upper-bound", "direction": "minimize", "unit": "bits", "valueFormat": "non-negative-decimal" },
+      { "id": "poseidon2b.sponge-collision-work-bits", "kind": "upper-bound", "direction": "minimize", "unit": "bits", "valueFormat": "non-negative-decimal" },
+      { "id": "poseidon2b.compression-collision-work-bits", "kind": "upper-bound", "direction": "minimize", "unit": "bits", "valueFormat": "non-negative-decimal" },
+      { "id": "poseidon2b.delta-upper", "kind": "probability-upper-bound", "direction": "minimize", "unit": "probability", "valueFormat": "unit-interval-decimal" },
+      { "id": "poseidon2b.delta-lower", "kind": "lower-bound", "direction": "maximize", "unit": "probability", "valueFormat": "unit-interval-decimal" }
+    ]
+  }
 }

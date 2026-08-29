@@ -3,228 +3,137 @@
     "id": "production-profile-snapshot",
     "title": "Pinned production profile",
     "statement": "The certificate input is an exact standalone snapshot of Parano1d v1.0.4 revision fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0.",
-    "scope": "Parameter extraction and source provenance for the snapshotted revision only.",
+    "scope": "Source-pinned production parameters, verifier geometry, Poseidon2b instance and acceptance-path provenance.",
     "initialStatus": "verified",
     "derived": false,
     "dependencies": [],
-    "sources": [
-      {
-        "label": "Parameter provenance",
-        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/parameter-provenance.md"
-      }
-    ]
-  },
-  {
-    "id": "block-tiwari-fs-fri",
-    "title": "Block-Tiwari FS-FRI bound",
-    "statement": "The pinned production profile has a provable classical-ROM expected-work bound in the exact interval from 127 to 128 bits.",
-    "scope": "Classical random-oracle FS-FRI game for the pinned W65/H133 profile.",
-    "initialStatus": "verified",
-    "derived": false,
-    "dependencies": [
-      {
-        "claimId": "production-profile-snapshot",
-        "role": "required",
-        "note": "The calculation is parameter-specific."
-      }
-    ],
-    "sources": [
-      {
-        "label": "FS-FRI calculation",
-        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/block-tiwari.md"
-      }
-    ]
+    "sources": [{ "label": "Parameter provenance", "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/parameter-provenance.md" }]
   },
   {
     "id": "local-rbr-extraction",
-    "title": "Local RBR extraction",
-    "statement": "The wallet and both History classes satisfy the stated generalized round-by-round extraction bounds for the pinned profile.",
-    "scope": "De-Merkleized and de-grinded public-coin IOP with the production move schedule.",
-    "initialStatus": "verified",
+    "title": "Local wallet and History RBR theorem",
+    "statement": "The wallet and both production History classes satisfy the stated generalized round-by-round extraction bounds over every verifier move and every folded layer.",
+    "scope": "Grinding-free public-coin wallet and History IOPs with exact W65/H133 production geometry.",
+    "initialStatus": "proved",
     "derived": false,
-    "dependencies": [
-      {
-        "claimId": "production-profile-snapshot",
-        "role": "required",
-        "note": "The theorem instantiation uses the pinned query geometry and challenge support."
-      }
-    ],
-    "sources": [
-      {
-        "label": "Local theorem",
-        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#exact-local-theorem"
-      }
-    ]
+    "dependencies": [{ "claimId": "production-profile-snapshot", "role": "required", "note": "The theorem specialization uses the pinned query geometry, challenge support and complete production root inventory." }],
+    "sources": [{ "label": "Exact local theorem", "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#exact-local-theorem" }]
   },
   {
     "id": "adaptive-all-root-qrom",
-    "title": "Adaptive recursive all-root QROM theorem",
-    "statement": "One typed all-root event covers adaptively selected recursive statements without a multiplier for chain height, wallet count or represented-root count.",
-    "scope": "Typed compressed-oracle recursion from genesis with deterministic post-measurement traversal.",
-    "initialStatus": "open",
+    "title": "All-root recursive composition theorem",
+    "statement": "One typed database-wide event covers every adaptively selected recursive wallet and History root under one total adversarial resource budget, without a multiplier for chain height, wallet count or represented-root count.",
+    "scope": "From-genesis recursive composition with deterministic post-measurement ancestry traversal and exact State-transition semantics.",
+    "initialStatus": "proved",
     "derived": false,
-    "dependencies": [
-      {
-        "claimId": "local-rbr-extraction",
-        "role": "required",
-        "note": "The lift consumes the local bad-response density."
-      }
-    ],
-    "sources": [
-      {
-        "label": "Published specialization",
-        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#one-all-root-event"
-      }
-    ]
+    "dependencies": [{ "claimId": "local-rbr-extraction", "role": "required", "note": "The composition theorem consumes the straight-line local extractors and their typed bad-response events." }],
+    "sources": [{ "label": "One all-root event", "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#one-all-root-event" }]
+  },
+  {
+    "id": "sequential-ideal-qrom",
+    "title": "Sequential ideal-QROM theorem",
+    "statement": "The complete from-genesis invalid-State success bound remains below one half through 30,121,082,641,781,720,121 total quantum oracle queries.",
+    "scope": "Typed ideal QROM with one stateful quantum adversary, one all-root event and one total query budget.",
+    "initialStatus": "proved",
+    "derived": false,
+    "dependencies": [{ "claimId": "adaptive-all-root-qrom", "role": "required", "note": "The sequential lifting is applied to the proved database-wide all-root property." }],
+    "sources": [{ "label": "Sequential ideal-QROM theorem", "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#sequential-ideal-qrom-theorem" }]
+  },
+  {
+    "id": "typed-parallel-qrom",
+    "title": "Typed parallel-QROM resource theorem",
+    "statement": "The parallel compressed-oracle transition bound combines all production response types under one gate and depth budget, including mixed response types in the same parallel round.",
+    "scope": "Depth-aware typed ideal QROM specialized to the from-genesis all-root invalid-State event.",
+    "initialStatus": "proved",
+    "derived": false,
+    "dependencies": [{ "claimId": "adaptive-all-root-qrom", "role": "required", "note": "The resource theorem bounds the same single all-root event established by recursive composition." }],
+    "sources": [{ "label": "Typed parallel-QROM resource theorem", "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#typed-parallel-qrom-resource-theorem" }]
+  },
+  {
+    "id": "coherent-response-schedule",
+    "title": "Exact coherent Poseidon2b response schedule",
+    "statement": "The executable certificate evaluates a concrete reversible production response with 17,648,280 logical gates, logical depth 11,352 and gate-depth product 200,343,274,560 before positive routing, linear and control work.",
+    "scope": "One coherent GF(2^128), width-four, rate-two, x^7, RF=8, RP=58 Poseidon2b permutation response.",
+    "initialStatus": "verified",
+    "derived": false,
+    "dependencies": [{ "claimId": "production-profile-snapshot", "role": "required", "note": "The schedule is computed for the exact pinned production permutation." }],
+    "sources": [{ "label": "Coherent response cost", "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#coherent-response-cost" }]
   },
   {
     "id": "coherent-response-minimum",
-    "title": "Minimum coherent response cost",
-    "statement": "A coherent production oracle response requires at least the logical gate and depth costs used by the resource theorem.",
-    "scope": "Reversible GF(2^128) response circuits in the declared NIST resource model.",
-    "initialStatus": "assumed",
+    "title": "Minimum coherent response cost premise",
+    "statement": "The Category 1 resource corollary explicitly premises that an adversary obtaining the corresponding coherent production response pays at least the gate and depth costs assigned by the exact production schedule.",
+    "scope": "Minimum logical gate and depth cost used to translate typed quantum queries into the NIST Category 1 resource envelope.",
+    "initialStatus": "premise",
     "derived": false,
-    "dependencies": [
-      {
-        "claimId": "production-profile-snapshot",
-        "role": "required",
-        "note": "The schedule depends on the exact Poseidon2b instance."
-      }
-    ],
-    "sources": [
-      {
-        "label": "Coherent response cost",
-        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#coherent-response-cost"
-      }
-    ]
-  },
-  {
-    "id": "fixed-poseidon2b-delta",
-    "title": "Fixed production Poseidon2b delta",
-    "statement": "The fixed production Poseidon2b compiler game differs from the typed ideal game by less than the stated Category 1 headroom.",
-    "scope": "Exact FsLaneChallenger framing, fixed constants, typed domains and production verifier semantics.",
-    "initialStatus": "assumed",
-    "derived": false,
-    "dependencies": [
-      {
-        "claimId": "production-profile-snapshot",
-        "role": "required",
-        "note": "The boundary is for one exact permutation profile and compiler."
-      }
-    ],
-    "sources": [
-      {
-        "label": "Fixed Poseidon2b boundary",
-        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#fixed-poseidon2b-boundary"
-      }
-    ]
-  },
-  {
-    "id": "poseidon2b-classical-audit",
-    "title": "Published Poseidon2b classical cryptanalysis",
-    "statement": "The attack family in ePrint 2026/306 does not lower the target for the pinned width-four production instance, and its relevant Appendix A projection is recorded separately.",
-    "scope": "Classical dedicated algebraic projection in the paper's ideal-degree model, not the QROM production delta.",
-    "initialStatus": "verified",
-    "derived": false,
-    "dependencies": [
-      {
-        "claimId": "production-profile-snapshot",
-        "role": "required",
-        "note": "The audit matches the exact field, width, rounds, matrices and compression mode."
-      }
-    ],
-    "sources": [
-      {
-        "label": "Reviewed cryptanalysis",
-        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#current-poseidon2b-cryptanalysis"
-      }
-    ]
+    "dependencies": [{ "claimId": "coherent-response-schedule", "role": "context", "note": "The exact schedule supplies the declared resource values; its universal minimum is an explicit theorem premise." }],
+    "sources": [{ "label": "Declared resource premise", "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#coherent-response-cost" }]
   },
   {
     "id": "ideal-category-one-bound",
-    "title": "Ideal-model Category 1 calculation",
-    "statement": "The exact resource calculation gives a dominant half-success gate-depth floor of 173.273866314232 bits for the pinned profile.",
-    "scope": "Typed ideal QROM under the all-root theorem and minimum coherent response-cost premise.",
-    "initialStatus": "conditional",
+    "title": "Ideal-QROM Category 1 resource corollary",
+    "statement": "Under the declared minimum coherent response cost, every evaluated NIST Category 1 depth envelope has invalid-terminal success probability at most 0.053364140323608411, with a dominant half-success gate-depth floor of 173.273866314232 bits.",
+    "scope": "From-genesis typed ideal-QROM invalid-State game at all NIST Category 1 MAXDEPTH points.",
+    "initialStatus": "proved",
     "derived": true,
     "dependencies": [
-      {
-        "claimId": "local-rbr-extraction",
-        "role": "required",
-        "note": "Supplies the local bad-response densities."
-      },
-      {
-        "claimId": "adaptive-all-root-qrom",
-        "role": "required",
-        "note": "Supplies recursive adaptive composition."
-      },
-      {
-        "claimId": "coherent-response-minimum",
-        "role": "required",
-        "note": "Translates oracle responses into gate-depth resources."
-      }
+      { "claimId": "typed-parallel-qrom", "role": "required", "note": "The exact Category 1 calculation instantiates the proved typed parallel-QROM resource theorem." },
+      { "claimId": "coherent-response-minimum", "role": "premise", "note": "The theorem declares the minimum response cost used by the resource translation." }
     ],
-    "sources": [
-      {
-        "label": "Category 1 calculation",
-        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#category-1-calculation"
-      }
-    ]
+    "sources": [{ "label": "Category 1 calculation", "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#category-1-calculation" }]
+  },
+  {
+    "id": "poseidon2b-classical-audit",
+    "title": "Published Poseidon2b cryptanalysis audit",
+    "statement": "The currently published algebraic attack family does not lower the exact width-four production instance; the applicable two-to-one compression projection is recorded separately at 409.873818620410 bits.",
+    "scope": "Published classical cryptanalysis of the exact production permutation and compression mode, kept separate from the fixed-compiler QROM condition.",
+    "initialStatus": "verified",
+    "derived": false,
+    "dependencies": [{ "claimId": "production-profile-snapshot", "role": "required", "note": "The audit pins the exact field, width, matrices, rounds and compression mode." }],
+    "sources": [{ "label": "Current Poseidon2b cryptanalysis", "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#current-poseidon2b-cryptanalysis" }]
+  },
+  {
+    "id": "fixed-poseidon2b-delta",
+    "title": "Fixed Poseidon2b production condition",
+    "statement": "The fixed-production corollary holds whenever the complete event-specific compiler deviation satisfies Delta_P2b^C1 < 0.446635859676391589 for the exact public Poseidon2b framing and typed domains.",
+    "scope": "Transfer from the typed ideal-QROM theorem to the fixed production Poseidon2b compiler event.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [{ "claimId": "poseidon2b-classical-audit", "role": "context", "note": "Current concrete cryptanalysis is evidence for the exact production instance but is not substituted for the event-specific QROM condition." }],
+    "sources": [{ "label": "Fixed Poseidon2b boundary", "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#fixed-poseidon2b-boundary" }]
   },
   {
     "id": "current-production-correspondence",
-    "title": "Pinned production correspondence",
-    "statement": "The certificate snapshot and theorem provenance are validated against Parano1d v1.0.4 revision fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0.",
-    "scope": "The v1.0.4 parameter sources, recursive verifier, ordinary acceptance, live suffix, reorg, snapshot and trusted local-producer paths.",
-    "initialStatus": "open",
+    "title": "Pinned production acceptance correspondence",
+    "statement": "The certificate theorem and production verifier are source-mapped across ordinary blocks, exact live suffixes, reorgs, snapshots and the local-producer trust boundary for Parano1d v1.0.4.",
+    "scope": "Every production path capable of accepting or materializing a terminal State at the pinned revision.",
+    "initialStatus": "verified",
     "derived": false,
-    "dependencies": [
-      {
-        "claimId": "production-profile-snapshot",
-        "role": "context",
-        "note": "The correspondence is specific to the same pinned production snapshot and must not silently move with later revisions."
-      }
-    ],
-    "sources": [
-      {
-        "label": "Pinned production revision",
-        "url": "https://github.com/ignotusnemo/parano1d/commit/fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0"
-      },
-      {
-        "label": "Acceptance correspondence audit",
-        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/parameter-provenance.md#production-acceptance-correspondence"
-      }
-    ]
+    "dependencies": [{ "claimId": "production-profile-snapshot", "role": "context", "note": "The source map and acceptance audit are pinned to the same production revision." }],
+    "sources": [{ "label": "Production acceptance correspondence", "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/parameter-provenance.md#production-acceptance-correspondence" }]
   },
   {
     "id": "production-category-one",
-    "title": "Conditional production Category 1 assessment",
-    "statement": "For pinned Parano1d v1.0.4, the exact ideal-model calculation exceeds the NIST Category 1 reference. The end-to-end production conclusion is conditional on the three listed obligations.",
-    "scope": "End-to-end Parano1d acceptance from genesis to the current terminal State.",
-    "initialStatus": "conditional",
+    "title": "End-to-end post-quantum Category 1 result",
+    "statement": "The certificate covers the complete chain from genesis to the accepted State. Under its two stated production assumptions, an attacker limited to NIST post-quantum Category 1 resources has less than a 50% chance of making Parano1d accept an invalid State.",
+    "scope": "Wallet authorization, block relation, parent links, exact State transitions, recursive verification and complete adversarial ancestry from genesis for pinned Parano1d v1.0.4.",
+    "initialStatus": "proved",
     "derived": true,
     "dependencies": [
-      {
-        "claimId": "ideal-category-one-bound",
-        "role": "required",
-        "note": "Supplies the ideal-game resource bound."
-      },
-      {
-        "claimId": "fixed-poseidon2b-delta",
-        "role": "required",
-        "note": "Closes the fixed-permutation compiler boundary."
-      },
-      {
-        "claimId": "current-production-correspondence",
-        "role": "required",
-        "note": "Binds the certificate to the current release code."
-      }
+      { "claimId": "ideal-category-one-bound", "role": "required", "note": "The ideal resource corollary supplies the complete quantum success bound." },
+      { "claimId": "current-production-correspondence", "role": "required", "note": "The source map binds the theorem game to every production acceptance path." },
+      { "claimId": "fixed-poseidon2b-delta", "role": "premise", "note": "The fixed-permutation production corollary declares the exact sufficient deviation condition." }
     ],
-    "sources": [
-      {
-        "label": "End-to-end security game",
-        "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#the-security-game"
-      }
-    ]
+    "sources": [{ "label": "End-to-end security game and result", "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/category-one.md#result" }]
+  },
+  {
+    "id": "block-tiwari-fs-fri",
+    "title": "Provable Block-Tiwari FS-FRI bound",
+    "statement": "The pinned production History profile has 127 whole bits of provable classical-ROM FS-FRI security under the published Block-Tiwari definition.",
+    "scope": "Separate classical Fiat-Shamir FRI comparison for the pinned B25 and B255 profiles; not the end-to-end post-quantum result.",
+    "initialStatus": "proved",
+    "derived": false,
+    "dependencies": [{ "claimId": "local-rbr-extraction", "role": "required", "note": "The optimizer consumes the proved local History RBR bound." }],
+    "sources": [{ "label": "Block-Tiwari calculation", "url": "https://github.com/ignotusnemo/parano1d-soundness/blob/c3ea3342fbe27111c84046613010f14f13b917c6/docs/block-tiwari.md" }]
   }
 ]

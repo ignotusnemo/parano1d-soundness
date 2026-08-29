@@ -1,14 +1,23 @@
 {
   "id": "recursive-all-root-proof",
-  "title": "Adaptive recursive all-root proof",
-  "description": "Submit a machine-checked proof for the exact typed recursive composition contract. The contract is being formalized and does not yet accept submissions.",
+  "title": "All-root theorem review and formalization",
+  "description": "Review, formalize, strengthen or challenge the published all-root recursive composition theorem for the exact from-genesis typed game.",
   "kind": "proof",
-  "direction": "maximize",
+  "direction": "non-ranked",
   "targetClaimId": "adaptive-all-root-qrom",
-  "contractVersion": "0.1.0-draft",
-  "validator": "reserved-formal-proof",
-  "state": "contract-draft",
-  "acceptance": "Activation requires a frozen theorem statement, pinned proof checker, import allowlist, axiom audit and independent kernel replay.",
-  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/platform/contracts/adaptive-all-root-qrom-v0.1.0-draft.md",
-  "scoreMetricId": "all-root-qrom.proved-resource-bits"
+  "contractVersion": "1.0.0",
+  "validator": "manual-audit",
+  "state": "active",
+  "acceptance": "The submission is source-pinned and schema-checked automatically. A maintainer and an independent cryptographic reviewer must confirm whether it supports, strengthens or challenges the exact published theorem before ledger promotion.",
+  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/platform/contracts/adaptive-all-root-qrom-v1.0.0.md",
+  "reviewPolicy": {
+    "minimumApprovals": 2,
+    "minimumIndependentApprovals": 1,
+    "maintainerLogins": ["ignotusnemo"],
+    "statusRules": {
+      "supports": ["proved"],
+      "challenges": ["refuted"]
+    },
+    "metricRules": []
+  }
 }

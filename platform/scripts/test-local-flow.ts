@@ -29,7 +29,9 @@ writeFileSync(
 const state = derivePlatformState(temporaryRoot);
 assert.equal(state.leaderboard.length, 1);
 assert.equal(state.leaderboard[0]?.login, "local-verifier");
-assert.equal(state.conclusion.status, "conditional");
+assert.equal(state.modelLeaderboard.length, 1);
+assert.equal(state.modelLeaderboard[0]?.displayName, "GPT-5");
+assert.equal(state.conclusion.status, "proved");
 const invalid = verifySubmission({
   root: temporaryRoot,
   submissionDirectory: path.join(sourceRoot, "submissions/examples/reproduction-invalid"),
