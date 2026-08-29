@@ -2,6 +2,8 @@
 
 Every public contribution is a GitHub pull request against `ignotusnemo/parano1d-soundness`. A pull request must add exactly one directory under `research/submissions/` and must not modify any existing file.
 
+The hosted noid.network service can prepare the same restricted pull request after GitHub sign-in. Such a pull request is authored by the pinned GitHub App bot and contains `delegation.json`, an Ed25519-signed binding between the researcher, saved run and exact passive submission bytes. The protected verifier accepts that identity only from the exact bot and public key recorded in [`research/keys`](../keys). A direct pull request has no delegation and continues to use its GitHub author.
+
 ## Start with any AI agent
 
 The research process does not require one model or hosted agent. Run Codex, Claude Code, Grok or another system locally, or work without AI. A direct submission records the GitHub researcher from the trusted pull request event and separately records the self-declared primary model and agent used for attribution. Model attribution is public research metadata, not part of the cryptographic proof.
@@ -27,6 +29,7 @@ Use a lowercase identifier containing letters, digits and hyphens. A machine-che
 research/submissions/<submission-id>/submission.json
 research/submissions/<submission-id>/report.md
 research/submissions/<submission-id>/artifact.json
+research/submissions/<submission-id>/delegation.json  # hosted service only
 ```
 
 Start from the generated workspace or an example in [`research/submissions/examples`](../submissions/examples). The manifest identifier must equal the directory name and its contract version must exactly match the active track.

@@ -7,6 +7,8 @@ const providerIdentifier = z.string().regex(/^[a-z0-9][a-z0-9.-]{1,79}$/);
 const modelIdentifier = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9._:/-]{1,119}$/);
 const sha256 = z.string().regex(/^[0-9a-f]{64}$/);
 const gitCommit = z.string().regex(/^[0-9a-f]{40}$/);
+const githubHumanLogin = z.string().regex(/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/);
+const githubActorLogin = z.string().regex(/^(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})|[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})\[bot\])$/);
 const safeTitle = z.string().min(8).max(160).regex(/^[^\u0000-\u001f<>]+$/u);
 const safeNote = z.string().min(40).max(8_000).refine((value) => !/[<>]/u.test(value), {
   message: "HTML is not permitted in submission notes"
@@ -217,8 +219,19 @@ export const verificationContextSchema = z
   .object({
     repository: z.string().regex(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/),
     commit: gitCommit,
-    actor: z.string().regex(/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/),
-    pullRequest: z.number().int().positive().optional()
+    actor: githubActorLogin,
+    pullRequest: z.number().int().positive().optional(),
+    researcher: z.object({
+      githubId: z.string().regex(/^[1-9][0-9]{0,19}$/),
+      login: githubHumanLogin,
+      profileUrl: z.string().url(),
+      avatarUrl: z.string().url(),
+      delegation: z.object({
+        issuer: z.literal("noid.network"),
+        keyId: z.string().regex(/^[a-z0-9][a-z0-9-]{2,63}$/),
+        runId: z.string().uuid()
+      }).strict()
+    }).strict().optional()
   })
   .strict();
 

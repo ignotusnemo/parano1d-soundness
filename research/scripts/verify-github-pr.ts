@@ -6,8 +6,8 @@ import { verifySubmission } from "@/lib/verifier";
 
 const repositoryPattern = /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/;
 const commitPattern = /^[0-9a-f]{40}$/;
-const loginPattern = /^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/;
-const submissionPath = /^research\/submissions\/([a-z0-9][a-z0-9-]{2,79})\/(submission\.json|report\.md|artifact\.json)$/;
+const loginPattern = /^(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})|[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})\[bot\])$/;
+const submissionPath = /^research\/submissions\/([a-z0-9][a-z0-9-]{2,79})\/(submission\.json|report\.md|artifact\.json|delegation\.json)$/;
 const maximumBytes = 1_048_576;
 
 interface PullRequestFile {
@@ -72,7 +72,7 @@ async function main(): Promise<void> {
   assertStablePullRequest(pull, base, head, actor);
 
   const files = await githubJson<PullRequestFile[]>(`${apiRoot}/pulls/${pullRequestNumber}/files?per_page=100`, token);
-  if (files.length === 0 || files.length > 3) throw new Error("a submission pull request must add one, two or three passive data files");
+  if (files.length === 0 || files.length > 4) throw new Error("a submission pull request must add between one and four passive data files");
   let id: string | undefined;
   const selected: Array<{ name: string; content: Buffer }> = [];
   let totalBytes = 0;

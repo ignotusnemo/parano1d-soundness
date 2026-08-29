@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "keyId": "noid-network-2026-01",
+  "algorithm": "Ed25519",
+  "issuer": "noid.network",
+  "botLogin": "parano1d-autoresearch[bot]",
+  "publicKeySpki": "MCowBQYDK2VwAyEAkMaBkJ4uWzEILi2F5PA9ZV7rsnd3nYRr/qSze5N7g90=",
+  "validFrom": "2026-08-29T00:00:00Z"
+}

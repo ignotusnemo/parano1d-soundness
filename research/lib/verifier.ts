@@ -13,17 +13,19 @@ import {
 import { runCertificate } from "@/lib/certificate-runner";
 import { CERTIFICATE_REVISION, PRODUCTION_REVISION } from "@/lib/pins";
 import type { SubmissionManifest, VerificationContext, VerificationResult } from "@/lib/types";
+import { DELEGATION_FILE_NAME, verifyServiceDelegation } from "@/lib/delegation";
 
 export const VERIFIER_NAME = "parano1d-soundness-research";
 export const VERIFIER_VERSION = "0.1.0";
 const MAXIMUM_SUBMISSION_BYTES = 1_048_576;
-const PASSIVE_FILE_NAMES = new Set(["submission.json", "report.md", "artifact.json"]);
+const PASSIVE_FILE_NAMES = new Set(["submission.json", "report.md", "artifact.json", DELEGATION_FILE_NAME]);
 
 export interface VerificationOptions {
   root: string;
   submissionDirectory: string;
   context: VerificationContext;
   checkedAt?: string;
+  delegationKeyDirectory?: string;
 }
 
 export function loadSubmission(directory: string): SubmissionManifest {
@@ -76,10 +78,31 @@ function sameFiles(actual: Set<string>, expected: string[]): boolean {
 }
 
 export function verifySubmission(options: VerificationOptions): VerificationResult {
-  const context = verificationContextSchema.parse(options.context);
+  const eventContext = verificationContextSchema.parse(options.context);
+  if (eventContext.researcher !== undefined) {
+    throw new Error("researcher identity must be derived from a signed delegation, not supplied by the caller");
+  }
   const files = submissionEnvelope(options.submissionDirectory);
   const manifest = loadSubmission(options.submissionDirectory);
   const checkedAt = options.checkedAt ?? new Date().toISOString();
+  let context = eventContext;
+  if (files.has(DELEGATION_FILE_NAME)) {
+    try {
+      const researcher = verifyServiceDelegation({
+        directory: options.submissionDirectory,
+        submissionId: manifest.id,
+        context: eventContext,
+        checkedAt,
+        keyDirectory: options.delegationKeyDirectory ?? path.join(options.root, "keys")
+      });
+      context = verificationContextSchema.parse({ ...eventContext, researcher });
+    } catch (error) {
+      return rejected(manifest, eventContext, [`hosted researcher delegation rejected: ${error instanceof Error ? error.message : String(error)}`], {}, checkedAt);
+    }
+  } else if (eventContext.actor.endsWith("[bot]")) {
+    return rejected(manifest, eventContext, ["a bot-authored submission requires a valid hosted researcher delegation"], {}, checkedAt);
+  }
+  const delegationFiles = files.has(DELEGATION_FILE_NAME) ? [DELEGATION_FILE_NAME] : [];
   if (path.basename(path.resolve(options.submissionDirectory)) !== manifest.id) {
     return rejected(manifest, context, ["submission identifier does not match its directory"], {}, checkedAt);
   }
@@ -92,7 +115,7 @@ export function verifySubmission(options: VerificationOptions): VerificationResu
   }
 
   if (track.validator === "certificate-reproduction") {
-    if (!sameFiles(files, ["submission.json"])) {
+    if (!sameFiles(files, ["submission.json", ...delegationFiles])) {
       return rejected(manifest, context, ["certificate reproduction must contain only submission.json"], {}, checkedAt);
     }
     const payload = reproductionPayloadSchema.parse(manifest.payload);
@@ -136,7 +159,7 @@ export function verifySubmission(options: VerificationOptions): VerificationResu
 
   if (track.validator === "manual-audit") {
     const payload = manualAuditPayloadSchema.parse(manifest.payload);
-    const expectedFiles = ["submission.json", "report.md", ...(payload.artifactPath ? ["artifact.json"] : [])];
+    const expectedFiles = ["submission.json", "report.md", ...(payload.artifactPath ? ["artifact.json"] : []), ...delegationFiles];
     const reportPath = path.join(options.submissionDirectory, payload.reportPath);
     const reasons: string[] = [];
     const observed: Record<string, string> = {};

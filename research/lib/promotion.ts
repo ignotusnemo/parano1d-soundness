@@ -19,6 +19,7 @@ export function evidenceFromAcceptedResult(
 ): EvidenceRecord {
   if (result.status !== "accepted") throw new Error("only an accepted result can be promoted");
   const context = result.context;
+  const researcher = context.researcher;
   const commitUrl = `https://github.com/${context.repository}/commit/${context.commit}`;
   return {
     schemaVersion: 1,
@@ -35,9 +36,9 @@ export function evidenceFromAcceptedResult(
       url: context.pullRequest
         ? `https://github.com/${context.repository}/pull/${context.pullRequest}`
         : commitUrl,
-      authorLogin: context.actor,
-      authorUrl: `https://github.com/${context.actor}`,
-      avatarUrl: `https://avatars.githubusercontent.com/${context.actor}`,
+      authorLogin: researcher?.login ?? context.actor,
+      authorUrl: researcher?.profileUrl ?? `https://github.com/${context.actor}`,
+      avatarUrl: researcher?.avatarUrl ?? `https://avatars.githubusercontent.com/${context.actor}`,
       ...(context.pullRequest ? { pullRequest: context.pullRequest } : {})
     },
     verification: {

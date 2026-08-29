@@ -22,6 +22,7 @@ function matchesValueFormat(value: string, format: MetricValueFormat): boolean {
 
 function sourceFor(result: VerificationResult) {
   const context = result.context;
+  const researcher = context.researcher;
   const commitUrl = `https://github.com/${context.repository}/commit/${context.commit}`;
   return {
     repository: context.repository,
@@ -29,9 +30,9 @@ function sourceFor(result: VerificationResult) {
     url: context.pullRequest
       ? `https://github.com/${context.repository}/pull/${context.pullRequest}`
       : commitUrl,
-    authorLogin: context.actor,
-    authorUrl: `https://github.com/${context.actor}`,
-    avatarUrl: `https://avatars.githubusercontent.com/${context.actor}`,
+    authorLogin: researcher?.login ?? context.actor,
+    authorUrl: researcher?.profileUrl ?? `https://github.com/${context.actor}`,
+    avatarUrl: researcher?.avatarUrl ?? `https://avatars.githubusercontent.com/${context.actor}`,
     ...(context.pullRequest ? { pullRequest: context.pullRequest } : {})
   };
 }
@@ -56,12 +57,13 @@ export function validateReviewDecision(
   const payload = manualAuditPayloadSchema.parse(manifest.payload);
   requireCondition(payload.finding !== "inconclusive", "an inconclusive report cannot enter the accepted ledger");
 
+  const submitterLogin = decision.context.researcher?.login ?? decision.context.actor;
   const logins = new Set<string>();
   const reviewUrls = new Set<string>();
   for (const reviewer of decision.reviewers) {
     requireCondition(!logins.has(reviewer.login), `reviewer ${reviewer.login} is duplicated`);
     requireCondition(!reviewUrls.has(reviewer.reviewUrl), `review URL ${reviewer.reviewUrl} is duplicated`);
-    requireCondition(reviewer.login !== decision.context.actor, "the submission author cannot approve the same submission");
+    requireCondition(reviewer.login !== submitterLogin, "the submission author cannot approve the same submission");
     logins.add(reviewer.login);
     reviewUrls.add(reviewer.reviewUrl);
   }

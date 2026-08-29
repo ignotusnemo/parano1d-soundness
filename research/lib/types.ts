@@ -138,6 +138,17 @@ export interface VerificationContext {
   commit: string;
   actor: string;
   pullRequest?: number;
+  researcher?: {
+    githubId: string;
+    login: string;
+    profileUrl: string;
+    avatarUrl: string;
+    delegation: {
+      issuer: "noid.network";
+      keyId: string;
+      runId: string;
+    };
+  };
 }
 
 export interface VerificationResult {

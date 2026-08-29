@@ -1,6 +1,5 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { deriveResearchState } from "@/lib/derive";
 import { readStrictJsonFile } from "@/lib/files";
 import { verifyGitHubReviewApprovals } from "@/lib/github-review";
 import { evidenceFromReviewedDecision } from "@/lib/review";
@@ -18,10 +17,11 @@ async function main(): Promise<void> {
   const decision = reviewDecisionSchema.parse(readStrictJsonFile(decisionSource));
   const manifest = loadSubmission(submissionDirectory);
   const track = loadTrack(root, manifest.track);
+  const { researcher: _signedResearcher, ...eventContext } = decision.context;
   const result = verifySubmission({
     root,
     submissionDirectory,
-    context: decision.context,
+    context: eventContext,
     checkedAt: decision.verificationCheckedAt
   });
   const record = evidenceFromReviewedDecision(manifest, result, track, decision);
@@ -36,8 +36,6 @@ async function main(): Promise<void> {
   mkdirSync(ledgerDirectory, { recursive: true });
   writeFileSync(decisionPath, `${JSON.stringify(decision, null, 2)}\n`, { flag: "wx" });
   writeFileSync(recordPath, `${JSON.stringify(record, null, 2)}\n`, { flag: "wx" });
-  const state = deriveResearchState(root);
-  writeFileSync(path.join(root, "public/data/state.json"), `${JSON.stringify(state, null, 2)}\n`, { flag: "w" });
   process.stdout.write(`${decisionPath}\n${recordPath}\n`);
 }
 
