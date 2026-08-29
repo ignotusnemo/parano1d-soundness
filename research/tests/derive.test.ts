@@ -15,6 +15,9 @@ test("the published end-to-end corollary is proved with explicit production prem
   ]);
   assert.equal(state.claims.find((claim) => claim.id === "adaptive-all-root-qrom")?.status, "proved");
   assert.equal(state.metrics.find((metric) => metric.id === "category-one.margin-over-reference")?.value, "+3.273866314232");
+  assert.equal(state.leaderboard[0]?.login, "ignotusnemo");
+  assert.equal(state.leaderboard[0]?.accepted, 1);
+  assert.ok((state.leaderboard[0]?.frontierMoves ?? 0) > 0);
 });
 
 test("classical Poseidon projection is not presented as the Category 1 metric", () => {

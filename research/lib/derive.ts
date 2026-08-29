@@ -157,7 +157,7 @@ function leaderboard(records: EvidenceRecord[], tracks: TrackDefinition[]): Lead
   const trackById = new Map(tracks.map((track) => [track.id, track]));
   const movesByRecord = frontierMoveCounts(records);
   const entries = new Map<string, LeaderboardEntry>();
-  for (const record of records.filter((candidate) => candidate.recordType === "accepted-submission")) {
+  for (const record of records) {
     const track = trackById.get(record.trackId);
     if (!track) continue;
     const source = record.source;
