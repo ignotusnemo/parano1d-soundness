@@ -39,6 +39,10 @@ main { width: min(1480px, calc(100% - 40px)); margin: 0 auto; }
 .state-bar p { max-width: 1000px; margin: 0; color: var(--muted); font-size: 15px; }
 .state-status { min-width: 210px; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; color: var(--muted); font-family: var(--mono); font-size: 10px; }
 .eyebrow { color: var(--muted); font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; }
+.verified-record { border-color: #7ca589; }
+.verified-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; font-family: var(--mono); font-size: 10px; }
+.verified-list a { border: 1px solid #a9c9b2; background: var(--green-bg); color: var(--green); padding: 3px 6px; text-decoration: none; }
+.verified-list a:hover { border-color: var(--green); text-decoration: underline; }
 .blocker-list { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; margin-top: 16px; font-family: var(--mono); font-size: 10px; }
 .blocker-list > span { color: var(--muted); font-weight: 800; letter-spacing: 0.08em; }
 .blocker-list a { border: 1px solid #d7bd6c; background: var(--amber-bg); color: var(--amber); padding: 3px 6px; text-decoration: none; }
@@ -51,6 +55,10 @@ main { width: min(1480px, calc(100% - 40px)); margin: 0 auto; }
 .revision-pin dl div { display: grid; gap: 2px; }
 .revision-pin dt { color: var(--muted); }
 .revision-pin dd { margin: 0; font-weight: 700; }
+
+.scope-boundary { border: 1px solid var(--line-dark); border-top: 0; background: #fffdf6; padding: 18px 20px; display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; }
+.scope-boundary h2 { margin: 3px 0 7px; font-size: 20px; line-height: 1.15; letter-spacing: -0.025em; }
+.scope-boundary p { max-width: 1100px; margin: 0; color: var(--muted); }
 
 .section { padding-top: 54px; scroll-margin-top: 70px; }
 .compact-section { padding-top: 32px; }
@@ -141,7 +149,7 @@ footer { width: min(1480px, calc(100% - 40px)); margin: 70px auto 0; border-top:
   .header-inner, main, footer { width: min(100% - 24px, 1480px); }
   .header-inner { display: grid; }
   nav { justify-content: flex-start; }
-  .state-bar, .section-heading, .revision-pin { align-items: flex-start; flex-direction: column; }
+  .state-bar, .section-heading, .revision-pin, .scope-boundary { align-items: flex-start; flex-direction: column; }
   .state-status { align-items: flex-start; min-width: 0; }
   .section-heading > p { text-align: left; }
   .revision-pin dl { flex-wrap: wrap; }

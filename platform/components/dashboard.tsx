@@ -44,6 +44,7 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
   }, []);
 
   const claimsById = useMemo(() => new Map(state.claims.map((claim) => [claim.id, claim])), [state.claims]);
+  const verifiedClaims = state.claims.filter((claim) => claim.status === "verified");
   const accepted = state.records.filter((record) => record.recordType === "accepted-submission");
   const audits = state.records.filter((record) => {
     const track = state.tracks.find((candidate) => candidate.id === record.trackId);
@@ -52,22 +53,21 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
 
   return (
     <main>
-      <section className="state-bar" aria-labelledby="current-conclusion">
+      <section className="state-bar verified-record" aria-labelledby="verified-record">
         <div>
-          <div className="eyebrow">CURRENT END-TO-END CONCLUSION</div>
-          <h1 id="current-conclusion">{state.conclusion.title}</h1>
-          <p>{state.conclusion.statement}</p>
-          <div className="blocker-list" aria-label="Unresolved obligations">
-            <span>UNRESOLVED</span>
-            {state.conclusion.blockingClaims.map((claimId) => (
-              <a key={claimId} href={`#claim-${claimId}`}>
-                {claimsById.get(claimId)?.title ?? claimId}
+          <div className="eyebrow">VERIFIED PUBLIC RECORD</div>
+          <h1 id="verified-record">Verified results for Parano1d v1.0.4</h1>
+          <p>The public record verifies the production parameter snapshot, its source correspondence to v1.0.4, the 127.194502224322-bit provable classical-ROM FS-FRI bound, local RBR extraction for the wallet and both History classes, and the published Poseidon2b attack audit for the exact production instance.</p>
+          <div className="verified-list" aria-label="Verified claims">
+            {verifiedClaims.map((claim) => (
+              <a key={claim.id} href={`#claim-${claim.id}`}>
+                {claim.title}
               </a>
             ))}
           </div>
         </div>
         <div className="state-status">
-          <Status value={state.conclusion.status} />
+          <span className="status status-verified">{verifiedClaims.length} VERIFIED CLAIMS</span>
           <span>Last state refresh {lastRefresh.toISOString().slice(11, 19)} UTC</span>
         </div>
       </section>
@@ -80,13 +80,32 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
         <dl>
           <div>
             <dt>Certificate</dt>
-            <dd>{shortCommit(state.certificateRevision)}</dd>
+            <dd><a href={`https://github.com/ignotusnemo/parano1d-soundness/commit/${state.certificateRevision}`} title={state.certificateRevision}>{shortCommit(state.certificateRevision)}</a></dd>
           </div>
           <div>
             <dt>Production</dt>
-            <dd>{shortCommit(state.productionRevision)}</dd>
+            <dd><a href={`https://github.com/ignotusnemo/parano1d/commit/${state.productionRevision}`} title={state.productionRevision}>{shortCommit(state.productionRevision)}</a></dd>
           </div>
         </dl>
+      </section>
+
+      <section className="scope-boundary" aria-labelledby="current-conclusion">
+        <div>
+          <div className="eyebrow">EXACT END-TO-END BOUNDARY</div>
+          <h2 id="current-conclusion">{state.conclusion.title}</h2>
+          <p>The exact ideal-model calculation gives a 173.273866314232-bit logical gate-depth floor, above the NIST Category 1 reference, under the named all-root QROM and coherent-response premises. A fixed Poseidon2b delta is additionally required to carry that result to the production permutation. Conditional applies to this final end-to-end promotion, not to the verified results above.</p>
+          <div className="blocker-list" aria-label="Remaining obligations for an unconditional production conclusion">
+            <span>REMAINING FOR AN UNCONDITIONAL PRODUCTION CLAIM</span>
+            {state.conclusion.blockingClaims.map((claimId) => (
+              <a key={claimId} href={`#claim-${claimId}`}>
+                {claimsById.get(claimId)?.title ?? claimId}
+              </a>
+            ))}
+          </div>
+        </div>
+        <div className="state-status">
+          <Status value={state.conclusion.status} />
+        </div>
       </section>
 
       <section id="bounds" className="section">
@@ -111,8 +130,8 @@ export function Dashboard({ initialState }: { initialState: PlatformState }) {
         <div className="panel chart-panel">
           <div className="panel-title">
             <div>
-              <h3>Conditional ideal Category 1 history</h3>
-              <p>Accepted records only. This is not an unconditional production claim.</p>
+              <h3>Exact ideal Category 1 calculation history</h3>
+              <p>Accepted records only. The calculation is exact under its named premises; production promotion remains conditional.</p>
             </div>
             <span>bits of logical gate-depth</span>
           </div>
