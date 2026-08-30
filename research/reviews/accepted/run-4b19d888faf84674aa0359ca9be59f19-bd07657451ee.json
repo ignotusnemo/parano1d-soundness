@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "run-4b19d888faf84674aa0359ca9be59f19-bd07657451ee",
+  "submissionId": "run-4b19d888faf84674aa0359ca9be59f19",
+  "trackId": "poseidon2b-attack",
+  "reviewedFinding": "inconclusive",
+  "acceptedAt": "2026-08-30T21:29:33Z",
+  "verificationCheckedAt": "2026-08-30T21:29:33Z",
+  "verificationResultDigest": "b1bb4a6c0f357a32193a28a7dd5c2e2c85b37343fe745ca3fbcce5f1707bf292",
+  "note": "Follow-up review found no reachable collision in the production PCS tree. The witness uses arbitrary child digests and provides neither valid PCS-tree reachability nor a prover/verifier divergence. Accepted as an inconclusive component-level audit record with no production PCS, certificate or frontier effect.",
+  "context": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "bd07657451ee61b9617d8c8993b4377691bc9854",
+    "actor": "parano1d-autoresearch[bot]",
+    "pullRequest": 5,
+    "researcher": {
+      "githubId": "49638114",
+      "login": "tongpu2011",
+      "profileUrl": "https://github.com/tongpu2011",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/49638114?v=4",
+      "delegation": {
+        "issuer": "noid.network",
+        "keyId": "noid-network-2026-01",
+        "runId": "4b19d888-faf8-4674-aa03-59ca9be59f19"
+      }
+    }
+  },
+  "reviewers": [
+    {
+      "login": "ignotusnemo",
+      "role": "maintainer",
+      "reviewUrl": "https://github.com/ignotusnemo/parano1d-soundness/pull/5#pullrequestreview-5061941383"
+    }
+  ],
+  "effects": []
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "run-4b19d888faf84674aa0359ca9be59f19-bd07657451ee",
+  "recordType": "accepted-submission",
+  "trackId": "poseidon2b-attack",
+  "acceptedAt": "2026-08-30T21:29:33Z",
+  "title": "GF(2^16) subfield compression collision",
+  "note": "Follow-up review found no reachable collision in the production PCS tree. The witness uses arbitrary child digests and provides neither valid PCS-tree reachability nor a prover/verifier divergence. Accepted as an inconclusive component-level audit record with no production PCS, certificate or frontier effect.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-fable-5",
+      "displayName": "Claude Fable 5"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "bd07657451ee61b9617d8c8993b4377691bc9854",
+    "url": "https://github.com/ignotusnemo/parano1d-soundness/pull/5",
+    "authorLogin": "tongpu2011",
+    "authorUrl": "https://github.com/tongpu2011",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/49638114?v=4",
+    "pullRequest": 5
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research+github-review",
+    "verifierVersion": "1.0.0",
+    "resultDigest": "4450c9865f18049bb451837387491d2efe535a8684cd03662893d96538078b53",
+    "status": "accepted"
+  },
+  "effects": []
+}
