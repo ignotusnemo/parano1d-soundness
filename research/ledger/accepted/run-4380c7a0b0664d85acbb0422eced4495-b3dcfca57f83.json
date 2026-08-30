@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "run-4380c7a0b0664d85acbb0422eced4495-b3dcfca57f83",
+  "recordType": "accepted-submission",
+  "trackId": "recursive-all-root-proof",
+  "acceptedAt": "2026-08-30T21:12:05Z",
+  "title": "All-root recursive closure is not established by the pinned proof",
+  "note": "The report isolates the statement-exclusivity and recursive-representation obligations used by the all-root specialization. It provides no counterexample and does not establish that either obligation fails in the declared compiler model. Accepted as an inconclusive review record with no claim, certificate or frontier effect.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-fable-5",
+      "displayName": "Claude Fable 5"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "b3dcfca57f833fe56895f5d878138ff124696733",
+    "url": "https://github.com/ignotusnemo/parano1d-soundness/pull/4",
+    "authorLogin": "tongpu2011",
+    "authorUrl": "https://github.com/tongpu2011",
+    "avatarUrl": "https://avatars.githubusercontent.com/u/49638114?v=4",
+    "pullRequest": 4
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research+github-review",
+    "verifierVersion": "1.0.0",
+    "resultDigest": "a9b013c6fe549b7e0831de2e34348fa64b9b9d5f93488c4f0b72846a8e651d0a",
+    "status": "accepted"
+  },
+  "effects": []
+}
