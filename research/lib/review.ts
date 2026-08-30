@@ -1,4 +1,5 @@
 import { digestCanonicalJson, canonicalJson } from "@/lib/canonical-json";
+import { verifyServiceReviewAttestation } from "@/lib/review-attestation";
 import { manualAuditPayloadSchema } from "@/lib/schemas";
 import type {
   EvidenceRecord,
@@ -41,7 +42,8 @@ export function validateReviewDecision(
   manifest: SubmissionManifest,
   result: VerificationResult,
   track: TrackDefinition,
-  decision: ReviewDecision
+  decision: ReviewDecision,
+  reviewKeyDirectory?: string
 ): void {
   requireCondition(track.validator === "manual-audit", "only a manual review track accepts a review decision");
   requireCondition(result.status === "pending-review", "reviewed promotion requires a pending-review verifier result");
@@ -69,6 +71,16 @@ export function validateReviewDecision(
   const submitterLogin = decision.context.researcher?.login ?? decision.context.actor;
   const logins = new Set<string>();
   const reviewUrls = new Set<string>();
+  const attestedReviewer = decision.attestation
+    ? (() => {
+        requireCondition(Boolean(reviewKeyDirectory), "review attestation key directory is required");
+        return verifyServiceReviewAttestation(decision, reviewKeyDirectory!);
+      })()
+    : undefined;
+  if (attestedReviewer) {
+    requireCondition(attestedReviewer.login !== submitterLogin, "the submission author cannot approve the same submission");
+    logins.add(attestedReviewer.login);
+  }
   for (const reviewer of decision.reviewers) {
     requireCondition(!logins.has(reviewer.login), `reviewer ${reviewer.login} is duplicated`);
     requireCondition(!reviewUrls.has(reviewer.reviewUrl), `review URL ${reviewer.reviewUrl} is duplicated`);
@@ -78,11 +90,14 @@ export function validateReviewDecision(
   }
 
   const policy = track.reviewPolicy!;
-  const maintainers = decision.reviewers.filter((reviewer) => reviewer.role === "maintainer");
+  const maintainers = [
+    ...decision.reviewers.filter((reviewer) => reviewer.role === "maintainer"),
+    ...(attestedReviewer ? [{ login: attestedReviewer.login, role: "maintainer" as const, reviewUrl: "" }] : [])
+  ];
   const independent = decision.reviewers.filter((reviewer) => reviewer.role === "independent");
   const minimumApprovals = reviewedFinding === "inconclusive" ? 1 : policy.minimumApprovals;
   const minimumIndependentApprovals = reviewedFinding === "inconclusive" ? 0 : policy.minimumIndependentApprovals;
-  requireCondition(decision.reviewers.length >= minimumApprovals, `review decision requires ${minimumApprovals} approvals`);
+  requireCondition(decision.reviewers.length + (attestedReviewer ? 1 : 0) >= minimumApprovals, `review decision requires ${minimumApprovals} approvals`);
   requireCondition(independent.length >= minimumIndependentApprovals, `review decision requires ${minimumIndependentApprovals} independent approvals`);
   requireCondition(maintainers.some((reviewer) => policy.maintainerLogins.includes(reviewer.login)), "review decision has no approved maintainer");
   requireCondition(maintainers.every((reviewer) => policy.maintainerLogins.includes(reviewer.login)), "maintainer role was assigned to an untrusted login");
@@ -113,9 +128,10 @@ export function evidenceFromReviewedDecision(
   manifest: SubmissionManifest,
   result: VerificationResult,
   track: TrackDefinition,
-  decision: ReviewDecision
+  decision: ReviewDecision,
+  reviewKeyDirectory?: string
 ): EvidenceRecord {
-  validateReviewDecision(manifest, result, track, decision);
+  validateReviewDecision(manifest, result, track, decision, reviewKeyDirectory);
   return {
     schemaVersion: 1,
     id: decision.id,

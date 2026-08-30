@@ -1,8 +1,12 @@
 import assert from "node:assert/strict";
+import { generateKeyPairSync } from "node:crypto";
+import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import path from "node:path";
 import test from "node:test";
 import { loadTrack } from "@/lib/catalog";
 import { verifyGitHubPullRequestContext, verifyGitHubReviewApprovals } from "@/lib/github-review";
+import { createServiceReviewAttestation } from "@/lib/review-attestation";
 import { evidenceFromReviewedDecision } from "@/lib/review";
 import { reviewDecisionSchema } from "@/lib/schemas";
 import { loadSubmission, verifySubmission } from "@/lib/verifier";
@@ -40,6 +44,77 @@ function reviewedFixture() {
   });
   return { manifest, track, result, decision };
 }
+
+test("an authenticated service attestation replaces only the maintainer GitHub approval", async () => {
+  const keyDirectory = mkdtempSync(path.join(tmpdir(), "review-key-"));
+  try {
+    const { privateKey, publicKey } = generateKeyPairSync("ed25519");
+    const keyId = "test-review-key";
+    writeFileSync(path.join(keyDirectory, `${keyId}.json`), JSON.stringify({
+      schemaVersion: 1,
+      keyId,
+      algorithm: "Ed25519",
+      issuer: "noid.network",
+      purpose: "maintainer-review",
+      publicKeySpki: publicKey.export({ format: "der", type: "spki" }).toString("base64"),
+      validFrom: "2026-08-29T00:00:00.000Z"
+    }));
+    const hostedSubmissionDirectory = path.join(root, "submissions/run-16ecaf1ad871460f992045a32a2007a7");
+    const manifest = loadSubmission(hostedSubmissionDirectory);
+    const track = loadTrack(root, manifest.track);
+    const hostedContext = {
+      repository: "ignotusnemo/parano1d-soundness",
+      commit: "8f3f7168772427899bcc27eed149490ae2848f75",
+      actor: "parano1d-autoresearch[bot]",
+      pullRequest: 3
+    };
+    const checkedAt = "2026-08-29T22:12:32.167Z";
+    const result = verifySubmission({ root, submissionDirectory: hostedSubmissionDirectory, context: hostedContext, checkedAt });
+    assert.ok(result.context.researcher);
+    const unsigned = reviewDecisionSchema.parse({
+      schemaVersion: 1,
+      id: `${manifest.id}-${hostedContext.commit.slice(0, 12)}`,
+      submissionId: manifest.id,
+      trackId: manifest.track,
+      reviewedFinding: "inconclusive",
+      acceptedAt: "2026-08-29T22:13:08.749Z",
+      verificationCheckedAt: checkedAt,
+      verificationResultDigest: result.resultDigest,
+      note: "The authenticated maintainer reviewed the exact passive report and accepted it as inconclusive with no frontier effect.",
+      context: result.context,
+      reviewers: [],
+      effects: []
+    });
+    const decision = reviewDecisionSchema.parse({
+      ...unsigned,
+      attestation: createServiceReviewAttestation(unsigned, {
+        keyId,
+        privateKeyPem: privateKey.export({ format: "pem", type: "pkcs8" }).toString(),
+        runId: result.context.researcher!.delegation.runId,
+        reviewer: { githubId: "98765", login: "ignotusnemo" },
+        issuedAt: unsigned.acceptedAt
+      })
+    });
+    const evidence = evidenceFromReviewedDecision(manifest, result, track, decision, keyDirectory);
+    assert.deepEqual(evidence.effects, []);
+    const request = async (url: string): Promise<Response> => {
+      if (url.includes("/pulls/3/commits")) return Response.json([{ sha: hostedContext.commit }, { sha: "f".repeat(40) }]);
+      if (url.endsWith("/pulls/3")) return Response.json({ head: { sha: "f".repeat(40) }, user: { login: hostedContext.actor } });
+      throw new Error(`unexpected GitHub request: ${url}`);
+    };
+    await verifyGitHubReviewApprovals(decision, "test-token", request);
+    await assert.rejects(
+      () => verifyGitHubReviewApprovals(decision, "test-token", async (url) => url.includes("/commits")
+        ? Response.json([{ sha: "f".repeat(40) }])
+        : Response.json({ head: { sha: "f".repeat(40) }, user: { login: hostedContext.actor } })),
+      /source commit is not part/u
+    );
+    decision.note = `${decision.note} tampered`;
+    assert.throws(() => evidenceFromReviewedDecision(manifest, result, track, decision, keyDirectory), /does not match the decision/u);
+  } finally {
+    rmSync(keyDirectory, { recursive: true, force: true });
+  }
+});
 
 test("a bound GitHub review decision promotes a pending report into immutable evidence", () => {
   const fixture = reviewedFixture();

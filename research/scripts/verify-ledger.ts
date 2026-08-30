@@ -59,7 +59,7 @@ async function main(): Promise<void> {
       const track = loadTrack(root, manifest.track);
       const { researcher: _signedResearcher, ...eventContext } = decision.context;
       const result = verifySubmission({ root, submissionDirectory, context: eventContext, checkedAt: decision.verificationCheckedAt });
-      expected = evidenceFromReviewedDecision(manifest, result, track, decision);
+      expected = evidenceFromReviewedDecision(manifest, result, track, decision, path.join(root, "review-keys"));
       if (verifyGitHub) await verifyGitHubReviewApprovals(decision, token!);
     } else {
       const submissionDirectory = submissions.find((candidate) => {

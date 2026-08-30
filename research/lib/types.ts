@@ -122,6 +122,18 @@ export interface EvidenceRecord {
   effects: EvidenceEffect[];
 }
 
+export interface PublicEvidenceRecord extends EvidenceRecord {
+  review?: {
+    finalFinding: "supports" | "challenges" | "inconclusive";
+    note: string;
+    reviewers: Array<{
+      login: string;
+      role: "maintainer" | "independent";
+      url: string;
+    }>;
+  };
+}
+
 export interface SubmissionManifest {
   schemaVersion: 1;
   id: string;
@@ -171,6 +183,23 @@ export interface ReviewApproval {
   reviewUrl: string;
 }
 
+export interface ServiceReviewAttestation {
+  schemaVersion: 1;
+  issuer: "noid.network";
+  keyId: string;
+  repository: "ignotusnemo/parano1d-soundness";
+  runId: string;
+  submissionId: string;
+  sourceCommit: string;
+  issuedAt: string;
+  reviewer: {
+    githubId: string;
+    login: string;
+  };
+  decisionDigest: string;
+  signature: string;
+}
+
 export interface ReviewDecision {
   schemaVersion: 1;
   id: string;
@@ -186,6 +215,8 @@ export interface ReviewDecision {
   verificationResultDigest: string;
   note: string;
   context: VerificationContext;
+  /** Signed maintainer decision created from an authenticated noid.network reviewer session. */
+  attestation?: ServiceReviewAttestation;
   reviewers: ReviewApproval[];
   effects: EvidenceEffect[];
 }
@@ -241,7 +272,7 @@ export interface ResearchState {
   metrics: Metric[];
   claims: DerivedClaim[];
   tracks: TrackDefinition[];
-  records: EvidenceRecord[];
+  records: PublicEvidenceRecord[];
   leaderboard: LeaderboardEntry[];
   modelLeaderboard: ModelLeaderboardEntry[];
 }

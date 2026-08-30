@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "keyId": "noid-network-review-2026-01",
+  "algorithm": "Ed25519",
+  "issuer": "noid.network",
+  "purpose": "maintainer-review",
+  "publicKeySpki": "MCowBQYDK2VwAyEAm84nWifm66pCFVeXPAiRQmdQ78Y/tJfjd/w35xh2ILM=",
+  "validFrom": "2026-08-30T00:00:00Z"
+}

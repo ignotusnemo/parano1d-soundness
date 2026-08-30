@@ -5,8 +5,14 @@ interface GitHubPullRequest {
   user: { login: string } | null;
 }
 
+interface GitHubPullCommit { sha: string; }
+
 function assertPullMatches(pull: GitHubPullRequest, context: VerificationContext): void {
   if (pull.head.sha !== context.commit) throw new Error("pull request head differs from the frozen submission commit");
+  if (!pull.user || pull.user.login !== context.actor) throw new Error("pull request author differs from the frozen submission actor");
+}
+
+function assertPullActorMatches(pull: GitHubPullRequest, context: VerificationContext): void {
   if (!pull.user || pull.user.login !== context.actor) throw new Error("pull request author differs from the frozen submission actor");
 }
 
@@ -63,7 +69,13 @@ export async function verifyGitHubReviewApprovals(
   if (!pullRequest) throw new Error("reviewed decision has no pull request");
   const apiRoot = `https://api.github.com/repos/${decision.context.repository}`;
   const pull = await githubJson<GitHubPullRequest>(`${apiRoot}/pulls/${pullRequest}`, token, request);
-  assertPullMatches(pull, decision.context);
+  if (decision.attestation) {
+    assertPullActorMatches(pull, decision.context);
+    const commits = await githubJson<GitHubPullCommit[]>(`${apiRoot}/pulls/${pullRequest}/commits?per_page=100`, token, request);
+    if (!commits.some((commit) => commit.sha === decision.context.commit)) throw new Error("attested source commit is not part of the pull request");
+  } else {
+    assertPullMatches(pull, decision.context);
+  }
 
   for (const reviewer of decision.reviewers) {
     const id = reviewId(reviewer.reviewUrl, decision.context.repository, pullRequest);
@@ -77,5 +89,8 @@ export async function verifyGitHubReviewApprovals(
     }
   }
   const stablePull = await githubJson<GitHubPullRequest>(`${apiRoot}/pulls/${pullRequest}`, token, request);
-  assertPullMatches(stablePull, decision.context);
+  if (decision.attestation) {
+    assertPullActorMatches(stablePull, decision.context);
+    if (stablePull.head.sha !== pull.head.sha) throw new Error("pull request head changed during attested review verification");
+  } else assertPullMatches(stablePull, decision.context);
 }

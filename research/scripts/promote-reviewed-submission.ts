@@ -26,7 +26,7 @@ async function main(): Promise<void> {
     context: eventContext,
     checkedAt: decision.verificationCheckedAt
   });
-  const record = evidenceFromReviewedDecision(manifest, result, track, decision);
+  const record = evidenceFromReviewedDecision(manifest, result, track, decision, path.join(root, "review-keys"));
   await verifyGitHubReviewApprovals(decision, token);
 
   const reviewDirectory = path.join(outputRoot, "reviews/accepted");

@@ -13,6 +13,23 @@ const safeTitle = z.string().min(8).max(160).regex(/^[^\u0000-\u001f<>]+$/u);
 const safeNote = z.string().min(40).max(8_000).refine((value) => !/[<>]/u.test(value), {
   message: "HTML is not permitted in submission notes"
 });
+
+export const serviceReviewAttestationSchema = z.object({
+  schemaVersion: z.literal(1),
+  issuer: z.literal("noid.network"),
+  keyId: z.string().regex(/^[a-z0-9][a-z0-9-]{2,63}$/),
+  repository: z.literal("ignotusnemo/parano1d-soundness"),
+  runId: z.string().uuid(),
+  submissionId: identifier,
+  sourceCommit: gitCommit,
+  issuedAt: z.string().datetime({ offset: true }),
+  reviewer: z.object({
+    githubId: z.string().regex(/^[1-9][0-9]{0,19}$/),
+    login: githubHumanLogin
+  }).strict(),
+  decisionDigest: sha256,
+  signature: z.string().regex(/^[A-Za-z0-9_-]{86}$/)
+}).strict();
 const modelAttributionSchema = z
   .object({
     provider: providerIdentifier,
@@ -249,13 +266,14 @@ export const reviewDecisionSchema = z
     context: verificationContextSchema.refine((value) => value.pullRequest !== undefined, {
       message: "reviewed decisions require a pull request"
     }),
+    attestation: serviceReviewAttestationSchema.optional(),
     reviewers: z.array(
       z.object({
         login: z.string().regex(/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/),
         role: z.enum(["maintainer", "independent"]),
         reviewUrl: z.string().url().max(500)
       }).strict()
-    ).min(1).max(8),
+    ).max(8),
     effects: z.array(effectSchema).max(20)
   })
   .strict();

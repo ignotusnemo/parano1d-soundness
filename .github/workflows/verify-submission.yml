@@ -5,6 +5,8 @@ on:
     types: [opened, reopened, synchronize, ready_for_review]
     paths:
       - "research/submissions/**"
+      - "research/reviews/accepted/**"
+      - "research/ledger/accepted/**"
 
 permissions:
   contents: read

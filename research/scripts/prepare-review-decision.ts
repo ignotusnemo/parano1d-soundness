@@ -1,8 +1,9 @@
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { z } from "zod";
 import { loadTrack } from "@/lib/catalog";
 import { readStrictJsonFile } from "@/lib/files";
+import { createServiceReviewAttestation } from "@/lib/review-attestation";
 import { validateReviewDecision } from "@/lib/review";
 import { effectSchema, manualAuditPayloadSchema, reviewDecisionSchema } from "@/lib/schemas";
 import { loadSubmission, verifySubmission } from "@/lib/verifier";
@@ -44,7 +45,7 @@ const effects = effectsPath
         if (!findingStatuses?.[0]) throw new Error(`track has no status rule for ${reviewedFinding}`);
         return [{ claimId: track.targetClaimId, status: findingStatuses[0], metrics: [] }];
       })();
-const decision = reviewDecisionSchema.parse({
+const decisionBase = reviewDecisionSchema.parse({
   schemaVersion: 1,
   id: `${manifest.id}-${context.commit.slice(0, 12)}`,
   submissionId: manifest.id,
@@ -61,7 +62,23 @@ const decision = reviewDecisionSchema.parse({
   ],
   effects
 });
-validateReviewDecision(manifest, result, track, decision);
+const attestationPrivateKey = option("--attestation-private-key");
+const decision = attestationPrivateKey
+  ? reviewDecisionSchema.parse({
+      ...decisionBase,
+      attestation: createServiceReviewAttestation(decisionBase, {
+        keyId: requiredOption("--attestation-key-id"),
+        privateKeyPem: readFileSync(path.resolve(attestationPrivateKey), "utf8"),
+        runId: result.context.researcher?.delegation.runId ?? (() => { throw new Error("service-attested review requires a hosted researcher delegation"); })(),
+        reviewer: {
+          githubId: requiredOption("--reviewer-github-id"),
+          login: requiredOption("--reviewer-login")
+        },
+        issuedAt: acceptedAt
+      })
+    })
+  : decisionBase;
+validateReviewDecision(manifest, result, track, decision, path.join(root, "review-keys"));
 const destination = path.resolve(requiredOption("--output"));
 writeFileSync(destination, `${JSON.stringify(decision, null, 2)}\n`, { flag: "wx" });
 process.stdout.write(`${destination}\nverification result ${result.resultDigest}\n`);

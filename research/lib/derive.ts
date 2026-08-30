@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+import path from "node:path";
 import type {
   ClaimStatus,
   DerivedClaim,
@@ -5,15 +7,50 @@ import type {
   LeaderboardEntry,
   Metric,
   ModelLeaderboardEntry,
+  PublicEvidenceRecord,
   ResearchState,
   TrackDefinition
 } from "@/lib/types";
 import { loadCatalog } from "@/lib/catalog";
+import { jsonFiles, readStrictJsonFile } from "@/lib/files";
+import { manualAuditPayloadSchema, reviewDecisionSchema } from "@/lib/schemas";
+import { loadSubmission } from "@/lib/verifier";
 import { CERTIFICATE_REVISION, PRODUCTION_REVISION } from "@/lib/pins";
 import { exactDecimalDifference } from "@/lib/exact-decimal";
 import { buildFrontier, FRONTIER_MODELS } from "@/lib/frontier";
 
 const CATEGORY_ONE_GATE_DEPTH_REFERENCE = "170";
+
+function publicRecords(root: string, records: EvidenceRecord[]): PublicEvidenceRecord[] {
+  const reviewDirectory = path.join(root, "reviews/accepted");
+  const decisions = new Map(
+    (existsSync(reviewDirectory) ? jsonFiles(reviewDirectory) : []).map((filename) => {
+      const decision = reviewDecisionSchema.parse(readStrictJsonFile(filename));
+      return [decision.id, decision] as const;
+    })
+  );
+  return records.map((record) => {
+    const decision = decisions.get(record.id);
+    if (!decision) return record;
+    const submitted = manualAuditPayloadSchema.parse(loadSubmission(path.join(root, "submissions", decision.submissionId)).payload).finding;
+    const reviewers = [
+      ...(decision.attestation ? [{
+        login: decision.attestation.reviewer.login,
+        role: "maintainer" as const,
+        url: `https://github.com/${decision.attestation.reviewer.login}`
+      }] : []),
+      ...decision.reviewers.map((reviewer) => ({ login: reviewer.login, role: reviewer.role, url: reviewer.reviewUrl }))
+    ];
+    return {
+      ...record,
+      review: {
+        finalFinding: decision.reviewedFinding ?? submitted,
+        note: decision.note,
+        reviewers
+      }
+    };
+  });
+}
 
 function isEstablished(status: ClaimStatus): boolean {
   return status === "verified" || status === "proved";
@@ -266,7 +303,7 @@ export function deriveResearchState(root: string): ResearchState {
     metrics,
     claims,
     tracks: catalog.tracks,
-    records: [...catalog.records].sort((left, right) => right.acceptedAt.localeCompare(left.acceptedAt)),
+    records: publicRecords(root, catalog.records).sort((left, right) => right.acceptedAt.localeCompare(left.acceptedAt)),
     leaderboard: leaderboard(catalog.records, catalog.tracks),
     modelLeaderboard: modelLeaderboard(catalog.records, catalog.tracks)
   };
