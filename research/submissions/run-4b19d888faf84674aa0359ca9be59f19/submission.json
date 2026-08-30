@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-4b19d888faf84674aa0359ca9be59f19",
+  "track": "poseidon2b-attack",
+  "contractVersion": "1.0.0",
+  "title": "GF(2^16) subfield compression collision",
+  "note": "Concrete chosen-input collision for production proof-core Poseidon2b feed-forward compression under tag IVCPCSN_. Exact metric: poseidon2b.compression-collision-work-bits = 16.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-fable-5",
+      "displayName": "Claude Fable 5"
+    }
+  },
+  "payload": {
+    "productionCommit": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",
+    "certificateCommit": "c3ea3342fbe27111c84046613010f14f13b917c6",
+    "reportPath": "report.md",
+    "reportSha256": "ae0247418235a5a2d36306c59d17af49e77b7a36f38599bc4e7bb9d1e8ac0b08",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "77b079973ffda90dba7a982fd3a76c0ad0acb5a347152a125ce8ae1681eb616d",
+    "affectedClaimId": "fixed-poseidon2b-delta",
+    "finding": "challenges"
+  }
+}

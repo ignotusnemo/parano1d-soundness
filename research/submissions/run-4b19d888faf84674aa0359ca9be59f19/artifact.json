@@ -1,0 +1,74 @@
+{
+  "artifactType": "poseidon2b-compression-collision-witness-v1",
+  "sourcePins": {
+    "workspaceRevision": "bc66deba28007832025093d47bd6f6a4bb89c7fd",
+    "productionCommit": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",
+    "certificateCommit": "c3ea3342fbe27111c84046613010f14f13b917c6"
+  },
+  "game": {
+    "metricId": "poseidon2b.compression-collision-work-bits",
+    "value": "16",
+    "unit": "bits",
+    "finding": "challenges"
+  },
+  "productionMapping": {
+    "tag": "IVCPCSN_",
+    "formula": "state=[a0,a1,b0 xor IV_hi,b1 xor IV_lo]; permute_flat_u128; output=(state0 xor a0)||(state1 xor a1)",
+    "byteEncoding": "two little-endian flat-basis lanes per digest"
+  },
+  "subfieldArgument": {
+    "embeddedField": "GF(2^16) in GF(2^128) tower representation",
+    "constantMaxHex": "0x2000",
+    "partialMdsDiagonalHex": [
+      "0x20",
+      "0x2000",
+      "0x200",
+      "0x800"
+    ],
+    "rangeBits": 32,
+    "birthdayExpectedWorkBits": "16"
+  },
+  "collision": {
+    "capacityIvFlatHex": {
+      "hi": "0xb2605e7d6a88532020ce686b642adce2",
+      "lo": "0x31b2df5f892542db0fb71b3c00247bc3"
+    },
+    "observedSearch": {
+      "evaluationsToFirstCollision": 34133,
+      "log2Evaluations": "15.058879600166",
+      "indices": [
+        144,
+        34132
+      ]
+    },
+    "input1": {
+      "internalTowerLanesHex16": {
+        "a0": "c108",
+        "a1": "43ee",
+        "c0": "ce56",
+        "c1": "6855"
+      },
+      "leftDigestHex": "e540ea8f1a089842e2a6522ba569a421e68d4f4d7d31bfb2d7d75baf0abcca86",
+      "rightDigestHex": "da6d1eedb4dc66cc032f25da58ddcd0056d21b74febdf7dfcb528d09223a14ae"
+    },
+    "input2": {
+      "internalTowerLanesHex16": {
+        "a0": "a45a",
+        "a1": "deaa",
+        "c0": "519f",
+        "c1": "696d"
+      },
+      "leftDigestHex": "98d5904cbebb99d38eddfff58d4f83b364cf7ecf5c11f979b3da8ad664e5dd00",
+      "rightDigestHex": "bfc9c0e91a36edc0e8eabff979abbd92ce2de1b92b73a47e1498f734a2f86015"
+    },
+    "outputDigestHex": "4645337d0892ad5d3c661811cb652b515de470b78b9153ca52121b54bd3371cf",
+    "outputTowerHex16": {
+      "h0": "5926",
+      "h1": "d2c5"
+    }
+  },
+  "independentChecks": {
+    "repoCodeExecuted": false,
+    "flatBasisValidation": "Independent flat GF(2^128) arithmetic recomputed both inputs to the same output."
+  }
+}
