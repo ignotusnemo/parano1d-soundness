@@ -6,7 +6,7 @@ Check whether the pinned Parano1d v1.0.4 verifier accepts exactly the objects an
 
 ## Pinned materials
 
-Compare certificate revision `c3ea3342fbe27111c84046613010f14f13b917c6` in `https://github.com/ignotusnemo/parano1d-soundness` with production revision `fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0` in `https://github.com/ignotusnemo/parano1d`. Read `contracts/production-correspondence-v1.1.0.md` before selecting one falsifiable source mapping.
+Compare certificate revision `c3ea3342fbe27111c84046613010f14f13b917c6` in `https://github.com/ignotusnemo/parano1d-soundness` with production revision `fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0` in `https://github.com/ignotusnemo/parano1d`. Read `contracts/production-correspondence-v1.0.0.md` before selecting one falsifiable source mapping.
 
 ## Useful results
 
