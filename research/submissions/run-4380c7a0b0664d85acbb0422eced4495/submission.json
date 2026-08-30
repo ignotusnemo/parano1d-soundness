@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "run-4380c7a0b0664d85acbb0422eced4495",
+  "track": "recursive-all-root-proof",
+  "contractVersion": "1.0.0",
+  "title": "All-root recursive closure is not established by the pinned proof",
+  "note": "The pinned arithmetic faithfully instantiates the published bound, and production code enforces recursive parent, height, and genesis constraints. The unresolved step is the ideal-compiler lemma that must prove statement-exclusive database flips and representation of every extracted nested artifact in the same measured database. The cited fixed-instance and adaptive results do not directly supply that unbounded recursive closure. No concrete counterexample was found, so the finding is inconclusive.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-fable-5",
+      "displayName": "Claude Fable 5"
+    }
+  },
+  "payload": {
+    "productionCommit": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",
+    "certificateCommit": "c3ea3342fbe27111c84046613010f14f13b917c6",
+    "reportPath": "report.md",
+    "reportSha256": "9ac9636c597e531e93ab3bc098a5b689303f08ee6acddf2f32bb4847f1859dea",
+    "affectedClaimId": "adaptive-all-root-qrom",
+    "finding": "inconclusive"
+  }
+}
