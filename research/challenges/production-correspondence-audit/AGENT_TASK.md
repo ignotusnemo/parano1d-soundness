@@ -6,11 +6,15 @@ Check whether the pinned Parano1d v1.0.4 verifier accepts exactly the objects an
 
 ## Pinned materials
 
-Compare certificate revision `c3ea3342fbe27111c84046613010f14f13b917c6` in `https://github.com/ignotusnemo/parano1d-soundness` with production revision `fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0` in `https://github.com/ignotusnemo/parano1d`. Read `contracts/production-correspondence-v1.0.0.md` before selecting one falsifiable source mapping.
+Compare certificate revision `c3ea3342fbe27111c84046613010f14f13b917c6` in `https://github.com/ignotusnemo/parano1d-soundness` with production revision `fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0` in `https://github.com/ignotusnemo/parano1d`. Read `contracts/production-correspondence-v1.1.0.md` before selecting one falsifiable source mapping.
 
 ## Useful results
 
 A useful submission can confirm one previously unchecked mapping, identify a precise mismatch, supply a reproducible counterexample or strengthen the source-to-model correspondence argument. General code review without an exact claim and source path is not accepted research.
+
+## Submission threshold
+
+Select one acceptance or materialization path before analysis. Name the exact production entry point, immutable source locations, modeled certificate object and falsifiable correspondence statement. Storage, transport or user-interface behavior is out of scope unless it changes consensus acceptance or materializes trusted State. A list of observations without that mapping must not be submitted.
 
 ## Required output
 

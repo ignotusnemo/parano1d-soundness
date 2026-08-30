@@ -92,12 +92,18 @@ export const trackSchema = z
     direction: z.enum(["maximize", "minimize", "bidirectional", "non-ranked"]),
     targetClaimId: identifier,
     contractVersion: z.string().min(3).max(40),
+    legacyContractVersions: z.array(z.string().min(3).max(40)).max(10).optional(),
     validator: z.enum(["certificate-reproduction", "manual-audit"]),
     state: z.enum(["active", "contract-draft"]),
     acceptance: z.string().min(20).max(1_000),
     contractUrl: z.string().url().optional(),
     scoreMetricId: metricIdentifier.optional(),
     expected: z.record(z.string(), z.string()).optional(),
+    submissionPolicy: z.object({
+      allowedFindings: z.array(z.enum(["supports", "challenges"])).min(1).max(2),
+      artifactRequired: z.boolean(),
+      evidenceSchema: z.literal("poseidon2b-production-impact-v1")
+    }).strict().optional(),
     reviewPolicy: z
       .object({
         minimumApprovals: z.number().int().min(2).max(8),
@@ -122,6 +128,15 @@ export const trackSchema = z
   })
   .strict()
   .superRefine((track, context) => {
+    if (track.legacyContractVersions?.includes(track.contractVersion)) {
+      context.addIssue({ code: "custom", message: "the active contract version cannot also be legacy", path: ["legacyContractVersions"] });
+    }
+    if (track.legacyContractVersions && new Set(track.legacyContractVersions).size !== track.legacyContractVersions.length) {
+      context.addIssue({ code: "custom", message: "legacy contract versions must be unique", path: ["legacyContractVersions"] });
+    }
+    if (track.submissionPolicy && track.validator !== "manual-audit") {
+      context.addIssue({ code: "custom", message: "only manual review tracks can declare a submission policy", path: ["submissionPolicy"] });
+    }
     if (track.validator === "manual-audit" && !track.reviewPolicy) {
       context.addIssue({ code: "custom", message: "manual review tracks require a reviewPolicy", path: ["reviewPolicy"] });
     }
@@ -231,6 +246,52 @@ export const manualAuditPayloadSchema = z
   .refine((value) => Boolean(value.artifactPath) === Boolean(value.artifactSha256), {
     message: "artifactPath and artifactSha256 must be declared together"
   });
+
+const productionImpactKind = z.enum([
+  "two-valid-production-artifacts-same-binding",
+  "accepted-invalid-proof",
+  "prover-verifier-divergence",
+  "reachable-production-preimage",
+  "fixed-compiler-counterexample",
+  "fixed-compiler-bound"
+]);
+
+export const poseidon2bProductionImpactArtifactSchema = z.object({
+  schemaVersion: z.literal(1),
+  artifactType: z.literal("poseidon2b-production-impact-v1"),
+  finding: z.enum(["supports", "challenges"]),
+  productionCommit: gitCommit,
+  game: metricIdentifier,
+  productionPath: z.object({
+    entryPoints: z.array(z.string().min(3).max(300)).min(1).max(20),
+    sourceLocations: z.array(z.string().url()).min(1).max(20),
+    validInputDerivation: z.string().min(80).max(20_000),
+    observedEffect: z.string().min(80).max(20_000)
+  }).strict(),
+  evidence: z.object({
+    kind: productionImpactKind,
+    witnesses: z.array(z.object({
+      label: z.string().min(3).max(160),
+      description: z.string().min(40).max(4_000),
+      sha256,
+      url: z.string().url().optional()
+    }).strict()).min(1).max(20),
+    reproductionSteps: z.array(z.string().min(3).max(2_000)).min(1).max(50),
+    expectedResult: z.string().min(40).max(8_000)
+  }).strict()
+}).strict().superRefine((artifact, context) => {
+  for (const [index, source] of artifact.productionPath.sourceLocations.entries()) {
+    if (!source.includes(artifact.productionCommit)) {
+      context.addIssue({ code: "custom", message: "each production source location must bind the exact production commit", path: ["productionPath", "sourceLocations", index] });
+    }
+  }
+  if (artifact.finding === "supports" && artifact.evidence.kind !== "fixed-compiler-bound") {
+    context.addIssue({ code: "custom", message: "supporting evidence must provide a fixed-compiler bound", path: ["evidence", "kind"] });
+  }
+  if (artifact.finding === "challenges" && artifact.evidence.kind === "fixed-compiler-bound") {
+    context.addIssue({ code: "custom", message: "challenging evidence must provide a production counterexample or reachable violation", path: ["evidence", "kind"] });
+  }
+});
 
 export const verificationContextSchema = z
   .object({

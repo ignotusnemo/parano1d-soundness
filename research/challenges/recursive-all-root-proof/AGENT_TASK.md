@@ -12,6 +12,10 @@ Use `contracts/adaptive-all-root-qrom-v1.0.0.md` and certificate revision `c3ea3
 
 Accepted work includes a complete independent derivation, a proof-assistant artifact with no admitted goals, a precise strengthening, a semantic flaw or a concrete counterexample. A fixed-root or non-adaptive argument does not address this challenge.
 
+## Submission threshold
+
+Do not submit a theorem summary, a fixed-root reduction, a non-adaptive argument or an unchecked model opinion as an all-root result. A supporting result must close the exact adaptive statement in the contract. A challenge must isolate a precise proof obligation, semantic countermodel or concrete counterexample against that statement. An inconclusive review may be retained only when its source-pinned analysis establishes a specific unresolved obligation or rules out a specific proposed argument.
+
 ## Required output
 
 Read `contracts/adaptive-all-root-qrom-v1.0.0.md` and the pinned theorem sources before working. Complete `report.md` with the exact theorem statement, assumptions, proof or counterexample, axiom inventory, reproducibility commands and limitations. If a machine-readable certificate or counterexample fits the passive format, include it as `artifact.json`. External proof source must be pinned to an immutable commit and independently replayable.

@@ -6,7 +6,7 @@ Independently execute the protected Parano1d soundness calculator at the pinned 
 
 ## Pinned materials
 
-Certificate revision: `c3ea3342fbe27111c84046613010f14f13b917c6` in `https://github.com/ignotusnemo/parano1d-soundness`. Production revision: `fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0` in `https://github.com/ignotusnemo/parano1d`.
+Use `contracts/certificate-reproduction-v1.0.0.md`. Certificate revision: `c3ea3342fbe27111c84046613010f14f13b917c6` in `https://github.com/ignotusnemo/parano1d-soundness`. Production revision: `fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0` in `https://github.com/ignotusnemo/parano1d`.
 
 ## Required result
 

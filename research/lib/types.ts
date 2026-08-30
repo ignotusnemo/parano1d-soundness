@@ -52,12 +52,18 @@ export interface TrackDefinition {
   direction: "maximize" | "minimize" | "bidirectional" | "non-ranked";
   targetClaimId: string;
   contractVersion: string;
+  legacyContractVersions?: string[];
   validator: "certificate-reproduction" | "manual-audit";
   state: "active" | "contract-draft";
   acceptance: string;
   contractUrl?: string;
   scoreMetricId?: string;
   expected?: Record<string, string>;
+  submissionPolicy?: {
+    allowedFindings: Array<"supports" | "challenges">;
+    artifactRequired: boolean;
+    evidenceSchema: "poseidon2b-production-impact-v1";
+  };
   reviewPolicy?: {
     minimumApprovals: number;
     minimumIndependentApprovals: number;

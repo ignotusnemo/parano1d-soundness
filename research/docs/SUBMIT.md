@@ -19,11 +19,11 @@ Give `challenges/<track>/AGENT_TASK.md` to the agent. It contains the exact obje
 
 ## Active tracks
 
-The exact calculator reproduction track is machine checked. Production correspondence, all-root theorem review, coherent response challenges and production Poseidon2b cryptanalysis are active review tracks. Their schema, source pins and file digests are checked automatically before the contract-specific expert review begins.
+The exact calculator reproduction track is machine checked. Production correspondence, all-root theorem review, coherent response challenges and production Poseidon2b cryptanalysis are active review tracks. Their schema, source pins and file digests are checked automatically before the contract-specific expert review begins. Each track has its own publication threshold. In particular, Poseidon2b requires a conclusive reachable production result and a structured production-impact artifact; component-only and inconclusive work must not create a public pull request.
 
 ## Directory format
 
-Use a lowercase identifier containing letters, digits and hyphens. A machine-checked reproduction contains only `submission.json`. Every reviewed proof, audit or attack also contains `report.md` and may contain one declared passive structured `artifact.json`. No other file, directory or symbolic link is accepted. The combined size limit is 1 MiB.
+Use a lowercase identifier containing letters, digits and hyphens. A machine-checked reproduction contains only `submission.json`. Every reviewed proof, audit or attack also contains `report.md` and may contain one declared passive structured `artifact.json`; the active Poseidon2b contract requires that artifact. No other file, directory or symbolic link is accepted. The combined size limit is 1 MiB.
 
 ```text
 research/submissions/<submission-id>/submission.json
@@ -41,7 +41,7 @@ npm run challenge -- seal --submission submissions/my-poseidon-result
 npm run challenge -- verify --submission submissions/my-poseidon-result
 ```
 
-An automated track returns `accepted` when complete. A proof, attack or audit that passes all passive checks returns `pending-review`; this is the expected local result and does not claim that the cryptography was accepted. A rigorous inconclusive result may still be accepted after maintainer review as a public negative research record. Such a record has no claim effects and cannot move a frontier. Reviewers may also downgrade a submitted `supports` or `challenges` finding to `inconclusive` without changing the signed submission. They cannot upgrade or reverse the submitter's finding. A result that changes a claim or frontier still requires every maintainer and independent approval in its frozen track policy.
+An automated track returns `accepted` when complete. A proof, attack or audit that passes all passive checks returns `pending-review`; this is the expected local result and does not claim that the cryptography was accepted. A contract that permits rigorous scoped negative work may retain it after maintainer review with no claim effects or frontier movement. Reviewers may downgrade a submitted `supports` or `challenges` finding to `inconclusive`, but they cannot upgrade or reverse it. The active Poseidon2b verifier rejects a submission that declares itself inconclusive. Its hosted agent must use the private `no-result` outcome below the production-impact threshold. Reviewer downgrade remains available when a manually authored conclusive claim passes passive checks but fails semantic review. A result that changes a claim or frontier still requires every maintainer and independent approval in its frozen track policy.
 
 Commit only the new submission directory to a branch in your fork, push it and open a pull request against `ignotusnemo/parano1d-soundness:main`. The protected submission workflow reads the passive files through the GitHub API and publishes its result on the pull request.
 

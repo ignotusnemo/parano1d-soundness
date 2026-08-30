@@ -6,6 +6,7 @@ import { digestCanonicalJson } from "@/lib/canonical-json";
 import { parseStrictJson } from "@/lib/strict-json";
 import {
   manualAuditPayloadSchema,
+  poseidon2bProductionImpactArtifactSchema,
   reproductionPayloadSchema,
   submissionManifestSchema,
   verificationContextSchema
@@ -26,6 +27,7 @@ export interface VerificationOptions {
   context: VerificationContext;
   checkedAt?: string;
   delegationKeyDirectory?: string;
+  allowLegacyContractVersion?: boolean;
 }
 
 export function loadSubmission(directory: string): SubmissionManifest {
@@ -107,7 +109,10 @@ export function verifySubmission(options: VerificationOptions): VerificationResu
     return rejected(manifest, context, ["submission identifier does not match its directory"], {}, checkedAt);
   }
   const track = loadTrack(options.root, manifest.track);
-  if (track.contractVersion !== manifest.contractVersion) {
+  const currentContract = track.contractVersion === manifest.contractVersion;
+  const legacyContract = options.allowLegacyContractVersion === true
+    && (track.legacyContractVersions ?? []).includes(manifest.contractVersion);
+  if (!currentContract && !legacyContract) {
     return rejected(manifest, context, ["submission contract version does not match the active track"], {}, checkedAt);
   }
   if (track.state !== "active") {
@@ -163,6 +168,7 @@ export function verifySubmission(options: VerificationOptions): VerificationResu
     const reportPath = path.join(options.submissionDirectory, payload.reportPath);
     const reasons: string[] = [];
     const observed: Record<string, string> = {};
+    let parsedArtifact: unknown;
     if (!sameFiles(files, expectedFiles)) reasons.push("review submission files do not exactly match the declared passive envelope");
     if (!existsSync(reportPath)) {
       reasons.push("report.md is missing");
@@ -189,9 +195,34 @@ export function verifySubmission(options: VerificationOptions): VerificationResu
         observed.artifactSha256 = artifactDigest;
         if (artifactDigest !== payload.artifactSha256) reasons.push("research artifact digest does not match artifact.json");
         try {
-          parseStrictJson(new TextDecoder("utf-8", { fatal: true }).decode(artifact));
+          parsedArtifact = parseStrictJson(new TextDecoder("utf-8", { fatal: true }).decode(artifact));
         } catch (error) {
           reasons.push(`artifact.json is not strict passive JSON: ${error instanceof Error ? error.message : String(error)}`);
+        }
+      }
+    }
+    if (currentContract && track.submissionPolicy) {
+      if (!track.submissionPolicy.allowedFindings.includes(payload.finding as "supports" | "challenges")) {
+        reasons.push(`the active contract does not accept ${payload.finding} submissions`);
+      }
+      if (track.submissionPolicy.artifactRequired && !payload.artifactPath) {
+        reasons.push("the active contract requires a structured production-impact artifact");
+      }
+      if (track.submissionPolicy.evidenceSchema === "poseidon2b-production-impact-v1" && parsedArtifact !== undefined) {
+        const artifact = poseidon2bProductionImpactArtifactSchema.safeParse(parsedArtifact);
+        if (!artifact.success) {
+          reasons.push(`production-impact artifact rejected: ${artifact.error.issues.map((issue) => issue.message).join("; ")}`);
+        } else {
+          const metricIds = new Set(track.reviewPolicy?.metricRules.map((rule) => rule.id) ?? []);
+          if (artifact.data.finding !== payload.finding) reasons.push("production-impact artifact finding differs from submission.json");
+          if (artifact.data.productionCommit !== payload.productionCommit) reasons.push("production-impact artifact targets another production commit");
+          if (!metricIds.has(artifact.data.game)) reasons.push("production-impact artifact names a game outside the active contract");
+          if (artifact.data.finding === "supports" && artifact.data.game !== "poseidon2b.delta-upper") {
+            reasons.push("supporting Poseidon2b evidence must bound poseidon2b.delta-upper");
+          }
+          if (artifact.data.finding === "challenges" && artifact.data.game === "poseidon2b.delta-upper") {
+            reasons.push("challenging Poseidon2b evidence cannot use the supporting delta-upper game");
+          }
         }
       }
     }

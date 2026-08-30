@@ -30,12 +30,19 @@ if (command === "list") {
   for (const track of tracks) process.stdout.write(`${track.id}\t${track.kind}\t${track.direction}\t${track.title}\n`);
 } else if (command === "setup") {
   const id = requiredOption("--id");
+  const trackId = requiredOption("--track");
+  const track = loadCatalog(root).tracks.find((candidate) => candidate.id === trackId);
+  if (!track) throw new Error(`unknown research track: ${trackId}`);
   const destination = path.resolve(option("--output") ?? path.join(root, "submissions", id));
-  const files = createChallengeSubmission({ root, destination, id, trackId: requiredOption("--track"), attribution: attribution() });
+  const files = createChallengeSubmission({ root, destination, id, trackId, attribution: attribution() });
   process.stdout.write(`Created ${destination}\n`);
   for (const file of files) process.stdout.write(`  ${file}\n`);
-  process.stdout.write(`\nGive challenges/${requiredOption("--track")}/AGENT_TASK.md to your agent. After editing, run:\n`);
-  process.stdout.write("For reviewed work, change payload.finding from inconclusive to supports or challenges only when the report justifies that effect.\n");
+  process.stdout.write(`\nGive challenges/${trackId}/AGENT_TASK.md to your agent. After editing, run:\n`);
+  if (track.submissionPolicy) {
+    process.stdout.write("This contract accepts only the listed conclusive findings and requires its structured artifact. Do not open a pull request when the contract threshold is not met.\n");
+  } else if (track.validator === "manual-audit") {
+    process.stdout.write("Change payload.finding from inconclusive to supports or challenges only when the report justifies that effect.\n");
+  }
   process.stdout.write(`npm run challenge -- seal --submission ${destination}\n`);
   process.stdout.write(`npm run challenge -- verify --submission ${destination}\n`);
 } else if (command === "seal") {

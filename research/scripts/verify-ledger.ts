@@ -58,7 +58,7 @@ async function main(): Promise<void> {
       const manifest = loadSubmission(submissionDirectory);
       const track = loadTrack(root, manifest.track);
       const { researcher: _signedResearcher, ...eventContext } = decision.context;
-      const result = verifySubmission({ root, submissionDirectory, context: eventContext, checkedAt: decision.verificationCheckedAt });
+      const result = verifySubmission({ root, submissionDirectory, context: eventContext, checkedAt: decision.verificationCheckedAt, allowLegacyContractVersion: true });
       expected = evidenceFromReviewedDecision(manifest, result, track, decision, path.join(root, "review-keys"));
       if (verifyGitHub) await verifyGitHubReviewApprovals(decision, token!);
     } else {
@@ -72,7 +72,8 @@ async function main(): Promise<void> {
         root,
         submissionDirectory,
         context: contextFromRecord(record, submissionDirectory, path.join(root, "keys")),
-        checkedAt: record.acceptedAt
+        checkedAt: record.acceptedAt,
+        allowLegacyContractVersion: true
       });
       expected = evidenceFromAcceptedResult(manifest, result);
       if (verifyGitHub) await verifyGitHubPullRequestContext(result.context, token!);
