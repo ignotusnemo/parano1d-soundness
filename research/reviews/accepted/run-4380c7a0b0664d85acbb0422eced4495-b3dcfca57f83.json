@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "run-4380c7a0b0664d85acbb0422eced4495-b3dcfca57f83",
+  "submissionId": "run-4380c7a0b0664d85acbb0422eced4495",
+  "trackId": "recursive-all-root-proof",
+  "reviewedFinding": "inconclusive",
+  "acceptedAt": "2026-08-30T21:12:05Z",
+  "verificationCheckedAt": "2026-08-30T21:12:05Z",
+  "verificationResultDigest": "b15384219ac88885d1c5b22848c1863b6f76631994bb2248abcd9c71d0aef4ba",
+  "note": "The report isolates the statement-exclusivity and recursive-representation obligations used by the all-root specialization. It provides no counterexample and does not establish that either obligation fails in the declared compiler model. Accepted as an inconclusive review record with no claim, certificate or frontier effect.",
+  "context": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "b3dcfca57f833fe56895f5d878138ff124696733",
+    "actor": "parano1d-autoresearch[bot]",
+    "pullRequest": 4,
+    "researcher": {
+      "githubId": "49638114",
+      "login": "tongpu2011",
+      "profileUrl": "https://github.com/tongpu2011",
+      "avatarUrl": "https://avatars.githubusercontent.com/u/49638114?v=4",
+      "delegation": {
+        "issuer": "noid.network",
+        "keyId": "noid-network-2026-01",
+        "runId": "4380c7a0-b066-4d85-acbb-0422eced4495"
+      }
+    }
+  },
+  "reviewers": [
+    {
+      "login": "ignotusnemo",
+      "role": "maintainer",
+      "reviewUrl": "https://github.com/ignotusnemo/parano1d-soundness/pull/4#pullrequestreview-5061906527"
+    }
+  ],
+  "effects": []
+}
