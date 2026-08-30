@@ -1,5 +1,6 @@
 import { writeFileSync } from "node:fs";
 import path from "node:path";
+import { z } from "zod";
 import { loadTrack } from "@/lib/catalog";
 import { readStrictJsonFile } from "@/lib/files";
 import { validateReviewDecision } from "@/lib/review";
@@ -20,6 +21,7 @@ const manifest = loadSubmission(submissionDirectory);
 const track = loadTrack(root, manifest.track);
 if (track.validator !== "manual-audit") throw new Error("review decisions apply only to human-reviewed tracks");
 const payload = manualAuditPayloadSchema.parse(manifest.payload);
+const reviewedFinding = z.enum(["supports", "challenges", "inconclusive"]).parse(option("--finding") ?? payload.finding);
 const verificationCheckedAt = option("--checked-at") ?? new Date().toISOString();
 const acceptedAt = option("--accepted-at") ?? new Date().toISOString();
 const pullRequest = Number(requiredOption("--pull-request"));
@@ -34,12 +36,12 @@ const result = verifySubmission({ root, submissionDirectory, context, checkedAt:
 if (result.status !== "pending-review") throw new Error(`submission cannot enter review promotion: ${result.status}`);
 const effectsPath = option("--effects");
 const effects = effectsPath
-  ? effectSchema.array().min(1).parse(readStrictJsonFile(path.resolve(effectsPath)))
-  : payload.finding === "inconclusive"
+  ? effectSchema.array().max(20).parse(readStrictJsonFile(path.resolve(effectsPath)))
+  : reviewedFinding === "inconclusive"
     ? []
     : (() => {
-        const findingStatuses = track.reviewPolicy?.statusRules[payload.finding];
-        if (!findingStatuses?.[0]) throw new Error(`track has no status rule for ${payload.finding}`);
+        const findingStatuses = track.reviewPolicy?.statusRules[reviewedFinding];
+        if (!findingStatuses?.[0]) throw new Error(`track has no status rule for ${reviewedFinding}`);
         return [{ claimId: track.targetClaimId, status: findingStatuses[0], metrics: [] }];
       })();
 const decision = reviewDecisionSchema.parse({
@@ -47,6 +49,7 @@ const decision = reviewDecisionSchema.parse({
   id: `${manifest.id}-${context.commit.slice(0, 12)}`,
   submissionId: manifest.id,
   trackId: manifest.track,
+  reviewedFinding,
   acceptedAt,
   verificationCheckedAt,
   verificationResultDigest: result.resultDigest,

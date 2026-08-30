@@ -68,6 +68,32 @@ test("a maintainer alone may accept a rigorous inconclusive result with no effec
   assert.deepEqual(evidence.effects, []);
 });
 
+test("reviewers may downgrade a submitted conclusion without changing the signed submission", () => {
+  const fixture = reviewedFixture();
+  assert.equal((fixture.manifest.payload as { finding: string }).finding, "supports");
+  fixture.decision.reviewedFinding = "inconclusive";
+  fixture.decision.effects = [];
+  fixture.decision.reviewers = [fixture.decision.reviewers[0]!];
+  const evidence = evidenceFromReviewedDecision(fixture.manifest, fixture.result, fixture.track, fixture.decision);
+  assert.deepEqual(evidence.effects, []);
+  assert.equal((fixture.manifest.payload as { finding: string }).finding, "supports");
+});
+
+test("reviewers cannot upgrade or reverse the submitted finding", () => {
+  const fixture = reviewedFixture();
+  fixture.manifest.payload = { ...fixture.manifest.payload, finding: "inconclusive" };
+  fixture.decision.reviewedFinding = "supports";
+  assert.throws(
+    () => evidenceFromReviewedDecision(fixture.manifest, fixture.result, fixture.track, fixture.decision),
+    /preserve the submitted finding or downgrade it/u
+  );
+  fixture.manifest.payload = { ...fixture.manifest.payload, finding: "challenges" };
+  assert.throws(
+    () => evidenceFromReviewedDecision(fixture.manifest, fixture.result, fixture.track, fixture.decision),
+    /preserve the submitted finding or downgrade it/u
+  );
+});
+
 test("a claim-changing result still requires the frozen independent review policy", () => {
   const fixture = reviewedFixture();
   fixture.decision.reviewers = [fixture.decision.reviewers[0]!];

@@ -41,7 +41,7 @@ npm run challenge -- seal --submission submissions/my-poseidon-result
 npm run challenge -- verify --submission submissions/my-poseidon-result
 ```
 
-An automated track returns `accepted` when complete. A proof, attack or audit that passes all passive checks returns `pending-review`; this is the expected local result and does not claim that the cryptography was accepted. A rigorous inconclusive result may still be accepted after maintainer review as a public negative research record. Such a record has no claim effects and cannot move a frontier. A result that changes a claim or frontier still requires every maintainer and independent approval in its frozen track policy.
+An automated track returns `accepted` when complete. A proof, attack or audit that passes all passive checks returns `pending-review`; this is the expected local result and does not claim that the cryptography was accepted. A rigorous inconclusive result may still be accepted after maintainer review as a public negative research record. Such a record has no claim effects and cannot move a frontier. Reviewers may also downgrade a submitted `supports` or `challenges` finding to `inconclusive` without changing the signed submission. They cannot upgrade or reverse the submitter's finding. A result that changes a claim or frontier still requires every maintainer and independent approval in its frozen track policy.
 
 Commit only the new submission directory to a branch in your fork, push it and open a pull request against `ignotusnemo/parano1d-soundness:main`. The protected submission workflow reads the passive files through the GitHub API and publishes its result on the pull request.
 

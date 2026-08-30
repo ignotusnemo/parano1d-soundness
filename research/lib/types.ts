@@ -176,6 +176,11 @@ export interface ReviewDecision {
   id: string;
   submissionId: string;
   trackId: string;
+  /**
+   * Semantic classification accepted by the reviewers. Older decisions omit
+   * this field and inherit the submitter's declared finding.
+   */
+  reviewedFinding?: "supports" | "challenges" | "inconclusive";
   acceptedAt: string;
   verificationCheckedAt: string;
   verificationResultDigest: string;

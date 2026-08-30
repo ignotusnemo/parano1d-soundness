@@ -241,6 +241,7 @@ export const reviewDecisionSchema = z
     id: identifier,
     submissionId: identifier,
     trackId: identifier,
+    reviewedFinding: z.enum(["supports", "challenges", "inconclusive"]).optional(),
     acceptedAt: z.string().datetime({ offset: true }),
     verificationCheckedAt: z.string().datetime({ offset: true }),
     verificationResultDigest: sha256,

@@ -55,10 +55,15 @@ export function validateReviewDecision(
   requireCondition(Date.parse(decision.acceptedAt) >= Date.parse(decision.verificationCheckedAt), "review acceptance predates automated verification");
 
   const payload = manualAuditPayloadSchema.parse(manifest.payload);
-  if (payload.finding === "inconclusive") {
+  const reviewedFinding = decision.reviewedFinding ?? payload.finding;
+  requireCondition(
+    reviewedFinding === payload.finding || reviewedFinding === "inconclusive",
+    "reviewers may preserve the submitted finding or downgrade it to inconclusive"
+  );
+  if (reviewedFinding === "inconclusive") {
     requireCondition(decision.effects.length === 0, "an inconclusive result cannot change a claim or frontier");
   } else {
-    requireCondition(decision.effects.length > 0, `${payload.finding} evidence requires at least one reviewed effect`);
+    requireCondition(decision.effects.length > 0, `${reviewedFinding} evidence requires at least one reviewed effect`);
   }
 
   const submitterLogin = decision.context.researcher?.login ?? decision.context.actor;
@@ -75,8 +80,8 @@ export function validateReviewDecision(
   const policy = track.reviewPolicy!;
   const maintainers = decision.reviewers.filter((reviewer) => reviewer.role === "maintainer");
   const independent = decision.reviewers.filter((reviewer) => reviewer.role === "independent");
-  const minimumApprovals = payload.finding === "inconclusive" ? 1 : policy.minimumApprovals;
-  const minimumIndependentApprovals = payload.finding === "inconclusive" ? 0 : policy.minimumIndependentApprovals;
+  const minimumApprovals = reviewedFinding === "inconclusive" ? 1 : policy.minimumApprovals;
+  const minimumIndependentApprovals = reviewedFinding === "inconclusive" ? 0 : policy.minimumIndependentApprovals;
   requireCondition(decision.reviewers.length >= minimumApprovals, `review decision requires ${minimumApprovals} approvals`);
   requireCondition(independent.length >= minimumIndependentApprovals, `review decision requires ${minimumIndependentApprovals} independent approvals`);
   requireCondition(maintainers.some((reviewer) => policy.maintainerLogins.includes(reviewer.login)), "review decision has no approved maintainer");
@@ -90,8 +95,8 @@ export function validateReviewDecision(
     requireCondition(effect.claimId === track.targetClaimId, `review effect may only target ${track.targetClaimId}`);
     requireCondition(!effectClaims.has(effect.claimId), `review effect for ${effect.claimId} is duplicated`);
     effectClaims.add(effect.claimId);
-    const permittedStatuses = policy.statusRules[payload.finding as "supports" | "challenges"];
-    requireCondition(permittedStatuses.some((status) => status === effect.status), `${payload.finding} evidence cannot assign status ${effect.status} under this track contract`);
+    const permittedStatuses = policy.statusRules[reviewedFinding as "supports" | "challenges"];
+    requireCondition(permittedStatuses.some((status) => status === effect.status), `${reviewedFinding} evidence cannot assign status ${effect.status} under this track contract`);
     for (const metric of effect.metrics) {
       const rule = metricRules.get(metric.id);
       requireCondition(Boolean(rule), `metric ${metric.id} is outside the frozen review contract`);
