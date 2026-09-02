@@ -58,10 +58,22 @@ log2(d_I^2) dedicated algebraic projection   409.873818620410
 
 The final value is the paper's classical dedicated-attack projection with `omega=2`, derived from an ideal-degree upper bound. The paper concludes that its attacks do not reduce the claimed 128-bit security of the full-round recommended instances. This projection does not evaluate the fixed-Poseidon2b QROM delta, which remains a separate premise of the end-to-end theorem. The exact correspondence and scope are included in [the Category 1 proof](docs/category-one.md#current-poseidon2b-cryptanalysis).
 
+The certificate also instantiates the nonlinear-subspace models from ePrint
+2026/1792. It checks the required balancing rank against the exact production
+internal matrix over `GF(2^128)`, obtaining `N_e=0xbe32`. The production
+constraint budget is `E_c=2`, so the new trail covers four of 58 partial
+rounds. The smallest attack-cost projection in that comparison is
+`1022.830074998558` bits under its `omega=2` semi-regular Macaulay model. It is
+weaker than the existing ePrint 2026/306 feed-forward projection and does not
+change the certificate conclusion. This is an attack-model projection, not a
+claim of 1022-bit security. The exact calculation and scope are in the
+[August 2026 Poseidon2b review](docs/poseidon2b-august-2026.md).
+
 The complete derivations are in:
 
 - [Block-Tiwari FS-FRI security](docs/block-tiwari.md);
 - [end-to-end QROM soundness and the Category 1 assessment](docs/category-one.md);
+- [August 2026 Poseidon2b cryptanalysis review](docs/poseidon2b-august-2026.md);
 - [production snapshot provenance](docs/parameter-provenance.md).
 
 ## Block-Tiwari comparison
@@ -134,7 +146,7 @@ soundness game. It does not claim that NIST reviewed or certified Parano1d.
 | Sequential QROM lifting and adaptive all-root composition | Chiesa, Manohar and Spooner together with FRACTAL, specialized in [`docs/category-one.md`](docs/category-one.md) |
 | Parallel compressed-oracle transition and collision bounds | Chung, Fehr, Huang and Liao, specialized to typed production responses in the Category 1 document |
 | Category 1 reference resources | NIST Section 4.A.5, evaluated at every stated `MAXDEPTH` point |
-| Published classical Poseidon2b cryptanalysis | Merz and Rodríguez García, specialized to the production permutation and compression mode in [`src/poseidon2b_cryptanalysis.rs`](src/poseidon2b_cryptanalysis.rs) |
+| Published classical Poseidon2b cryptanalysis | Merz and Rodríguez García, plus Li, Liu and Wang, specialized to the production permutation and compression mode in [`src/poseidon2b_cryptanalysis.rs`](src/poseidon2b_cryptanalysis.rs) |
 | Production correspondence | the full revision pin, standalone snapshot and source-symbol map in [`docs/parameter-provenance.md`](docs/parameter-provenance.md) |
 | Numerical conclusions | exact rational arithmetic and release regression tests in this crate |
 
