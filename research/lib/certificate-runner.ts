@@ -1,5 +1,7 @@
 import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
+import { mkdtempSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
 import path from "node:path";
 
 export interface CertificateObservation {
@@ -11,15 +13,12 @@ export interface CertificateObservation {
   categoryOneGateDepthBits: string;
   categoryOneIdealEnvelope: string;
   poseidonClassicalProjectionBits: string;
+  poseidonNonlinearRankCore?: string;
+  poseidonLinearTrailRounds?: string;
+  poseidonNonlinearTrailRounds?: string;
+  poseidonNonlinearProjectionBits?: string;
 }
 
-const CERTIFICATE_PATHS = [
-  "Cargo.toml",
-  "Cargo.lock",
-  "rust-toolchain.toml",
-  "model",
-  "src"
-];
 const observationCache = new Map<string, CertificateObservation>();
 
 function run(directory: string, command: string, args: string[]): string {
@@ -45,14 +44,27 @@ function one(report: string, pattern: RegExp, label: string): string {
   return matches[0][1];
 }
 
-function assertPinnedCertificateTree(root: string, revision: string): void {
+function reportAtRevision(root: string, revision: string): string {
   if (!/^[0-9a-f]{40}$/.test(revision)) throw new Error("certificate revision is not a full Git commit id");
   run(root, "git", ["cat-file", "-e", `${revision}^{commit}`]);
-  const diff = spawnSync("git", ["diff", "--quiet", revision, "--", ...CERTIFICATE_PATHS], { cwd: root });
-  if (diff.error) throw diff.error;
-  if (diff.status !== 0) throw new Error("protected certificate sources differ from the frozen certificate revision");
-  const untracked = run(root, "git", ["ls-files", "--others", "--exclude-standard", "--", ...CERTIFICATE_PATHS]).trim();
-  if (untracked.length > 0) throw new Error("protected certificate sources contain untracked files");
+  const directory = mkdtempSync(path.join(tmpdir(), "parano1d-certificate-"));
+  try {
+    const archive = spawnSync("git", ["archive", "--format=tar", revision], {
+      cwd: root,
+      maxBuffer: 32 * 1_048_576
+    });
+    if (archive.error) throw archive.error;
+    if (archive.status !== 0) throw new Error(`git archive failed: ${archive.stderr.toString().trim()}`);
+    const unpack = spawnSync("tar", ["-xf", "-", "-C", directory], {
+      input: archive.stdout,
+      maxBuffer: 32 * 1_048_576
+    });
+    if (unpack.error) throw unpack.error;
+    if (unpack.status !== 0) throw new Error(`certificate archive extraction failed: ${unpack.stderr.toString().trim()}`);
+    return run(directory, "cargo", ["run", "--release", "--locked", "--", "--exact"]);
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
 }
 
 export function runCertificate(directory: string, certificateRevision: string): CertificateObservation {
@@ -60,8 +72,31 @@ export function runCertificate(directory: string, certificateRevision: string): 
   const cacheKey = `${root}:${certificateRevision}`;
   const cached = observationCache.get(cacheKey);
   if (cached) return { ...cached };
-  assertPinnedCertificateTree(root, certificateRevision);
-  const report = run(root, "cargo", ["run", "--release", "--locked", "--", "--exact"]);
+  const report = reportAtRevision(root, certificateRevision);
+  const nonlinearObservation = report.includes("POSEIDON2B NONLINEAR SUBSPACE REVIEW")
+    ? {
+        poseidonNonlinearRankCore: one(
+          report,
+          /^production even-construction rank core: 0x([0-9a-f]{32}) nonzero$/gmu,
+          "Poseidon2b nonlinear-subspace rank core"
+        ),
+        poseidonLinearTrailRounds: one(
+          report,
+          /^partial-round trails: linear=([0-9]+) nonlinear=[0-9]+ of production RP=[0-9]+$/gmu,
+          "Poseidon2b linear-subspace trail length"
+        ),
+        poseidonNonlinearTrailRounds: one(
+          report,
+          /^partial-round trails: linear=[0-9]+ nonlinear=([0-9]+) of production RP=[0-9]+$/gmu,
+          "Poseidon2b nonlinear-subspace trail length"
+        ),
+        poseidonNonlinearProjectionBits: one(
+          report,
+          /^lowest-cost ePrint 2026\/1792 production projection: .+ at ([0-9]+\.[0-9]{12}) bits$/gmu,
+          "Poseidon2b nonlinear-subspace projection"
+        )
+      }
+    : {};
   const observation = {
     certificateCommit: certificateRevision,
     productionCommit: one(report, /^source revision: ([0-9a-f]{40})$/gmu, "production revision"),
@@ -90,7 +125,8 @@ export function runCertificate(directory: string, certificateRevision: string): 
       report,
       /^descriptive log2\(d_I\^2\) dedicated algebraic projection: ([0-9]+\.[0-9]{12})$/gmu,
       "Poseidon2b classical projection"
-    )
+    ),
+    ...nonlinearObservation
   };
   observationCache.set(cacheKey, observation);
   return { ...observation };

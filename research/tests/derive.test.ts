@@ -43,6 +43,16 @@ test("Poseidon2b work factors remain separated by exact attack game", () => {
   assert.equal(new Set(metricIds).size, metricIds.length);
 });
 
+test("the applicable nonlinear-subspace result has one non-ranked reproduction track", () => {
+  const state = deriveResearchState(path.resolve("."));
+  const tracks = state.tracks.filter((track) => track.id === "poseidon2b-nonlinear-subspace-reproduction");
+  assert.equal(tracks.length, 1);
+  assert.equal(tracks[0]?.kind, "reproduction");
+  assert.equal(tracks[0]?.direction, "non-ranked");
+  assert.equal(tracks[0]?.targetClaimId, "poseidon2b-classical-audit");
+  assert.equal(tracks[0]?.scoreMetricId, undefined);
+});
+
 test("a refuted declared premise visibly invalidates the dependent production conclusion", () => {
   const temporary = mkdtempSync(path.join(tmpdir(), "parano1d-derived-premise-"));
   try {

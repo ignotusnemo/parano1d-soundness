@@ -227,7 +227,11 @@ export const reproductionPayloadSchema = z
     sequentialIdealQromBits: z.string().regex(/^[0-9]+\.[0-9]{12}$/),
     categoryOneGateDepthBits: z.string().regex(/^[0-9]+\.[0-9]{12}$/),
     categoryOneIdealEnvelope: z.string().regex(/^0\.[0-9]{18}$/),
-    poseidonClassicalProjectionBits: z.string().regex(/^[0-9]+\.[0-9]{12}$/)
+    poseidonClassicalProjectionBits: z.string().regex(/^[0-9]+\.[0-9]{12}$/),
+    poseidonNonlinearRankCore: z.string().regex(/^[0-9a-f]{32}$/).optional(),
+    poseidonLinearTrailRounds: z.string().regex(/^[0-9]+$/).optional(),
+    poseidonNonlinearTrailRounds: z.string().regex(/^[0-9]+$/).optional(),
+    poseidonNonlinearProjectionBits: z.string().regex(/^[0-9]+\.[0-9]{12}$/).optional()
   })
   .strict();
 

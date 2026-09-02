@@ -6,7 +6,8 @@ import test from "node:test";
 import { createChallengeSubmission, sealChallengeSubmission } from "@/lib/challenge";
 import { loadCatalog } from "@/lib/catalog";
 import { parseStrictJson } from "@/lib/strict-json";
-import { verifySubmission } from "@/lib/verifier";
+import { evidenceFromAcceptedResult } from "@/lib/promotion";
+import { loadSubmission, verifySubmission } from "@/lib/verifier";
 
 test("every active public contract and agent task has a consistent publication boundary", () => {
   const root = path.resolve(".");
@@ -59,6 +60,40 @@ test("an agent-ready workspace seals passive evidence and reaches contract revie
     });
     assert.equal(result.status, "pending-review");
     assert.equal(parseStrictJson(readFileSync(path.join(destination, "artifact.json"), "utf8")) !== null, true);
+  } finally {
+    rmSync(temporary, { recursive: true, force: true });
+  }
+});
+
+test("the nonlinear-subspace reproduction is machine checked and promoted without a frontier metric", () => {
+  const temporary = mkdtempSync(path.join(tmpdir(), "parano1d-nonlinear-reproduction-"));
+  const destination = path.join(temporary, "nonlinear-subspace-reproduction");
+  try {
+    const files = createChallengeSubmission({
+      root: path.resolve("."),
+      destination,
+      id: "nonlinear-subspace-reproduction",
+      trackId: "poseidon2b-nonlinear-subspace-reproduction",
+      attribution: { mode: "human" }
+    });
+    assert.deepEqual(files.map((file) => path.basename(file)), ["submission.json"]);
+    const result = verifySubmission({
+      root: path.resolve("."),
+      submissionDirectory: destination,
+      context: {
+        repository: "ignotusnemo/parano1d-soundness",
+        commit: "1".repeat(40),
+        actor: "ignotusnemo",
+        pullRequest: 46
+      },
+      checkedAt: "2026-09-02T12:00:00.000Z"
+    });
+    assert.equal(result.status, "accepted");
+    assert.equal(result.observed.poseidonNonlinearRankCore, "0000000000000000000000000000be32");
+    assert.equal(result.observed.poseidonNonlinearProjectionBits, "1022.830074998558");
+    const record = evidenceFromAcceptedResult(loadSubmission(destination), result);
+    assert.deepEqual(record.effects, [{ claimId: "poseidon2b-classical-audit", status: "verified", metrics: [] }]);
+    assert.equal(record.source.authorLogin, "ignotusnemo");
   } finally {
     rmSync(temporary, { recursive: true, force: true });
   }

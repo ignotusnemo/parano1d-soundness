@@ -2,6 +2,10 @@
 
 Each directory is an agent-ready research task tied to one active public contract. A researcher chooses a task, gives its `AGENT_TASK.md` to any local AI agent and submits only passive result data under `research/submissions/<id>/`.
 
+The nonlinear-subspace reproduction track is deliberately narrow: the agent
+reruns one pinned ePrint 2026/1792 specialization and submits only the generated
+manifest. No open-ended repository audit is required.
+
 From `research/`, list and create a submission with:
 
 ```sh

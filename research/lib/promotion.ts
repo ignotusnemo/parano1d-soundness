@@ -10,6 +10,15 @@ function effectsFor(result: VerificationResult): EvidenceEffect[] {
       }
     ];
   }
+  if (result.trackId === "poseidon2b-nonlinear-subspace-reproduction") {
+    return [
+      {
+        claimId: "poseidon2b-classical-audit",
+        status: "verified",
+        metrics: []
+      }
+    ];
+  }
   throw new Error(`track ${result.trackId} does not support automatic promotion`);
 }
 
