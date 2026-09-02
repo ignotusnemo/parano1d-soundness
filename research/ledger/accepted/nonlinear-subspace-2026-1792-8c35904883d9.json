@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "nonlinear-subspace-2026-1792-8c35904883d9",
+  "recordType": "accepted-submission",
+  "trackId": "poseidon2b-nonlinear-subspace-reproduction",
+  "acceptedAt": "2026-09-02T11:07:59.855Z",
+  "title": "ePrint 2026/1792 production specialization",
+  "note": "Reproduces the exact nonlinear-subspace audit for the pinned width-four production Poseidon2b compression. The verified result does not change the frontier.",
+  "attribution": {
+    "mode": "human"
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "8c35904883d913e19e19a9afe711bf0e3dd78b92",
+    "url": "https://github.com/ignotusnemo/parano1d-soundness/pull/8",
+    "authorLogin": "ignotusnemo",
+    "authorUrl": "https://github.com/ignotusnemo",
+    "avatarUrl": "https://avatars.githubusercontent.com/ignotusnemo",
+    "pullRequest": 8
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research",
+    "verifierVersion": "0.1.0",
+    "resultDigest": "ea17bc517521063edee207bd755c678258c0bf9ae22d04434aefa145d4a73fa7",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "poseidon2b-classical-audit",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}
