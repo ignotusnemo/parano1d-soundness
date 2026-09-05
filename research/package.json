@@ -10,6 +10,7 @@
   "scripts": {
     "state": "tsx scripts/export-state.ts",
     "typecheck": "tsc --noEmit",
+    "pretest": "cargo --version",
     "test": "tsx --test tests/**/*.test.ts",
     "verify": "tsx scripts/verify-submission.ts",
     "verify:github-pr": "tsx scripts/verify-github-pr.ts",
