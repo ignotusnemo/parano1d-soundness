@@ -4,7 +4,7 @@ This standalone repository instantiates the security analysis for a pinned Paran
 
 The public claim graph, open research contracts, accepted evidence and contributor record are versioned in [`research/`](research/). The service at [noid.network](https://noid.network/) uses this public verification layer but is not part of the certificate or its acceptance boundary.
 
-The analysis inputs and production acceptance correspondence are pinned to Parano1d v1.0.4 commit [`fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0`](https://github.com/ignotusnemo/parano1d/commit/fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0). The complete standalone snapshot is [`model/production.toml`](model/production.toml), and its repository-relative source-symbol and acceptance-path map is [`docs/parameter-provenance.md`](docs/parameter-provenance.md). The executable embeds this snapshot and does not import another checkout. A later production revision requires an explicit snapshot and provenance renewal.
+The analysis inputs and production acceptance correspondence are pinned to Parano1d commit [`7f65daaae414128aa4377ca0ac1e96fd6dbc31a5`](https://github.com/ignotusnemo/parano1d/commit/7f65daaae414128aa4377ca0ac1e96fd6dbc31a5), including the analysis-only wallet Johnson refinement. The complete standalone snapshot is [`model/production.toml`](model/production.toml), and its repository-relative source-symbol and acceptance-path map is [`docs/parameter-provenance.md`](docs/parameter-provenance.md). The executable embeds this snapshot and does not import another checkout. A later production revision requires an explicit snapshot and provenance renewal.
 
 The repository pins the same Rust `1.96.0` toolchain used by the source revision.
 
@@ -17,9 +17,9 @@ The repository pins the same Rust `1.96.0` toolchain used by the source revision
 | Block-Tiwari conjectured comparison, reference only | **127 bits** |
 | Sequential ideal-QROM half-success boundary | **64.707407428576 bits** |
 | NIST Post-Quantum Cryptography Category | **Category 1** |
-| Dominant Category 1 gate-depth floor | **173.273866314232 bits** |
-| Margin over the NIST `2^170` reference | **3.273866314232 bits** |
-| Complete ideal bound at the Category 1 envelope | **0.053364140323608411** |
+| Dominant Category 1 gate-depth floor | **173.391078499301 bits** |
+| Margin over the NIST `2^170` reference | **3.391078499301 bits** |
+| Complete ideal bound at the Category 1 envelope | **0.049330348213215253** |
 
 The provable FS-FRI row is the certified classical lower bound. The conjectured row is shown only to compare against the corresponding literature estimate and is not used by the certificate. The remaining rows concern a different game: acceptance of an invalid terminal State whose recursive ancestry starts at genesis by a quantum adversary.
 
@@ -37,7 +37,7 @@ at T = 2^64:
     Delta_P2b < 0.312471062061564258
 
 at the NIST Post-Quantum Cryptography Category 1 resource envelope:
-    Delta_P2b^C1 < 0.446635859676391589
+    Delta_P2b^C1 < 0.450669651786784747
 ```
 
 The Category 1 result also states the coherent response-cost premise used to
@@ -172,6 +172,19 @@ normative result thresholds:
 ```sh
 cargo test --release --locked
 ```
+
+## Wallet Johnson refinement
+
+The current snapshot tightens the W65 wallet's local query bound from
+`(15/64)^65` to `5^-65`, with local exponent `150.925326167679` bits.
+The field-exception numerator is `701202001931`. The
+[wallet derivation](docs/wallet-johnson.md) proves the finite list and
+correlated-agreement specialization using existing characteristic-two results.
+
+This is an analysis-only update. Queries, matrices, transcript and consensus
+are unchanged. History now limits the dominant resource term. The classical
+FS-FRI and sequential ideal-QROM results are unchanged, and the resource
+assessment remains Category 1 under the same premises.
 
 ## Source layout
 

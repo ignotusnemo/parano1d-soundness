@@ -6,7 +6,7 @@
 use serde::Deserialize;
 
 pub const PINNED_SOURCE_REPOSITORY: &str = "https://github.com/ignotusnemo/parano1d";
-pub const PINNED_SOURCE_REVISION: &str = "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0";
+pub const PINNED_SOURCE_REVISION: &str = "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5";
 pub const PRODUCTION_SNAPSHOT_PATH: &str = "model/production.toml";
 pub const PRODUCTION_SNAPSHOT: &str = include_str!("../model/production.toml");
 pub const MERKLE_COMPRESSION_MODE: &str = "truncated-permutation-feed-forward";
@@ -346,9 +346,9 @@ mod tests {
                 parameters.wallet_radius_numerator,
                 parameters.wallet_radius_denominator,
             ),
-            (49, 64)
+            (4, 5)
         );
-        assert_eq!(parameters.wallet_field_bad_numerator, 29_163_918_888);
+        assert_eq!(parameters.wallet_field_bad_numerator, 701_202_001_931);
         assert_eq!(parameters.wallet_query_seed_lanes, 7);
         assert_eq!(parameters.history_inverse_rate, 4);
         assert_eq!(parameters.history_queries, 133);

@@ -2,7 +2,7 @@ schema = 2
 name = "parano1d-production-soundness"
 description = "Standalone production-parameter snapshot for the executable soundness certificate"
 source_repository = "https://github.com/ignotusnemo/parano1d"
-source_revision = "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0"
+source_revision = "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5"
 continued_currentness_guaranteed = false
 
 [profile]
@@ -12,9 +12,9 @@ digest_bits = 256
 [profile.wallet]
 inverse_rate = 32
 queries = 65
-radius_numerator = 49
-radius_denominator = 64
-field_bad_numerator = 29163918888
+radius_numerator = 4
+radius_denominator = 5
+field_bad_numerator = 701202001931
 query_seed_lanes = 7
 
 [profile.history]

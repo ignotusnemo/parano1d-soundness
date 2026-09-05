@@ -3,15 +3,15 @@
 The executable certificate reads its complete protocol input from
 [`model/production.toml`](../model/production.toml). That snapshot is pinned to
 Parano1d commit
-[`fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0`](https://github.com/ignotusnemo/parano1d/commit/fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0), the v1.0.4 release.
+[`7f65daaae414128aa4377ca0ac1e96fd6dbc31a5`](https://github.com/ignotusnemo/parano1d/commit/7f65daaae414128aa4377ca0ac1e96fd6dbc31a5), which refines the W65 wallet analysis without a protocol change.
 
 The paths and symbols below are relative to that revision. They identify the production definitions from which each snapshot field was taken and the production paths that can accept a terminal State. The standalone calculator does not open or build another checkout. Updating the production source therefore requires a new revision pin, a renewed snapshot and a renewed correspondence audit in the same change.
 
 ## Revision renewal audit
 
-The preceding certificate pinned commit [`a1187ee01b74f889560bac0eb813d5ca49c6fe0d`](https://github.com/ignotusnemo/parano1d/commit/a1187ee01b74f889560bac0eb813d5ca49c6fe0d). A direct Git object comparison from that revision to the v1.0.4 pin found identical blobs for every parameter source listed below, `noid_recursive/src/accumulator.rs`, `noid_chain/src/consensus/validation.rs` and `noid_chain/src/block.rs`. The only change in `noid_recursive/src/acceptance/history_step/relation.rs` adds cooperative cancellation to the prover path. The existing `verify_history_step_terminal` implementation and its validation path are unchanged.
+The preceding certificate pinned the v1.0.4 release at [`fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0`](https://github.com/ignotusnemo/parano1d/commit/fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0). A direct Git object comparison with the renewed pin found identical blobs for every parameter source and acceptance path listed below except `noid_gkr/src/zk_auth_qrom.rs`. That file changes the analysis radius from `49/64` to `4/5`, the finite candidate bound and the field-exception ledger. Its companion `noid_gkr/src/zk_auth_rbr.rs` updates extractor-side checks, not production proof acceptance.
 
-The production workspace's integrated `noid_soundness` release tests pass against the v1.0.4 source definitions, and its exact numerical conclusions match this standalone snapshot field for field. The acceptance routing changed after the preceding pin, so the current ordinary block, recursive suffix, reorg, snapshot and local-producer paths were audited separately below.
+The W65/H133 geometry, trace and challenge fields, Poseidon2b instance, matrices, native consensus predicates and all acceptance paths below are unchanged. The [wallet derivation](wallet-johnson.md) records the renewed mathematical specialization. The production workspace's integrated `noid_soundness` release tests and the standalone snapshot tests pass, and their exact numerical reports agree after removing the standalone provenance header. This renewal changes analytical bounds, not the protocol or its production acceptance boundary.
 
 ## Challenge and digest widths
 
@@ -30,8 +30,8 @@ other and with the value used by every certificate calculation.
 | Snapshot input | Production source |
 |---|---|
 | inverse rate, query count and query-seed lanes | `noid_fri_binius/src/zk_capsule.rs::{ZK_AUTH_CAPSULE_PARAMETERS,ZK_AUTH_CAPSULE_GEOMETRY}` |
-| selected radius `49/64` | `noid_gkr/src/zk_auth_qrom.rs::ZK_AUTH_SELECTED_JOHNSON_PCS_PARAMETERS` |
-| field exceptional-set numerator `29,163,918,888` | `noid_gkr/src/zk_auth_qrom.rs::conditional_selected_zk_auth_base_iop_ledger` |
+| selected radius `4/5` | `noid_gkr/src/zk_auth_qrom.rs::ZK_AUTH_SELECTED_JOHNSON_PCS_PARAMETERS` |
+| field exceptional-set numerator `701,202,001,931` | `noid_gkr/src/zk_auth_qrom.rs::conditional_selected_zk_auth_base_iop_ledger` |
 | independent wallet query-count check | the same ledger's `query_term_exponent` |
 
 The query count is stored independently for the wallet ledger and capsule
