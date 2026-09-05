@@ -1,7 +1,7 @@
 import { existsSync, lstatSync, readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
-import { loadTrack } from "@/lib/catalog";
+import { loadVerificationTrack } from "@/lib/catalog";
 import { digestCanonicalJson } from "@/lib/canonical-json";
 import { parseStrictJson } from "@/lib/strict-json";
 import {
@@ -108,7 +108,7 @@ export function verifySubmission(options: VerificationOptions): VerificationResu
   if (path.basename(path.resolve(options.submissionDirectory)) !== manifest.id) {
     return rejected(manifest, context, ["submission identifier does not match its directory"], {}, checkedAt);
   }
-  const track = loadTrack(options.root, manifest.track);
+  const track = loadVerificationTrack(options.root, manifest.track, manifest.contractVersion, options.allowLegacyContractVersion === true);
   const currentContract = track.contractVersion === manifest.contractVersion;
   const legacyContract = options.allowLegacyContractVersion === true
     && (track.legacyContractVersions ?? []).includes(manifest.contractVersion);
@@ -227,8 +227,8 @@ export function verifySubmission(options: VerificationOptions): VerificationResu
       }
     }
     if (payload.affectedClaimId !== track.targetClaimId) reasons.push("affected claim does not match the selected track");
-    if (payload.productionCommit !== PRODUCTION_REVISION) reasons.push("production commit does not match the frozen production revision");
-    if (payload.certificateCommit !== CERTIFICATE_REVISION) reasons.push("certificate commit does not match the frozen certificate revision");
+    if (payload.productionCommit !== (track.expected?.productionCommit ?? PRODUCTION_REVISION)) reasons.push("production commit does not match the frozen production revision");
+    if (payload.certificateCommit !== (track.expected?.certificateCommit ?? CERTIFICATE_REVISION)) reasons.push("certificate commit does not match the frozen certificate revision");
     if (reasons.length > 0) return rejected(manifest, context, reasons, observed, checkedAt);
     return finalizeResult({
       schemaVersion: 1,

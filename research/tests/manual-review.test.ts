@@ -25,7 +25,7 @@ function reviewSubmission(affectedClaimId: string): { root: string; directory: s
     schemaVersion: 1,
     id: "all-root-independent-review",
     track: "recursive-all-root-proof",
-    contractVersion: "1.0.0",
+    contractVersion: "1.1.0",
     title: "Independent all-root theorem review",
     note: "This report checks the exact statement-keyed all-root theorem against the pinned from-genesis invalid-State game.",
     attribution: { mode: "ai-assisted", model: { provider: "openai", model: "gpt-5", displayName: "GPT-5", agent: "Codex" } },

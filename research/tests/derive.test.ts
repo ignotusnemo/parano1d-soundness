@@ -14,9 +14,9 @@ test("the published end-to-end corollary is proved with explicit production prem
     "fixed-poseidon2b-delta"
   ]);
   assert.equal(state.claims.find((claim) => claim.id === "adaptive-all-root-qrom")?.status, "proved");
-  assert.equal(state.metrics.find((metric) => metric.id === "category-one.margin-over-reference")?.value, "+3.273866314232");
+  assert.equal(state.metrics.find((metric) => metric.id === "category-one.margin-over-reference")?.value, "+3.391078499301");
   assert.equal(state.leaderboard[0]?.login, "ignotusnemo");
-  assert.equal(state.leaderboard[0]?.accepted, 1);
+  assert.equal(state.leaderboard[0]?.accepted, 3);
   assert.ok((state.leaderboard[0]?.frontierMoves ?? 0) > 0);
 });
 
@@ -25,7 +25,7 @@ test("classical Poseidon projection is not presented as the Category 1 metric", 
   const poseidon = state.claims.find((claim) => claim.id === "poseidon2b-classical-audit");
   const categoryOne = state.claims.find((claim) => claim.id === "ideal-category-one-bound");
   assert.equal(poseidon?.metrics[0]?.value, "409.873818620410");
-  assert.ok(categoryOne?.metrics.some((metric) => metric.value === "173.273866314232"));
+  assert.ok(categoryOne?.metrics.some((metric) => metric.value === "173.391078499301"));
   assert.ok(!categoryOne?.metrics.some((metric) => metric.value === "409.873818620410"));
   assert.ok(!state.metrics.some((metric) => metric.id.startsWith("fs-fri.")));
   assert.ok(!state.metrics.some((metric) => metric.id.startsWith("poseidon2b.")));

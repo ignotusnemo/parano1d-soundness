@@ -5,15 +5,14 @@
   "kind": "attack",
   "direction": "non-ranked",
   "targetClaimId": "fixed-poseidon2b-delta",
-  "contractVersion": "1.2.0",
+  "contractVersion": "1.1.0",
   "legacyContractVersions": [
-    "1.1.0",
     "1.0.0"
   ],
   "validator": "manual-audit",
   "state": "active",
   "acceptance": "Only conclusive evidence that derives valid production inputs and demonstrates an accepted production effect may be submitted. A structured production-impact artifact is mandatory. Inconclusive and component-only results finish privately without a pull request.",
-  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/research/contracts/poseidon2b-attack-v1.2.0.md",
+  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/research/contracts/poseidon2b-attack-v1.1.0.md",
   "submissionPolicy": {
     "allowedFindings": [
       "challenges",
@@ -98,7 +97,7 @@
     ]
   },
   "expected": {
-    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
-    "certificateCommit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c"
+    "productionCommit": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",
+    "certificateCommit": "c3ea3342fbe27111c84046613010f14f13b917c6"
   }
 }

@@ -2,21 +2,26 @@
   "schemaVersion": 1,
   "id": "reproduction-valid",
   "track": "certificate-reproduction",
-  "contractVersion": "1.0.0",
+  "contractVersion": "1.1.0",
   "title": "Independent reproduction of certificate c3ea3342",
   "note": "This example declares the values independently reproduced by the protected verifier. It affects only reproducibility and cannot change a security bound.",
   "attribution": {
     "mode": "ai-assisted",
-    "model": { "provider": "openai", "model": "gpt-5", "displayName": "GPT-5", "agent": "Codex" }
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5",
+      "displayName": "GPT-5",
+      "agent": "Codex"
+    }
   },
   "payload": {
-    "certificateCommit": "c3ea3342fbe27111c84046613010f14f13b917c6",
-    "productionCommit": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",
-    "reportSha256": "1466dec6e33a262997810b05a497dee875b5086525c9bfb073e4bbdbdc90d73b",
+    "certificateCommit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "reportSha256": "b0c7fda8b7bf8e9bbdb893d4f33d5bc54eb2358942757ac0a211076a9255dfc9",
     "blockTiwariProvableBits": "127.194502224322",
     "sequentialIdealQromBits": "64.707407428576",
-    "categoryOneGateDepthBits": "173.273866314232",
-    "categoryOneIdealEnvelope": "0.053364140323608411",
+    "categoryOneGateDepthBits": "173.391078499301",
+    "categoryOneIdealEnvelope": "0.049330348213215253",
     "poseidonClassicalProjectionBits": "409.873818620410"
   }
 }

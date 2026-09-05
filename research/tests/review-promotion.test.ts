@@ -69,7 +69,7 @@ test("an authenticated service attestation replaces only the maintainer GitHub a
       pullRequest: 3
     };
     const checkedAt = "2026-08-29T22:12:32.167Z";
-    const result = verifySubmission({ root, submissionDirectory: hostedSubmissionDirectory, context: hostedContext, checkedAt });
+    const result = verifySubmission({ root, submissionDirectory: hostedSubmissionDirectory, context: hostedContext, checkedAt, allowLegacyContractVersion: true });
     assert.ok(result.context.researcher);
     const unsigned = reviewDecisionSchema.parse({
       schemaVersion: 1,

@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "id": "official-certificate-e45cfefd",
+  "recordType": "official-baseline",
+  "trackId": "official-certificate",
+  "acceptedAt": "2026-09-05T12:41:56.866Z",
+  "title": "W65 wallet Johnson refinement",
+  "note": "Analysis-only renewal at radius 4/5 with 17 candidates per RS layer. The local wallet query density is 5^-65 and the field numerator is 701202001931. W65/H133, matrices, transcript and consensus are unchanged. History now limits the dominant Category 1 term. Classical FS-FRI, sequential ideal-QROM and Category 1 are unchanged. Earlier accepted evidence retains its original source pins and is not presented as independent review of this refinement.",
+  "attribution": {
+    "mode": "human"
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "url": "https://github.com/ignotusnemo/parano1d-soundness/commit/e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "authorLogin": "ignotusnemo",
+    "authorUrl": "https://github.com/ignotusnemo",
+    "avatarUrl": "https://avatars.githubusercontent.com/ignotusnemo"
+  },
+  "verification": {
+    "verifier": "parano1d-soundness",
+    "verifierVersion": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "resultDigest": "b0c7fda8b7bf8e9bbdb893d4f33d5bc54eb2358942757ac0a211076a9255dfc9",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "production-profile-snapshot",
+      "status": "verified",
+      "metrics": [
+        {
+          "id": "profile.wallet-queries",
+          "label": "Wallet queries",
+          "value": "65",
+          "unit": "queries",
+          "kind": "reference",
+          "scope": "Pinned W65 production profile"
+        },
+        {
+          "id": "profile.history-queries",
+          "label": "History queries",
+          "value": "133",
+          "unit": "queries",
+          "kind": "reference",
+          "scope": "Pinned H133 production profile"
+        }
+      ]
+    },
+    {
+      "claimId": "local-rbr-extraction",
+      "status": "proved",
+      "metrics": []
+    },
+    {
+      "claimId": "adaptive-all-root-qrom",
+      "status": "proved",
+      "metrics": []
+    },
+    {
+      "claimId": "sequential-ideal-qrom",
+      "status": "proved",
+      "metrics": [
+        {
+          "id": "qrom.sequential-boundary",
+          "label": "Sequential ideal-QROM boundary",
+          "value": "64.707407428576",
+          "unit": "bits",
+          "kind": "lower-bound",
+          "scope": "First total quantum query budget not covered by the strict half-success inequality"
+        },
+        {
+          "id": "qrom.at-two-to-64",
+          "label": "Ideal success bound at 2^64 queries",
+          "value": "0.187528937938435742",
+          "unit": "probability",
+          "kind": "probability-upper-bound",
+          "scope": "Complete from-genesis typed ideal-QROM invalid-State game"
+        }
+      ]
+    },
+    {
+      "claimId": "typed-parallel-qrom",
+      "status": "proved",
+      "metrics": []
+    },
+    {
+      "claimId": "coherent-response-schedule",
+      "status": "verified",
+      "metrics": [
+        {
+          "id": "coherent-response.logical-gates",
+          "label": "Coherent response logical gates",
+          "value": "17648280",
+          "unit": "logical gates",
+          "kind": "resource-count",
+          "scope": "One exact production Poseidon2b permutation response"
+        },
+        {
+          "id": "coherent-response.logical-depth",
+          "label": "Coherent response logical depth",
+          "value": "11352",
+          "unit": "logical depth",
+          "kind": "resource-count",
+          "scope": "One exact production Poseidon2b permutation response"
+        },
+        {
+          "id": "coherent-response.gate-depth",
+          "label": "Coherent response gate-depth",
+          "value": "200343274560",
+          "unit": "logical gate-depth",
+          "kind": "resource-count",
+          "scope": "One exact production Poseidon2b permutation response"
+        }
+      ]
+    },
+    {
+      "claimId": "ideal-category-one-bound",
+      "status": "proved",
+      "metrics": [
+        {
+          "id": "category-one.nist-category",
+          "label": "NIST post-quantum category",
+          "value": "Category 1",
+          "unit": "NIST PQC",
+          "kind": "reference",
+          "scope": "Depth-aware resource target referenced to AES-128 exhaustive key search"
+        },
+        {
+          "id": "category-one.gate-depth-floor",
+          "label": "Half-success gate-depth floor",
+          "value": "173.391078499301",
+          "unit": "bits",
+          "kind": "lower-bound",
+          "scope": "Dominant from-genesis typed ideal-QROM term under the declared response-cost premise",
+          "exact": "2582861384452286892833325057050995293191443111989882812744743549792540982036442341587336678904960313210157811790075582062080343111263242759093167269645800224470128715625395480104030006611732974857334051470818461745458718146894519059104061085244931158992525109590604469742000276117088211181678958792044836748972688959802682716826674162615855020863056955579477710989205885226684868862583216550006323378529728400015640474976163821426359157684502831390916991061287782140018099905870703468725473018124586993726463785056088543586275656275579438190724539202238601586751281227043231188681264992865318813263495234737174135842764180728360168173260144595450334904039540760583530903761447862035897042063657395360898273003459952769742358220210874454953/164507419701678395023593470962819625103582027565106587125224151788347490854855732311338431265670521198353475185069732550301949041450328593104444771048522908254954835999258684022628023966774529461213488739829686837755453721947815254006463560260296817692536710754038027435792471344710466839511595207555899466728095483072627439893296346373057996373980471897633367046899314617866199759015473465338604004190787819430260000208080204781289801199641134035429287570856582999363672283680602904825020470202691880239531259389645373897838275523037229790808393600230817351885383653252258860045384028416399873526694992671571805896607320099513760254939629476245248235720057159978307900149244960121552896"
+        },
+        {
+          "id": "category-one.margin-over-reference",
+          "label": "Margin over the NIST reference",
+          "value": "+3.391078499301",
+          "unit": "bits",
+          "kind": "lower-bound",
+          "scope": "Difference between the dominant half-success floor and the 2^170 gate-depth reference"
+        },
+        {
+          "id": "category-one.ideal-envelope",
+          "label": "Complete ideal success bound",
+          "value": "0.049330348213215253",
+          "unit": "probability",
+          "kind": "probability-upper-bound",
+          "scope": "Complete from-genesis typed ideal-QROM bound at the NIST Category 1 resource envelope"
+        },
+        {
+          "id": "category-one.poseidon-delta-headroom",
+          "label": "Fixed Poseidon2b deviation headroom",
+          "value": "0.450669651786784747",
+          "unit": "probability",
+          "kind": "upper-bound",
+          "scope": "Sufficient event-specific production condition for the fixed Poseidon2b compiler"
+        }
+      ]
+    },
+    {
+      "claimId": "poseidon2b-classical-audit",
+      "status": "verified",
+      "metrics": [
+        {
+          "id": "poseidon2b.appendix-a-projection",
+          "label": "Applicable published attack projection",
+          "value": "409.873818620410",
+          "unit": "bits",
+          "kind": "reference",
+          "scope": "Classical dedicated algebraic ideal-degree model for exact two-to-one production compression"
+        }
+      ]
+    },
+    {
+      "claimId": "current-production-correspondence",
+      "status": "verified",
+      "metrics": []
+    },
+    {
+      "claimId": "production-category-one",
+      "status": "proved",
+      "metrics": []
+    },
+    {
+      "claimId": "block-tiwari-fs-fri",
+      "status": "proved",
+      "metrics": [
+        {
+          "id": "fs-fri.provable-work",
+          "label": "Provable FS-FRI work",
+          "value": "127.194502224322",
+          "unit": "bits",
+          "kind": "lower-bound",
+          "scope": "Separate classical-ROM expected-work comparison"
+        },
+        {
+          "id": "fs-fri.conjectured-work",
+          "label": "Conjectured FS-FRI work",
+          "value": "127.207518749639",
+          "unit": "bits",
+          "kind": "reference",
+          "scope": "Separate Block-Tiwari conjectured classical-ROM comparison"
+        }
+      ]
+    }
+  ]
+}

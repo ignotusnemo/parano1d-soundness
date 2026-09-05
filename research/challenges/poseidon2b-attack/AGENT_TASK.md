@@ -6,7 +6,7 @@ Find and verify a conclusive reachable production break against the exact Poseid
 
 ## Pinned materials
 
-Use `contracts/poseidon2b-attack-v1.1.0.md`, certificate revision `c3ea3342fbe27111c84046613010f14f13b917c6` in `https://github.com/ignotusnemo/parano1d-soundness` and production revision `fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0` in `https://github.com/ignotusnemo/parano1d`. Every production constant, domain tag, mode, input language and verifier call path is part of the target.
+Use `contracts/poseidon2b-attack-v1.2.0.md`, certificate revision `e45cfefd0632ed48d9f2f1975bf5174b5356a37c` in `https://github.com/ignotusnemo/parano1d-soundness` and production revision `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://github.com/ignotusnemo/parano1d`. Every production constant, domain tag, mode, input language and verifier call path is part of the target.
 
 ## Useful results
 
@@ -20,7 +20,7 @@ If you cannot prove a qualifying production effect, use the hosted `no-result` o
 
 ## Required output
 
-Read `contracts/poseidon2b-attack-v1.1.0.md`. Complete `report.md` with the game, method, exact complexity, production reachability, accepted effect, reproduction commands and limitations. A qualifying result must include `artifact.json` matching `poseidon2b-production-impact-v1`. Larger code must be public at an immutable commit. Never submit an executable binary.
+Read `contracts/poseidon2b-attack-v1.2.0.md`. Complete `report.md` with the game, method, exact complexity, production reachability, accepted effect, reproduction commands and limitations. A qualifying result must include `artifact.json` matching `poseidon2b-production-impact-v1`. Larger code must be public at an immutable commit. Never submit an executable binary.
 
 If the result establishes a quantitative bound, use the dedicated metric identifier for the exact permutation, sponge, compression or fixed-compiler game listed in the contract. Never place unlike games under one generic work metric.
 

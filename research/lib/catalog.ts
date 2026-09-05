@@ -1,5 +1,5 @@
 import path from "node:path";
-import { existsSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 import type { ClaimDefinition, EvidenceRecord, TrackDefinition } from "@/lib/types";
 import { claimSchema, evidenceRecordSchema, trackSchema } from "@/lib/schemas";
 import { assertUnique, jsonFiles, readStrictJsonFile } from "@/lib/files";
@@ -56,4 +56,19 @@ export function loadTrack(root: string, id: string): TrackDefinition {
   const track = catalog.tracks.find((candidate) => candidate.id === id);
   if (!track) throw new Error(`unknown track ${id}`);
   return track;
+}
+
+/** Archived contracts are available only for explicit accepted-ledger replay. */
+export function loadVerificationTrack(root: string, id: string, version: string, allowLegacy: boolean): TrackDefinition {
+  const current = loadTrack(root, id);
+  if (!allowLegacy || current.contractVersion === version) return current;
+  const archiveRoot = path.join(root, "catalog/archive");
+  if (!existsSync(archiveRoot)) return current;
+  const candidates = readdirSync(archiveRoot, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .flatMap((entry) => jsonFiles(path.join(archiveRoot, entry.name)))
+    .map((filePath) => trackSchema.parse(readStrictJsonFile(filePath)))
+    .filter((track) => track.id === id && (track.contractVersion === version || (track.legacyContractVersions ?? []).includes(version)));
+  if (candidates.length > 1) throw new Error(`ambiguous archived contract ${id} v${version}`);
+  return candidates[0] ?? current;
 }

@@ -104,11 +104,11 @@ function productionImpactArtifact() {
     schemaVersion: 1,
     artifactType: "poseidon2b-production-impact-v1",
     finding: "challenges",
-    productionCommit: "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",
+    productionCommit: "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
     game: "poseidon2b.compression-collision-work-bits",
     productionPath: {
       entryPoints: ["noid_ivc_core::merkle::hash_pair"],
-      sourceLocations: ["https://github.com/ignotusnemo/parano1d/blob/fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0/noid_ivc_core/src/merkle.rs"],
+      sourceLocations: ["https://github.com/ignotusnemo/parano1d/blob/7f65daaae414128aa4377ca0ac1e96fd6dbc31a5/noid_ivc_core/src/merkle.rs"],
       validInputDerivation: "Both colliding child digests are derived from complete valid production leaf encodings and lower node evaluations at the pinned commit, with every intermediate digest included in the witness.",
       observedEffect: "The independently replayed valid production artifacts contain different committed data but produce the same accepted PCS root at the exact verifier entry point named above."
     },
@@ -196,9 +196,11 @@ test("legacy Poseidon2b submissions are accepted only for historical ledger veri
       attribution: { mode: "human" }
     });
     const manifestPath = path.join(destination, "submission.json");
-    const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as { contractVersion: string; payload: { finding: string } };
+    const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as { contractVersion: string; payload: { finding: string; productionCommit: string; certificateCommit: string } };
     manifest.contractVersion = "1.0.0";
     manifest.payload.finding = "inconclusive";
+    manifest.payload.productionCommit = "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0";
+    manifest.payload.certificateCommit = "c3ea3342fbe27111c84046613010f14f13b917c6";
     writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
 
     const current = verifySubmission({

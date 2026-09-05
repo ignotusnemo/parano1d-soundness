@@ -5,11 +5,11 @@
   "kind": "audit",
   "direction": "non-ranked",
   "targetClaimId": "current-production-correspondence",
-  "contractVersion": "1.1.0",
+  "contractVersion": "1.0.0",
   "validator": "manual-audit",
   "state": "active",
   "acceptance": "The schema and source pin are checked automatically. Supporting or challenging results require a maintainer and independent reviewer. A maintainer may retain a rigorous scoped inconclusive audit with no claim or frontier effects.",
-  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/research/contracts/production-correspondence-v1.1.0.md",
+  "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/research/contracts/production-correspondence-v1.0.0.md",
   "reviewPolicy": {
     "minimumApprovals": 2,
     "minimumIndependentApprovals": 1,
@@ -26,11 +26,8 @@
     },
     "metricRules": []
   },
-  "legacyContractVersions": [
-    "1.0.0"
-  ],
   "expected": {
-    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
-    "certificateCommit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c"
+    "productionCommit": "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0",
+    "certificateCommit": "c3ea3342fbe27111c84046613010f14f13b917c6"
   }
 }

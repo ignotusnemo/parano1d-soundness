@@ -6,6 +6,10 @@ The service at [noid.network](https://noid.network/) may prepare submissions and
 
 ## Verify the research layer
 
+The current official certificate includes the September 5, 2026 wallet Johnson refinement. Its production and certificate revisions are pinned in `lib/pins.ts`, and its exact report digest and metrics are recorded in `evidence/official/wallet-johnson-2026-09-05.json`. The previous official baseline, submissions, signed reviews and accepted ledger records are preserved unchanged.
+
+Active challenges use renewed versioned contracts. `catalog/archive/` retains the preceding contracts' exact source pins and reproduction values solely for explicit accepted-ledger replay. New submissions must use the active contract and cannot present an old certificate as a reproduction of the new one. Earlier reviews remain evidence about their original revisions, not independent verification of the refined wallet derivation.
+
 ```sh
 npm ci
 npm run typecheck
