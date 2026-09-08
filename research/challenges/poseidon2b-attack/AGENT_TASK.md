@@ -26,4 +26,4 @@ If the result establishes a quantitative bound, use the dedicated metric identif
 
 ## Review
 
-CI rejects inconclusive findings, missing production-impact artifacts and malformed reachability claims before review. Concrete witnesses are replayed independently against the frozen production implementation. A maintainer and two independent cryptographic reviewers must confirm a conclusive result before it affects the public record or frontier.
+Automated checks reject inconclusive findings, missing production-impact artifacts and malformed reachability claims before review. Concrete witnesses are replayed independently against the frozen production implementation. The authenticated portal maintainer reviews the conclusive evidence and signs the final decision before checked publication; this does not relax the production-impact threshold.

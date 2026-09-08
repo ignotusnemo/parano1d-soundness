@@ -97,8 +97,15 @@ export function validateReviewDecision(
     ...(attestedReviewer ? [{ login: attestedReviewer.login, role: "maintainer" as const, reviewUrl: "" }] : [])
   ];
   const independent = decision.reviewers.filter((reviewer) => reviewer.role === "independent");
-  const minimumApprovals = reviewedFinding === "inconclusive" ? 1 : policy.minimumApprovals;
-  const minimumIndependentApprovals = reviewedFinding === "inconclusive" ? 0 : policy.minimumIndependentApprovals;
+  // Local-account reviews are finalized by the authenticated portal maintainer.
+  // The signature above binds the exact report, classification and effects.
+  // External/legacy approvals retain their original multi-reviewer policy.
+  const portalMaintainer = Boolean(attestedReviewer)
+    && decision.attestation?.schemaVersion === 2
+    && decision.context.researcher?.identityProvider === "noid.network";
+  const maintainerFinal = reviewedFinding === "inconclusive" || portalMaintainer;
+  const minimumApprovals = maintainerFinal ? 1 : policy.minimumApprovals;
+  const minimumIndependentApprovals = maintainerFinal ? 0 : policy.minimumIndependentApprovals;
   requireCondition(decision.reviewers.length + (attestedReviewer ? 1 : 0) >= minimumApprovals, `review decision requires ${minimumApprovals} approvals`);
   requireCondition(independent.length >= minimumIndependentApprovals, `review decision requires ${minimumIndependentApprovals} independent approvals`);
   requireCondition(maintainers.some((reviewer) => policy.maintainerLogins.includes(reviewer.login)), "review decision has no approved maintainer");

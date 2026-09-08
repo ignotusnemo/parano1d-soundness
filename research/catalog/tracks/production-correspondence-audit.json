@@ -8,7 +8,7 @@
   "contractVersion": "1.1.0",
   "validator": "manual-audit",
   "state": "active",
-  "acceptance": "The schema and source pin are checked automatically. Supporting or challenging results require a maintainer and independent reviewer. A maintainer may retain a rigorous scoped inconclusive audit with no claim or frontier effects.",
+  "acceptance": "The schema and source pin are checked automatically. The authenticated noid.network maintainer reviews the scoped correspondence result and signs the final decision before checked publication. Inconclusive audits have no claim or frontier effects. External reviews retain their contract approval policy.",
   "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/research/contracts/production-correspondence-v1.1.0.md",
   "reviewPolicy": {
     "minimumApprovals": 2,

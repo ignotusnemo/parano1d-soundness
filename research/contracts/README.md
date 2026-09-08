@@ -2,6 +2,8 @@
 
 Every research track has an exact acceptance contract. A contract defines the security game, accepted evidence, automated checks, semantic review, score direction and the only claim that an accepted result may change.
 
+For local-account submissions on noid.network, the authenticated portal maintainer has final review authority through the existing signed service decision. This applies to pending and new hosted reviews; additional reviewers are advisory, not a prerequisite for Finalize. It supersedes reviewer-count wording in the versioned contracts only for that authenticated hosted route. Mathematical targets, source pins, evidence thresholds, allowed effects and existing signed records are unchanged. Legacy and external review decisions still use their recorded approval-count policy. See [review decisions](../reviews/README.md).
+
 The exact calculator reproduction is machine checked. Cryptographic proofs, circuit results and attacks are source-pinned and schema-checked automatically, then reviewed by the experts named by their contracts. The trusted workflow never executes contributor-controlled code, actions, binaries, package manifests or build scripts.
 
 The active public research contracts are:

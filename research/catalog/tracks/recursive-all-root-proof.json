@@ -8,7 +8,7 @@
   "contractVersion": "1.1.0",
   "validator": "manual-audit",
   "state": "active",
-  "acceptance": "The submission is source-pinned and schema-checked automatically. A maintainer and an independent cryptographic reviewer must confirm whether it supports, strengthens or challenges the exact published theorem before ledger promotion.",
+  "acceptance": "The submission is source-pinned and schema-checked automatically. The authenticated noid.network maintainer reviews whether the argument supports or challenges the exact published theorem and signs the final decision before checked ledger promotion. External reviews retain their contract approval policy.",
   "contractUrl": "https://github.com/ignotusnemo/parano1d-soundness/blob/main/research/contracts/adaptive-all-root-qrom-v1.1.0.md",
   "reviewPolicy": {
     "minimumApprovals": 2,

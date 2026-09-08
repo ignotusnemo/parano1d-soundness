@@ -22,4 +22,4 @@ Complete every section of the generated `report.md`. Cite immutable source lines
 
 ## Review
 
-Automated checks validate identity-independent data, source pins and digests. A Parano1d maintainer and an independent reviewer decide the semantic finding before it enters the ledger.
+Automated checks validate identity-independent data, source pins and digests. The authenticated portal maintainer reviews the evidence and signs the final semantic finding before checked ledger publication. Additional reviews can inform that decision.

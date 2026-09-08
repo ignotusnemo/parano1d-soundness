@@ -22,4 +22,4 @@ Read `contracts/adaptive-all-root-qrom-v1.1.0.md` and the pinned theorem sources
 
 ## Review
 
-The local verifier should return `pending-review`. Mathematical acceptance requires an independent cryptographic review. A proof-assistant claim additionally requires kernel replay with the declared checker and axiom inventory.
+The local verifier should return `pending-review`. Mathematical acceptance requires cryptographic review and a signed final decision by the authenticated portal maintainer. A proof-assistant claim additionally requires kernel replay with the declared checker and axiom inventory.

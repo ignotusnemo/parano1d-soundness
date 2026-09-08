@@ -2,7 +2,7 @@
 
 This directory contains the public claim graph, agent-ready research challenges, versioned acceptance contracts, passive submission verifier and accepted evidence ledger for the Parano1d soundness certificate. These files define the public verification boundary independently of any website or hosted backend.
 
-The service at [noid.network](https://noid.network/) may prepare submissions and report their progress, but it cannot accept a cryptographic result by itself. Every accepted result is represented in this repository and can be reconstructed with the public verifier.
+The service at [noid.network](https://noid.network/) prepares submissions and reports their progress. Its authenticated maintainer makes the final semantic review decision; the backend signs that exact decision, checks it with the public verifier, runs the trusted tests and merges the evidence. It never treats an agent's report as automatically proving its claim. Every accepted result is represented in this repository and can be reconstructed with the public verifier.
 
 ## Verify the research layer
 

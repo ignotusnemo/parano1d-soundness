@@ -1,6 +1,6 @@
 # Accepted review decisions
 
-Every human-reviewed ledger record has one decision in `reviews/accepted/<record-id>.json`. The decision binds the submission ID, exact pull request commit, automated verifier digest, acceptance time, contract-defined effects and the immutable Forgejo API URLs of every required independent approval. Legacy decisions preserve their original GitHub approval URLs.
+Every human-reviewed ledger record has one decision in `reviews/accepted/<record-id>.json`. The decision binds the submission ID, exact pull request commit, automated verifier digest, acceptance time and contract-defined effects. On noid.network, the authenticated portal maintainer makes the final decision. Its existing local-account service signature records that authority explicitly; it does not claim an independent reviewer. Additional reviews may inform the decision but do not block the maintainer's Finalize action. Legacy and externally approved decisions retain their original approval-count policy and immutable review URLs.
 
 The preparation command re-runs the passive verifier, binds its digest and creates a strict decision from the exact pull request context and approval URLs. Use repeated `--independent` options when the contract requires two independent reviewers. A result with frontier metrics supplies a strict JSON array through `--effects`; status-only reviews use the contract-derived default effect.
 
@@ -10,7 +10,7 @@ npm run review:prepare -- --submission submissions/<id> --repository ignotusnemo
 
 Pass `--finding inconclusive` when the submitted `supports` or `challenges` classification is not established but the work is still accepted as a reviewed record. The resulting decision has no effects and needs one approved maintainer review. The signed submission remains unchanged.
 
-The promotion command checks the frozen review policy, confirms every Forgejo approval against the exact submission commit and writes both the decision and derived ledger record. It rejects self-review, duplicated reviewers, stale approvals, an untrusted maintainer role, effects outside the target claim, claim statuses outside the track's finding-specific rules and metrics outside the contract allowlist. A reviewed component result may preserve a declared `premise` while adding an exact bound; it does not automatically prove or refute the end-to-end claim.
+The promotion command verifies the portal maintainer signature or the external approval policy, confirms any recorded Forgejo approvals against the exact submission commit and writes both the decision and derived ledger record. It rejects self-review, duplicated reviewers, stale approvals, an untrusted maintainer role, effects outside the target claim, claim statuses outside the track's finding-specific rules and metrics outside the contract allowlist. A reviewed component result may preserve a declared `premise` while adding an exact bound; it does not automatically prove or refute the end-to-end claim. Local-account authority changes who finalizes the review, not the frozen mathematical target, evidence requirements or permitted effects.
 
 ```sh
 npm run promote:reviewed -- --submission submissions/<id> --decision /path/to/review-decision.json

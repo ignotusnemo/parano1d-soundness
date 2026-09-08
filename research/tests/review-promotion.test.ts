@@ -125,6 +125,74 @@ test("a bound GitHub review decision promotes a pending report into immutable ev
   assert.deepEqual(evidence.effects, fixture.decision.effects);
 });
 
+test("the signed local portal maintainer is final without weakening identity or effect checks", () => {
+  const directory = mkdtempSync(path.join(tmpdir(), "portal-final-review-"));
+  try {
+    const { privateKey, publicKey } = generateKeyPairSync("ed25519");
+    const keyId = "portal-review-test";
+    writeFileSync(path.join(directory, `${keyId}.json`), JSON.stringify({ schemaVersion: 1, keyId, algorithm: "Ed25519", issuer: "noid.network", purpose: "maintainer-review", publicKeySpki: publicKey.export({ format: "der", type: "spki" }).toString("base64"), validFrom: "2026-08-29T00:00:00.000Z" }));
+    const setup = () => {
+      const fixture = reviewedFixture();
+      fixture.result.context = {
+        ...fixture.result.context,
+        actor: "noid-network",
+        researcher: { identityProvider: "noid.network", id: "1000000000000000001", login: "researcher", profileUrl: "https://noid.network/members/researcher", avatarUrl: "https://noid.network/api/avatars/1000000000000000001", delegation: { issuer: "noid.network", keyId: "portal-delegation-test", runId: "4380c7a0-b066-4d85-acbb-0422eced4495" } }
+      };
+      fixture.decision.context = structuredClone(fixture.result.context);
+      fixture.decision.reviewers = [];
+      return fixture;
+    };
+    const attest = (fixture: ReturnType<typeof setup>, login = "ignotusnemo", legacy = false) => {
+      fixture.decision.attestation = createServiceReviewAttestation(fixture.decision, {
+        keyId, privateKeyPem: privateKey.export({ format: "pem", type: "pkcs8" }).toString(), runId: fixture.result.context.researcher!.delegation.runId,
+        reviewer: legacy ? { githubId: "98765", login } : { identityProvider: "noid.network", id: "1000000000000000000", login }, issuedAt: fixture.decision.acceptedAt
+      });
+    };
+    const check = (fixture: ReturnType<typeof setup>) => evidenceFromReviewedDecision(fixture.manifest, fixture.result, fixture.track, fixture.decision, directory);
+    for (const finding of ["supports", "challenges"] as const) {
+      const fixture = setup();
+      fixture.manifest.payload = { ...fixture.manifest.payload, finding };
+      fixture.decision.reviewedFinding = finding;
+      fixture.decision.effects[0]!.status = finding === "supports" ? "proved" : "refuted";
+      attest(fixture);
+      assert.deepEqual(check(fixture).effects, fixture.decision.effects);
+    }
+    const missing = setup();
+    assert.throws(() => check(missing), /requires 2 approvals/u);
+    const legacy = setup();
+    attest(legacy, "ignotusnemo", true);
+    assert.throws(() => check(legacy), /requires 2 approvals/u);
+    const outsider = setup();
+    attest(outsider, "outsider");
+    assert.throws(() => check(outsider), /no approved maintainer/u);
+    const self = setup();
+    self.result.context.researcher!.login = "ignotusnemo";
+    self.decision.context = structuredClone(self.result.context);
+    attest(self);
+    assert.throws(() => check(self), /submission author cannot approve/u);
+    for (const tamper of [
+      (fixture: ReturnType<typeof setup>) => { fixture.decision.note += " changed"; },
+      (fixture: ReturnType<typeof setup>) => { fixture.decision.effects[0]!.status = "refuted"; },
+      (fixture: ReturnType<typeof setup>) => { fixture.decision.context.commit = "f".repeat(40); }
+    ]) {
+      const fixture = setup();
+      attest(fixture);
+      tamper(fixture);
+      assert.throws(() => check(fixture), /does not match|differs|identifier is not canonical/u);
+    }
+    const scope = setup();
+    scope.decision.effects[0]!.claimId = "unrelated-claim";
+    attest(scope);
+    assert.throws(() => check(scope), /may only target/u);
+    const status = setup();
+    status.decision.effects[0]!.status = "premise";
+    attest(status);
+    assert.throws(() => check(status), /cannot assign status/u);
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+});
+
 test("a reviewed inconclusive result is accepted without changing claims or frontiers", () => {
   const fixture = reviewedFixture();
   fixture.manifest.payload = { ...fixture.manifest.payload, finding: "inconclusive" };
