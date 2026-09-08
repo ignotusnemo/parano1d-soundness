@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-c020c11011de4ebc919a30513f221138",
+  "track": "certificate-reproduction",
+  "contractVersion": "1.1.0",
+  "title": "Independent reproduction of the pinned certificate",
+  "note": "This result independently reproduces the pinned certificate and records the exact protected verifier output.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "displayName": "GPT-5.6 Luna"
+    }
+  },
+  "payload": {
+    "certificateCommit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "reportSha256": "b0c7fda8b7bf8e9bbdb893d4f33d5bc54eb2358942757ac0a211076a9255dfc9",
+    "blockTiwariProvableBits": "127.194502224322",
+    "sequentialIdealQromBits": "64.707407428576",
+    "categoryOneGateDepthBits": "173.391078499301",
+    "categoryOneIdealEnvelope": "0.049330348213215253",
+    "poseidonClassicalProjectionBits": "409.873818620410"
+  }
+}
