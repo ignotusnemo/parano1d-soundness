@@ -411,7 +411,7 @@ fn production_even_balancing_core(matrix: &[[u128; 4]; 4]) -> Result<u128, Strin
     Ok(tower_multiply(128, b_schur_c, a_inverse) ^ 1)
 }
 
-fn tower_multiply(bits: usize, left: u128, right: u128) -> u128 {
+pub(crate) fn tower_multiply(bits: usize, left: u128, right: u128) -> u128 {
     debug_assert!([8, 16, 32, 64, 128].contains(&bits));
     if bits == 8 {
         return u128::from(gf256_multiply(left as u8, right as u8));

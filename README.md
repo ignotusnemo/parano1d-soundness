@@ -19,7 +19,7 @@ The repository pins the same Rust `1.96.0` toolchain used by the source revision
 | NIST Post-Quantum Cryptography Category | **Category 1** |
 | Dominant Category 1 gate-depth floor | **173.391078499301 bits** |
 | Margin over the NIST `2^170` reference | **3.391078499301 bits** |
-| Complete ideal bound at the Category 1 envelope | **0.049330348213215253** |
+| Complete ideal bound at the Category 1 envelope | **0.049330348228363684** |
 
 The provable FS-FRI row is the certified classical lower bound. The conjectured row is shown only to compare against the corresponding literature estimate and is not used by the certificate. The remaining rows concern a different game: acceptance of an invalid terminal State whose recursive ancestry starts at genesis by a quantum adversary.
 
@@ -37,12 +37,15 @@ at T = 2^64:
     Delta_P2b < 0.312471062061564258
 
 at the NIST Post-Quantum Cryptography Category 1 resource envelope:
-    Delta_P2b^C1 < 0.450669651786784747
+    Delta_P2b^C1 < 0.450669651771636316
 ```
 
-The Category 1 result also states the coherent response-cost premise used to
-translate oracle queries into logical gates and circuit depth. These conditions
-are part of the theorem, not omitted implementation notes.
+The Category 1 result states a batch gate-depth price and minimum scalar gate
+charge used to translate oracle queries into logical circuit resources. These
+conditions are part of the theorem. Faster circuits may use more gates; a
+reference-depth factor is not a universal minimum depth. The separately
+audited [complete constructions and scalar lower bound](docs/response-accounting.md)
+are not substituted for those declared prices.
 
 The certificate also instantiates the algebraic cryptanalysis published in
 ePrint 2026/306. Its headline wide-tensor attack family is structurally outside
