@@ -3,6 +3,7 @@ import { existsSync, readdirSync } from "node:fs";
 import type { ClaimDefinition, EvidenceRecord, TrackDefinition } from "@/lib/types";
 import { claimSchema, evidenceRecordSchema, trackSchema } from "@/lib/schemas";
 import { assertUnique, jsonFiles, readStrictJsonFile } from "@/lib/files";
+import { validateMetricRetractions } from "@/lib/metric-retractions";
 
 export interface Catalog {
   claims: ClaimDefinition[];
@@ -24,6 +25,10 @@ export function loadCatalog(root: string): Catalog {
   assertUnique(claims, (claim) => claim.id, "claim id");
   assertUnique(tracks, (track) => track.id, "track id");
   assertUnique(records, (record) => record.id, "evidence record id");
+  for (const filename of recordFiles.filter((file) => file.startsWith(path.join(root, "ledger/accepted")))) {
+    if (evidenceRecordSchema.parse(readStrictJsonFile(filename)).recordType !== "accepted-submission") throw new Error("the accepted ledger cannot contain official certificate records");
+  }
+  validateMetricRetractions(records);
 
   const claimIds = new Set(claims.map((claim) => claim.id));
   const trackIds = new Set(tracks.map((track) => track.id));

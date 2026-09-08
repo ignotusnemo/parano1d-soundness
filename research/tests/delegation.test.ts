@@ -8,6 +8,7 @@ import { canonicalJson } from "@/lib/canonical-json";
 import { delegatedContentDigest, serviceDelegationActor } from "@/lib/delegation";
 import { CERTIFICATE_REVISION, PRODUCTION_REVISION } from "@/lib/pins";
 import { verifySubmission } from "@/lib/verifier";
+import { loadTrack } from "@/lib/catalog";
 
 const checkedAt = "2026-08-29T12:01:00.000Z";
 const botActor = "test-autoresearch[bot]";
@@ -25,7 +26,7 @@ function hostedSubmission(schemaVersion: 1 | 2 = 1): { root: string; directory: 
     schemaVersion: 1,
     id: "hosted-all-root-review",
     track: "recursive-all-root-proof",
-    contractVersion: "1.1.0",
+    contractVersion: loadTrack(path.resolve("."), "recursive-all-root-proof").contractVersion,
     title: "Hosted independent all-root theorem review",
     note: "This report checks the exact statement-keyed theorem against the pinned from-genesis invalid-State game.",
     attribution: { mode: "ai-assisted", model: { provider: "openai", model: "gpt-5", displayName: "GPT-5", agent: "Codex" } },

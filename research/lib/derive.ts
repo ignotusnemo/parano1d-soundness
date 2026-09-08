@@ -18,6 +18,7 @@ import { loadSubmission } from "@/lib/verifier";
 import { CERTIFICATE_REVISION, PRODUCTION_REVISION } from "@/lib/pins";
 import { exactDecimalDifference } from "@/lib/exact-decimal";
 import { buildFrontier, FRONTIER_MODELS } from "@/lib/frontier";
+import { effectiveMetricRecords } from "@/lib/metric-retractions";
 
 const CATEGORY_ONE_GATE_DEPTH_REFERENCE = "170";
 
@@ -85,7 +86,7 @@ function deriveClaims(records: EvidenceRecord[], definitions: ReturnType<typeof 
     });
   }
 
-  const sortedRecords = [...records].sort((left, right) => left.acceptedAt.localeCompare(right.acceptedAt));
+  const sortedRecords = effectiveMetricRecords(records).sort((left, right) => Date.parse(left.acceptedAt) - Date.parse(right.acceptedAt));
   for (const record of sortedRecords) {
     for (const effect of record.effects) {
       const claim = claims.get(effect.claimId);
@@ -186,7 +187,7 @@ function frontierMoveCounts(records: EvidenceRecord[]): Map<string, number> {
   const counts = new Map<string, number>();
   for (const model of FRONTIER_MODELS) {
     for (const event of buildFrontier(records, model).events) {
-      counts.set(event.record.id, (counts.get(event.record.id) ?? 0) + event.moves.length);
+      counts.set(event.record.id, (counts.get(event.record.id) ?? 0) + (event.corrected ? 0 : event.moves.length));
     }
   }
   return counts;

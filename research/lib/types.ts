@@ -126,6 +126,7 @@ export interface EvidenceRecord {
     status: "accepted";
   };
   effects: EvidenceEffect[];
+  metricRetractions?: Array<{ recordId: string; metricId: string; reason: string }>;
 }
 
 export interface PublicEvidenceRecord extends EvidenceRecord {

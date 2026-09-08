@@ -6,9 +6,9 @@ The service at [noid.network](https://noid.network/) prepares submissions and re
 
 ## Verify the research layer
 
-The current official certificate includes the September 5, 2026 wallet Johnson refinement. Its production and certificate revisions are pinned in `lib/pins.ts`, and its exact report digest and metrics are recorded in `evidence/official/wallet-johnson-2026-09-05.json`. The previous official baseline, submissions, signed reviews and accepted ledger records are preserved unchanged.
+The current official certificate includes the wallet Johnson refinement and the September 8, 2026 response-accounting correction. Its revisions are pinned in `lib/pins.ts`, and its exact report digest and renewed metrics are recorded in `evidence/official/response-accounting-2026-09-08.json`. Earlier baselines, submissions, signed reviews and ledger records are preserved unchanged. The correction explicitly withdraws the incomplete historical construction metrics from current selection. It does not erase their history or count as a frontier improvement.
 
-Active challenges use renewed versioned contracts. `catalog/archive/` retains the preceding contracts' exact source pins and reproduction values solely for explicit accepted-ledger replay. New submissions must use the active contract and cannot present an old certificate as a reproduction of the new one. Earlier reviews remain evidence about their original revisions, not independent verification of the refined wallet derivation.
+Active challenges use renewed versioned contracts. `catalog/archive/` retains preceding source pins and reproduction values for explicit accepted-ledger replay. New submissions must use the active contract and cannot present an old certificate as a reproduction of the new one. Earlier reviews remain evidence about their original revisions. Response-circuit costs are not end-to-end security bits; the conditional Category 1 probability envelope is also distinct from its dominant-term gate-depth floor.
 
 ```sh
 npm ci

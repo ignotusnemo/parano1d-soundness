@@ -17,6 +17,9 @@ export interface CertificateObservation {
   poseidonLinearTrailRounds?: string;
   poseidonNonlinearTrailRounds?: string;
   poseidonNonlinearProjectionBits?: string;
+  coherentResponseGatesUpper?: string;
+  coherentResponseDepthUpper?: string;
+  coherentResponseGateDepthUpper?: string;
 }
 
 const observationCache = new Map<string, CertificateObservation>();
@@ -78,6 +81,11 @@ export function runCertificate(directory: string, certificateRevision: string): 
   const cached = observationCache.get(cacheKey);
   if (cached) return { ...cached };
   const report = reportAtRevision(root, certificateRevision);
+  const responseObservation = report.includes("COHERENT RESPONSE ACCOUNTING AUDIT") ? {
+    coherentResponseGatesUpper: one(report, /^complete scalar construction upper: gates<=([0-9]+) depth<=[0-9]+ gate-depth<=[0-9]+ wires<=[0-9]+$/gmu, "complete scalar gate upper bound"),
+    coherentResponseDepthUpper: one(report, /^complete scalar construction upper: gates<=[0-9]+ depth<=([0-9]+) gate-depth<=[0-9]+ wires<=[0-9]+$/gmu, "complete scalar depth upper bound"),
+    coherentResponseGateDepthUpper: one(report, /^complete scalar construction upper: gates<=[0-9]+ depth<=[0-9]+ gate-depth<=([0-9]+) wires<=[0-9]+$/gmu, "complete scalar gate-depth upper bound")
+  } : {};
   const nonlinearObservation = report.includes("POSEIDON2B NONLINEAR SUBSPACE REVIEW")
     ? {
         poseidonNonlinearRankCore: one(
@@ -131,7 +139,8 @@ export function runCertificate(directory: string, certificateRevision: string): 
       /^descriptive log2\(d_I\^2\) dedicated algebraic projection: ([0-9]+\.[0-9]{12})$/gmu,
       "Poseidon2b classical projection"
     ),
-    ...nonlinearObservation
+    ...nonlinearObservation,
+    ...responseObservation
   };
   observationCache.set(cacheKey, observation);
   return { ...observation };

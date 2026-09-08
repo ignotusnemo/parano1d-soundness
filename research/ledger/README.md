@@ -10,3 +10,5 @@ npm run ledger:verify
 ```
 
 Human-reviewed results use the approval-bound procedure in [`reviews/README.md`](../reviews/README.md). The backend reconstructs every ledger record from the original submission, frozen contract, source commit and review decision. It also confirms recorded Forgejo approvals against the exact pull request commit. Historical GitHub-backed records remain reproducible and may still be revalidated with the legacy verifier path.
+
+Protected official certificate renewals can retract specific erroneous historical metrics using `metricRetractions`, with the exact record ID, metric ID and reason. Submissions cannot set this field. The original signed records remain byte-for-byte intact and visible in the timeline. Current metric selection excludes only the named withdrawn values. A correction is not credited as a frontier improvement; unrelated evidence and established lower bounds are preserved.

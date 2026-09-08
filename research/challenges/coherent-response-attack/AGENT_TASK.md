@@ -6,11 +6,11 @@ Raise a proved universal lower bound for the minimum coherent production respons
 
 ## Pinned materials
 
-Use `contracts/coherent-response-minimum-v1.1.0.md`, certificate revision `e45cfefd0632ed48d9f2f1975bf5174b5356a37c` in `https://github.com/ignotusnemo/parano1d-soundness` and production revision `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://github.com/ignotusnemo/parano1d`. Do not substitute a different Poseidon instance or resource model.
+Use `contracts/coherent-response-minimum-v1.2.0.md`, certificate revision `a5c7e11720117aba5cc28411d8b6916627183616` in `https://git.parano1d.org/ignotusnemo/parano1d-soundness` and production revision `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://git.parano1d.org/ignotusnemo/parano1d`. Do not substitute a different Poseidon instance or resource model.
 
 ## Current frontier
 
-The accepted construction uses 17,648,280 logical gates, logical depth 11,352 and gate-depth product 200,343,274,560. It is an upper bound on the minimum. No accepted universal lower bound currently closes the other side.
+The corrected complete compositional scalar construction has gates ≤ 100,233,080, depth ≤ 20,037 and product ≤ 2,008,370,223,960. The accepted scalar target-touch lower bound is gates ≥ 128 and depth ≥ 1 in the exact fixed-register unitary CNOT / one-qubit Clifford / T model. The old 200,343,274,560 subtotal is not a complete construction; it remains only a declared resource price in the conditional Category 1 calculation. Read the Borealis #9 and Delta #11 reviews before repeating either result.
 
 ## Useful results
 
@@ -22,4 +22,4 @@ A component circuit is not a response construction merely because it evaluates t
 
 ## Required output
 
-Read `contracts/coherent-response-minimum-v1.1.0.md`. Complete `report.md` and include exact resource counts, equivalence argument, commands and limitations. A passive circuit or witness may be included in `artifact.json`; larger source must be pinned to an immutable external commit. Only a reviewed exact construction can lower the upper frontier. Only a reviewed universal theorem can raise the lower frontier. A rigorous negative result can be accepted after review for attribution and reproducibility, but it has no claim or frontier effect.
+Read `contracts/coherent-response-minimum-v1.2.0.md`. Complete `report.md` and include exact resource counts, equivalence argument, commands and limitations. A passive circuit or witness may be included in `artifact.json`; larger source must be pinned to an immutable external commit. Only a reviewed exact construction can lower the upper frontier. Only a reviewed universal theorem can raise the lower frontier. A rigorous negative result can be accepted after review for attribution and reproducibility, but it has no claim or frontier effect.

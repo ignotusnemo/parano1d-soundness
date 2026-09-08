@@ -6,7 +6,7 @@ Attack, independently derive, strengthen or formalize the published adaptive all
 
 ## Pinned materials
 
-Use `contracts/adaptive-all-root-qrom-v1.1.0.md` and certificate revision `e45cfefd0632ed48d9f2f1975bf5174b5356a37c` in `https://github.com/ignotusnemo/parano1d-soundness`. Production correspondence is pinned to Parano1d revision `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://github.com/ignotusnemo/parano1d`.
+Use `contracts/adaptive-all-root-qrom-v1.2.0.md` and certificate revision `a5c7e11720117aba5cc28411d8b6916627183616` in `https://git.parano1d.org/ignotusnemo/parano1d-soundness`. Production correspondence is pinned to Parano1d revision `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://git.parano1d.org/ignotusnemo/parano1d`.
 
 ## Useful results
 
@@ -18,7 +18,7 @@ Do not submit a theorem summary, a fixed-root reduction, a non-adaptive argument
 
 ## Required output
 
-Read `contracts/adaptive-all-root-qrom-v1.1.0.md` and the pinned theorem sources before working. Complete `report.md` with the exact theorem statement, assumptions, proof or counterexample, axiom inventory, reproducibility commands and limitations. If a machine-readable certificate or counterexample fits the passive format, include it as `artifact.json`. External proof source must be pinned to an immutable commit and independently replayable.
+Read `contracts/adaptive-all-root-qrom-v1.2.0.md` and the pinned theorem sources before working. Complete `report.md` with the exact theorem statement, assumptions, proof or counterexample, axiom inventory, reproducibility commands and limitations. If a machine-readable certificate or counterexample fits the passive format, include it as `artifact.json`. External proof source must be pinned to an immutable commit and independently replayable.
 
 ## Review
 

@@ -23,11 +23,14 @@ test("the renewed official record matches protected execution and preserves the 
   const metrics = current.effects.flatMap((effect) => effect.metrics);
   assert.equal(metrics.find((metric) => metric.id === "category-one.gate-depth-floor")?.value, observed.categoryOneGateDepthBits);
   assert.equal(metrics.find((metric) => metric.id === "category-one.ideal-envelope")?.value, observed.categoryOneIdealEnvelope);
+  assert.equal(metrics.find((metric) => metric.id === "coherent-response.logical-gates")?.value, observed.coherentResponseGatesUpper);
+  assert.equal(metrics.find((metric) => metric.id === "coherent-response.logical-depth")?.value, observed.coherentResponseDepthUpper);
+  assert.equal(metrics.find((metric) => metric.id === "coherent-response.gate-depth")?.value, observed.coherentResponseGateDepthUpper);
   const state = deriveResearchState(root);
   assert.equal(state.productionRevision, PRODUCTION_REVISION);
   assert.equal(state.certificateRevision, CERTIFICATE_REVISION);
   assert.equal(state.metrics.find((metric) => metric.id === "category-one.gate-depth-floor")?.value, "173.391078499301");
-  assert.equal(state.metrics.find((metric) => metric.id === "category-one.ideal-envelope")?.value, "0.049330348213215253");
+  assert.equal(state.metrics.find((metric) => metric.id === "category-one.ideal-envelope")?.value, "0.049330348228363684");
 });
 
 test("old reproduction contracts are replayable but cannot stand in for the current certificate", () => {

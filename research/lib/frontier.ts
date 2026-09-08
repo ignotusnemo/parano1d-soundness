@@ -37,6 +37,7 @@ export interface FrontierEvent {
   lower?: number;
   upper?: number;
   moves: FrontierMove[];
+  corrected?: boolean;
 }
 
 export interface Frontier {
@@ -145,37 +146,31 @@ function referenceValue(records: EvidenceRecord[], model: FrontierModel): number
 }
 
 export function buildFrontier(records: EvidenceRecord[], model: FrontierModel): Frontier {
-  const sorted = [...records].sort((left, right) => left.acceptedAt.localeCompare(right.acceptedAt));
   const events: FrontierEvent[] = [];
+  const candidates = new Map<string, FrontierMove>();
   let lower: number | undefined;
   let upper: number | undefined;
-
-  for (const record of sorted) {
+  for (const record of [...records].sort((left, right) => Date.parse(left.acceptedAt) - Date.parse(right.acceptedAt))) {
+    let corrected = false;
+    for (const withdrawal of record.metricRetractions ?? []) {
+      corrected = candidates.delete(withdrawal.recordId + ":" + withdrawal.metricId) || corrected;
+    }
     const metrics = metricsInRecord(record);
-    const lowerMoves = matchingMoves(metrics, model.lowerMetrics, "lower");
-    const upperMoves = matchingMoves(metrics, model.upperMetrics, "upper");
-    const effectiveMoves: FrontierMove[] = [];
-
-    for (const move of lowerMoves) {
-      if (lower === undefined || move.value > lower) {
-        lower = move.value;
-        effectiveMoves.push(move);
-      }
+    for (const move of [...matchingMoves(metrics, model.lowerMetrics, "lower"), ...matchingMoves(metrics, model.upperMetrics, "upper")]) {
+      candidates.set(record.id + ":" + move.metricId, move);
     }
-    for (const move of upperMoves) {
-      if (upper === undefined || move.value < upper) {
-        upper = move.value;
-        effectiveMoves.push(move);
-      }
+    let bestLower: FrontierMove | undefined;
+    let bestUpper: FrontierMove | undefined;
+    for (const candidate of candidates.values()) {
+      if (candidate.side === "lower" && (bestLower === undefined || candidate.value > bestLower.value)) bestLower = candidate;
+      if (candidate.side === "upper" && (bestUpper === undefined || candidate.value < bestUpper.value)) bestUpper = candidate;
     }
-    if (effectiveMoves.length > 0) events.push({ record, lower, upper, moves: effectiveMoves });
+    const moves: FrontierMove[] = [];
+    if (bestLower && bestLower.value !== lower) moves.push(bestLower);
+    if (bestUpper && bestUpper.value !== upper) moves.push(bestUpper);
+    lower = bestLower?.value;
+    upper = bestUpper?.value;
+    if (moves.length > 0 || corrected) events.push({ record, lower, upper, moves, corrected });
   }
-
-  return {
-    events,
-    lower,
-    upper,
-    reference: referenceValue(sorted, model),
-    inconsistent: lower !== undefined && upper !== undefined && lower > upper
-  };
+  return { events, lower, upper, reference: referenceValue(records, model), inconsistent: lower !== undefined && upper !== undefined && lower > upper };
 }

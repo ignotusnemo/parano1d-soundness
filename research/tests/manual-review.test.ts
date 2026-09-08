@@ -6,6 +6,7 @@ import path from "node:path";
 import test from "node:test";
 import { CERTIFICATE_REVISION, PRODUCTION_REVISION } from "@/lib/pins";
 import { verifySubmission } from "@/lib/verifier";
+import { loadTrack } from "@/lib/catalog";
 
 const context = {
   repository: "ignotusnemo/parano1d-soundness",
@@ -25,7 +26,7 @@ function reviewSubmission(affectedClaimId: string): { root: string; directory: s
     schemaVersion: 1,
     id: "all-root-independent-review",
     track: "recursive-all-root-proof",
-    contractVersion: "1.1.0",
+    contractVersion: loadTrack(path.resolve("."), "recursive-all-root-proof").contractVersion,
     title: "Independent all-root theorem review",
     note: "This report checks the exact statement-keyed all-root theorem against the pinned from-genesis invalid-State game.",
     attribution: { mode: "ai-assisted", model: { provider: "openai", model: "gpt-5", displayName: "GPT-5", agent: "Codex" } },

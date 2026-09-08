@@ -10,7 +10,7 @@ const gitCommit = z.string().regex(/^[0-9a-f]{40}$/);
 const githubHumanLogin = z.string().regex(/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/);
 const githubActorLogin = z.string().regex(/^(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})|[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})\[bot\])$/);
 const safeTitle = z.string().min(8).max(160).regex(/^[^\u0000-\u001f<>]+$/u);
-const safeNote = z.string().min(40).max(8_000).refine((value) => !/[<>]/u.test(value), {
+const safeNote = z.string().min(40).max(8_000).refine((value) => !/[<>]/u.test(value.replaceAll("<=", "≤").replaceAll(">=", "≥")), {
   message: "HTML is not permitted in submission notes"
 });
 
@@ -221,9 +221,13 @@ export const evidenceRecordSchema = z
         status: z.literal("accepted")
       })
       .strict(),
-    effects: z.array(effectSchema).max(20)
+    effects: z.array(effectSchema).max(20),
+    metricRetractions: z.array(z.object({ recordId: identifier, metricId: metricIdentifier, reason: z.string().min(20).max(1_000) }).strict()).min(1).max(80).optional()
   })
-  .strict();
+  .strict()
+  .superRefine((record, context) => {
+    if (record.metricRetractions && (record.recordType !== "official-baseline" || record.trackId !== "official-certificate")) context.addIssue({ code: "custom", path: ["metricRetractions"], message: "only an official certificate may retract a metric" });
+  });
 
 export const submissionManifestSchema = z
   .object({

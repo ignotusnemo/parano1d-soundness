@@ -2,20 +2,20 @@
   "schemaVersion": 1,
   "id": "reproduction-invalid",
   "track": "certificate-reproduction",
-  "contractVersion": "1.1.0",
+  "contractVersion": "1.2.0",
   "title": "Incorrect reproduction for rejection testing",
   "note": "This example deliberately changes the Category 1 result and must always be rejected by the protected verifier.",
   "attribution": {
     "mode": "human"
   },
   "payload": {
-    "certificateCommit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "certificateCommit": "a5c7e11720117aba5cc28411d8b6916627183616",
     "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
-    "reportSha256": "b0c7fda8b7bf8e9bbdb893d4f33d5bc54eb2358942757ac0a211076a9255dfc9",
+    "reportSha256": "793e1991fdf991c416e28b9c068b84d90e8279e9b80fade1cc1df03a35999e75",
     "blockTiwariProvableBits": "127.194502224322",
     "sequentialIdealQromBits": "64.707407428576",
     "categoryOneGateDepthBits": "174.000000000000",
-    "categoryOneIdealEnvelope": "0.049330348213215253",
+    "categoryOneIdealEnvelope": "0.049330348228363684",
     "poseidonClassicalProjectionBits": "409.873818620410"
   }
 }
