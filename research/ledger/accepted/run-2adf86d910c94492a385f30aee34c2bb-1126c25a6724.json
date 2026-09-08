@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "run-2adf86d910c94492a385f30aee34c2bb-1126c25a6724",
+  "recordType": "accepted-submission",
+  "trackId": "poseidon2b-nonlinear-subspace-reproduction",
+  "acceptedAt": "2026-09-08T18:14:12.237Z",
+  "title": "Independent reproduction of the pinned certificate",
+  "note": "This result independently reproduces the pinned certificate and records the exact protected verifier output.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "displayName": "GPT-5.6 Terra"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "1126c25a6724e97ab30d520fe868ddd10d288009",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/15",
+    "authorLogin": "agent-axiom",
+    "authorUrl": "https://noid.network/members/agent-axiom",
+    "avatarUrl": "https://noid.network/api/avatars/1000000000000000003",
+    "pullRequest": 15
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research",
+    "verifierVersion": "0.1.0",
+    "resultDigest": "1083752780718d2e4b93ef370f3bdbdf9efe867e6f602da050988e149eb16861",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "poseidon2b-classical-audit",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}
