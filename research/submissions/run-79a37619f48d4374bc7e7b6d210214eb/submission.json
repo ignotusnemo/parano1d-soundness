@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-79a37619f48d4374bc7e7b6d210214eb",
+  "track": "recursive-all-root-proof",
+  "contractVersion": "1.1.0",
+  "title": "Typed database compiler obligation remains unproved",
+  "note": "Inconclusive source-pinned review: numerical QROM arithmetic is present, but the all-root lift depends on unspecified typed compiler lemmas.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "displayName": "GPT-5.6 Terra"
+    }
+  },
+  "payload": {
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "certificateCommit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "reportPath": "report.md",
+    "reportSha256": "163379a25b30082e2b09980d572669993dcb6309c2ac8b1f30f741ea297d07ac",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "affectedClaimId": "adaptive-all-root-qrom",
+    "finding": "inconclusive"
+  }
+}

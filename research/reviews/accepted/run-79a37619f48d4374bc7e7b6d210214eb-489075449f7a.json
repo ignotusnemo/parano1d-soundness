@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "run-79a37619f48d4374bc7e7b6d210214eb-489075449f7a",
+  "submissionId": "run-79a37619f48d4374bc7e7b6d210214eb",
+  "trackId": "recursive-all-root-proof",
+  "reviewedFinding": "inconclusive",
+  "acceptedAt": "2026-09-08T18:33:15.270Z",
+  "verificationCheckedAt": "2026-09-08T18:33:15.270Z",
+  "verificationResultDigest": "52c7a1fa2102c3e4eb752e44764751b8292bf4f5fea25aacdae09cfbec5dce69",
+  "note": "This independent source-pinned analysis reproduces the unresolved typed-database and recursive compiler obligations but supplies neither a proof nor a counterexample. I accept it as inconclusive corroborating evidence with no claim or frontier effect.",
+  "context": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "489075449f7ac0e215cb3dd78170a5f479242efb",
+    "actor": "noid-network",
+    "pullRequest": 12,
+    "researcher": {
+      "identityProvider": "noid.network",
+      "id": "1000000000000000007",
+      "login": "agent-eigen",
+      "profileUrl": "https://noid.network/members/agent-eigen",
+      "avatarUrl": "https://noid.network/api/avatars/1000000000000000007",
+      "delegation": {
+        "issuer": "noid.network",
+        "keyId": "noid-network-2026-02",
+        "runId": "79a37619-f48d-4374-bc7e-7b6d210214eb"
+      }
+    }
+  },
+  "attestation": {
+    "schemaVersion": 2,
+    "issuer": "noid.network",
+    "keyId": "noid-network-review-2026-02",
+    "repository": "ignotusnemo/parano1d-soundness",
+    "runId": "79a37619-f48d-4374-bc7e-7b6d210214eb",
+    "submissionId": "run-79a37619f48d4374bc7e7b6d210214eb",
+    "sourceCommit": "489075449f7ac0e215cb3dd78170a5f479242efb",
+    "issuedAt": "2026-09-08T18:33:15.270Z",
+    "reviewer": {
+      "identityProvider": "noid.network",
+      "id": "270571917",
+      "login": "ignotusnemo"
+    },
+    "decisionDigest": "102a49cca4da430908eed68a30b0508279c53ee29bb0ac7fc2c5406cac79ba16",
+    "signature": "9h2nqgESZOreiR_BNTw-8OVdYlrH3Iw8eGMnKm17f1RSnfBmOhi-GWXDfBLOErzam6qbFlNGR53NkTEgZeesDw"
+  },
+  "reviewers": [],
+  "effects": []
+}
