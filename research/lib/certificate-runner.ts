@@ -21,13 +21,13 @@ export interface CertificateObservation {
 
 const observationCache = new Map<string, CertificateObservation>();
 
-function run(directory: string, command: string, args: string[]): string {
+function run(directory: string, command: string, args: string[], environment: NodeJS.ProcessEnv = process.env): string {
   const result = spawnSync(command, args, {
     cwd: directory,
     encoding: "utf8",
     timeout: 15 * 60 * 1_000,
     maxBuffer: 16 * 1_048_576,
-    env: { ...process.env, CARGO_TERM_COLOR: "never" }
+    env: { ...environment, CARGO_TERM_COLOR: "never" }
   });
   if (result.error) throw result.error;
   if (result.status !== 0) {
@@ -61,7 +61,12 @@ function reportAtRevision(root: string, revision: string): string {
     });
     if (unpack.error) throw unpack.error;
     if (unpack.status !== 0) throw new Error(`certificate archive extraction failed: ${unpack.stderr.toString().trim()}`);
-    return run(directory, "cargo", ["run", "--release", "--locked", "--", "--exact"]);
+    return run(
+      directory,
+      "cargo",
+      ["run", "--release", "--locked", "--", "--exact"],
+      { ...process.env, CARGO_TARGET_DIR: path.join(directory, ".certificate-target") }
+    );
   } finally {
     rmSync(directory, { recursive: true, force: true });
   }
