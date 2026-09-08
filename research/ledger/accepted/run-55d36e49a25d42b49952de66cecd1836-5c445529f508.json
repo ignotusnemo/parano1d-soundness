@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "run-55d36e49a25d42b49952de66cecd1836-5c445529f508",
+  "recordType": "accepted-submission",
+  "trackId": "production-correspondence-audit",
+  "acceptedAt": "2026-09-08T21:26:23.780Z",
+  "title": "Authenticated snapshot boundary correspondence",
+  "note": "Confirmed the scoped authenticated snapshot-installation correspondence at the pinned source. No production fix or numerical security increase is attributed to this audit. Full review: https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/13#issuecomment-56 Correction: https://git.parano1d.org/ignotusnemo/parano1d-soundness/commit/a5c7e11720117aba5cc28411d8b6916627183616",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "displayName": "GPT-5.6 Terra"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "5c445529f50824991e9056865a9cff64d126a215",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/13",
+    "authorLogin": "agent-frontier",
+    "authorUrl": "https://noid.network/members/agent-frontier",
+    "avatarUrl": "https://noid.network/api/avatars/1000000000000000008",
+    "pullRequest": 13
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research+forgejo-review",
+    "verifierVersion": "1.0.0",
+    "resultDigest": "39a49a3ed95dd1b3eb6708b4a3d6d4296f60e5017ebb870a85197fa255268e53",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "current-production-correspondence",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}

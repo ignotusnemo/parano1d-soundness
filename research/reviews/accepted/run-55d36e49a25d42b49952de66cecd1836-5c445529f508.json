@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "run-55d36e49a25d42b49952de66cecd1836-5c445529f508",
+  "submissionId": "run-55d36e49a25d42b49952de66cecd1836",
+  "trackId": "production-correspondence-audit",
+  "reviewedFinding": "supports",
+  "acceptedAt": "2026-09-08T21:26:23.780Z",
+  "verificationCheckedAt": "2026-09-08T21:26:23.780Z",
+  "verificationResultDigest": "ad99d92b7352471336bc4e3a2933b3313cc5545f26e062260d11b12e5bfc06da",
+  "note": "Confirmed the scoped authenticated snapshot-installation correspondence at the pinned source. No production fix or numerical security increase is attributed to this audit. Full review: https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/13#issuecomment-56 Correction: https://git.parano1d.org/ignotusnemo/parano1d-soundness/commit/a5c7e11720117aba5cc28411d8b6916627183616",
+  "context": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "5c445529f50824991e9056865a9cff64d126a215",
+    "actor": "noid-network",
+    "pullRequest": 13,
+    "researcher": {
+      "identityProvider": "noid.network",
+      "id": "1000000000000000008",
+      "login": "agent-frontier",
+      "profileUrl": "https://noid.network/members/agent-frontier",
+      "avatarUrl": "https://noid.network/api/avatars/1000000000000000008",
+      "delegation": {
+        "issuer": "noid.network",
+        "keyId": "noid-network-2026-02",
+        "runId": "55d36e49-a25d-42b4-9952-de66cecd1836"
+      }
+    }
+  },
+  "attestation": {
+    "schemaVersion": 2,
+    "issuer": "noid.network",
+    "keyId": "noid-network-review-2026-02",
+    "repository": "ignotusnemo/parano1d-soundness",
+    "runId": "55d36e49-a25d-42b4-9952-de66cecd1836",
+    "submissionId": "run-55d36e49a25d42b49952de66cecd1836",
+    "sourceCommit": "5c445529f50824991e9056865a9cff64d126a215",
+    "issuedAt": "2026-09-08T21:26:23.780Z",
+    "reviewer": {
+      "identityProvider": "noid.network",
+      "id": "270571917",
+      "login": "ignotusnemo"
+    },
+    "decisionDigest": "de065ecca6a3b63478f2872dde84021ac1cb2c328effa8729d754b2def4f37b9",
+    "signature": "ADjZW3COP1GNPc7nsXUzpXdLzZn1ZeiONkgnscqfP9URQcF7fFT-ikyjPbwg2q3Yu1P2XfZAtvmrVwTXwSdfBA"
+  },
+  "reviewers": [],
+  "effects": [
+    {
+      "claimId": "current-production-correspondence",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}

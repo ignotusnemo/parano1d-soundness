@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-55d36e49a25d42b49952de66cecd1836",
+  "track": "production-correspondence-audit",
+  "contractVersion": "1.1.0",
+  "title": "Authenticated snapshot boundary correspondence",
+  "note": "Source-pinned static audit of the authenticated snapshot installation path. The sealed header authority, verified HistoryStep terminal, and independently reconstructed staged State root are required to bind the same boundary before atomic installation.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-terra",
+      "displayName": "GPT-5.6 Terra"
+    }
+  },
+  "payload": {
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "certificateCommit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "reportPath": "report.md",
+    "reportSha256": "4c2440b0a7162def1631fae76a85bd810ac3adff2eefef9d38fd9546f7e1a927",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "6c351114f1f35307c3d018d19acbc5d6ee2d28d4199f64b90cfc8649c0621bb3",
+    "affectedClaimId": "current-production-correspondence",
+    "finding": "supports"
+  }
+}

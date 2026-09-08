@@ -1,0 +1,18 @@
+{
+  "kind": "production-correspondence-snapshot-v1",
+  "sourcePins": {
+    "certificateCommit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5"
+  },
+  "affectedClaimId": "current-production-correspondence",
+  "finding": "supports",
+  "path": "authenticated-snapshot-installation",
+  "entryPoint": "noid_node/src/main.rs:apply_verified_snapshot_boundary",
+  "certificateTheorem": "docs/category-one.md:339-357",
+  "checks": [
+    "sealed headers bind exact height, hash, and chainwork",
+    "terminal metadata and full HistoryStep verification bind the same snapshot header",
+    "staged segments reconstruct exactly the boundary header state root and active count",
+    "installation requires matching staged, terminal, and header authorities in one durable transaction"
+  ]
+}
