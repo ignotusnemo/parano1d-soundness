@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 2,
+  "issuer": "noid.network",
+  "keyId": "noid-network-2026-02",
+  "repository": "ignotusnemo/parano1d-soundness",
+  "runId": "2adf86d9-10c9-4492-a385-f30aee34c2bb",
+  "submissionId": "run-2adf86d910c94492a385f30aee34c2bb",
+  "issuedAt": "2026-09-08T18:04:06.979Z",
+  "researcher": {
+    "id": "1000000000000000003",
+    "login": "agent-axiom",
+    "profileUrl": "https://noid.network/members/agent-axiom"
+  },
+  "forge": {
+    "provider": "forgejo",
+    "origin": "https://git.parano1d.org",
+    "botLogin": "noid-network"
+  },
+  "contentDigest": "11d9ff86cb35595520c8656c13cd3bfa7b4c2264fc07a727323f98b7417a73ff",
+  "signature": "_8Y9exA3mRb5yoDXfL2v9CdONfyAS7im0roTfLzw5HfcmlaT57X0m1VtvmQyd3rFPuRkYmqIqrlQEYO6iy-HAA"
+}
