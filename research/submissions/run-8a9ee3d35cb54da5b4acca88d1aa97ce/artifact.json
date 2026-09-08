@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "production-correspondence-audit-v1",
+  "finding": "supports",
+  "affectedClaimId": "current-production-correspondence",
+  "scope": "local-producer-boundary",
+  "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+  "certificateCommit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+  "productionEntryPoint": "noid_miner/src/block_production.rs::PreparedBlockAttempt::prove",
+  "modeledObjects": [
+    "HistoryStepBlockInput<TIER>",
+    "HistoryStepTerminal",
+    "ChainAccumulator start/end",
+    "exact post-State"
+  ],
+  "falsifiableStatement": "Every pinned non-test call to the unchecked local seal consumes the exact node-built post-State and a terminal returned by the B25/B255 prover; after proving only nonce may vary, and commit rechecks template, current parent, PoW, State and bundle bindings. Inbound network data cannot construct the capability.",
+  "authorityChain": [
+    {
+      "stage": "template",
+      "symbol": "build_node_owned_block_template",
+      "guarantee": "Mints a one-shot private-field capability carrying the exact post-State, nonce-free header and undo log."
+    },
+    {
+      "stage": "witness",
+      "symbol": "prepare_history_step_witness",
+      "guarantee": "Checks parent accumulator, parent State, native nonce-free rules, authorization cardinality/class and exact State frontier."
+    },
+    {
+      "stage": "proof",
+      "symbol": "prove_built_history_step_terminal",
+      "guarantee": "Its returned terminal is canonically encoded directly into the private PreparedBlockAttempt."
+    },
+    {
+      "stage": "seal",
+      "symbol": "PreparedBlockAttempt::prove",
+      "guarantee": "Changes only nonce, validates PoW and rejects an accumulator end-boundary mismatch before the unchecked bridge."
+    },
+    {
+      "stage": "typed-bridge",
+      "symbol": "PreparedBlockStateCommit::seal_after_trusted_history_step_proof_unchecked",
+      "guarantee": "Rechecks nonce-free header, body transaction IDs, exact post-State fields and undo height; returns private-field LocallyProvedBlockCommit."
+    },
+    {
+      "stage": "commit",
+      "symbol": "MdbxChainContext::commit_locally_proved_next_block",
+      "guarantee": "Under the write lock rechecks current parent/height, PoW, hot parent State, sealed post-State and bundle block binding before durable commit."
+    }
+  ],
+  "callSiteInventory": {
+    "uncheckedSealProduction": [
+      "noid_miner/src/block_production.rs:353"
+    ],
+    "uncheckedSealTestOnly": [
+      "noid_chain/src/consensus/template.rs:1301",
+      "noid_chain/src/consensus/template.rs:1316",
+      "noid_chain/src/storage/mdbx_context.rs:2979"
+    ],
+    "testModuleBoundaries": [
+      "noid_chain/src/consensus/template.rs:784",
+      "noid_chain/src/storage/mdbx_context.rs:2805"
+    ]
+  },
+  "observedTests": [
+    {
+      "target": "certificate release suite",
+      "passed": 29,
+      "failed": 0
+    },
+    {
+      "target": "local fast commit rejects impossible PoW",
+      "passed": 1,
+      "failed": 0
+    },
+    {
+      "target": "unsafe local seal binds header/body/post-State",
+      "passed": 1,
+      "failed": 0
+    },
+    {
+      "target": "producer epoch-anchor boundary",
+      "passed": 1,
+      "failed": 0
+    }
+  ],
+  "conclusion": "The unchecked local producer bridge changes verification timing only within the declared trusted-prover boundary; it preserves the certificate's modeled HistoryStep and exact State transition on the pinned production control flow."
+}

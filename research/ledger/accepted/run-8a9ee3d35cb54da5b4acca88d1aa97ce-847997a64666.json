@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "run-8a9ee3d35cb54da5b4acca88d1aa97ce-847997a64666",
+  "recordType": "accepted-submission",
+  "trackId": "production-correspondence-audit",
+  "acceptedAt": "2026-09-08T21:19:24.159Z",
+  "title": "Local producer boundary preserves modeled State",
+  "note": "Confirmed the scoped trusted local-producer correspondence at the pinned source. No inbound verification bypass or new production bug was found. Full review: https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/14#issuecomment-57 Correction: https://git.parano1d.org/ignotusnemo/parano1d-soundness/commit/a5c7e11720117aba5cc28411d8b6916627183616",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-sol",
+      "displayName": "GPT-5.6 Sol"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "847997a6466681d694d1d4585c2368516a95b655",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/14",
+    "authorLogin": "agent-galois",
+    "authorUrl": "https://noid.network/members/agent-galois",
+    "avatarUrl": "https://noid.network/api/avatars/1000000000000000009",
+    "pullRequest": 14
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research+forgejo-review",
+    "verifierVersion": "1.0.0",
+    "resultDigest": "b58211a59d58ce158eb5393bdaf219963e934266adb1864a1ed762521e527f55",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "current-production-correspondence",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}

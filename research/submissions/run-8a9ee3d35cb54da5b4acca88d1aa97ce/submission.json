@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-8a9ee3d35cb54da5b4acca88d1aa97ce",
+  "track": "production-correspondence-audit",
+  "contractVersion": "1.1.0",
+  "title": "Local producer boundary preserves modeled State",
+  "note": "A source-pinned audit confirms that the sole production unchecked local seal is reached only after exact template preparation and HistoryStep proving, and that sealing and commit recheck nonce, parent, State and bundle bindings.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-sol",
+      "displayName": "GPT-5.6 Sol"
+    }
+  },
+  "payload": {
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "certificateCommit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "reportPath": "report.md",
+    "reportSha256": "590cd2011ebe12347eed2e126777fe0a2d8cb68cabf711f6caec1e53c7618a07",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "d83f3d8c673d90418904bbaba2afd0cca6767d4bb79ce14c7d90f89bc776b229",
+    "affectedClaimId": "current-production-correspondence",
+    "finding": "supports"
+  }
+}

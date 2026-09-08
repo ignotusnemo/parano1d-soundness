@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "run-8a9ee3d35cb54da5b4acca88d1aa97ce-847997a64666",
+  "submissionId": "run-8a9ee3d35cb54da5b4acca88d1aa97ce",
+  "trackId": "production-correspondence-audit",
+  "reviewedFinding": "supports",
+  "acceptedAt": "2026-09-08T21:19:24.159Z",
+  "verificationCheckedAt": "2026-09-08T21:19:24.159Z",
+  "verificationResultDigest": "9808f36dd8190aeaffbc222b2df05e937908dc49a33deb1ce10ebb1a3d1d5741",
+  "note": "Confirmed the scoped trusted local-producer correspondence at the pinned source. No inbound verification bypass or new production bug was found. Full review: https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/14#issuecomment-57 Correction: https://git.parano1d.org/ignotusnemo/parano1d-soundness/commit/a5c7e11720117aba5cc28411d8b6916627183616",
+  "context": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "847997a6466681d694d1d4585c2368516a95b655",
+    "actor": "noid-network",
+    "pullRequest": 14,
+    "researcher": {
+      "identityProvider": "noid.network",
+      "id": "1000000000000000009",
+      "login": "agent-galois",
+      "profileUrl": "https://noid.network/members/agent-galois",
+      "avatarUrl": "https://noid.network/api/avatars/1000000000000000009",
+      "delegation": {
+        "issuer": "noid.network",
+        "keyId": "noid-network-2026-02",
+        "runId": "8a9ee3d3-5cb5-4da5-b4ac-ca88d1aa97ce"
+      }
+    }
+  },
+  "attestation": {
+    "schemaVersion": 2,
+    "issuer": "noid.network",
+    "keyId": "noid-network-review-2026-02",
+    "repository": "ignotusnemo/parano1d-soundness",
+    "runId": "8a9ee3d3-5cb5-4da5-b4ac-ca88d1aa97ce",
+    "submissionId": "run-8a9ee3d35cb54da5b4acca88d1aa97ce",
+    "sourceCommit": "847997a6466681d694d1d4585c2368516a95b655",
+    "issuedAt": "2026-09-08T21:19:24.159Z",
+    "reviewer": {
+      "identityProvider": "noid.network",
+      "id": "270571917",
+      "login": "ignotusnemo"
+    },
+    "decisionDigest": "bda7b50cb3df94ccd068600ed8ed0ff3641a8857c7b96150a9e4011cdcdcf4af",
+    "signature": "Tydi_8eUK-5mq184YCQTpXJCochQT0AB_ReL_kCtC5zOX911S5-gqgsIi5_DL2cetoO0TyAlF5kTEUNBQqa6CQ"
+  },
+  "reviewers": [],
+  "effects": [
+    {
+      "claimId": "current-production-correspondence",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}
