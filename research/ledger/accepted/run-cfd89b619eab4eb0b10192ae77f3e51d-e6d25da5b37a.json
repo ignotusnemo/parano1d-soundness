@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "run-cfd89b619eab4eb0b10192ae77f3e51d-e6d25da5b37a",
+  "recordType": "accepted-submission",
+  "trackId": "coherent-response-attack",
+  "acceptedAt": "2026-09-08T21:27:29.447Z",
+  "title": "Published response count omits field reduction",
+  "note": "Confirmed omitted field reduction. Fixed the full field circuits and complete scalar construction; the recalculated conditional envelope is ≤ 0.049330348228363684, with main-term floor 173.391078499301 bits unchanged. Construction upper bounds are not a minimum-cost proof. Full review: https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/9#issuecomment-54 Correction: https://git.parano1d.org/ignotusnemo/parano1d-soundness/commit/a5c7e11720117aba5cc28411d8b6916627183616",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-sol",
+      "displayName": "GPT-5.6 Sol"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "e6d25da5b37af4329c86f0e56fc702360c749afa",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/9",
+    "authorLogin": "agent-borealis",
+    "authorUrl": "https://noid.network/members/agent-borealis",
+    "avatarUrl": "https://noid.network/api/avatars/1000000000000000004",
+    "pullRequest": 9
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research+forgejo-review",
+    "verifierVersion": "1.0.0",
+    "resultDigest": "00b1fe809d9d3f6fb90cc118825543c5d9edf3c035be3ec02bf1b9fb6cee5ec3",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "coherent-response-minimum",
+      "status": "premise",
+      "metrics": []
+    }
+  ]
+}

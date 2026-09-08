@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "coherent-response-accounting-audit-v1",
+  "sourcePins": {
+    "workspaceRevision": "04f2a47bdd5f3b51286ce8e7cb613fca169dc0b6",
+    "certificateRevision": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "productionRevision": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5"
+  },
+  "paper": {
+    "doi": "10.3390/s23063156",
+    "pdfSha256": "e8b31e10131585e72369cab6297a1d27224afe45e01ce352d7c622bdabe6b7e0",
+    "scopeFinding": "The reconstructed n=128 Karatsuba count excludes modular reduction."
+  },
+  "reconstructedPublishedSubtotal": {
+    "karatsubaLevels": 7,
+    "structuralCnot": 16218,
+    "toffoli": 2187,
+    "decompositionCnot": 13122,
+    "oneQubitClifford": 4374,
+    "t": 15309,
+    "totalLogicalGatesPerUnreducedMultiply": 49023,
+    "logicalDepthPerUnreducedMultiply": 43,
+    "chargedMultiplierInvocations": 360,
+    "logicalGates": 17648280,
+    "logicalDepth": 11352,
+    "gateDepth": 200343274560
+  },
+  "productionReductionWitness": {
+    "modulus": "x^128+x^7+x^2+x+1",
+    "inputA": "x",
+    "inputB": "x^127",
+    "unreducedLow128": "0x00",
+    "productionReducedResult": "0x87"
+  },
+  "explicitSerialReductionExtension": {
+    "basis": [
+      "CNOT",
+      "one-qubit Clifford",
+      "T"
+    ],
+    "connectivity": "all-to-all",
+    "measurement": "none",
+    "additionalAncillas": 0,
+    "garbage": "127 high product/work coefficients, cleaned by reversing the enclosing compute-copy-uncompute circuit",
+    "cnotPerMultiply": 508,
+    "serialDepthPerMultiply": 508,
+    "cnotAcross360Invocations": 182880,
+    "partialLogicalGates": 17831160,
+    "partialLogicalDepth": 145464,
+    "partialGateDepth": 2593791858240,
+    "frontierEligible": false,
+    "reason": "Other required linear, constant, response-copy, routing and control operations remain unsynthesized."
+  },
+  "conclusion": "The published figures are not a complete exact response construction or valid upper frontier."
+}

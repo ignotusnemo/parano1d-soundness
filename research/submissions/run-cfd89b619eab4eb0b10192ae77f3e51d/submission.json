@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-cfd89b619eab4eb0b10192ae77f3e51d",
+  "track": "coherent-response-attack",
+  "contractVersion": "1.1.0",
+  "title": "Published response count omits field reduction",
+  "note": "The 49,023-gate multiplier exactly matches the cited unreduced Karatsuba polynomial circuit. Production requires GCM modular reduction, so 17,648,280 gates and depth 11,352 are a nonlinear subtotal rather than a complete exact scalar response construction or valid upper frontier. An explicit 508-CNOT serial reduction schedule demonstrates the omitted work; no replacement frontier is claimed.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-sol",
+      "displayName": "GPT-5.6 Sol"
+    }
+  },
+  "payload": {
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "certificateCommit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "reportPath": "report.md",
+    "reportSha256": "c2643a0069d9374397328b90f232f41d35a82f065d8448be8156e3a806e582a5",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "0616bbeb64d47f020395d9f3079e89f9d80cc3d7a58a420c3c5705c8d349de2e",
+    "affectedClaimId": "coherent-response-minimum",
+    "finding": "challenges"
+  }
+}
