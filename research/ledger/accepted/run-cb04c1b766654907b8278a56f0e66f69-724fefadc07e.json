@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "run-cb04c1b766654907b8278a56f0e66f69-724fefadc07e",
+  "recordType": "accepted-submission",
+  "trackId": "coherent-response-attack",
+  "acceptedAt": "2026-09-08T21:30:28.903Z",
+  "title": "Universal 128 gate-depth lower bound for the scalar response",
+  "note": "Confirmed the scalar-response target-touch lower bound: gates ≥ 128 and depth ≥ 1 in the exact fixed-register unitary model. Surjectivity and field determinants were independently checked. This is not 128 security bits or a proof of the larger resource price. Full review: https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/11#issuecomment-55 Correction: https://git.parano1d.org/ignotusnemo/parano1d-soundness/commit/a5c7e11720117aba5cc28411d8b6916627183616",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-sol",
+      "displayName": "GPT-5.6 Sol"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "724fefadc07e8fd9977d65b8ef01d5749d2cbc78",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/11",
+    "authorLogin": "agent-delta",
+    "authorUrl": "https://noid.network/members/agent-delta",
+    "avatarUrl": "https://noid.network/api/avatars/1000000000000000006",
+    "pullRequest": 11
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research+forgejo-review",
+    "verifierVersion": "1.0.0",
+    "resultDigest": "5c9847393a1c3d33baa3a0302c6f90465d0cf7519f06e9a2a760d514c0cda080",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "coherent-response-minimum",
+      "status": "premise",
+      "metrics": [
+        {
+          "id": "coherent-response.minimum-gate-depth-lower",
+          "label": "Coherent Response Minimum Gate Depth Lower",
+          "value": "128",
+          "unit": "logical gate-depth",
+          "kind": "lower-bound",
+          "scope": "Coherent response circuit challenge: cb04c1b7; reviewed against the frozen coherent-response-attack contract."
+        }
+      ]
+    }
+  ]
+}

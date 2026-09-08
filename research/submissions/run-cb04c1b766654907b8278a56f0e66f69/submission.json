@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-cb04c1b766654907b8278a56f0e66f69",
+  "track": "coherent-response-attack",
+  "contractVersion": "1.1.0",
+  "title": "Universal 128 gate-depth lower bound for the scalar response",
+  "note": "For the exact pinned scalar Poseidon2b response, bijectivity makes every one of the 128 response coordinates live. In the declared CNOT, one-qubit Clifford and T basis, each live fixed-register output bit requires its own active target gate; depth is at least one. Thus the universal gate-depth lower frontier is 128. This does not validate the published 200343274560 minimum premise or resolve the separate incomplete-construction accounting issue.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-sol",
+      "displayName": "GPT-5.6 Sol"
+    }
+  },
+  "payload": {
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "certificateCommit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "reportPath": "report.md",
+    "reportSha256": "a624e109cc52b42b050f71d31bff5d3d5f40abc146dd2ccf3bd7362ef58c0274",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "a4edc12c51ac2cff02b570c6ce69b22610469b864bc66c0d131aa334fea8b71d",
+    "affectedClaimId": "coherent-response-minimum",
+    "finding": "supports"
+  }
+}

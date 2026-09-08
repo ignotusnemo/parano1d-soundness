@@ -1,0 +1,49 @@
+{
+  "artifactType": "coherent-response-universal-lower-bound-v1",
+  "sourcePins": {
+    "workspaceRevision": "04f2a47bdd5f3b51286ce8e7cb613fca169dc0b6",
+    "certificateRevision": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "productionRevision": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5"
+  },
+  "relation": {
+    "field": "GF(2^128)",
+    "stateWidth": 4,
+    "rate": 2,
+    "sboxExponent": 7,
+    "fullRounds": 8,
+    "partialRounds": 58,
+    "scalarOutputBits": 128,
+    "formula": "f(s)=pi_0(P(s)); U_f maps (s,z) to (s,z xor f(s))"
+  },
+  "invertibilityChecks": {
+    "gcdExponentFieldOrder": 1,
+    "fullMatrixDeterminantTowerHex": "0x40",
+    "partialMatrixDeterminantTowerHex": "0x2064",
+    "scalarProjection": "surjective"
+  },
+  "theorem": {
+    "logicalGateLowerBound": "128",
+    "logicalDepthLowerBound": "1",
+    "gateDepthLowerBound": "128",
+    "metricId": "coherent-response.minimum-gate-depth-lower",
+    "unit": "logical gate-depth"
+  },
+  "model": {
+    "gateBasis": [
+      "CNOT",
+      "one-qubit Clifford",
+      "T"
+    ],
+    "connectivityGrantedForLowerBound": "all-to-all",
+    "ancillaInitializationGrantedForLowerBound": "free zero initialization",
+    "garbage": "allowed; exact named response bits still required",
+    "routingAndFanout": "not credited; including them cannot lower the bound",
+    "measurement": "query/response measurement excluded by coherence; ancillary feed-forward does not avoid counted target corrections"
+  },
+  "publishedConstructionContext": {
+    "logicalGates": "17648280",
+    "logicalDepth": "11352",
+    "gateDepth": "200343274560"
+  },
+  "frontierEffect": "raise universal lower frontier to 128 only"
+}
