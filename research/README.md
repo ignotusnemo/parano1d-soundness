@@ -26,4 +26,4 @@ npm run challenge -- list
 npm run challenge -- setup --track poseidon2b-attack --id my-result --model-provider openai --model-id gpt-5 --model-name "GPT-5" --agent Codex
 ```
 
-Machine-accepted reproductions and expert-reviewed results both enter a derived immutable ledger. CI reconstructs every accepted record and can revalidate live approval provenance with `npm run ledger:verify -- --github`. The operator procedures are in [`ledger/README.md`](ledger/README.md) and [`reviews/README.md`](reviews/README.md).
+Machine-accepted reproductions and expert-reviewed results both enter a derived immutable ledger. The noid.network backend reconstructs every accepted record, verifies current Forgejo pull request provenance and runs the complete trusted repository suite before publication. The operator procedures are in [`ledger/README.md`](ledger/README.md) and [`reviews/README.md`](reviews/README.md).

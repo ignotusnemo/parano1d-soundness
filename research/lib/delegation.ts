@@ -9,11 +9,13 @@ import type { VerificationContext } from "@/lib/types";
 export const DELEGATION_FILE_NAME = "delegation.json";
 const identifier = z.string().regex(/^[a-z0-9][a-z0-9-]{2,79}$/);
 const keyId = z.string().regex(/^[a-z0-9][a-z0-9-]{2,63}$/);
-const humanLogin = z.string().regex(/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/);
-const botLogin = z.string().regex(/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})\[bot\]$/);
+const githubHumanLogin = z.string().regex(/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})$/);
+const githubBotLogin = z.string().regex(/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,38})\[bot\]$/);
+const portalLogin = z.string().regex(/^[a-z][a-z0-9_-]{2,31}$/);
+const forgejoLogin = z.string().regex(/^[A-Za-z0-9_.-]{1,40}$/);
 const sha256 = z.string().regex(/^[0-9a-f]{64}$/);
 
-const delegationSchema = z.object({
+const legacyDelegationSchema = z.object({
   schemaVersion: z.literal(1),
   issuer: z.literal("noid.network"),
   keyId,
@@ -21,25 +23,64 @@ const delegationSchema = z.object({
   runId: z.string().uuid(),
   submissionId: identifier,
   issuedAt: z.string().datetime({ offset: true }),
+  researcher: z.object({ githubId: z.string().regex(/^[1-9][0-9]{0,19}$/), login: githubHumanLogin }).strict(),
+  contentDigest: sha256,
+  signature: z.string().regex(/^[A-Za-z0-9_-]{86}$/)
+}).strict();
+
+const portalDelegationSchema = z.object({
+  schemaVersion: z.literal(2),
+  issuer: z.literal("noid.network"),
+  keyId,
+  repository: z.literal("ignotusnemo/parano1d-soundness"),
+  runId: z.string().uuid(),
+  submissionId: identifier,
+  issuedAt: z.string().datetime({ offset: true }),
   researcher: z.object({
-    githubId: z.string().regex(/^[1-9][0-9]{0,19}$/),
-    login: humanLogin
+    id: z.string().regex(/^[1-9][0-9]{0,18}$/),
+    login: portalLogin,
+    profileUrl: z.string().url().refine((value) => new URL(value).origin === "https://noid.network")
+  }).strict(),
+  forge: z.object({
+    provider: z.literal("forgejo"),
+    origin: z.literal("https://git.parano1d.org"),
+    botLogin: forgejoLogin
   }).strict(),
   contentDigest: sha256,
   signature: z.string().regex(/^[A-Za-z0-9_-]{86}$/)
 }).strict();
 
-const keyDescriptorSchema = z.object({
+const delegationSchema = z.discriminatedUnion("schemaVersion", [legacyDelegationSchema, portalDelegationSchema]);
+
+const legacyKeyDescriptorSchema = z.object({
   schemaVersion: z.literal(1),
   keyId,
   algorithm: z.literal("Ed25519"),
   issuer: z.literal("noid.network"),
-  botLogin,
+  botLogin: githubBotLogin,
   publicKeySpki: z.string().regex(/^[A-Za-z0-9+/]+={0,2}$/),
   validFrom: z.string().datetime({ offset: true }),
   validUntil: z.string().datetime({ offset: true }).optional()
 }).strict();
 
+const portalKeyDescriptorSchema = z.object({
+  schemaVersion: z.literal(2),
+  keyId,
+  algorithm: z.literal("Ed25519"),
+  issuer: z.literal("noid.network"),
+  purpose: z.literal("hosted-research-delegation"),
+  forge: z.object({
+    provider: z.literal("forgejo"),
+    origin: z.literal("https://git.parano1d.org"),
+    repository: z.literal("ignotusnemo/parano1d-soundness"),
+    botLogin: forgejoLogin
+  }).strict(),
+  publicKeySpki: z.string().regex(/^[A-Za-z0-9+/]+={0,2}$/),
+  validFrom: z.string().datetime({ offset: true }),
+  validUntil: z.string().datetime({ offset: true }).optional()
+}).strict();
+
+const keyDescriptorSchema = z.discriminatedUnion("schemaVersion", [legacyKeyDescriptorSchema, portalKeyDescriptorSchema]);
 type ServiceDelegation = z.infer<typeof delegationSchema>;
 type ServiceDelegationKey = z.infer<typeof keyDescriptorSchema>;
 
@@ -49,15 +90,24 @@ function loadServiceDelegation(directory: string): ServiceDelegation {
 
 function loadServiceDelegationKey(delegation: ServiceDelegation, keyDirectory: string): ServiceDelegationKey {
   const descriptor = keyDescriptorSchema.parse(parseStrictJson(readFileSync(path.join(keyDirectory, `${delegation.keyId}.json`), "utf8")));
-  if (descriptor.keyId !== delegation.keyId || descriptor.issuer !== delegation.issuer) {
-    throw new Error("delegation key descriptor does not match its issuer");
+  if (descriptor.keyId !== delegation.keyId || descriptor.issuer !== delegation.issuer || descriptor.schemaVersion !== delegation.schemaVersion) {
+    throw new Error("delegation key descriptor does not match its issuer or protocol version");
+  }
+  if (delegation.schemaVersion === 2) {
+    if (descriptor.schemaVersion !== 2 || descriptor.forge.provider !== delegation.forge.provider || descriptor.forge.origin !== delegation.forge.origin || descriptor.forge.repository !== delegation.repository || descriptor.forge.botLogin !== delegation.forge.botLogin) {
+      throw new Error("delegation does not match the pinned Forgejo identity");
+    }
   }
   return descriptor;
 }
 
+function descriptorBotLogin(descriptor: ServiceDelegationKey): string {
+  return descriptor.schemaVersion === 1 ? descriptor.botLogin : descriptor.forge.botLogin;
+}
+
 export function serviceDelegationActor(directory: string, keyDirectory: string): string {
   const delegation = loadServiceDelegation(directory);
-  return loadServiceDelegationKey(delegation, keyDirectory).botLogin;
+  return descriptorBotLogin(loadServiceDelegationKey(delegation, keyDirectory));
 }
 
 function fileDigest(filename: string): string {
@@ -73,11 +123,7 @@ export function delegatedContentDigest(directory: string): string {
       throw error;
     }
   };
-  return digestCanonicalJson({
-    submissionSha256: fileDigest(path.join(directory, "submission.json")),
-    reportSha256: optionalDigest("report.md"),
-    artifactSha256: optionalDigest("artifact.json")
-  });
+  return digestCanonicalJson({ submissionSha256: fileDigest(path.join(directory, "submission.json")), reportSha256: optionalDigest("report.md"), artifactSha256: optionalDigest("artifact.json") });
 }
 
 export interface VerifyDelegationOptions {
@@ -94,7 +140,7 @@ export function verifyServiceDelegation(options: VerifyDelegationOptions): Verif
   if (delegation.repository !== options.context.repository) throw new Error("delegation names another repository");
   if (delegation.contentDigest !== delegatedContentDigest(options.directory)) throw new Error("delegation does not match the passive submission bytes");
   const descriptor = loadServiceDelegationKey(delegation, options.keyDirectory);
-  if (options.context.actor !== descriptor.botLogin) throw new Error("delegation was not submitted by the pinned GitHub App bot");
+  if (options.context.actor !== descriptorBotLogin(descriptor)) throw new Error("delegation was not submitted by the pinned service account");
   const issuedAt = Date.parse(delegation.issuedAt);
   const checkedAt = Date.parse(options.checkedAt);
   if (issuedAt < Date.parse(descriptor.validFrom)) throw new Error("delegation predates its signing key");
@@ -103,11 +149,21 @@ export function verifyServiceDelegation(options: VerifyDelegationOptions): Verif
   const { signature, ...signed } = delegation;
   const publicKey = createPublicKey({ key: Buffer.from(descriptor.publicKeySpki, "base64"), format: "der", type: "spki" });
   if (!verify(null, Buffer.from(canonicalJson(signed)), publicKey, Buffer.from(signature, "base64url"))) throw new Error("delegation signature is invalid");
+  if (delegation.schemaVersion === 1) {
+    return {
+      githubId: delegation.researcher.githubId,
+      login: delegation.researcher.login,
+      profileUrl: `https://github.com/${delegation.researcher.login}`,
+      avatarUrl: `https://avatars.githubusercontent.com/u/${delegation.researcher.githubId}?v=4`,
+      delegation: { issuer: delegation.issuer, keyId: delegation.keyId, runId: delegation.runId }
+    };
+  }
   return {
-    githubId: delegation.researcher.githubId,
+    identityProvider: "noid.network",
+    id: delegation.researcher.id,
     login: delegation.researcher.login,
-    profileUrl: `https://github.com/${delegation.researcher.login}`,
-    avatarUrl: `https://avatars.githubusercontent.com/u/${delegation.researcher.githubId}?v=4`,
+    profileUrl: delegation.researcher.profileUrl,
+    avatarUrl: `https://noid.network/api/avatars/${delegation.researcher.id}`,
     delegation: { issuer: delegation.issuer, keyId: delegation.keyId, runId: delegation.runId }
   };
 }

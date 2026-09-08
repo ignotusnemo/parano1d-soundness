@@ -31,7 +31,7 @@ export interface CreateReviewAttestationInput {
   keyId: string;
   privateKeyPem: string;
   runId: string;
-  reviewer: { githubId: string; login: string };
+  reviewer: { githubId: string; login: string } | { identityProvider: "noid.network"; id: string; login: string };
   issuedAt: string;
 }
 
@@ -40,8 +40,8 @@ export function createServiceReviewAttestation(
   input: CreateReviewAttestationInput
 ): ServiceReviewAttestation {
   if (decision.attestation) throw new Error("review decision is already attested");
-  const unsigned = serviceReviewAttestationSchema.omit({ signature: true }).parse({
-    schemaVersion: 1,
+  const unsigned = {
+    schemaVersion: "identityProvider" in input.reviewer ? 2 as const : 1 as const,
     issuer: "noid.network",
     keyId: input.keyId,
     repository: decision.context.repository,
@@ -51,7 +51,7 @@ export function createServiceReviewAttestation(
     issuedAt: input.issuedAt,
     reviewer: input.reviewer,
     decisionDigest: reviewDecisionDigest(decision)
-  });
+  };
   const privateKey = createPrivateKey(input.privateKeyPem);
   if (privateKey.asymmetricKeyType !== "ed25519") throw new Error("review attestation key is not Ed25519");
   return serviceReviewAttestationSchema.parse({

@@ -37,7 +37,9 @@ function publicRecords(root: string, records: EvidenceRecord[]): PublicEvidenceR
       ...(decision.attestation ? [{
         login: decision.attestation.reviewer.login,
         role: "maintainer" as const,
-        url: `https://github.com/${decision.attestation.reviewer.login}`
+        url: decision.attestation.schemaVersion === 2
+          ? `https://noid.network/members/${decision.attestation.reviewer.login}`
+          : `https://github.com/${decision.attestation.reviewer.login}`
       }] : []),
       ...decision.reviewers.map((reviewer) => ({ login: reviewer.login, role: reviewer.role, url: reviewer.reviewUrl }))
     ];

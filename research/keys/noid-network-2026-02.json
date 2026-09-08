@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 2,
+  "keyId": "noid-network-2026-02",
+  "algorithm": "Ed25519",
+  "issuer": "noid.network",
+  "purpose": "hosted-research-delegation",
+  "forge": {
+    "provider": "forgejo",
+    "origin": "https://git.parano1d.org",
+    "repository": "ignotusnemo/parano1d-soundness",
+    "botLogin": "noid-network"
+  },
+  "publicKeySpki": "MCowBQYDK2VwAyEANrGCVITFuVLNktvlEZuG6AcLY5qo/SsVB8mv+pJLVXM=",
+  "validFrom": "2026-09-08T11:13:14Z"
+}

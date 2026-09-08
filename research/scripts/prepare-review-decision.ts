@@ -12,7 +12,7 @@ import type { ReviewApproval } from "@/lib/types";
 
 function approval(value: string, role: ReviewApproval["role"]): ReviewApproval {
   const separator = value.indexOf("=");
-  if (separator <= 0 || separator === value.length - 1) throw new Error(`reviewer must use login=https://github.com/... format: ${value}`);
+  if (separator <= 0 || separator === value.length - 1) throw new Error(`reviewer must use login=https://... format: ${value}`);
   return { login: value.slice(0, separator), role, reviewUrl: value.slice(separator + 1) };
 }
 
@@ -70,10 +70,9 @@ const decision = attestationPrivateKey
         keyId: requiredOption("--attestation-key-id"),
         privateKeyPem: readFileSync(path.resolve(attestationPrivateKey), "utf8"),
         runId: result.context.researcher?.delegation.runId ?? (() => { throw new Error("service-attested review requires a hosted researcher delegation"); })(),
-        reviewer: {
-          githubId: requiredOption("--reviewer-github-id"),
-          login: requiredOption("--reviewer-login")
-        },
+        reviewer: option("--reviewer-id")
+          ? { identityProvider: "noid.network", id: requiredOption("--reviewer-id"), login: requiredOption("--reviewer-login") }
+          : { githubId: requiredOption("--reviewer-github-id"), login: requiredOption("--reviewer-login") },
         issuedAt: acceptedAt
       })
     })

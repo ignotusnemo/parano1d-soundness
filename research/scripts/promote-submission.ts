@@ -1,5 +1,6 @@
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { verifyForgejoPullRequestContext } from "@/lib/forgejo-review";
 import { verifyGitHubPullRequestContext } from "@/lib/github-review";
 import { evidenceFromAcceptedResult } from "@/lib/promotion";
 import { loadSubmission, verifySubmission } from "@/lib/verifier";
@@ -16,11 +17,15 @@ async function main(): Promise<void> {
     actor: requiredOption("--actor"),
     pullRequest: Number(pullRequest)
   };
-  const token = process.env.GITHUB_TOKEN;
-  if (!token) throw new Error("GITHUB_TOKEN is required to verify pull request identity");
   const result = verifySubmission({ root, submissionDirectory, context });
   if (result.status !== "accepted") throw new Error(`submission cannot be promoted: ${result.status}`);
-  await verifyGitHubPullRequestContext(result.context, token);
+  if (result.context.researcher?.identityProvider === "noid.network") {
+    await verifyForgejoPullRequestContext(result.context);
+  } else {
+    const token = process.env.GITHUB_TOKEN;
+    if (!token) throw new Error("GITHUB_TOKEN is required to verify a legacy GitHub pull request identity");
+    await verifyGitHubPullRequestContext(result.context, token);
+  }
   const record = evidenceFromAcceptedResult(loadSubmission(submissionDirectory), result);
   const ledgerDirectory = path.join(root, "ledger/accepted");
   const recordPath = path.join(ledgerDirectory, `${record.id}.json`);

@@ -24,16 +24,18 @@ function matchesValueFormat(value: string, format: MetricValueFormat): boolean {
 function sourceFor(result: VerificationResult) {
   const context = result.context;
   const researcher = context.researcher;
-  const commitUrl = `https://github.com/${context.repository}/commit/${context.commit}`;
+  const hostedOnForgejo = researcher?.identityProvider === "noid.network";
+  const forgeOrigin = hostedOnForgejo ? "https://git.parano1d.org" : "https://github.com";
+  const commitUrl = `${forgeOrigin}/${context.repository}/commit/${context.commit}`;
   return {
     repository: context.repository,
     commit: context.commit,
     url: context.pullRequest
-      ? `https://github.com/${context.repository}/pull/${context.pullRequest}`
+      ? `${forgeOrigin}/${context.repository}/${hostedOnForgejo ? "pulls" : "pull"}/${context.pullRequest}`
       : commitUrl,
     authorLogin: researcher?.login ?? context.actor,
-    authorUrl: researcher?.profileUrl ?? `https://github.com/${context.actor}`,
-    avatarUrl: researcher?.avatarUrl ?? `https://avatars.githubusercontent.com/${context.actor}`,
+    authorUrl: researcher?.profileUrl ?? `${forgeOrigin}/${context.actor}`,
+    avatarUrl: researcher?.avatarUrl ?? (hostedOnForgejo ? `${forgeOrigin}/avatars/default` : `https://avatars.githubusercontent.com/${context.actor}`),
     ...(context.pullRequest ? { pullRequest: context.pullRequest } : {})
   };
 }
@@ -143,7 +145,9 @@ export function evidenceFromReviewedDecision(
     attribution: manifest.attribution,
     source: sourceFor(result),
     verification: {
-      verifier: "parano1d-soundness-research+github-review",
+      verifier: result.context.researcher?.identityProvider === "noid.network"
+        ? "parano1d-soundness-research+forgejo-review"
+        : "parano1d-soundness-research+github-review",
       verifierVersion: "1.0.0",
       resultDigest: digestCanonicalJson({
         automatedResultDigest: result.resultDigest,

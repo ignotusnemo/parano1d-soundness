@@ -156,8 +156,10 @@ export interface VerificationContext {
   commit: string;
   actor: string;
   pullRequest?: number;
-  researcher?: {
+  researcher?: ({
     githubId: string;
+    identityProvider?: undefined;
+    id?: undefined;
     login: string;
     profileUrl: string;
     avatarUrl: string;
@@ -166,7 +168,19 @@ export interface VerificationContext {
       keyId: string;
       runId: string;
     };
-  };
+  } | {
+    identityProvider: "noid.network";
+    id: string;
+    githubId?: undefined;
+    login: string;
+    profileUrl: string;
+    avatarUrl: string;
+    delegation: {
+      issuer: "noid.network";
+      keyId: string;
+      runId: string;
+    };
+  });
 }
 
 export interface VerificationResult {
@@ -189,7 +203,7 @@ export interface ReviewApproval {
   reviewUrl: string;
 }
 
-export interface ServiceReviewAttestation {
+export interface LegacyServiceReviewAttestation {
   schemaVersion: 1;
   issuer: "noid.network";
   keyId: string;
@@ -205,6 +219,26 @@ export interface ServiceReviewAttestation {
   decisionDigest: string;
   signature: string;
 }
+
+export interface PortalServiceReviewAttestation {
+  schemaVersion: 2;
+  issuer: "noid.network";
+  keyId: string;
+  repository: "ignotusnemo/parano1d-soundness";
+  runId: string;
+  submissionId: string;
+  sourceCommit: string;
+  issuedAt: string;
+  reviewer: {
+    identityProvider: "noid.network";
+    id: string;
+    login: string;
+  };
+  decisionDigest: string;
+  signature: string;
+}
+
+export type ServiceReviewAttestation = LegacyServiceReviewAttestation | PortalServiceReviewAttestation;
 
 export interface ReviewDecision {
   schemaVersion: 1;

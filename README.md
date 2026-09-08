@@ -155,7 +155,7 @@ soundness game. It does not claim that NIST reviewed or certified Parano1d.
 Clone the standalone certificate repository and run the default report:
 
 ```sh
-git clone https://github.com/ignotusnemo/parano1d-soundness.git
+git clone https://git.parano1d.org/ignotusnemo/parano1d-soundness.git
 cd parano1d-soundness
 cargo run --release --locked
 ```

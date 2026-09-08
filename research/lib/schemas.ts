@@ -14,7 +14,7 @@ const safeNote = z.string().min(40).max(8_000).refine((value) => !/[<>]/u.test(v
   message: "HTML is not permitted in submission notes"
 });
 
-export const serviceReviewAttestationSchema = z.object({
+const legacyServiceReviewAttestationSchema = z.object({
   schemaVersion: z.literal(1),
   issuer: z.literal("noid.network"),
   keyId: z.string().regex(/^[a-z0-9][a-z0-9-]{2,63}$/),
@@ -30,6 +30,26 @@ export const serviceReviewAttestationSchema = z.object({
   decisionDigest: sha256,
   signature: z.string().regex(/^[A-Za-z0-9_-]{86}$/)
 }).strict();
+
+const portalServiceReviewAttestationSchema = z.object({
+  schemaVersion: z.literal(2),
+  issuer: z.literal("noid.network"),
+  keyId: z.string().regex(/^[a-z0-9][a-z0-9-]{2,63}$/),
+  repository: z.literal("ignotusnemo/parano1d-soundness"),
+  runId: z.string().uuid(),
+  submissionId: identifier,
+  sourceCommit: gitCommit,
+  issuedAt: z.string().datetime({ offset: true }),
+  reviewer: z.object({
+    identityProvider: z.literal("noid.network"),
+    id: z.string().regex(/^[1-9][0-9]{0,18}$/),
+    login: z.string().regex(/^[a-z][a-z0-9_-]{2,31}$/)
+  }).strict(),
+  decisionDigest: sha256,
+  signature: z.string().regex(/^[A-Za-z0-9_-]{86}$/)
+}).strict();
+
+export const serviceReviewAttestationSchema = z.union([legacyServiceReviewAttestationSchema, portalServiceReviewAttestationSchema]);
 const modelAttributionSchema = z
   .object({
     provider: providerIdentifier,
@@ -297,23 +317,38 @@ export const poseidon2bProductionImpactArtifactSchema = z.object({
   }
 });
 
+const legacyResearcherSchema = z.object({
+  githubId: z.string().regex(/^[1-9][0-9]{0,19}$/),
+  login: githubHumanLogin,
+  profileUrl: z.string().url(),
+  avatarUrl: z.string().url(),
+  delegation: z.object({
+    issuer: z.literal("noid.network"),
+    keyId: z.string().regex(/^[a-z0-9][a-z0-9-]{2,63}$/),
+    runId: z.string().uuid()
+  }).strict()
+}).strict();
+
+const portalResearcherSchema = z.object({
+  identityProvider: z.literal("noid.network"),
+  id: z.string().regex(/^[1-9][0-9]{0,18}$/),
+  login: z.string().regex(/^[a-z][a-z0-9_-]{2,31}$/),
+  profileUrl: z.string().url(),
+  avatarUrl: z.string().url(),
+  delegation: z.object({
+    issuer: z.literal("noid.network"),
+    keyId: z.string().regex(/^[a-z0-9][a-z0-9-]{2,63}$/),
+    runId: z.string().uuid()
+  }).strict()
+}).strict();
+
 export const verificationContextSchema = z
   .object({
     repository: z.string().regex(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/),
     commit: gitCommit,
     actor: githubActorLogin,
     pullRequest: z.number().int().positive().optional(),
-    researcher: z.object({
-      githubId: z.string().regex(/^[1-9][0-9]{0,19}$/),
-      login: githubHumanLogin,
-      profileUrl: z.string().url(),
-      avatarUrl: z.string().url(),
-      delegation: z.object({
-        issuer: z.literal("noid.network"),
-        keyId: z.string().regex(/^[a-z0-9][a-z0-9-]{2,63}$/),
-        runId: z.string().uuid()
-      }).strict()
-    }).strict().optional()
+    researcher: z.union([legacyResearcherSchema, portalResearcherSchema]).optional()
   })
   .strict();
 

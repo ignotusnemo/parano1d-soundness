@@ -12,7 +12,7 @@ import { verifySubmission } from "@/lib/verifier";
 const checkedAt = "2026-08-29T12:01:00.000Z";
 const botActor = "test-autoresearch[bot]";
 
-function hostedSubmission(): { root: string; directory: string; keyDirectory: string } {
+function hostedSubmission(schemaVersion: 1 | 2 = 1): { root: string; directory: string; keyDirectory: string } {
   const root = mkdtempSync(path.join(tmpdir(), "parano1d-delegation-test-"));
   const directory = path.join(root, "hosted-all-root-review");
   const keyDirectory = path.join(root, "keys");
@@ -40,27 +40,32 @@ function hostedSubmission(): { root: string; directory: string; keyDirectory: st
   }));
 
   const { publicKey, privateKey } = generateKeyPairSync("ed25519");
-  const keyId = "test-hosted-key";
-  writeFileSync(path.join(keyDirectory, `${keyId}.json`), JSON.stringify({
-    schemaVersion: 1,
-    keyId,
-    algorithm: "Ed25519",
-    issuer: "noid.network",
-    botLogin: botActor,
-    publicKeySpki: publicKey.export({ format: "der", type: "spki" }).toString("base64"),
-    validFrom: "2026-08-29T00:00:00.000Z"
+  const keyId = schemaVersion === 1 ? "test-hosted-key" : "test-portal-key";
+  const publicKeySpki = publicKey.export({ format: "der", type: "spki" }).toString("base64");
+  writeFileSync(path.join(keyDirectory, `${keyId}.json`), JSON.stringify(schemaVersion === 1 ? {
+    schemaVersion: 1, keyId, algorithm: "Ed25519", issuer: "noid.network", botLogin: botActor,
+    publicKeySpki, validFrom: "2026-08-29T00:00:00.000Z"
+  } : {
+    schemaVersion: 2, keyId, algorithm: "Ed25519", issuer: "noid.network", purpose: "hosted-research-delegation",
+    forge: { provider: "forgejo", origin: "https://git.parano1d.org", repository: "ignotusnemo/parano1d-soundness", botLogin: "noid-network" },
+    publicKeySpki, validFrom: "2026-08-29T00:00:00.000Z"
   }));
-  const signed = {
-    schemaVersion: 1,
-    issuer: "noid.network",
+  const common = {
+    issuer: "noid.network" as const,
     keyId,
-    repository: "ignotusnemo/parano1d-soundness",
+    repository: "ignotusnemo/parano1d-soundness" as const,
     runId: "d98b8ce8-f013-4b9a-95ea-b85cf876e64a",
     submissionId: "hosted-all-root-review",
     issuedAt: "2026-08-29T12:00:00.000Z",
-    researcher: { githubId: "12345678", login: "alice-researcher" },
     contentDigest: delegatedContentDigest(directory)
-  } as const;
+  };
+  const signed = schemaVersion === 1 ? {
+    schemaVersion: 1 as const, ...common, researcher: { githubId: "12345678", login: "alice-researcher" }
+  } : {
+    schemaVersion: 2 as const, ...common,
+    researcher: { id: "1000000000000000001", login: "alice_researcher", profileUrl: "https://noid.network/members/alice_researcher" },
+    forge: { provider: "forgejo" as const, origin: "https://git.parano1d.org", botLogin: "noid-network" }
+  };
   const signature = sign(null, Buffer.from(canonicalJson(signed)), privateKey).toString("base64url");
   writeFileSync(path.join(directory, "delegation.json"), JSON.stringify({ ...signed, signature }));
   return { root, directory, keyDirectory };
@@ -114,6 +119,29 @@ test("the accepted ledger reconstructs the bot actor from the pinned delegation 
   }
 });
 
+test("a portal delegation binds a local researcher identity to the pinned Forgejo service", () => {
+  const submission = hostedSubmission(2);
+  try {
+    assert.equal(serviceDelegationActor(submission.directory, submission.keyDirectory), "noid-network");
+    const result = verifyHosted(submission, "noid-network");
+    assert.equal(result.status, "pending-review");
+    assert.deepEqual(result.context.researcher, {
+      identityProvider: "noid.network",
+      id: "1000000000000000001",
+      login: "alice_researcher",
+      profileUrl: "https://noid.network/members/alice_researcher",
+      avatarUrl: "https://noid.network/api/avatars/1000000000000000001",
+      delegation: {
+        issuer: "noid.network",
+        keyId: "test-portal-key",
+        runId: "d98b8ce8-f013-4b9a-95ea-b85cf876e64a"
+      }
+    });
+  } finally {
+    rmSync(submission.root, { recursive: true, force: true });
+  }
+});
+
 test("a hosted delegation fails after any signed report byte changes", () => {
   const submission = hostedSubmission();
   try {
@@ -131,7 +159,7 @@ test("a valid delegation is rejected when another GitHub actor opens the pull re
   try {
     const result = verifyHosted(submission, "another-bot[bot]");
     assert.equal(result.status, "rejected");
-    assert.match(result.reasons[0] ?? "", /pinned GitHub App bot/u);
+    assert.match(result.reasons[0] ?? "", /pinned service account/u);
   } finally {
     rmSync(submission.root, { recursive: true, force: true });
   }

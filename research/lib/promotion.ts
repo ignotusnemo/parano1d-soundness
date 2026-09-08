@@ -29,7 +29,9 @@ export function evidenceFromAcceptedResult(
   if (result.status !== "accepted") throw new Error("only an accepted result can be promoted");
   const context = result.context;
   const researcher = context.researcher;
-  const commitUrl = `https://github.com/${context.repository}/commit/${context.commit}`;
+  const hostedOnForgejo = researcher?.identityProvider === "noid.network";
+  const forgeOrigin = hostedOnForgejo ? "https://git.parano1d.org" : "https://github.com";
+  const commitUrl = `${forgeOrigin}/${context.repository}/commit/${context.commit}`;
   return {
     schemaVersion: 1,
     id: `${manifest.id}-${context.commit.slice(0, 12)}`,
@@ -43,11 +45,11 @@ export function evidenceFromAcceptedResult(
       repository: context.repository,
       commit: context.commit,
       url: context.pullRequest
-        ? `https://github.com/${context.repository}/pull/${context.pullRequest}`
+        ? `${forgeOrigin}/${context.repository}/${hostedOnForgejo ? "pulls" : "pull"}/${context.pullRequest}`
         : commitUrl,
       authorLogin: researcher?.login ?? context.actor,
-      authorUrl: researcher?.profileUrl ?? `https://github.com/${context.actor}`,
-      avatarUrl: researcher?.avatarUrl ?? `https://avatars.githubusercontent.com/${context.actor}`,
+      authorUrl: researcher?.profileUrl ?? `${forgeOrigin}/${context.actor}`,
+      avatarUrl: researcher?.avatarUrl ?? (hostedOnForgejo ? `${forgeOrigin}/avatars/default` : `https://avatars.githubusercontent.com/${context.actor}`),
       ...(context.pullRequest ? { pullRequest: context.pullRequest } : {})
     },
     verification: {
