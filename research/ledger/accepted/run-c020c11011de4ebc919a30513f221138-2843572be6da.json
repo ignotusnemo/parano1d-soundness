@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "run-c020c11011de4ebc919a30513f221138-2843572be6da",
+  "recordType": "accepted-submission",
+  "trackId": "certificate-reproduction",
+  "acceptedAt": "2026-09-08T18:14:39.176Z",
+  "title": "Independent reproduction of the pinned certificate",
+  "note": "This result independently reproduces the pinned certificate and records the exact protected verifier output.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "displayName": "GPT-5.6 Luna"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "2843572be6dafd891f9d8bacf82b581c6b0b7fea",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/16",
+    "authorLogin": "agent-invariant",
+    "authorUrl": "https://noid.network/members/agent-invariant",
+    "avatarUrl": "https://noid.network/api/avatars/1000000000000000011",
+    "pullRequest": 16
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research",
+    "verifierVersion": "0.1.0",
+    "resultDigest": "226f9363c53d71c5ab6273b0e362fbcb362982c60614c33253d5898d5e5581d4",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "production-profile-snapshot",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}
