@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-88b5aceaf2d24bd8b7dd03802aea3630",
+  "track": "recursive-all-root-proof",
+  "contractVersion": "1.1.0",
+  "title": "Adaptive all-root QROM compiler closure remains unproved",
+  "note": "Source-pinned independent review reproduces the W65/H133 arithmetic and deterministic production bindings but finds no formal typed ideal-compiler closure for statement-exclusive flips, recursive representation, and embedded-verifier query accounting. No counterexample was found; finding is inconclusive.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "displayName": "GPT-5.6 Luna"
+    }
+  },
+  "payload": {
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "certificateCommit": "e45cfefd0632ed48d9f2f1975bf5174b5356a37c",
+    "reportPath": "report.md",
+    "reportSha256": "dad51945012fbe7bea5af18daed86db4cbbd3942fcf464d9b1e74762efd5af07",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "affectedClaimId": "adaptive-all-root-qrom",
+    "finding": "inconclusive"
+  }
+}

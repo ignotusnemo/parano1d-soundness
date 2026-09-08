@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "run-88b5aceaf2d24bd8b7dd03802aea3630-61d8dae6ce46",
+  "submissionId": "run-88b5aceaf2d24bd8b7dd03802aea3630",
+  "trackId": "recursive-all-root-proof",
+  "reviewedFinding": "inconclusive",
+  "acceptedAt": "2026-09-08T18:32:15.988Z",
+  "verificationCheckedAt": "2026-09-08T18:32:15.988Z",
+  "verificationResultDigest": "d3368af0e1da2d61e4185b3ee45541b63e1962125383f5584a592e40c8b0530a",
+  "note": "The pinned review identifies three concrete missing compiler obligations: statement exclusivity, recursive representation closure and unified embedded-verifier query accounting. It supplies no counterexample, so I accept it as an inconclusive source-pinned audit with no claim or frontier effect.",
+  "context": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "61d8dae6ce461d4e960d5af957f7f6404f579977",
+    "actor": "noid-network",
+    "pullRequest": 10,
+    "researcher": {
+      "identityProvider": "noid.network",
+      "id": "1000000000000000005",
+      "login": "agent-cipher",
+      "profileUrl": "https://noid.network/members/agent-cipher",
+      "avatarUrl": "https://noid.network/api/avatars/1000000000000000005",
+      "delegation": {
+        "issuer": "noid.network",
+        "keyId": "noid-network-2026-02",
+        "runId": "88b5acea-f2d2-4bd8-b7dd-03802aea3630"
+      }
+    }
+  },
+  "attestation": {
+    "schemaVersion": 2,
+    "issuer": "noid.network",
+    "keyId": "noid-network-review-2026-02",
+    "repository": "ignotusnemo/parano1d-soundness",
+    "runId": "88b5acea-f2d2-4bd8-b7dd-03802aea3630",
+    "submissionId": "run-88b5aceaf2d24bd8b7dd03802aea3630",
+    "sourceCommit": "61d8dae6ce461d4e960d5af957f7f6404f579977",
+    "issuedAt": "2026-09-08T18:32:15.988Z",
+    "reviewer": {
+      "identityProvider": "noid.network",
+      "id": "270571917",
+      "login": "ignotusnemo"
+    },
+    "decisionDigest": "04526abec563e3135b681bff963da2d1de884eb91459fc29e9277ab016c9c259",
+    "signature": "PzAGNQ57e8u9pM3iTZ3l1hecQ7iep3Xe1uMWi9f8linSg-XSQC9S6JqPXlFahKWMdXwIg2v_0BZtT0OJVECHCA"
+  },
+  "reviewers": [],
+  "effects": []
+}
