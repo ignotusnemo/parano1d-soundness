@@ -790,9 +790,9 @@ The executable audit evaluates this expression in `GF(2^128)` and obtains the
 nonzero tower-basis value `0xbe32`. It then evaluates all four applicable
 Macaulay models at every permitted trail placement. The smallest `omega=2`
 projection is `1022.830074998558` bits. This is above the
-`409.873818620410`-bit feed-forward projection in equation (36), so the new
-paper does not change the strongest published dedicated-attack projection used
-by this certificate. This is the paper's semi-regular attack-cost model
+`409.873818620410`-bit feed-forward projection in equation (36), so this
+August model does not change the lower of the two models instantiated here.
+This is the paper's semi-regular attack-cost model
 transferred to the production field, not a lower bound on all attacks.
 
 The reviewed ePrint 2026/1792 archive version is `20260824:125701`, with
@@ -801,6 +801,10 @@ SHA-256
 The complete specialization, model caveats and the screening of the other
 August Poseidon results are recorded in the
 [August 2026 Poseidon2b review](poseidon2b-august-2026.md).
+
+### September 2026 literature update
+
+The [September ePrint review](september-2026-eprint-review.md) evaluates the new bivariate resultant method of ePrint 2026/1905. Its formal no-skip CICO-2 `omega=2` soft-O monomial for the snapshotted round count is `7^107`, or `300.386976660164` descriptive bits. The large-characteristic stability theorem does not cover `GF(2^128)`, and the published equations and experiments do not establish the method for Parano1d's fixed feed-forward compression. The executable audit records both failed transfer checks and does not treat this screening expression as a production attack, a security lower bound or a value for `Delta_P2b`. The review also checks production parameters against the authors' pinned reference and records the scope of new Fiat-Shamir, quantum permutation and Reed-Solomon work.
 
 ## Fixed Poseidon2b boundary
 

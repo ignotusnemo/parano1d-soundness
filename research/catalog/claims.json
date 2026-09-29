@@ -169,7 +169,7 @@
   {
     "id": "poseidon2b-classical-audit",
     "title": "Published Poseidon2b cryptanalysis audit",
-    "statement": "The currently published algebraic attack family does not lower the exact width-four production instance; the applicable two-to-one compression projection is recorded separately at 409.873818620410 bits.",
+    "statement": "The specialized feed-forward model has a 409.873818620410-bit attack-cost projection. A lower September 2026 CICO-2 screening expression has not been validated for the binary feed-forward production equations.",
     "scope": "Published classical cryptanalysis of the exact production permutation and compression mode, kept separate from the fixed-compiler QROM condition.",
     "initialStatus": "verified",
     "derived": false,
@@ -177,13 +177,17 @@
       {
         "claimId": "production-profile-snapshot",
         "role": "required",
-        "note": "The audit pins the exact field, width, matrices, rounds and compression mode."
+        "note": "The audit pins the exact field, width, matrices, rounds and compression mode. The September resultant screen does not change the conditional soundness bound."
       }
     ],
     "sources": [
       {
         "label": "Current Poseidon2b cryptanalysis",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/category-one.md#current-poseidon2b-cryptanalysis"
+      },
+      {
+        "label": "September 2026 ePrint review",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/docs/september-2026-eprint-review.md"
       }
     ]
   },

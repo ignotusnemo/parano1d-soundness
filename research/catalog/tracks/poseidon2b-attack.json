@@ -1,7 +1,7 @@
 {
   "id": "poseidon2b-attack",
   "title": "Production Poseidon2b attack",
-  "description": "Submit a conclusive reachable production break or a fixed-compiler bound against the exact width-four Poseidon2b instance. Component-only and inconclusive findings do not create public submissions.",
+  "description": "Test the September 2026 CICO-2 resultant lead or another method against the exact width-four binary Poseidon2b instance. Public submissions still require a reachable production break or a fixed-compiler bound; screening calculations alone do not qualify.",
   "kind": "attack",
   "direction": "non-ranked",
   "targetClaimId": "fixed-poseidon2b-delta",

@@ -72,11 +72,14 @@ change the certificate conclusion. This is an attack-model projection, not a
 claim of 1022-bit security. The exact calculation and scope are in the
 [August 2026 Poseidon2b review](docs/poseidon2b-august-2026.md).
 
+The [September 2026 ePrint review](docs/september-2026-eprint-review.md) adds a reproducible CICO-2 resultant screening calculation, confirms the v2 production constants against the authors' pinned reference, and checks the scope of new Fiat-Shamir, quantum permutation and Reed-Solomon work. The standalone calculator still pins its historical v1 production snapshot, which uses the same Poseidon2b tuple; its Category 1 numbers are not the v2 joint-bank numbers.
+
 The complete derivations are in:
 
 - [Block-Tiwari FS-FRI security](docs/block-tiwari.md);
 - [end-to-end QROM soundness and the Category 1 assessment](docs/category-one.md);
 - [August 2026 Poseidon2b cryptanalysis review](docs/poseidon2b-august-2026.md);
+- [September 2026 ePrint review](docs/september-2026-eprint-review.md);
 - [production snapshot provenance](docs/parameter-provenance.md).
 
 ## Block-Tiwari comparison
