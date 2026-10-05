@@ -4,13 +4,17 @@ This standalone repository instantiates the security analysis for a pinned Paran
 
 The public claim graph, open research contracts, accepted evidence and contributor record are versioned in [`research/`](research/). The service at [noid.network](https://noid.network/) uses this public verification layer but is not part of the certificate or its acceptance boundary.
 
+The standalone calculator retains its historical v1 production snapshot. Current mainnet v2 joint-bank accounting is documented in the [main Parano1d repository](https://git.parano1d.org/ignotusnemo/parano1d/src/branch/main/noid_soundness/docs/v2-retirement.md).
+
+Submission verification, the trusted certificate and research test suite, and accepted-evidence publication run on the noid.network application host against the [canonical Forgejo repository](https://git.parano1d.org/ignotusnemo/parano1d-soundness). GitHub serves as a source mirror. Local reproduction commands are documented below and in [`research/README.md`](research/README.md).
+
 The analysis inputs and production acceptance correspondence are pinned to Parano1d commit [`7f65daaae414128aa4377ca0ac1e96fd6dbc31a5`](https://github.com/ignotusnemo/parano1d/commit/7f65daaae414128aa4377ca0ac1e96fd6dbc31a5), including the analysis-only wallet Johnson refinement. The complete standalone snapshot is [`model/production.toml`](model/production.toml), and its repository-relative source-symbol and acceptance-path map is [`docs/parameter-provenance.md`](docs/parameter-provenance.md). The executable embeds this snapshot and does not import another checkout. A later production revision requires an explicit snapshot and provenance renewal.
 
 The repository pins the same Rust `1.96.0` toolchain used by the source revision.
 
 ## Results
 
-| Security statement | Current production result |
+| Security statement | Pinned v1 snapshot result |
 |---|---:|
 | Target FRI security | **128 bits** |
 | Provable Block-Tiwari FS-FRI security | **127 bits** |
