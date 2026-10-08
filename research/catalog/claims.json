@@ -337,6 +337,16 @@
         "claimId": "v2-production-correspondence",
         "role": "premise",
         "note": "A scoped historical acceptance audit is not a complete correspondence proof for the current v2 source."
+      },
+      {
+        "claimId": "sequential-ideal-qrom",
+        "role": "context",
+        "note": "The current inventory applies the existing ideal-QROM lifting once. This context link does not transfer the historical numerical query cap."
+      },
+      {
+        "claimId": "typed-parallel-qrom",
+        "role": "context",
+        "note": "The current accounting specializes the existing typed resource framework to its own inventory and prices. The v1 numerical bound remains historical."
       }
     ],
     "sources": [
@@ -357,7 +367,13 @@
     "scope": "Parano1d v2.0.3 sparse evaluation and the legacy-to-v2 boundary. A source-linked calculator and matching key digests do not independently prove honest matrix preprocessing.",
     "initialStatus": "premise",
     "derived": false,
-    "dependencies": [],
+    "dependencies": [
+      {
+        "claimId": "local-rbr-extraction",
+        "role": "context",
+        "note": "Sparse openings reuse the C1/BaseFold local-bound framework. This link does not discharge honest preprocessing or current request bindings."
+      }
+    ],
     "sources": [
       {
         "label": "Sparse-retirement obligations",
@@ -372,7 +388,13 @@
     "scope": "Parano1d v2.0.3 fixed HistoryStep bank, public transcript framing and bounded contract interpreter. Domain separation alone does not rule out every self-reference attack.",
     "initialStatus": "premise",
     "derived": false,
-    "dependencies": [],
+    "dependencies": [
+      {
+        "claimId": "adaptive-all-root-qrom",
+        "role": "context",
+        "note": "The existing theorem framework supplies the extraction and binding requirements to be checked for the current concrete recursive relation."
+      }
+    ],
     "sources": [
       {
         "label": "September concrete-compiler review",
@@ -391,7 +413,13 @@
     "scope": "Current v2 joint-bank conditional accounting. This condition is not discharged by the October arithmetic reproduction.",
     "initialStatus": "premise",
     "derived": false,
-    "dependencies": [],
+    "dependencies": [
+      {
+        "claimId": "adaptive-all-root-qrom",
+        "role": "context",
+        "note": "The v2 extension uses the existing all-root theorem framework with an expanded inventory. This context is not a completed proof of the current specialization."
+      }
+    ],
     "sources": [
       {
         "label": "V2 composition and fixed-compiler premises",
@@ -406,7 +434,13 @@
     "scope": "Current v2 joint-bank conditional accounting. This condition is not discharged by the October arithmetic reproduction.",
     "initialStatus": "premise",
     "derived": false,
-    "dependencies": [],
+    "dependencies": [
+      {
+        "claimId": "fixed-poseidon2b-delta",
+        "role": "context",
+        "note": "The fixed-hash production condition is retained with the current v2 event and its own exact headroom. The historical threshold is not substituted."
+      }
+    ],
     "sources": [
       {
         "label": "V2 composition and fixed-compiler premises",
@@ -421,7 +455,13 @@
     "scope": "Parano1d v2.0.3 at the pinned production revision. A positive scoped audit establishes only the source mapping it explicitly checks.",
     "initialStatus": "premise",
     "derived": false,
-    "dependencies": [],
+    "dependencies": [
+      {
+        "claimId": "current-production-correspondence",
+        "role": "context",
+        "note": "The earlier source-mapped audit is historical evidence and an audit reference. It does not establish correspondence for the current v2 revision."
+      }
+    ],
     "sources": [
       {
         "label": "Pinned integrated certificate",
@@ -436,7 +476,18 @@
     "scope": "Exact current production response interfaces and every resource price charged to the 20-event v2 joint-bank inventory.",
     "initialStatus": "premise",
     "derived": false,
-    "dependencies": [],
+    "dependencies": [
+      {
+        "claimId": "coherent-response-minimum",
+        "role": "context",
+        "note": "The existing scalar and batch price conditions are retained for the current response interfaces and inventory."
+      },
+      {
+        "claimId": "coherent-response-schedule",
+        "role": "context",
+        "note": "The published coherent construction is component evidence. Its upper bound does not establish the declared minimum prices."
+      }
+    ],
     "sources": [
       {
         "label": "Pinned integrated certificate",
@@ -451,7 +502,13 @@
     "scope": "Component-level arithmetic reproduction from the current production source. No universal security bound or reachable production attack follows from these projections.",
     "initialStatus": "under-review",
     "derived": false,
-    "dependencies": [],
+    "dependencies": [
+      {
+        "claimId": "poseidon2b-classical-audit",
+        "role": "context",
+        "note": "The current component reproduction supplements the published cryptanalysis. Their distinct attack games and source scopes remain explicit."
+      }
+    ],
     "sources": [
       {
         "label": "Pinned integrated certificate",

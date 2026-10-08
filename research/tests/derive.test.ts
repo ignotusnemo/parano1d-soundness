@@ -29,6 +29,20 @@ test("classical Poseidon projection is not presented as the Category 1 metric", 
   assert.ok(!state.metrics.some((metric) => metric.id.startsWith("poseidon2b.")));
 });
 
+test("theorem context links do not establish current v2 production premises", () => {
+  const state = deriveResearchState(path.resolve("."));
+  const claims = new Map(state.claims.map((claim) => [claim.id, claim]));
+  for (const id of ["v2-compiler-correspondence", "v2-all-root-composition", "v2-retirement-correspondence"]) {
+    const extension = claims.get(id)!;
+    assert.equal(extension.status, "premise");
+    assert.ok(extension.dependencies.some((dependency) => dependency.role === "context" && claims.get(dependency.claimId)?.status === "proved"));
+    assert.deepEqual(extension.evidenceIds, []);
+  }
+  assert.equal(claims.get("v2-joint-bank-accounting")?.status, "verified");
+  assert.ok(state.conclusion.premiseClaims.includes("v2-all-root-composition"));
+  assert.ok(state.conclusion.premiseClaims.includes("v2-production-correspondence"));
+});
+
 test("Poseidon2b work factors remain separated by exact attack game", () => {
   const state = deriveResearchState(path.resolve("."));
   const track = state.tracks.find((candidate) => candidate.id === "poseidon2b-attack");
