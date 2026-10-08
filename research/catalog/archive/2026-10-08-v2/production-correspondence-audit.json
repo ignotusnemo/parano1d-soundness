@@ -1,15 +1,15 @@
 {
   "id": "production-correspondence-audit",
-  "title": "V2 production correspondence audit",
-  "description": "Audit a precise acceptance or trusted-State materialization path in v2.0.3 against the current integrated certificate, including activation, bank selection and recursive ancestry.",
+  "title": "Legacy v1 production correspondence audit",
+  "description": "Review a previously unchecked acceptance path in the frozen v1.0.4 production snapshot. Current v2 retirement and recursive compiler tasks are published separately.",
   "kind": "audit",
   "direction": "non-ranked",
-  "targetClaimId": "v2-production-correspondence",
-  "contractVersion": "2.0.0",
+  "targetClaimId": "current-production-correspondence",
+  "contractVersion": "1.3.0",
   "validator": "manual-audit",
   "state": "active",
   "acceptance": "The schema and source pin are checked automatically. The authenticated noid.network maintainer reviews the scoped correspondence result and signs the final decision before checked publication. Inconclusive audits have no claim or frontier effects. External reviews retain their contract approval policy.",
-  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/production-correspondence-v2.0.0.md",
+  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/production-correspondence-v1.3.0.md",
   "reviewPolicy": {
     "minimumApprovals": 2,
     "minimumIndependentApprovals": 1,
@@ -26,14 +26,8 @@
     },
     "metricRules": []
   },
-  "legacyContractVersions": [
-    "1.0.0",
-    "1.1.0",
-    "1.2.0",
-    "1.3.0"
-  ],
   "expected": {
-    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
-    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50"
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "certificateCommit": "5e6951555dd67d37ede40b6e272561cd7022089d"
   }
 }

@@ -2,11 +2,11 @@
 
 ## Objective
 
-Check whether the pinned Parano1d v1.0.4 verifier accepts exactly the objects and execution paths modeled by the soundness certificate. Cover ordinary blocks, exact live suffixes, reorgs, authenticated snapshots, recursive ancestry and the local producer boundary.
+Check whether the pinned Parano1d v2.0.3 verifier accepts exactly the objects and execution paths modeled by the soundness certificate. Cover ordinary blocks, exact live suffixes, reorgs, authenticated snapshots, recursive ancestry and the local producer boundary.
 
 ## Pinned materials
 
-Compare certificate revision `5e6951555dd67d37ede40b6e272561cd7022089d` in `https://git.parano1d.org/ignotusnemo/parano1d-soundness` with production revision `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://git.parano1d.org/ignotusnemo/parano1d`. Read `contracts/production-correspondence-v1.3.0.md` before selecting one falsifiable source mapping.
+Use `contracts/production-correspondence-v2.0.0.md`. Both production and certificate pins are `50d6dac5a37b9f1be425b5e6cd823de48f843b50` in `https://git.parano1d.org/ignotusnemo/parano1d`. Clone that complete production repository and inspect `noid_soundness/docs/v2-retirement.md`, `noid_soundness/src/v2.rs` and the relevant verifier paths. The soundness workspace supplies contracts and evidence; its standalone calculator is historical.
 
 ## Useful results
 
@@ -18,12 +18,13 @@ Select one acceptance or materialization path before analysis. Name the exact pr
 
 ## Required output
 
-Complete every section of the generated `report.md`. Cite immutable source lines and the certificate theorem section. Put a passive structured witness in `artifact.json` when one exists. State whether the finding supports, challenges or remains inconclusive for `current-production-correspondence`, then seal the digests and run the local verifier.
+Complete every section of the generated `report.md`. Cite immutable source lines and the certificate theorem section. Put a passive structured witness in `artifact.json` when one exists. State whether the finding supports, challenges or remains inconclusive for `v2-production-correspondence`, then seal the digests and run the local verifier.
 
 ## Review
 
 Automated checks validate identity-independent data, source pins and digests. The authenticated portal maintainer reviews the evidence and signs the final semantic finding before checked ledger publication. Additional reviews can inform that decision.
 
-## Profile boundary
 
-This is the historical v1 profile. Do not transfer its numerical result or a scoped acceptance audit to v2. The current v2 bank has separate tasks and evidence.
+## Current target
+
+The target claim is `v2-production-correspondence`. Read the complete v2 contract before analysis. For new submissions use contract `2.0.0` and the current source pair. Historical results remain attributable to their original profiles.

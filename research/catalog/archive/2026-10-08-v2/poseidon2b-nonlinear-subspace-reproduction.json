@@ -1,0 +1,27 @@
+{
+  "id": "poseidon2b-nonlinear-subspace-reproduction",
+  "title": "Nonlinear subspace audit reproduction",
+  "description": "Reproduce the exact ePrint 2026/1792 specialization for the production width-four Poseidon2b compression. This checks the concrete matrix rank and all four frozen Macaulay projections.",
+  "kind": "reproduction",
+  "direction": "non-ranked",
+  "targetClaimId": "poseidon2b-classical-audit",
+  "contractVersion": "1.1.0",
+  "validator": "certificate-reproduction",
+  "state": "active",
+  "acceptance": "The trusted verifier executes the pinned standalone certificate, checks the exact production matrix rank core, trail lengths and lowest attack-cost projection, then compares every declared value with the frozen contract.",
+  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/poseidon2b-nonlinear-subspace-reproduction-v1.1.0.md",
+  "expected": {
+    "certificateCommit": "5e6951555dd67d37ede40b6e272561cd7022089d",
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "reportSha256": "44c68fab770d5ad1942fc719596af1484f4f680021a70b96a4fa64b76a700506",
+    "blockTiwariProvableBits": "127.194502224322",
+    "sequentialIdealQromBits": "64.707407428576",
+    "categoryOneGateDepthBits": "173.391078499301",
+    "categoryOneIdealEnvelope": "0.049330348228363684",
+    "poseidonClassicalProjectionBits": "409.873818620410",
+    "poseidonNonlinearRankCore": "0000000000000000000000000000be32",
+    "poseidonLinearTrailRounds": "2",
+    "poseidonNonlinearTrailRounds": "4",
+    "poseidonNonlinearProjectionBits": "1022.830074998558"
+  }
+}

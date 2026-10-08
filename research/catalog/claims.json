@@ -309,7 +309,7 @@
     "derived": false,
     "dependencies": [
       {
-        "claimId": "coherent-response-minimum",
+        "claimId": "v2-coherent-response-minimum",
         "role": "premise",
         "note": "The existing scalar and batch resource prices remain declared conditions."
       },
@@ -332,6 +332,11 @@
         "claimId": "v2-fixed-poseidon2b-delta",
         "role": "premise",
         "note": "Use the v2 event-specific headroom, not the different legacy profile threshold."
+      },
+      {
+        "claimId": "v2-production-correspondence",
+        "role": "premise",
+        "note": "A scoped historical acceptance audit is not a complete correspondence proof for the current v2 source."
       }
     ],
     "sources": [
@@ -406,6 +411,51 @@
       {
         "label": "V2 composition and fixed-compiler premises",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/v2-retirement.md"
+      }
+    ]
+  },
+  {
+    "id": "v2-production-correspondence",
+    "title": "V2 production acceptance correspondence",
+    "statement": "Every audited v2 acceptance or trusted-State materialization path must match the exact objects, bank identities and assumptions of the integrated source-linked certificate.",
+    "scope": "Parano1d v2.0.3 at the pinned production revision. A positive scoped audit establishes only the source mapping it explicitly checks.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [],
+    "sources": [
+      {
+        "label": "Pinned integrated certificate",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/v2-retirement.md"
+      }
+    ]
+  },
+  {
+    "id": "v2-coherent-response-minimum",
+    "title": "V2 coherent response cost premise",
+    "statement": "The current v2 calculator uses declared scalar and batch response prices to translate typed query probabilities into gate-depth resources. Complete construction upper bounds do not establish those minimum prices.",
+    "scope": "Exact current production response interfaces and every resource price charged to the 20-event v2 joint-bank inventory.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [],
+    "sources": [
+      {
+        "label": "Pinned integrated certificate",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/response-accounting.md"
+      }
+    ]
+  },
+  {
+    "id": "v2-poseidon2b-classical-audit",
+    "title": "V2 Poseidon2b nonlinear-subspace audit",
+    "statement": "The source-linked production matrix specialization reproduces a nonzero rank core, trail lengths two and four, and the exact semi-regular Macaulay projections for the v2.0.3 Poseidon2b implementation.",
+    "scope": "Component-level arithmetic reproduction from the current production source. No universal security bound or reachable production attack follows from these projections.",
+    "initialStatus": "under-review",
+    "derived": false,
+    "dependencies": [],
+    "sources": [
+      {
+        "label": "Pinned integrated certificate",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/poseidon2b-august-2026.md"
       }
     ]
   }

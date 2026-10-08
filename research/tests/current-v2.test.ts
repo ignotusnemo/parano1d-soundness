@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -8,8 +8,47 @@ import { loadCatalog, loadTrack } from "@/lib/catalog";
 import { createChallengeSubmission } from "@/lib/challenge";
 import { buildFrontier, FRONTIER_MODELS } from "@/lib/frontier";
 import { verifySubmission } from "@/lib/verifier";
+import { readV2Inputs, V2_CERTIFICATE_REVISION } from "@/lib/v2-certificate-runner";
 
 const root = path.resolve(".");
+
+test("all active work targets the current v2 certificate and distinct claims", () => {
+  const tracks = loadCatalog(root).tracks.filter((track) => track.state === "active" && track.id !== "official-certificate");
+  assert.equal(tracks.length, 8);
+  for (const track of tracks) {
+    assert.equal(track.expected?.productionCommit, V2_CERTIFICATE_REVISION);
+    assert.equal(track.expected?.certificateCommit, V2_CERTIFICATE_REVISION);
+    assert.ok(track.targetClaimId.startsWith("v2-"));
+    assert.doesNotMatch(track.title, /legacy|v1/i);
+  }
+});
+
+test("current release inputs reject corruption before any protected execution", () => {
+  const temporary = mkdtempSync(path.join(tmpdir(), "v2-input-check-"));
+  try {
+    cpSync(path.join(root, "certificates"), path.join(temporary, "certificates"), { recursive: true });
+    assert.equal(readV2Inputs(temporary).length, 4);
+    const filename = path.join(temporary, "certificates/v2.0.3/class-0.key.gz");
+    writeFileSync(filename, readFileSync(path.join(temporary, "certificates/v2.0.3/class-1.key.gz")));
+    assert.throws(() => readV2Inputs(temporary), /protected input digest mismatch/);
+  } finally { rmSync(temporary, { recursive: true, force: true }); }
+});
+
+test("a v2 reproduction rejects altered bank, event inventory and historical source pins", () => {
+  const temporary = mkdtempSync(path.join(tmpdir(), "v2-payload-check-"));
+  const destination = path.join(temporary, "v2-payload-check");
+  try {
+    createChallengeSubmission({ root, destination, id: "v2-payload-check", trackId: "certificate-reproduction", attribution: { mode: "human" } });
+    const filename = path.join(destination, "submission.json");
+    const original = JSON.parse(readFileSync(filename, "utf8"));
+    for (const [key, value] of [["bankDigest", "0".repeat(64)], ["eventCount", "19"], ["productionCommit", "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5"]]) {
+      writeFileSync(filename, JSON.stringify({ ...original, payload: { ...original.payload, [key!]: value } }));
+      const result = verifySubmission({ root, submissionDirectory: destination, context: { repository: "local/reproduction", commit: "0".repeat(40), actor: "researcher" } });
+      assert.equal(result.status, "rejected");
+      assert.ok(result.reasons.some((reason) => reason.includes(key!)));
+    }
+  } finally { rmSync(temporary, { recursive: true, force: true }); }
+});
 
 test("v2 evidence keeps exact report hashes and a separate conditional frontier", () => {
   const { records } = loadCatalog(root);

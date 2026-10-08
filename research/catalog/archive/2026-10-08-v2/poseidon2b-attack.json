@@ -1,22 +1,15 @@
 {
   "id": "poseidon2b-attack",
-  "title": "V2 production Poseidon2b attack",
-  "description": "Test the current production instance and concrete v2 compiler. A reachable accepted violation or a fixed-compiler bound is required; screening calculations and failed searches do not qualify.",
+  "title": "Production Poseidon2b attack",
+  "description": "Test the September 2026 CICO-2 resultant lead or another method against the exact width-four binary Poseidon2b instance. Public submissions still require a reachable production break or a fixed-compiler bound; screening calculations alone do not qualify.",
   "kind": "attack",
   "direction": "non-ranked",
-  "targetClaimId": "v2-fixed-poseidon2b-delta",
-  "contractVersion": "2.0.0",
-  "legacyContractVersions": [
-    "1.0.0",
-    "1.1.0",
-    "1.2.0",
-    "1.3.0",
-    "1.4.0"
-  ],
+  "targetClaimId": "fixed-poseidon2b-delta",
+  "contractVersion": "1.4.0",
   "validator": "manual-audit",
   "state": "active",
   "acceptance": "Only conclusive evidence that derives valid production inputs and demonstrates an accepted production effect may be submitted. A structured production-impact artifact is mandatory. Inconclusive and component-only results finish privately without a pull request.",
-  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/poseidon2b-attack-v2.0.0.md",
+  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/poseidon2b-attack-v1.4.0.md",
   "submissionPolicy": {
     "allowedFindings": [
       "challenges",
@@ -101,7 +94,7 @@
     ]
   },
   "expected": {
-    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
-    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50"
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "certificateCommit": "5e6951555dd67d37ede40b6e272561cd7022089d"
   }
 }

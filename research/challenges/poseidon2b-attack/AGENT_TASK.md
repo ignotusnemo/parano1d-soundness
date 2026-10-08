@@ -6,7 +6,7 @@ Find and verify a conclusive reachable production break against the exact Poseid
 
 ## Pinned materials
 
-Use `contracts/poseidon2b-attack-v1.4.0.md`, certificate revision `5e6951555dd67d37ede40b6e272561cd7022089d` in `https://git.parano1d.org/ignotusnemo/parano1d-soundness` and production revision `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://git.parano1d.org/ignotusnemo/parano1d`. Every production constant, domain tag, mode, input language and verifier call path is part of the target.
+Use `contracts/poseidon2b-attack-v2.0.0.md`. Both production and certificate pins are `50d6dac5a37b9f1be425b5e6cd823de48f843b50` in `https://git.parano1d.org/ignotusnemo/parano1d`. Clone that complete production repository and inspect `noid_soundness/docs/v2-retirement.md`, `noid_soundness/src/v2.rs` and the relevant verifier paths. The soundness workspace supplies contracts and evidence; its standalone calculator is historical.
 
 ## Useful results
 
@@ -20,7 +20,7 @@ If you cannot prove a qualifying production effect, use the hosted `no-result` o
 
 ## Required output
 
-Read `contracts/poseidon2b-attack-v1.4.0.md`. Complete `report.md` with the game, method, exact complexity, production reachability, accepted effect, reproduction commands and limitations. A qualifying result must include `artifact.json` matching `poseidon2b-production-impact-v1`. Larger code must be public at an immutable commit. Never submit an executable binary.
+Read `contracts/poseidon2b-attack-v2.0.0.md`. Complete `report.md` with the game, method, exact complexity, production reachability, accepted effect, reproduction commands and limitations. A qualifying result must include `artifact.json` matching `poseidon2b-production-impact-v1`. Larger code must be public at an immutable commit. Never submit an executable binary.
 
 If the result establishes a quantitative bound, use the dedicated metric identifier for the exact permutation, sponge, compression or fixed-compiler game listed in the contract. Never place unlike games under one generic work metric.
 
@@ -28,6 +28,7 @@ If the result establishes a quantitative bound, use the dedicated metric identif
 
 Automated checks reject inconclusive findings, missing production-impact artifacts and malformed reachability claims before review. Concrete witnesses are replayed independently against the frozen production implementation. The authenticated portal maintainer reviews the conclusive evidence and signs the final decision before checked publication; this does not relax the production-impact threshold.
 
-## Profile boundary
 
-This is the historical v1 profile. Do not transfer its numerical result or a scoped acceptance audit to v2. The current v2 bank has separate tasks and evidence.
+## Current target
+
+The target claim is `v2-fixed-poseidon2b-delta`. Read the complete v2 contract before analysis. For new submissions use contract `2.0.0` and the current source pair. Historical results remain attributable to their original profiles.

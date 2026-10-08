@@ -7,14 +7,12 @@ import { deriveResearchState } from "@/lib/derive";
 
 test("the published end-to-end corollary is proved with explicit production premises", () => {
   const state = deriveResearchState(path.resolve("."));
-  assert.equal(state.conclusion.status, "proved");
-  assert.deepEqual(state.conclusion.blockingClaims, []);
-  assert.deepEqual(state.conclusion.premiseClaims, [
-    "coherent-response-minimum",
-    "fixed-poseidon2b-delta"
-  ]);
+  assert.equal(state.claims.find((claim) => claim.id === "production-category-one")?.status, "proved");
+  assert.deepEqual(state.claims.find((claim) => claim.id === "production-category-one")?.blockingClaims, []);
+  assert.ok(state.conclusion.premiseClaims.includes("v2-coherent-response-minimum"));
+  assert.ok(state.conclusion.premiseClaims.includes("v2-fixed-poseidon2b-delta"));
   assert.equal(state.claims.find((claim) => claim.id === "adaptive-all-root-qrom")?.status, "proved");
-  assert.equal(state.metrics.find((metric) => metric.id === "category-one.margin-over-reference")?.value, "+3.391078499301");
+  assert.equal(state.claims.flatMap((claim) => claim.metrics).find((metric) => metric.id === "category-one.margin-over-reference")?.value, "+3.391078499301");
   assert.equal(state.leaderboard[0]?.login, "ignotusnemo");
   assert.equal(state.leaderboard[0]?.accepted, state.records.filter((record) => record.source.authorLogin === "ignotusnemo").length);
   assert.ok((state.leaderboard[0]?.frontierMoves ?? 0) > 0);
@@ -49,7 +47,7 @@ test("the applicable nonlinear-subspace result has one non-ranked reproduction t
   assert.equal(tracks.length, 1);
   assert.equal(tracks[0]?.kind, "reproduction");
   assert.equal(tracks[0]?.direction, "non-ranked");
-  assert.equal(tracks[0]?.targetClaimId, "poseidon2b-classical-audit");
+  assert.equal(tracks[0]?.targetClaimId, "v2-poseidon2b-classical-audit");
   assert.equal(tracks[0]?.scoreMetricId, undefined);
 });
 
@@ -87,7 +85,7 @@ test("a refuted declared premise visibly invalidates the dependent production co
     }, null, 2)}\n`);
     const state = deriveResearchState(temporary);
     assert.equal(state.claims.find((claim) => claim.id === "fixed-poseidon2b-delta")?.status, "refuted");
-    assert.equal(state.conclusion.status, "premise-failed");
+    assert.equal(state.claims.find((claim) => claim.id === "production-category-one")?.status, "premise-failed");
     writeFileSync(path.join(temporary, "ledger/accepted/all-root-counterexample.json"), `${JSON.stringify({
       schemaVersion: 1,
       id: "all-root-counterexample",
@@ -116,7 +114,7 @@ test("a refuted declared premise visibly invalidates the dependent production co
     }, null, 2)}\n`);
     const conflicted = deriveResearchState(temporary);
     assert.equal(conflicted.claims.find((claim) => claim.id === "adaptive-all-root-qrom")?.status, "conflicted");
-    assert.equal(conflicted.conclusion.status, "conflicted");
+    assert.equal(conflicted.claims.find((claim) => claim.id === "production-category-one")?.status, "conflicted");
   } finally {
     rmSync(temporary, { recursive: true, force: true });
   }

@@ -27,7 +27,7 @@ test("the corrected construction replaces invalid subtotals while Delta's lower 
   const state = deriveResearchState(path.resolve("."));
   assert.equal(state.claims.find((claim) => claim.id === "coherent-response-schedule")?.metrics.find((metric) => metric.id === "coherent-response.gate-depth")?.value, "2008370223960");
   assert.equal(state.leaderboard.find((entry) => entry.login === "agent-delta")?.frontierMoves, 1);
-  assert.equal(state.metrics.find((metric) => metric.id === "category-one.ideal-envelope")?.value, "0.049330348228363684");
+  assert.equal(state.claims.flatMap((claim) => claim.metrics).find((metric) => metric.id === "category-one.ideal-envelope")?.value, "0.049330348228363684");
 });
 
 test("retractions require protected official records and exact earlier metric targets", () => {

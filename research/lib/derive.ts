@@ -16,11 +16,8 @@ import { jsonFiles, readStrictJsonFile } from "@/lib/files";
 import { manualAuditPayloadSchema, reviewDecisionSchema } from "@/lib/schemas";
 import { loadSubmission } from "@/lib/verifier";
 import { CERTIFICATE_REVISION, PRODUCTION_REVISION } from "@/lib/pins";
-import { exactDecimalDifference } from "@/lib/exact-decimal";
 import { buildFrontier, FRONTIER_MODELS } from "@/lib/frontier";
 import { effectiveMetricRecords } from "@/lib/metric-retractions";
-
-const CATEGORY_ONE_GATE_DEPTH_REFERENCE = "170";
 
 function publicRecords(root: string, records: EvidenceRecord[]): PublicEvidenceRecord[] {
   const reviewDirectory = path.join(root, "reviews/accepted");
@@ -269,24 +266,14 @@ function modelLeaderboard(records: EvidenceRecord[], tracks: TrackDefinition[]):
 export function deriveResearchState(root: string): ResearchState {
   const catalog = loadCatalog(root);
   const claims = deriveClaims(catalog.records, catalog.claims);
-  const conclusion = claims.find((claim) => claim.id === "production-category-one");
+  const conclusion = claims.find((claim) => claim.id === "v2-joint-bank-accounting");
   if (!conclusion) throw new Error("missing production conclusion claim");
   const headlineMetricIds = [
-    "category-one.nist-category",
-    "category-one.gate-depth-floor",
-    "category-one.margin-over-reference",
-    "category-one.ideal-envelope",
+    "v2.category-one.gate-depth-floor",
+    "v2.category-one.ideal-envelope",
   ];
   const allMetrics = claims.flatMap((claim) => claim.metrics);
   const metrics = headlineMetricIds.map((id) => allMetrics.find((metric) => metric.id === id)).filter((metric) => metric !== undefined);
-  const gateDepthFloor = metrics.find((metric) => metric.id === "category-one.gate-depth-floor");
-  const marginIndex = metrics.findIndex((metric) => metric.id === "category-one.margin-over-reference");
-  if (gateDepthFloor && marginIndex !== -1 && metrics[marginIndex]) {
-    metrics[marginIndex] = {
-      ...metrics[marginIndex],
-      value: exactDecimalDifference(gateDepthFloor.value, CATEGORY_ONE_GATE_DEPTH_REFERENCE, true)
-    };
-  }
   const generatedAt = catalog.records.reduce(
     (latest, record) => (record.acceptedAt > latest ? record.acceptedAt : latest),
     "1970-01-01T00:00:00Z"

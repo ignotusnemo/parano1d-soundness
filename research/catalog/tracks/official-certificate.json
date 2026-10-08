@@ -4,9 +4,13 @@
   "description": "Protected baseline imported from the source-pinned Parano1d soundness certificate.",
   "kind": "reproduction",
   "direction": "non-ranked",
-  "targetClaimId": "production-profile-snapshot",
+  "targetClaimId": "v2-joint-bank-accounting",
   "contractVersion": "1.0.0",
   "validator": "certificate-reproduction",
   "state": "active",
-  "acceptance": "Protected project baseline. Public reproductions use the certificate-reproduction track."
+  "acceptance": "Protected project baseline. Public reproductions use the certificate-reproduction track.",
+  "expected": {
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50"
+  }
 }

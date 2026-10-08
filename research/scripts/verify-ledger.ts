@@ -1,7 +1,7 @@
 import { existsSync, readdirSync, statSync } from "node:fs";
 import path from "node:path";
 import { canonicalJson } from "@/lib/canonical-json";
-import { loadTrack } from "@/lib/catalog";
+import { loadVerificationTrack } from "@/lib/catalog";
 import { DELEGATION_FILE_NAME, serviceDelegationActor } from "@/lib/delegation";
 import { jsonFiles, readStrictJsonFile } from "@/lib/files";
 import { verifyGitHubPullRequestContext, verifyGitHubReviewApprovals } from "@/lib/github-review";
@@ -56,7 +56,7 @@ async function main(): Promise<void> {
       const submissionDirectory = path.join(root, "submissions", decision.submissionId);
       if (!existsSync(path.join(submissionDirectory, "submission.json"))) throw new Error(`reviewed submission ${decision.submissionId} is missing`);
       const manifest = loadSubmission(submissionDirectory);
-      const track = loadTrack(root, manifest.track);
+      const track = loadVerificationTrack(root, manifest.track, manifest.contractVersion, true);
       const { researcher: _signedResearcher, ...eventContext } = decision.context;
       const result = verifySubmission({ root, submissionDirectory, context: eventContext, checkedAt: decision.verificationCheckedAt, allowLegacyContractVersion: true });
       expected = evidenceFromReviewedDecision(manifest, result, track, decision, path.join(root, "review-keys"));

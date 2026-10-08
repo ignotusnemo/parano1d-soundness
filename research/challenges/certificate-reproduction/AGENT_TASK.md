@@ -1,25 +1,19 @@
-# Agent task: reproduce the exact soundness certificate
+# Agent task: v2 certificate reproduction
 
 ## Objective
 
-Independently execute the protected Parano1d soundness calculator at the pinned certificate and production commits and confirm every declared output. This track tests reproducibility. It does not move a security frontier.
+The target is the complete source-linked v2.0.3 joint-bank accounting report. It covers wallet, pre-activation History, v2 History and sparse retirement, using the authenticated mainnet bank and two pinned retirement keys.
 
 ## Pinned materials
 
-Use `contracts/certificate-reproduction-v1.3.0.md`. Certificate revision: `5e6951555dd67d37ede40b6e272561cd7022089d` in `https://git.parano1d.org/ignotusnemo/parano1d-soundness`. Production revision: `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://git.parano1d.org/ignotusnemo/parano1d`.
+Read `contracts/certificate-reproduction-v2.0.0.md` and `certificates/README.md`. Production and integrated certificate are pinned to `50d6dac5a37b9f1be425b5e6cd823de48f843b50` in `https://git.parano1d.org/ignotusnemo/parano1d`. Obtain the complete production checkout and inspect the relevant code before executing the protected reproduction. This research workspace supplies the frozen contract, verified input files and passive verifier.
 
 ## Required result
 
-Run the certificate through the repository verifier in release mode with its lockfile. The submission is accepted automatically only when the observed Block-Tiwari value, sequential ideal-QROM boundary, Category 1 gate-depth floor, complete ideal envelope and Poseidon2b classical projection all match the frozen contract exactly.
+The protected runner verifies the SHA-256 and exact size of all four decompressed inputs, then the production calculator independently verifies their protocol digests and key identities. It checks the complete JSON report hash, activation height 210537, 20-event inventory, bank, runtime and key pins, sequential query cap, limiting event, descriptive gate-depth floor and 90-digit ideal-envelope ceiling.
 
-## Work boundary
+## Commands and output
 
-Do not change calculator code, expected values, track contracts or verifier code. Produce only the generated `submission.json`. The trusted verifier checks out and executes the pinned certificate itself, so copying numbers without a successful protected execution gives no additional authority.
+Set `PARANO1D_PRODUCTION_DIR` as documented in `certificates/README.md`. From the research directory, run `npm ci`, create a workspace with `npm run challenge -- setup --track certificate-reproduction --id <your-result> <your attribution options>`, then run `npm run challenge -- verify --submission <directory>`. Return the generated passive `submission.json` only after the local verifier returns `accepted`.
 
-## Commands
-
-Create the submission with `npm run challenge -- setup`, then run `npm run challenge -- verify --submission <directory>`. A successful local result must be `accepted`.
-
-## Profile boundary
-
-This is the historical v1 profile. Do not transfer its numerical result or a scoped acceptance audit to v2. The current v2 bank has separate tasks and evidence.
+Do not modify calculator sources, expected values, input files, contracts or verifier code. An altered field, source pin or input digest must fail. A matching result verifies conditional arithmetic and reproducibility. It does not independently regenerate the release matrices or prove honest preprocessing, all-root composition, the concrete compiler, fixed Poseidon2b deviation or universal response-cost minima. Those conditions have separate current v2 review tasks.

@@ -6,7 +6,7 @@ Attack, independently derive, strengthen or formalize the published adaptive all
 
 ## Pinned materials
 
-Use `contracts/adaptive-all-root-qrom-v1.3.0.md` and certificate revision `5e6951555dd67d37ede40b6e272561cd7022089d` in `https://git.parano1d.org/ignotusnemo/parano1d-soundness`. Production correspondence is pinned to Parano1d revision `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://git.parano1d.org/ignotusnemo/parano1d`.
+Use `contracts/adaptive-all-root-qrom-v2.0.0.md`. Both production and certificate pins are `50d6dac5a37b9f1be425b5e6cd823de48f843b50` in `https://git.parano1d.org/ignotusnemo/parano1d`. Clone that complete production repository and inspect `noid_soundness/docs/v2-retirement.md`, `noid_soundness/src/v2.rs` and the relevant verifier paths. The soundness workspace supplies contracts and evidence; its standalone calculator is historical.
 
 ## Useful results
 
@@ -18,12 +18,13 @@ Do not submit a theorem summary, a fixed-root reduction, a non-adaptive argument
 
 ## Required output
 
-Read `contracts/adaptive-all-root-qrom-v1.3.0.md` and the pinned theorem sources before working. Complete `report.md` with the exact theorem statement, assumptions, proof or counterexample, axiom inventory, reproducibility commands and limitations. If a machine-readable certificate or counterexample fits the passive format, include it as `artifact.json`. External proof source must be pinned to an immutable commit and independently replayable.
+Read `contracts/adaptive-all-root-qrom-v2.0.0.md` and the pinned theorem sources before working. Complete `report.md` with the exact theorem statement, assumptions, proof or counterexample, axiom inventory, reproducibility commands and limitations. If a machine-readable certificate or counterexample fits the passive format, include it as `artifact.json`. External proof source must be pinned to an immutable commit and independently replayable.
 
 ## Review
 
 The local verifier should return `pending-review`. Mathematical acceptance requires cryptographic review and a signed final decision by the authenticated portal maintainer. A proof-assistant claim additionally requires kernel replay with the declared checker and axiom inventory.
 
-## Profile boundary
 
-This is the historical v1 profile. Do not transfer its numerical result or a scoped acceptance audit to v2. The current v2 bank has separate tasks and evidence.
+## Current target
+
+The target claim is `v2-all-root-composition`. Read the complete v2 contract before analysis. For new submissions use contract `2.0.0` and the current source pair. Historical results remain attributable to their original profiles.

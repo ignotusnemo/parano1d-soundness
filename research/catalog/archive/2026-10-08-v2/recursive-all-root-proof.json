@@ -1,15 +1,15 @@
 {
   "id": "recursive-all-root-proof",
-  "title": "V2 all-root composition review",
-  "description": "Review or formalize all-root composition for the current wallet, History and sparse-retirement inventory under one adversarial budget, including the v1-to-v2 ancestry boundary.",
+  "title": "All-root theorem review and formalization",
+  "description": "Review, formalize, strengthen or challenge the published all-root recursive composition theorem for the exact from-genesis typed game.",
   "kind": "proof",
   "direction": "non-ranked",
-  "targetClaimId": "v2-all-root-composition",
-  "contractVersion": "2.0.0",
+  "targetClaimId": "adaptive-all-root-qrom",
+  "contractVersion": "1.3.0",
   "validator": "manual-audit",
   "state": "active",
   "acceptance": "The submission is source-pinned and schema-checked automatically. The authenticated noid.network maintainer reviews whether the argument supports or challenges the exact published theorem and signs the final decision before checked ledger promotion. External reviews retain their contract approval policy.",
-  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/adaptive-all-root-qrom-v2.0.0.md",
+  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/adaptive-all-root-qrom-v1.3.0.md",
   "reviewPolicy": {
     "minimumApprovals": 2,
     "minimumIndependentApprovals": 1,
@@ -26,14 +26,8 @@
     },
     "metricRules": []
   },
-  "legacyContractVersions": [
-    "1.0.0",
-    "1.1.0",
-    "1.2.0",
-    "1.3.0"
-  ],
   "expected": {
-    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
-    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50"
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "certificateCommit": "5e6951555dd67d37ede40b6e272561cd7022089d"
   }
 }

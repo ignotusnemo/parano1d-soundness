@@ -242,7 +242,7 @@ export const submissionManifestSchema = z
   })
   .strict();
 
-export const reproductionPayloadSchema = z
+const legacyReproductionPayloadSchema = z
   .object({
     certificateCommit: gitCommit,
     productionCommit: gitCommit,
@@ -258,6 +258,35 @@ export const reproductionPayloadSchema = z
     poseidonNonlinearProjectionBits: z.string().regex(/^[0-9]+\.[0-9]{12}$/).optional()
   })
   .strict();
+
+const currentCertificateBase = {
+  certificateCommit: gitCommit,
+  productionCommit: gitCommit,
+  reportSha256: sha256
+};
+export const v2ReproductionPayloadSchema = z.object({
+  ...currentCertificateBase,
+  profile: z.literal("mainnet-v2"),
+  bankDigest: sha256,
+  legacyRuntimeDigest: sha256,
+  retirementKey0: sha256,
+  retirementKey1: sha256,
+  activationHeight: z.string().regex(/^[0-9]+$/),
+  eventCount: z.string().regex(/^[0-9]+$/),
+  categoryOneGateDepthBits: z.string().regex(/^[0-9]+\.[0-9]{1,16}$/),
+  categoryOneIdealEnvelope: z.string().regex(/^0\.[0-9]{90}$/),
+  sequentialLargestQueryCap: z.string().regex(/^[0-9]+$/),
+  limitingEvent: metricIdentifier
+}).strict();
+export const v2PoseidonReproductionPayloadSchema = z.object({
+  ...currentCertificateBase,
+  profile: z.literal("mainnet-v2-poseidon2b"),
+  poseidonNonlinearRankCore: z.string().regex(/^[0-9a-f]{32}$/),
+  poseidonLinearTrailRounds: z.string().regex(/^[0-9]+$/),
+  poseidonNonlinearTrailRounds: z.string().regex(/^[0-9]+$/),
+  poseidonNonlinearProjectionBits: z.string().regex(/^[0-9]+\.[0-9]{12}$/)
+}).strict();
+export const reproductionPayloadSchema = z.union([v2ReproductionPayloadSchema, v2PoseidonReproductionPayloadSchema, legacyReproductionPayloadSchema]);
 
 export const manualAuditPayloadSchema = z
   .object({

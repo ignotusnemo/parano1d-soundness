@@ -11,6 +11,7 @@ rmSync(temporaryRoot, { recursive: true, force: true });
 mkdirSync(path.join(temporaryRoot, "ledger/accepted"), { recursive: true });
 cpSync(path.join(sourceRoot, "catalog"), path.join(temporaryRoot, "catalog"), { recursive: true });
 cpSync(path.join(sourceRoot, "evidence"), path.join(temporaryRoot, "evidence"), { recursive: true });
+cpSync(path.join(sourceRoot, "certificates"), path.join(temporaryRoot, "certificates"), { recursive: true });
 const context = {
   repository: "ignotusnemo/parano1d-soundness",
   commit: "0123456789abcdef0123456789abcdef01234567",
@@ -27,11 +28,10 @@ writeFileSync(
   `${JSON.stringify(record, null, 2)}\n`
 );
 const state = deriveResearchState(temporaryRoot);
-assert.equal(state.leaderboard.length, 1);
-assert.equal(state.leaderboard[0]?.login, "local-verifier");
-assert.equal(state.modelLeaderboard.length, 1);
-assert.equal(state.modelLeaderboard[0]?.displayName, "GPT-5");
-assert.equal(state.conclusion.status, "proved");
+assert.equal(state.leaderboard.find((entry) => entry.login === "local-verifier")?.accepted, 1);
+assert.equal(state.modelLeaderboard.find((entry) => entry.displayName === "GPT-5")?.accepted, 1);
+assert.deepEqual(record.effects, [{ claimId: "v2-joint-bank-accounting", status: "verified", metrics: [] }]);
+assert.equal(state.conclusion.status, "verified");
 const invalid = verifySubmission({
   root: temporaryRoot,
   submissionDirectory: path.join(sourceRoot, "submissions/examples/reproduction-invalid"),

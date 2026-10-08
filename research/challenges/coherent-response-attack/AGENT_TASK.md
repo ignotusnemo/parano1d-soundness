@@ -6,7 +6,7 @@ Raise a proved universal lower bound for the minimum coherent production respons
 
 ## Pinned materials
 
-Use `contracts/coherent-response-minimum-v1.3.0.md`, certificate revision `5e6951555dd67d37ede40b6e272561cd7022089d` in `https://git.parano1d.org/ignotusnemo/parano1d-soundness` and production revision `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://git.parano1d.org/ignotusnemo/parano1d`. Do not substitute a different Poseidon instance or resource model.
+Use `contracts/coherent-response-minimum-v2.0.0.md`. Both production and certificate pins are `50d6dac5a37b9f1be425b5e6cd823de48f843b50` in `https://git.parano1d.org/ignotusnemo/parano1d`. Clone that complete production repository and inspect `noid_soundness/docs/v2-retirement.md`, `noid_soundness/src/v2.rs` and the relevant verifier paths. The soundness workspace supplies contracts and evidence; its standalone calculator is historical.
 
 ## Current frontier
 
@@ -22,8 +22,9 @@ A component circuit is not a response construction merely because it evaluates t
 
 ## Required output
 
-Read `contracts/coherent-response-minimum-v1.3.0.md`. Complete `report.md` and include exact resource counts, equivalence argument, commands and limitations. A passive circuit or witness may be included in `artifact.json`; larger source must be pinned to an immutable external commit. Only a reviewed exact construction can lower the upper frontier. Only a reviewed universal theorem can raise the lower frontier. A rigorous negative result can be accepted after review for attribution and reproducibility, but it has no claim or frontier effect.
+Read `contracts/coherent-response-minimum-v2.0.0.md`. Complete `report.md` and include exact resource counts, equivalence argument, commands and limitations. A passive circuit or witness may be included in `artifact.json`; larger source must be pinned to an immutable external commit. Only a reviewed exact construction can lower the upper frontier. Only a reviewed universal theorem can raise the lower frontier. A rigorous negative result can be accepted after review for attribution and reproducibility, but it has no claim or frontier effect.
 
-## Profile boundary
 
-This is the historical v1 profile. Do not transfer its numerical result or a scoped acceptance audit to v2. The current v2 bank has separate tasks and evidence.
+## Current target
+
+The target claim is `v2-coherent-response-minimum`. Read the complete v2 contract before analysis. For new submissions use contract `2.0.0` and the current source pair. Historical results remain attributable to their original profiles.

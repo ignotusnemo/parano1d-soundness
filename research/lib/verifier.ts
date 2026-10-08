@@ -12,6 +12,7 @@ import {
   verificationContextSchema
 } from "@/lib/schemas";
 import { runCertificate } from "@/lib/certificate-runner";
+import { runV2Certificate } from "@/lib/v2-certificate-runner";
 import { CERTIFICATE_REVISION, PRODUCTION_REVISION } from "@/lib/pins";
 import type { SubmissionManifest, VerificationContext, VerificationResult } from "@/lib/types";
 import { DELEGATION_FILE_NAME, verifyServiceDelegation } from "@/lib/delegation";
@@ -127,9 +128,15 @@ export function verifySubmission(options: VerificationOptions): VerificationResu
     const certificateDirectory = process.env.PARANO1D_SOUNDNESS_DIR ?? path.resolve(options.root, "..");
     const certificateCommit = track.expected?.certificateCommit;
     if (!certificateCommit) return rejected(manifest, context, ["track has no frozen certificate revision"], {}, checkedAt);
+    const submitted = payload as unknown as Record<string, string>;
+    const mismatches = Object.entries(track.expected ?? {}).filter(([key, value]) => submitted[key] !== value);
+    if (mismatches.length > 0) return rejected(manifest, context, mismatches.map(([key]) => `submitted value ${key} differs from the frozen contract`), {}, checkedAt);
     let observed: Record<string, string>;
     try {
-      observed = { ...runCertificate(certificateDirectory, certificateCommit) };
+      const profile = track.expected?.profile;
+      observed = profile === "mainnet-v2" || profile === "mainnet-v2-poseidon2b"
+        ? runV2Certificate(options.root, certificateCommit, profile)
+        : { ...runCertificate(certificateDirectory, certificateCommit) };
     } catch (error) {
       return rejected(
         manifest,
@@ -140,7 +147,6 @@ export function verifySubmission(options: VerificationOptions): VerificationResu
       );
     }
     const expected = track.expected ?? {};
-    const submitted = payload as unknown as Record<string, string>;
     const reasons: string[] = [];
     for (const [key, expectedValue] of Object.entries(expected)) {
       if (observed[key] !== expectedValue) reasons.push(`protected observation ${key} differs from the frozen contract`);

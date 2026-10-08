@@ -43,7 +43,7 @@ function reviewSubmission(affectedClaimId: string): { root: string; directory: s
 }
 
 test("an active cryptographic track passes passive checks and enters expert review", () => {
-  const submission = reviewSubmission("adaptive-all-root-qrom");
+  const submission = reviewSubmission("v2-all-root-composition");
   try {
     const result = verifySubmission({ root: path.resolve("."), submissionDirectory: submission.directory, context });
     assert.equal(result.status, "pending-review");
@@ -65,7 +65,7 @@ test("a review track cannot target another claim", () => {
 });
 
 test("a manifest identifier must equal its submission directory", () => {
-  const submission = reviewSubmission("adaptive-all-root-qrom");
+  const submission = reviewSubmission("v2-all-root-composition");
   try {
     const manifestPath = path.join(submission.directory, "submission.json");
     const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as Record<string, unknown>;
@@ -80,7 +80,7 @@ test("a manifest identifier must equal its submission directory", () => {
 });
 
 test("a declared artifact must exist and use strict passive JSON", () => {
-  const submission = reviewSubmission("adaptive-all-root-qrom");
+  const submission = reviewSubmission("v2-all-root-composition");
   try {
     const manifestPath = path.join(submission.directory, "submission.json");
     const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as { payload: Record<string, unknown> };
@@ -104,7 +104,7 @@ test("a declared artifact must exist and use strict passive JSON", () => {
 });
 
 test("review submissions reject undeclared files outside the passive envelope", () => {
-  const submission = reviewSubmission("adaptive-all-root-qrom");
+  const submission = reviewSubmission("v2-all-root-composition");
   try {
     writeFileSync(path.join(submission.directory, "artifact.json"), "{}\n");
     const result = verifySubmission({ root: path.resolve("."), submissionDirectory: submission.directory, context });
@@ -116,7 +116,7 @@ test("review submissions reject undeclared files outside the passive envelope", 
 });
 
 test("submission files cannot be symbolic links", () => {
-  const submission = reviewSubmission("adaptive-all-root-qrom");
+  const submission = reviewSubmission("v2-all-root-composition");
   try {
     symlinkSync("report.md", path.join(submission.directory, "artifact.json"));
     assert.throws(

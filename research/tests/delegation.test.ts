@@ -35,7 +35,7 @@ function hostedSubmission(schemaVersion: 1 | 2 = 1): { root: string; directory: 
       certificateCommit: CERTIFICATE_REVISION,
       reportPath: "report.md",
       reportSha256,
-      affectedClaimId: "adaptive-all-root-qrom",
+      affectedClaimId: "v2-all-root-composition",
       finding: "supports"
     }
   }));

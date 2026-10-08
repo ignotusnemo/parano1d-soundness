@@ -1,6 +1,12 @@
 import type { EvidenceEffect, EvidenceRecord, SubmissionManifest, VerificationResult } from "@/lib/types";
 
 function effectsFor(result: VerificationResult): EvidenceEffect[] {
+  if (result.observed.profile === "mainnet-v2" && result.trackId === "certificate-reproduction") {
+    return [{ claimId: "v2-joint-bank-accounting", status: "verified", metrics: [] }];
+  }
+  if (result.observed.profile === "mainnet-v2-poseidon2b" && result.trackId === "poseidon2b-nonlinear-subspace-reproduction") {
+    return [{ claimId: "v2-poseidon2b-classical-audit", status: "verified", metrics: [] }];
+  }
   if (result.trackId === "certificate-reproduction") {
     return [
       {

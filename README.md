@@ -4,7 +4,7 @@ This standalone repository instantiates the security analysis for a pinned Paran
 
 The public claim graph, open research contracts, accepted evidence and contributor record are versioned in [`research/`](research/). The service at [noid.network](https://noid.network/) uses this public verification layer but is not part of the certificate or its acceptance boundary.
 
-The standalone calculator retains its historical v1 production snapshot. Current mainnet v2 joint-bank accounting is documented in the [main Parano1d repository](https://git.parano1d.org/ignotusnemo/parano1d/src/branch/main/noid_soundness/docs/v2-retirement.md).
+All active research tasks target the current v2.0.3 production source and integrated certificate. Start with [the v2 reproduction instructions](research/certificates/README.md). The standalone calculator and numerical profile below retain the historical v1 snapshot for replay of accepted evidence; they are not active research targets.
 
 Submission verification, the trusted certificate and research test suite, and accepted-evidence publication run on the noid.network application host against the [canonical Forgejo repository](https://git.parano1d.org/ignotusnemo/parano1d-soundness). GitHub serves as a source mirror. Local reproduction commands are documented below and in [`research/README.md`](research/README.md).
 
