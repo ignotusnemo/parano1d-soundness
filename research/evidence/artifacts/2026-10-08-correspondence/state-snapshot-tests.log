@@ -1,0 +1,53 @@
+warning: /home/neo/rust/parano1d-v2-correspondence/noid_node/Cargo.toml: file `/home/neo/rust/parano1d-v2-correspondence/noid_node/src/main.rs` found to be present in multiple build targets:
+  * `bin` target `parano1d`
+  * `example` target `isolated_v1_1_node`
+  * `example` target `isolated_v2_node`
+   Compiling noid_chain v2.0.3 (/home/neo/rust/parano1d-v2-correspondence/noid_chain)
+    Finished `release` profile [optimized] target(s) in 48.43s
+     Running unittests src/lib.rs (/home/neo/rust/paranoid/target/release/deps/noid_chain-5298653ca6d14bc6)
+
+running 35 tests
+test storage::mdbx_context::tests::rejected_snapshot_terminal_leaves_canonical_headers_untouched ... ok
+test storage::mdbx_store::tests::active_snapshot_floor_pins_exact_block_objects_beyond_normal_retention ... ok
+test storage::mdbx_store::tests::canonical_header_batch_uses_one_bounded_contiguous_snapshot ... ok
+test storage::mdbx_store::tests::local_snapshot_lookup_bounds_allocation_and_only_returns_root_matching_hints ... ok
+test storage::mdbx_store::tests::snapshot_correspondence_late_segment_substitution_rolls_back_every_durable_boundary ... ok
+test storage::mdbx_store::tests::snapshot_header_stream_failure_rolls_back_partial_suffix ... ok
+test storage::mdbx_store::tests::snapshot_install_accepts_concurrent_same_prefix_advance ... ok
+test storage::mdbx_store::tests::snapshot_install_atomically_commits_headers_state_terminal_and_tip ... ok
+test storage::mdbx_store::tests::snapshot_install_rejects_divergent_advance_without_mutation ... ok
+test storage::mdbx_store::tests::snapshot_install_replaces_only_an_authorized_nonfinal_suffix ... ok
+test storage::mdbx_store::tests::snapshot_local_reuse_does_not_trust_a_corrupt_root_matching_index ... ok
+test storage::mdbx_store::tests::snapshot_local_reuse_skips_changed_and_missing_segments_and_finishes_exact_root ... ok
+test storage::mdbx_store::tests::snapshot_local_reuse_stops_when_its_generation_is_retired ... ok
+test storage::mdbx_store::tests::snapshot_rebase_accepts_the_exact_maximum_nonfinal_depth ... ok
+test storage::mdbx_store::tests::snapshot_rebase_cannot_cross_the_local_finalized_checkpoint ... ok
+test storage::mdbx_store::tests::snapshot_rebase_refuses_a_boundary_that_does_not_yet_win_fork_choice ... ok
+test storage::serial::tests::sparse_encoded_segment_size_matches_snapshot_caps ... ok
+test storage::snapshot_generation::tests::incremental_generation_hard_links_unchanged_payload ... ok
+test storage::snapshot_generation::tests::manifest_sequence_length_bomb_is_bounded_and_rejected ... ok
+test storage::snapshot_generation::tests::oversized_manifest_file_rejects_before_payload_allocation ... ok
+test storage::snapshot_generation::tests::spent_coinbase_undo_preimage_uses_parent_height_boundary ... ok
+test storage::snapshot_generation::tests::unchanged_canonical_state_exports_incrementally_end_to_end ... ok
+test storage::snapshot_staging::tests::authenticated_manifest_boundary_and_geometry_fail_closed_before_staging ... ok
+test storage::snapshot_staging::tests::coinbase_creation_ids_use_snapshot_height_not_allocator_bound ... ok
+test storage::snapshot_staging::tests::creation_bound_is_checked_before_file_publication ... ok
+test storage::snapshot_staging::tests::duplicate_reject_aborts_and_cleans_the_session ... ok
+test storage::snapshot_staging::tests::expanded_domain_snapshot_authenticates_sparse_lower_and_upper_segments ... ok
+test storage::snapshot_staging::tests::finalize_binds_header_live_count_and_exact_root ... ok
+test storage::snapshot_staging::tests::finalize_second_pass_detects_file_tampering_and_cleans ... ok
+test storage::snapshot_staging::tests::finalized_iterator_reauthenticates_before_mdbx_handoff ... ok
+test storage::snapshot_staging::tests::incomplete_and_unsorted_sessions_fail_closed ... ok
+test storage::snapshot_staging::tests::recoverable_rejection_keeps_session_for_an_exact_source_retry ... ok
+test storage::snapshot_staging::tests::sparse_snapshot_scales_across_all_256_genesis_segments ... ok
+test storage::snapshot_staging::tests::stages_finalizes_and_keeps_files_alive_until_handle_drop ... ok
+test storage::snapshot_staging::tests::strict_length_and_exact_root_failures_abort_without_partial_files ... ok
+
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 362 filtered out; finished in 5.22s
+
+     Running tests/incarnation_prototype.rs (/home/neo/rust/paranoid/target/release/deps/incarnation_prototype-997dd59d079c9d8e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 5 filtered out; finished in 0.00s
+

@@ -1,0 +1,112 @@
+warning: /home/neo/rust/parano1d-v2-correspondence/noid_node/Cargo.toml: file `/home/neo/rust/parano1d-v2-correspondence/noid_node/src/main.rs` found to be present in multiple build targets:
+  * `bin` target `parano1d`
+  * `example` target `isolated_v1_1_node`
+  * `example` target `isolated_v2_node`
+    Blocking waiting for file lock on build directory
+   Compiling noid-ivc-core v2.0.3 (/home/neo/rust/parano1d-v2-correspondence/noid_ivc_core)
+   Compiling noid_gkr v2.0.3 (/home/neo/rust/parano1d-v2-correspondence/noid_gkr)
+   Compiling noid-ivc-prover v2.0.3 (/home/neo/rust/parano1d-v2-correspondence/noid_ivc_prover)
+   Compiling noid_recursive v2.0.3 (/home/neo/rust/parano1d-v2-correspondence/noid_recursive)
+    Finished `release` profile [optimized] target(s) in 6m 31s
+     Running unittests src/lib.rs (/home/neo/rust/paranoid/target/release/deps/noid_recursive-def7c5c3ffabf33c)
+
+running 12 tests
+test acceptance::history_step::v2::banked::assembly::tests::selector_and_every_carried_or_folded_coordinate_are_constrained ... ok
+test acceptance::history_step::v2::banked::bank::tests::base_cannot_import_claims_or_change_any_bank_pin ... ok
+test acceptance::history_step::v2::banked::bank::tests::freezing_statement_preserves_the_boundary_binding_and_grants_no_capability ... ok
+test acceptance::history_step::v2::banked::bank::tests::routing_preserves_the_other_lane_and_cannot_reset_the_origin ... ok
+test acceptance::history_step::v2::banked::config::tests::common_layout_has_two_complete_matrix_lanes ... ok
+test acceptance::history_step::v2::banked::config::tests::joint_recipe_rejects_swapped_shapes_and_mixed_schedules ... ok
+test acceptance::history_step::v2::banked::config::tests::large_page_tradeoffs_are_pinned_separately_from_legacy_classes ... ok
+test acceptance::history_step::v2::banked::decision::tests::carried_cache_is_exact_bounded_and_runtime_local ... ok
+test acceptance::history_step::v2::banked::origin_codec::tests::origin_carrier_bounds_and_boundary_are_checked_before_proof_work ... ok
+test acceptance::history_step::v2::banked::origin_codec::tests::origin_framing_remains_legacy_and_does_not_select_a_successor_bank ... ok
+test acceptance::history_step::v2::banked::retirement_codec::tests::checked_evaluations_must_use_the_release_keys_for_each_live_class ... ok
+test acceptance::history_step::v2::banked::retirement_codec::tests::retirement_carrier_rejects_truncation_order_and_oversized_lengths ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 450 filtered out; finished in 0.14s
+
+     Running tests/leaf_hash_replay.rs (/home/neo/rust/paranoid/target/release/deps/leaf_hash_replay-cebcd580f648a297)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+
+     Running tests/region_channel_multitx.rs (/home/neo/rust/paranoid/target/release/deps/region_channel_multitx-e5414d5d0bee61ad)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.00s
+
+     Running tests/region_common_period_multitx.rs (/home/neo/rust/paranoid/target/release/deps/region_common_period_multitx-7d09983c07a863b0)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.00s
+
+     Running tests/region_merkle_multitx.rs (/home/neo/rust/paranoid/target/release/deps/region_merkle_multitx-55503f6d79bdde7f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.00s
+
+     Running tests/region_merkle_slot_e2e.rs (/home/neo/rust/paranoid/target/release/deps/region_merkle_slot_e2e-24dd360e4ff29563)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+
+     Running tests/region_sb6_slot_e2e.rs (/home/neo/rust/paranoid/target/release/deps/region_sb6_slot_e2e-5df291eda0ea1d29)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+
+     Running tests/region_slot_e2e.rs (/home/neo/rust/paranoid/target/release/deps/region_slot_e2e-a1c759186b2499e6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+
+     Running tests/region_source_leaf_slot_e2e.rs (/home/neo/rust/paranoid/target/release/deps/region_source_leaf_slot_e2e-637a79f2014d88e7)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+
+     Running tests/region_source_tree_multitx.rs (/home/neo/rust/paranoid/target/release/deps/region_source_tree_multitx-ab9f345f4df292ce)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.00s
+
+     Running tests/region_union_primitive_e2e.rs (/home/neo/rust/paranoid/target/release/deps/region_union_primitive_e2e-5584c97e99774d86)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+
+     Running tests/region_walk_a_multitx.rs (/home/neo/rust/paranoid/target/release/deps/region_walk_a_multitx-035a75036c3923ca)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 0.00s
+
+     Running tests/source_binding_reduction.rs (/home/neo/rust/paranoid/target/release/deps/source_binding_reduction-1c755e509e3ffb53)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 3 filtered out; finished in 0.00s
+
+     Running tests/trace_slot_e2e.rs (/home/neo/rust/paranoid/target/release/deps/trace_slot_e2e-9b51a3904424d91f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+
+     Running tests/zk_auth_capsule_split_channel.rs (/home/neo/rust/paranoid/target/release/deps/zk_auth_capsule_split_channel-ed62217ac4f84835)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 1 filtered out; finished in 0.00s
+

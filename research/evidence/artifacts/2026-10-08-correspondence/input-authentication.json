@@ -1,0 +1,67 @@
+{
+  "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "release": "v2.0.3",
+  "all_release_sha256_match": true,
+  "inputs": [
+    {
+      "path": "history-step-pack-v1/v1/history-step.runtime",
+      "sha256": "8fab1225073d658bc1988573c79b0520ce141d2ac4a0e7c8cc2562be0e6767a5",
+      "bytes": 2214607
+    },
+    {
+      "path": "history-step-pack-v1/v1/history-step-c00.field-r1cs.zst",
+      "sha256": "72adc8770c2acb10fc67e844a2e96d92dac358ec2b6db781888733e25662d6bc",
+      "bytes": 3865200
+    },
+    {
+      "path": "history-step-pack-v1/v1/history-step-c01.field-r1cs.zst",
+      "sha256": "6bc11c87595edff1e0f85857b20ed9c3554d0d331f0b1d1604dfed18963414f9",
+      "bytes": 13240352
+    },
+    {
+      "path": "history-step-pack-v1/pins.env",
+      "sha256": "e7d0269bcbdcfb36f739d1cd53e464cdae8fb1a1fffa4b231e38e11562162758",
+      "bytes": 280
+    },
+    {
+      "path": "history-step-pack-v2/v2-runtime-metadata.bin",
+      "sha256": "04e969990958520dbc865e0fddb8ef946dae23f670dc9cb56efaadc5ccebfed2",
+      "bytes": 2258540
+    },
+    {
+      "path": "history-step-pack-v2/v2-small.field-r1cs.zst",
+      "sha256": "83abfdc69bffb154efce2452715773cfa4750a94e8f6238470cd82a01c6bf317",
+      "bytes": 10465911
+    },
+    {
+      "path": "history-step-pack-v2/v2-large.field-r1cs.zst",
+      "sha256": "45ff8187894d976f56dcb7bd14b3bb6a6caef2752f93c8312234449956d21db5",
+      "bytes": 21478342
+    },
+    {
+      "path": "history-step-pack-v2/pins.env",
+      "sha256": "cd91ec5ed5dd81bd572c33f729f670514c438c747c82163f7c72769be8b88bff",
+      "bytes": 268
+    },
+    {
+      "path": "history-step-pack-v2/retirement-keys/class-0.key",
+      "sha256": "02421f91a13d34480e71e3f8a88071d7e8dcb10ac9ca2339f8a2dea7cb8a689c",
+      "bytes": 304
+    },
+    {
+      "path": "history-step-pack-v2/retirement-keys/class-1.key",
+      "sha256": "c655cbb3c3f485b3654d4a0c5d69f108eda504a3a34769a5579aad1fe3b9e8c8",
+      "bytes": 304
+    },
+    {
+      "path": "/home/neo/rust/noid-network-ops/v2-correspondence-20261008/inputs/history-step-c00.field-r1cs",
+      "sha256": "e10930cc232e385589a031992a13054a9e120ae23e2f62847eaaa3e8b1fc6d04",
+      "bytes": 84771079
+    },
+    {
+      "path": "/home/neo/rust/noid-network-ops/v2-correspondence-20261008/inputs/history-step-c01.field-r1cs",
+      "sha256": "4bc0ff64592ea45f4571decec79f72b0da23ab8f36948252b184a7c14c9f60f7",
+      "bytes": 386877460
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+
+running 1 test
+test field_circuit::tests::c1_channel_trace_locksteps_native_wide_operations ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 486 filtered out; finished in 0.02s
+
+
+running 1 test
+test field_circuit::tests::c1_layout_and_union_recorders_bind_raw_wide_sponge_lanes ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 486 filtered out; finished in 0.00s
+
+
+running 1 test
+test field_circuit::tests::layout_recording_challenger_rejects_layout_drift ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 486 filtered out; finished in 0.00s
+
+
+running 1 test
+test field_circuit::tests::poseidon2b_permute_matches_native ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 486 filtered out; finished in 0.02s
+

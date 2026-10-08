@@ -304,7 +304,7 @@
     "id": "v2-joint-bank-accounting",
     "title": "Mainnet v2 joint-bank soundness accounting",
     "statement": "The source-linked v2.0.3 calculator reproduces the September exact report for wallet, legacy History, v2 History and sparse retirement. Its dominant work floor is 173.3897612554174 descriptive bits and ideal Category 1 envelope is approximately 0.04937388373372754.",
-    "scope": "Parano1d v2.0.3 mainnet bank c2a6df73 at activation height 210537. Verified conditional arithmetic; no new proof of preprocessing or production correspondence.",
+    "scope": "Parano1d v2.0.3 mainnet bank c2a6df73 at activation height 210537. Verified conditional arithmetic. The October source evidence covers specific retirement, parent/transcript and snapshot obligations; the complete adaptive composition, fixed-hash and response-price conditions remain explicit.",
     "initialStatus": "under-review",
     "derived": false,
     "dependencies": [
@@ -316,12 +316,12 @@
       {
         "claimId": "v2-compiler-correspondence",
         "role": "premise",
-        "note": "Concrete recursive compiler correspondence remains a separate scoped review target."
+        "note": "The selected-parent and transcript source bindings are verified within their declared local hypotheses. Complete adaptive compiler closure remains in the all-root and fixed-hash conditions."
       },
       {
         "claimId": "v2-retirement-correspondence",
         "role": "premise",
-        "note": "Honest public preprocessing, authenticated keys and sparse request binding remain explicit conditions."
+        "note": "Both release preprocessing keys and complete origin request bindings are verified; the underlying local algebraic, commitment and extraction conditions remain explicit."
       },
       {
         "claimId": "v2-all-root-composition",
@@ -336,7 +336,7 @@
       {
         "claimId": "v2-production-correspondence",
         "role": "premise",
-        "note": "A scoped historical acceptance audit is not a complete correspondence proof for the current v2 source."
+        "note": "The snapshot admission and installation path is verified. Other production acceptance paths remain distinct correspondence targets."
       },
       {
         "claimId": "sequential-ideal-qrom",
@@ -362,9 +362,9 @@
   },
   {
     "id": "v2-retirement-correspondence",
-    "title": "V2 sparse-retirement correspondence",
-    "statement": "The v2 sparse-retirement verifier must bind its accepted openings to the authenticated legacy matrix, independently pinned preprocessing key, complete matrix point/value, request context and dynamic roots.",
-    "scope": "Parano1d v2.0.3 sparse evaluation and the legacy-to-v2 boundary. A source-linked calculator and matching key digests do not independently prove honest matrix preprocessing.",
+    "title": "V2 preprocessing and retirement binding",
+    "statement": "Both release preprocessing keys match independent reconstruction from canonical matrices. The production origin path binds every live retirement obligation to its complete point/value, request context, authenticated key and all eleven sparse column openings.",
+    "scope": "Pinned v2.0.3 release keys and legacy-to-v2 origin path. Independent table construction shares the canonical decoder and PCS implementation. The source mapping is conditional on the declared local algebraic, commitment and extraction conditions.",
     "initialStatus": "premise",
     "derived": false,
     "dependencies": [
@@ -378,14 +378,18 @@
       {
         "label": "Sparse-retirement obligations",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/v2-retirement.md"
+      },
+      {
+        "label": "October scoped source proof and reproduction",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/27be1ed74b4ba5b338dc2c11fb1a0be89a744924/research/submissions/v2-retirement-correspondence-20261008/report.md"
       }
     ]
   },
   {
     "id": "v2-compiler-correspondence",
-    "title": "V2 concrete recursive Fiat-Shamir correspondence",
-    "statement": "The concrete recursive relation must preserve the transcript and statement bindings assumed by the all-root analysis even when an adversary selects contract data and earlier proofs.",
-    "scope": "Parano1d v2.0.3 fixed HistoryStep bank, public transcript framing and bounded contract interpreter. Domain separation alone does not rule out every self-reference attack.",
+    "title": "V2 selected-parent transcript correspondence",
+    "statement": "The fixed v2 bank preserves native/trace transcript framing, selects exactly one nonbase parent, carries every inactive matrix lane unchanged and binds contract execution to the authenticated proving relation.",
+    "scope": "Verified named source bindings at v2.0.3, conditional on authenticated sidecar/local extraction and exact arithmetic. General concrete Fiat-Shamir security, fixed-hash self-reference resistance and the complete adaptive shared-database compiler remain separate conditions.",
     "initialStatus": "premise",
     "derived": false,
     "dependencies": [
@@ -403,6 +407,10 @@
       {
         "label": "V2 composition assumptions",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/v2-retirement.md"
+      },
+      {
+        "label": "October scoped source proof and reproduction",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/27be1ed74b4ba5b338dc2c11fb1a0be89a744924/research/submissions/v2-selected-parent-transcript-20261008/report.md"
       }
     ]
   },
@@ -410,7 +418,7 @@
     "id": "v2-all-root-composition",
     "title": "V2 all-root composition condition",
     "statement": "The terminating all-root worklist must cover wallet, legacy History, v2 History and sparse evaluation under one adversarial budget, retaining every legacy ancestry obligation.",
-    "scope": "Current v2 joint-bank conditional accounting. This condition is not discharged by the October arithmetic reproduction.",
+    "scope": "The deterministic v2 worklist terminates and preserves ancestry under the stated local hypotheses. The full adaptive database-game embedding remains open: statement-exclusive transitions, representation of each required extracted child in the same database, and one budget including embedded-verifier oracle queries.",
     "initialStatus": "premise",
     "derived": false,
     "dependencies": [
@@ -424,6 +432,10 @@
       {
         "label": "V2 composition and fixed-compiler premises",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/v2-retirement.md"
+      },
+      {
+        "label": "Conditional worklist lemma and unresolved compiler obligations",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/b159eb8c7c5d509ccbfc2102667769703272cd7c/noid_soundness/docs/v2-correspondence-2026-10.md"
       }
     ]
   },
@@ -450,9 +462,9 @@
   },
   {
     "id": "v2-production-correspondence",
-    "title": "V2 production acceptance correspondence",
-    "statement": "Every audited v2 acceptance or trusted-State materialization path must match the exact objects, bank identities and assumptions of the integrated source-linked certificate.",
-    "scope": "Parano1d v2.0.3 at the pinned production revision. A positive scoped audit establishes only the source mapping it explicitly checks.",
+    "title": "V2 authenticated snapshot correspondence",
+    "statement": "The audited node snapshot path fully verifies the height-selected terminal against the exact header, epoch and origin, then authenticates the same segment bytes that its atomic MDBX transaction installs.",
+    "scope": "Authenticated snapshot admission and durable installation at pinned v2.0.3. Conditional on terminal soundness, root binding, native fork choice and the fixed callback. This evidence does not cover every ordinary-block, live-suffix, reorg or local-producer path.",
     "initialStatus": "premise",
     "derived": false,
     "dependencies": [
@@ -466,6 +478,10 @@
       {
         "label": "Pinned integrated certificate",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/v2-retirement.md"
+      },
+      {
+        "label": "October scoped source proof and reproduction",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/27be1ed74b4ba5b338dc2c11fb1a0be89a744924/research/submissions/v2-snapshot-correspondence-20261008/report.md"
       }
     ]
   },

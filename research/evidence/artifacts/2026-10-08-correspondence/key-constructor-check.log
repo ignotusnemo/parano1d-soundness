@@ -1,0 +1,27 @@
+warning: /home/neo/rust/parano1d-v2-correspondence/noid_node/Cargo.toml: file `/home/neo/rust/parano1d-v2-correspondence/noid_node/src/main.rs` found to be present in multiple build targets:
+  * `bin` target `parano1d`
+  * `example` target `isolated_v1_1_node`
+  * `example` target `isolated_v2_node`
+   Compiling serde_spanned v0.6.9
+   Compiling toml_datetime v0.6.11
+   Compiling noid_core v2.0.3 (/home/neo/rust/parano1d-v2-correspondence/noid_core)
+   Compiling toml_edit v0.22.27
+   Compiling tempfile v3.27.0
+   Compiling noid_poseidon2b v2.0.3 (/home/neo/rust/parano1d-v2-correspondence/noid_poseidon2b)
+   Compiling toml v0.8.23
+   Compiling serde_json v1.0.150
+   Compiling noid-ivc-core v2.0.3 (/home/neo/rust/parano1d-v2-correspondence/noid_ivc_core)
+    Finished `release` profile [optimized] target(s) in 1m 53s
+     Running unittests src/lib.rs (/home/neo/rust/paranoid/target/release/deps/noid_ivc_core-0b3ac4d48a5aa010)
+
+running 1 test
+test matrix_claim::sparse_c1::correspondence_audit::independent_sparse_columns_match_resident_and_compact_preprocessing ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 486 filtered out; finished in 0.22s
+
+     Running tests/deep_chain_family.rs (/home/neo/rust/paranoid/target/release/deps/deep_chain_family-41648173acc67f30)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 3 filtered out; finished in 0.00s
+

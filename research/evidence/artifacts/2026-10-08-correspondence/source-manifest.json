@@ -1,0 +1,490 @@
+{
+  "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "sources": [
+    {
+      "path": "noid_node/build.rs",
+      "sha256": "1a727c3aaebc2845865e2deae7fe8898ebfc28273fec2ffd6d8f83985a66b126",
+      "bytes": 17879,
+      "anchors": [
+        {
+          "symbol": "fn embed_retirement_keys(",
+          "lines": [
+            249
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_node/build.rs"
+    },
+    {
+      "path": "noid_node/src/embedded_history_step_pack.rs",
+      "sha256": "0664ee45c7483488d4302856d804947f2dc9efd5ae73f912a22847c9684b1a63",
+      "bytes": 6973,
+      "anchors": [
+        {
+          "symbol": "pub fn embedded_retirement_keys(",
+          "lines": [
+            81
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_node/src/embedded_history_step_pack.rs"
+    },
+    {
+      "path": "noid_node/src/main.rs",
+      "sha256": "c00d7e1d3767a4c439c79b7afd78b32f0b02e3e9f427ab39216ee65b604eeb3f",
+      "bytes": 698402,
+      "anchors": [
+        {
+          "symbol": "fn verify_terminal_against_validated_snapshot_headers(",
+          "lines": [
+            4027
+          ]
+        },
+        {
+          "symbol": "fn verify_history_step_terminal(",
+          "lines": [
+            4217
+          ]
+        },
+        {
+          "symbol": "async fn apply_verified_snapshot_boundary(",
+          "lines": [
+            15637
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_node/src/main.rs"
+    },
+    {
+      "path": "noid_node/src/snapshot_header_staging.rs",
+      "sha256": "1d068dfa16fa594b140690ec4b528ec6d272730776e44ae0b320e3da51c6cc01",
+      "bytes": 67887,
+      "anchors": [
+        {
+          "symbol": "pub fn append_batch(",
+          "lines": [
+            435
+          ]
+        },
+        {
+          "symbol": "pub fn validate_complete(",
+          "lines": [
+            607
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_node/src/snapshot_header_staging.rs"
+    },
+    {
+      "path": "noid_miner/src/history_protocol.rs",
+      "sha256": "6d7ecb84995bd87d2465e9c0fcf604641fe276a139e83c6015120e9880a84426",
+      "bytes": 20059,
+      "anchors": [
+        {
+          "symbol": "pub fn new(",
+          "lines": [
+            47
+          ]
+        },
+        {
+          "symbol": "pub fn with_retirement_keys(",
+          "lines": [
+            97
+          ]
+        },
+        {
+          "symbol": "pub fn install_origin_bytes(",
+          "lines": [
+            210
+          ]
+        },
+        {
+          "symbol": "fn verified_origin(",
+          "lines": [
+            361
+          ]
+        },
+        {
+          "symbol": "pub fn verify_terminal(",
+          "lines": [
+            422
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_miner/src/history_protocol.rs"
+    },
+    {
+      "path": "noid_miner/src/v2_artifacts.rs",
+      "sha256": "fb4dc8e476d0b34cd607bd9fc9b030206a38c522d8a816ded1e6f21f61c03410",
+      "bytes": 8368,
+      "anchors": [
+        {
+          "symbol": "pub fn into_runtime(",
+          "lines": [
+            46
+          ]
+        },
+        {
+          "symbol": "pub fn preflight_build_matrix(",
+          "lines": [
+            64
+          ]
+        },
+        {
+          "symbol": "pub unsafe fn into_embedded_runtime(",
+          "lines": [
+            88
+          ]
+        },
+        {
+          "symbol": "pub fn decode_v2_runtime_metadata_pinned(",
+          "lines": [
+            134
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_miner/src/v2_artifacts.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/relation.rs",
+      "sha256": "209ac9076996fcca596ebb7dcf9c2cb5b4f40f7d5b5d5986a9038f78bce79032",
+      "bytes": 106641,
+      "anchors": [
+        {
+          "symbol": "pub fn prepare_history_step_retirement(",
+          "lines": [
+            1716
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/relation.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step_bank/retirement.rs",
+      "sha256": "15b64763e33587ea7750b6952b897d9ecf71295bdc5cefcda416654ce70afa7e",
+      "bytes": 20014,
+      "anchors": [
+        {
+          "symbol": "pub(crate) fn from_pending(",
+          "lines": [
+            127
+          ]
+        },
+        {
+          "symbol": "fn compute_binding(",
+          "lines": [
+            205
+          ]
+        },
+        {
+          "symbol": "pub fn verify_reduction(",
+          "lines": [
+            319
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step_bank/retirement.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step_bank/retirement/evaluation.rs",
+      "sha256": "7b6a55f4423637d60a9886055030cd16b7bffed2811b807033de49f814be754b",
+      "bytes": 4170,
+      "anchors": [
+        {
+          "symbol": "pub fn verify_matrix_evaluations(",
+          "lines": [
+            49
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step_bank/retirement/evaluation.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked/retirement_codec.rs",
+      "sha256": "e96813d08a82498e007bb7421590cd70c8857fbde41f7ad02f6ba09db280c47e",
+      "bytes": 15339,
+      "anchors": [
+        {
+          "symbol": "pub fn from_release(",
+          "lines": [
+            34
+          ]
+        },
+        {
+          "symbol": "pub fn verify(",
+          "lines": [
+            134
+          ]
+        },
+        {
+          "symbol": "pub fn from_bytes(",
+          "lines": [
+            232
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/retirement_codec.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked/bank.rs",
+      "sha256": "270793c8ad70be07082732f3fd6987384826cfa0db6bd02d07e155021fd531a8",
+      "bytes": 19617,
+      "anchors": [
+        {
+          "symbol": "pub(super) fn parse(",
+          "lines": [
+            138
+          ]
+        },
+        {
+          "symbol": "fn from_boundary(",
+          "lines": [
+            244
+          ]
+        },
+        {
+          "symbol": "pub fn from_retirement(",
+          "lines": [
+            358
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/bank.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked/decision.rs",
+      "sha256": "10b62a9fe4058e090af9e870a21e2e096a7a848ae9645c5bdda1a811b98ec8da",
+      "bytes": 6497,
+      "anchors": [
+        {
+          "symbol": "fn check_claims(",
+          "lines": [
+            54
+          ]
+        },
+        {
+          "symbol": "pub fn verify_terminal(",
+          "lines": [
+            98
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/decision.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked/parent.rs",
+      "sha256": "44138455cd92cfaafcfeaf8f9cd94ffed844e844165d2172d12ac707bf87728a",
+      "bytes": 10118,
+      "anchors": [
+        {
+          "symbol": "pub(super) fn replay(",
+          "lines": [
+            224
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/parent.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked/assembly.rs",
+      "sha256": "f75871ebceab088b6cf803eec8e7aa25ca4f4523e17dbf6ee5f9df96027eba49",
+      "bytes": 19737,
+      "anchors": [],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/assembly.rs"
+    },
+    {
+      "path": "noid_recursive/src/accumulator.rs",
+      "sha256": "3aac90b4194eac14e9ca62a417ff12c053008f90394cffdeef6823c60a4cb145",
+      "bytes": 20132,
+      "anchors": [
+        {
+          "symbol": "pub fn validate_local_header_boundary(",
+          "lines": [
+            228
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/accumulator.rs"
+    },
+    {
+      "path": "noid_ivc_core/src/matrix_claim/sparse_c1.rs",
+      "sha256": "24f1ad28c0231085101062e47b6efbfc418baf0285d246da782225ff81cc7926",
+      "bytes": 22034,
+      "anchors": [
+        {
+          "symbol": "fn channel(",
+          "lines": [
+            127
+          ]
+        },
+        {
+          "symbol": "pub fn verify(",
+          "lines": [
+            413
+          ]
+        },
+        {
+          "symbol": "fn observe_opening_column(",
+          "lines": [
+            453
+          ]
+        },
+        {
+          "symbol": "fn reduce(",
+          "lines": [
+            546
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/matrix_claim/sparse_c1.rs"
+    },
+    {
+      "path": "noid_ivc_core/src/matrix_claim/sparse_c1/preprocess.rs",
+      "sha256": "a8b1461a54ad53e8ee3bd0b10bef3eaf0fb1a46a340f8350f8864ef58ddf8398",
+      "bytes": 11745,
+      "anchors": [
+        {
+          "symbol": "pub fn digest(",
+          "lines": [
+            100
+          ]
+        },
+        {
+          "symbol": "pub fn from_resident(",
+          "lines": [
+            150
+          ]
+        },
+        {
+          "symbol": "pub fn from_compact(",
+          "lines": [
+            197
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/matrix_claim/sparse_c1/preprocess.rs"
+    },
+    {
+      "path": "noid_ivc_core/src/matrix_claim/sparse_c1/wire.rs",
+      "sha256": "41b9704ebdacb50d3e9ffdda918c2af4aca072e352d9d4e24e4c4e5b9ef9637c",
+      "bytes": 16615,
+      "anchors": [
+        {
+          "symbol": "pub fn from_bytes_pinned(",
+          "lines": [
+            106
+          ]
+        },
+        {
+          "symbol": "pub fn from_bytes(",
+          "lines": [
+            421
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/matrix_claim/sparse_c1/wire.rs"
+    },
+    {
+      "path": "noid_chain/src/consensus/params.rs",
+      "sha256": "7cc71b47e934409cc36d2f72f2258c76f2756335c5e0efbd27f64c807c8a708e",
+      "bytes": 17759,
+      "anchors": [
+        {
+          "symbol": "pub const MAINNET_V2_ACTIVATION_HEIGHT:",
+          "lines": [
+            19
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_chain/src/consensus/params.rs"
+    },
+    {
+      "path": "noid_chain/src/storage/mdbx_context.rs",
+      "sha256": "943c0f62b47b27eb10a9e4f59f5f88c940aa4481f2b92b7d07b5363b4158acba",
+      "bytes": 161223,
+      "anchors": [
+        {
+          "symbol": "pub fn verify_snapshot_boundary",
+          "lines": [
+            2354
+          ]
+        },
+        {
+          "symbol": "pub fn apply_staged_state_snapshot",
+          "lines": [
+            2587
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_chain/src/storage/mdbx_context.rs"
+    },
+    {
+      "path": "noid_chain/src/storage/mdbx_store.rs",
+      "sha256": "57f618330caf5f80f7784d878d8ebd2af8e471c9d6c844715bfce9be56d772f6",
+      "bytes": 260173,
+      "anchors": [
+        {
+          "symbol": "pub(crate) fn install_finalized_snapshot_staging",
+          "lines": [
+            2490
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_chain/src/storage/mdbx_store.rs"
+    },
+    {
+      "path": "noid_chain/src/storage/snapshot_staging.rs",
+      "sha256": "2c2f7bdfd2c73686e4fc050df1a83540eab6cc7c801e15406a3b4280525e6fde",
+      "bytes": 59956,
+      "anchors": [
+        {
+          "symbol": "pub fn from_authenticated_header(",
+          "lines": [
+            49
+          ]
+        },
+        {
+          "symbol": "pub fn finalize(",
+          "lines": [
+            552
+          ]
+        },
+        {
+          "symbol": "pub fn read_encoded(",
+          "lines": [
+            751
+          ]
+        },
+        {
+          "symbol": "fn decode_and_verify_segment<'a>(",
+          "lines": [
+            828
+          ]
+        }
+      ],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_chain/src/storage/snapshot_staging.rs"
+    },
+    {
+      "path": "noid_soundness/docs/v2-retirement.md",
+      "sha256": "704137df7874e8913936ba7b5539aa2ac48ce55468db908d2fa2c1bef4cc0ba3",
+      "bytes": 7717,
+      "anchors": [],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/v2-retirement.md"
+    },
+    {
+      "path": "noid_soundness/docs/category-one.md",
+      "sha256": "2e8be9951b1d8dc2eae9d14f41e893bd759d0f183f372d18e30f510302ca22f4",
+      "bytes": 34859,
+      "anchors": [],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/category-one.md"
+    },
+    {
+      "path": "noid_soundness/src/v2.rs",
+      "sha256": "92b57853801d7f8c1ecd36978f3d26d1fb2c37be1207f345911d43c2dd921be2",
+      "bytes": 10827,
+      "anchors": [],
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/src/v2.rs"
+    }
+  ]
+}

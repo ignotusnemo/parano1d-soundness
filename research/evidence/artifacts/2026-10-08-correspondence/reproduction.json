@@ -1,0 +1,99 @@
+{
+  "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "auditArgumentCommit": "b159eb8c7c5d509ccbfc2102667769703272cd7c",
+  "publication": "Maintainer-authorized project evidence. The passive submissions remain pending semantic review under their frozen contracts; no third-party approval is asserted.",
+  "reproductionInputs": {
+    "url": "https://noid.network/research-artifacts/v2-correspondence-20261008/reproduction-inputs.tar.zst",
+    "sha256": "25a0f1df8b90b71ff659b76a8e17b3d39f86e1d5bbd784aa4f8db919a7a9cbfa",
+    "bytes": 104837742,
+    "files": 23
+  },
+  "tests": {
+    "snapshot": 35,
+    "v2BankOriginCache": 12,
+    "smallIndependentPreprocessing": 1,
+    "completeReleaseKeyReconstruction": 2,
+    "nativeTraceCorrespondence": 4,
+    "total": 54,
+    "failed": 0
+  },
+  "releaseKeyReconstruction": {
+    "canonicalEntries": 152532541,
+    "staticRootsMatched": 14,
+    "bytesMatchedPerKey": 304,
+    "classes": 2,
+    "independence": "Independent column/table construction; shared canonical decoder and release PCS implementation."
+  },
+  "reports": [
+    {
+      "submission": "v2-retirement-correspondence-20261008",
+      "claimId": "v2-retirement-correspondence",
+      "sourceCommit": "27be1ed74b4ba5b338dc2c11fb1a0be89a744924",
+      "reportSha256": "e237bbfc9addfd3d026b637bce0710bba8745b5ac0bda2c833d5ad7b211faed2",
+      "artifactSha256": "6a4d921faad16f96b69cac0d6ca25bc96a0858b8a276cbcaf21cfe78ed156bd3"
+    },
+    {
+      "submission": "v2-selected-parent-transcript-20261008",
+      "claimId": "v2-compiler-correspondence",
+      "sourceCommit": "27be1ed74b4ba5b338dc2c11fb1a0be89a744924",
+      "reportSha256": "aef0d740d481dcd3c30a50f767e0e3fdff273afec5b45afb1473c540a1cdaa77",
+      "artifactSha256": "b9f76fe355afc4d9abda9c4879d373648127b9bcb1ee246d4e994c0161e6a965"
+    },
+    {
+      "submission": "v2-snapshot-correspondence-20261008",
+      "claimId": "v2-production-correspondence",
+      "sourceCommit": "27be1ed74b4ba5b338dc2c11fb1a0be89a744924",
+      "reportSha256": "874e1e9357f00910df00c8899dbddaabc7da6116cdd47b63167a1f1b679fd054",
+      "artifactSha256": "c94391e27ac7b15c7c2bad10b32a8efafa67265fc675c3225f5da6b60a664e64"
+    }
+  ],
+  "receipts": [
+    {
+      "path": "source-manifest.json",
+      "sha256": "60e31fb7535277c192804ca8c59f30e46a9c7196a90ecef835a7cb6f73f55155"
+    },
+    {
+      "path": "input-authentication.json",
+      "sha256": "97d738ba322bc0037e22c66fbd1851e1a140faedefc4c0ab1de2ab362dccbb54"
+    },
+    {
+      "path": "retirement-mutations.json",
+      "sha256": "2eea141da2cc239d85f3efc76e4d0ead87cc8b6737477b0ad5eace7938663cc6"
+    },
+    {
+      "path": "v2-snapshot-admission.json",
+      "sha256": "84e9ed6c68c75d5f9f4928ce027a9abc9e0e10bc50158f80f31e8ad688dc6416"
+    },
+    {
+      "path": "transcript-correspondence-tests.json",
+      "sha256": "c5c707dc6be516930dfc63680241c4735d84197dd54a3ec6d00dbcbe30320f17"
+    },
+    {
+      "path": "release-key-reproduction.log",
+      "sha256": "5372893fa755d5a65d198cc099de896a07cfa5832478bf1542727fc3f1314063"
+    },
+    {
+      "path": "state-snapshot-tests.log",
+      "sha256": "06a55ec9927572aa88eeefb8178a34e3681a263297c2d3b2dd2ef21c228e3f50"
+    },
+    {
+      "path": "v2-boundary-tests.log",
+      "sha256": "08821ee6fe7b84a863fcecf7dccbe19195fad531e4b249b197c4995ff0738c54"
+    },
+    {
+      "path": "key-constructor-check.log",
+      "sha256": "d0f3f402e3195b78afd66ce8f1ed0b5fb9d202dbc39cc508821fd1fd4670e340"
+    },
+    {
+      "path": "transcript-correspondence-tests.log",
+      "sha256": "78686699e3b56d64f63fb259530eadbaa86aee86af20061b74029863c6814110"
+    }
+  ],
+  "remainingConditions": [
+    "Full adaptive all-root database embedding: statement-exclusive transitions, same-database child representation, and embedded-verifier oracle budget.",
+    "Fixed Poseidon2b instantiation/deviation.",
+    "Universal scalar and amortized batch coherent-response minimum prices.",
+    "The local algebraic, sidecar and PCS extraction conditions used by each source proof."
+  ],
+  "frontierEffect": "none"
+}

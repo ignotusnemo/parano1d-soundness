@@ -1,0 +1,58 @@
+{
+  "elapsed_ms": 31356,
+  "observations": [
+    {
+      "accepted": true,
+      "check": "valid_full_origin",
+      "isolated_activation": 10,
+      "isolated_bank": "be82f3bec102f03c63715dac9bb4a939cb9aa5b21d013e38402b321fd8a41fa9",
+      "isolated_origin_rejected_by_mainnet_bank": true,
+      "live_classes": [
+        0,
+        1
+      ],
+      "mainnet_activation": 210537,
+      "mainnet_bank": "c2a6df736b0d0da22e285b6930b11cf44b520d65b52c7dfe78f44fe0cd48e76e",
+      "origin": "b7fdcbd39c1c4ddd157acd683ac3a95db49743df5c4b12c17d5f2f6019381755",
+      "parent_height": 9,
+      "request": "0ccf5d1af3a0008e10d30ce206949eaccf48ee4e84ae1da2df4ad940393746bc",
+      "tip_class": 1
+    },
+    {
+      "check": "request_and_opening_mutations",
+      "class": 0,
+      "dynamic_root_changes_rejected_at_full_origin_entry": 4,
+      "independent_pcs_columns": 11,
+      "key_or_context_changes_rejected": 2,
+      "pcs_leaf_or_path_changes_rejected": 22,
+      "point_coordinates": 45,
+      "point_limb_changes_rejected": 90,
+      "value_limb_changes_rejected": 2,
+      "wire_bytes": 6478232
+    },
+    {
+      "check": "request_and_opening_mutations",
+      "class": 1,
+      "dynamic_root_changes_rejected_at_full_origin_entry": 4,
+      "independent_pcs_columns": 11,
+      "key_or_context_changes_rejected": 2,
+      "pcs_leaf_or_path_changes_rejected": 22,
+      "point_coordinates": 49,
+      "point_limb_changes_rejected": 98,
+      "value_limb_changes_rejected": 2,
+      "wire_bytes": 7628536
+    },
+    {
+      "both_single_lane_omissions_rejected": true,
+      "check": "coverage_and_authority",
+      "class_substitution_rejected": true,
+      "duplicates_rejected": true,
+      "legacy_row_load_attempts": 0,
+      "origin_boundary_preserved": true,
+      "reduction_request_substitution_rejected": true,
+      "reordering_rejected": true
+    }
+  ],
+  "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "scope": "archived valid isolated-network request, release legacy matrices and preprocessing keys, pinned production verifier code; not a mainnet origin or a QROM proof"
+}

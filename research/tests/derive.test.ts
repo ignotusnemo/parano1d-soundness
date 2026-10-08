@@ -30,7 +30,18 @@ test("classical Poseidon projection is not presented as the Category 1 metric", 
 });
 
 test("theorem context links do not establish current v2 production premises", () => {
-  const state = deriveResearchState(path.resolve("."));
+  const temporary = mkdtempSync(path.join(tmpdir(), "parano1d-context-only-"));
+  let state;
+  try {
+    cpSync(path.resolve("catalog"), path.join(temporary, "catalog"), { recursive: true });
+    cpSync(path.resolve("evidence"), path.join(temporary, "evidence"), { recursive: true });
+    for (const id of ["v2-retirement-correspondence-20261008", "v2-selected-parent-transcript-20261008", "v2-snapshot-correspondence-20261008"]) {
+      rmSync(path.join(temporary, "evidence/official", `${id}.json`));
+    }
+    state = deriveResearchState(temporary);
+  } finally {
+    rmSync(temporary, { recursive: true, force: true });
+  }
   const claims = new Map(state.claims.map((claim) => [claim.id, claim]));
   for (const id of ["v2-compiler-correspondence", "v2-all-root-composition", "v2-retirement-correspondence"]) {
     const extension = claims.get(id)!;
@@ -41,6 +52,33 @@ test("theorem context links do not establish current v2 production premises", ()
   assert.equal(claims.get("v2-joint-bank-accounting")?.status, "verified");
   assert.ok(state.conclusion.premiseClaims.includes("v2-all-root-composition"));
   assert.ok(state.conclusion.premiseClaims.includes("v2-production-correspondence"));
+});
+
+test("scoped v2 source evidence preserves open compiler conditions and numerical frontiers", () => {
+  const state = deriveResearchState(path.resolve("."));
+  const claims = new Map(state.claims.map((claim) => [claim.id, claim]));
+  for (const id of ["v2-retirement-correspondence", "v2-compiler-correspondence", "v2-production-correspondence"]) {
+    const claim = claims.get(id)!;
+    assert.equal(claim.status, "verified");
+    assert.equal(claim.initialStatus, "premise");
+    const records = state.records.filter((record) => record.effects.some((effect) => effect.claimId === id));
+    assert.equal(records.length, 1);
+    assert.equal(records[0]?.recordType, "official-baseline");
+    assert.ok(records[0]?.effects.every((effect) => effect.metrics.length === 0));
+    assert.ok(!records[0]?.review);
+  }
+  for (const id of ["v2-all-root-composition", "v2-fixed-poseidon2b-delta", "v2-coherent-response-minimum"]) {
+    assert.equal(claims.get(id)?.status, "premise");
+    assert.deepEqual(claims.get(id)?.evidenceIds, []);
+  }
+  assert.match(claims.get("v2-compiler-correspondence")!.scope, /complete adaptive shared-database compiler remain separate/);
+  assert.match(claims.get("v2-production-correspondence")!.scope, /does not cover every ordinary-block/);
+  assert.match(claims.get("v2-all-root-composition")!.scope, /embedded-verifier oracle queries/);
+  const baseline = state.records.find((record) => record.id === "official-v2-accounting-20261008")!;
+  for (const metric of state.metrics) {
+    assert.deepEqual(metric, baseline.effects.flatMap((effect) => effect.metrics).find((candidate) => candidate.id === metric.id));
+  }
+  assert.ok(state.records.filter((record) => record.id.startsWith("official-v2-") && record.acceptedAt.startsWith("2026-10-08")).every((record) => record.recordType === "official-baseline"));
 });
 
 test("Poseidon2b work factors remain separated by exact attack game", () => {

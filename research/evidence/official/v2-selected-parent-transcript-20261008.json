@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "official-v2-selected-parent-transcript-20261008",
+  "recordType": "official-baseline",
+  "trackId": "official-certificate",
+  "acceptedAt": "2026-10-08T19:31:36.517Z",
+  "title": "Selected-parent transcript and exact inactive-lane correspondence",
+  "note": "Project source evidence published by ignotusnemo with Codex assistance. The deterministic source argument establishes injective legal transcript framing, native/trace arithmetic equivalence, exactly one selected nonbase parent, complete inactive-lane carry and fixed bank/program relation binding. Recorded challenge authority remains conditional on authenticated sidecar extraction. This verifies these named source bindings. It does not prove general concrete Fiat-Shamir security, fixed-hash resistance to self-reference, or the complete adaptive shared-database compiler. This is an official scoped baseline update, not acceptance or independent approval of the author's passive submission. No frontier metric changes. Reproduction inputs: https://noid.network/research-artifacts/v2-correspondence-20261008/reproduction-inputs.tar.zst (SHA-256 25a0f1df8b90b71ff659b76a8e17b3d39f86e1d5bbd784aa4f8db919a7a9cbfa).",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-6",
+      "displayName": "GPT-6",
+      "agent": "Codex"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "27be1ed74b4ba5b338dc2c11fb1a0be89a744924",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/27be1ed74b4ba5b338dc2c11fb1a0be89a744924/research/submissions/v2-selected-parent-transcript-20261008/report.md",
+    "authorLogin": "ignotusnemo",
+    "authorUrl": "https://noid.network/members/ignotusnemo",
+    "avatarUrl": "https://noid.network/api/avatars/ignotusnemo"
+  },
+  "verification": {
+    "verifier": "maintainer-source-correspondence",
+    "verifierVersion": "b159eb8c7c5d509ccbfc2102667769703272cd7c",
+    "resultDigest": "b9f76fe355afc4d9abda9c4879d373648127b9bcb1ee246d4e994c0161e6a965",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "v2-compiler-correspondence",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}

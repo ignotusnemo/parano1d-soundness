@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "official-v2-retirement-correspondence-20261008",
+  "recordType": "official-baseline",
+  "trackId": "official-certificate",
+  "acceptedAt": "2026-10-08T19:31:36.517Z",
+  "title": "Canonical preprocessing and complete retirement request binding",
+  "note": "Project source evidence published by ignotusnemo with Codex assistance. Both release preprocessing keys were reconstructed from the complete authenticated canonical matrices using independent column/table construction. All 152,532,541 canonical entries, fourteen static roots and every byte of both 304-byte keys match. The source proof covers complete points/values, request context, both live classes, four dynamic roots and all eleven PCS columns. Genuine isolated-origin mutations corroborate the checks; the mainnet bank rejects that isolated origin. The canonical decoder and PCS implementation are shared. Commitment, local extraction, compiler, fixed-hash and resource-price conditions remain explicit. This is an official scoped baseline update, not acceptance or independent approval of the author's passive submission. No frontier metric changes. Reproduction inputs: https://noid.network/research-artifacts/v2-correspondence-20261008/reproduction-inputs.tar.zst (SHA-256 25a0f1df8b90b71ff659b76a8e17b3d39f86e1d5bbd784aa4f8db919a7a9cbfa).",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-6",
+      "displayName": "GPT-6",
+      "agent": "Codex"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "27be1ed74b4ba5b338dc2c11fb1a0be89a744924",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/27be1ed74b4ba5b338dc2c11fb1a0be89a744924/research/submissions/v2-retirement-correspondence-20261008/report.md",
+    "authorLogin": "ignotusnemo",
+    "authorUrl": "https://noid.network/members/ignotusnemo",
+    "avatarUrl": "https://noid.network/api/avatars/ignotusnemo"
+  },
+  "verification": {
+    "verifier": "maintainer-source-correspondence",
+    "verifierVersion": "b159eb8c7c5d509ccbfc2102667769703272cd7c",
+    "resultDigest": "6a4d921faad16f96b69cac0d6ca25bc96a0858b8a276cbcaf21cfe78ed156bd3",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "v2-retirement-correspondence",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}

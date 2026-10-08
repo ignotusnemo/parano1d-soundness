@@ -1,0 +1,67 @@
+{
+  "elapsed_ms": 167332,
+  "observations": [
+    {
+      "accepted": true,
+      "activation_height": 10,
+      "bank": "be82f3bec102f03c63715dac9bb4a939cb9aa5b21d013e38402b321fd8a41fa9",
+      "check": "valid_v2_snapshot_boundary",
+      "height": 17,
+      "state_root": "a268ca77444d6c6abc62890edbafb7b22adc540f01eb53c03773b817047e593d",
+      "terminal_bytes": 916916,
+      "terminal_callback": "HistoryProtocolRuntime::verify_terminal"
+    },
+    {
+      "check": "header_substitution",
+      "error": "consensus: BadHistoryStepTerminal(\"snapshot terminal does not bind its staged boundary\")",
+      "field": "state_root",
+      "rejected": true
+    },
+    {
+      "check": "header_substitution",
+      "error": "consensus: BadHistoryStepTerminal(\"snapshot terminal does not bind its staged boundary\")",
+      "field": "live_count",
+      "rejected": true
+    },
+    {
+      "check": "header_substitution",
+      "error": "consensus: BadHistoryStepTerminal(\"snapshot terminal does not bind its staged boundary\")",
+      "field": "alloc_cursor",
+      "rejected": true
+    },
+    {
+      "check": "header_substitution",
+      "error": "consensus: BadHistoryStepTerminal(\"snapshot terminal does not bind its staged boundary\")",
+      "field": "height",
+      "rejected": true
+    },
+    {
+      "check": "header_substitution",
+      "error": "consensus: BadHistoryStepTerminal(\"snapshot terminal does not bind its staged boundary\")",
+      "field": "previous_hash",
+      "rejected": true
+    },
+    {
+      "check": "epoch_substitution_same_height",
+      "error": "consensus: BadHistoryStepTerminal(\"v2 HistoryStep: Boundary\")",
+      "rejected": true
+    },
+    {
+      "check": "proof_tail_substitution_after_valid_admission",
+      "error": "consensus: BadHistoryStepTerminal(\"v2 HistoryStep: Proof(Auxiliary)\")",
+      "rejected": true
+    },
+    {
+      "accepted": true,
+      "check": "origin_cache_restart",
+      "explicit_origin_reinstallation": false
+    },
+    {
+      "canonical_tip_after_all_admissions": 0,
+      "check": "authority_boundary",
+      "legacy_row_load_attempts": 0
+    }
+  ],
+  "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "scope": "genuine isolated v2 terminal through production dispatcher and snapshot capability constructor; sealed header validation and durable State installation checked separately"
+}

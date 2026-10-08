@@ -28,3 +28,7 @@ The local verifier should return `pending-review`. Mathematical acceptance requi
 ## Current target
 
 The target claim is `v2-all-root-composition`. Read the complete v2 contract before analysis. For new submissions use contract `2.0.0` and the current source pair. Historical results remain attributable to their original profiles.
+
+## Current unresolved compiler obligations
+
+The [October publication note](../../../docs/october-2026-correspondence-results.md) and [integrated source argument](https://git.parano1d.org/ignotusnemo/parano1d/src/commit/b159eb8c7c5d509ccbfc2102667769703272cd7c/noid_soundness/docs/v2-correspondence-2026-10.md) establish a conditional deterministic worklist descent with complete lane retention. They do not close the full adaptive measured-database game. Address statement-exclusive database transitions, representation of each required extracted child in the same database, and a total budget including embedded-verifier oracle queries. Fractal Theorem 11.5 assumes constant-depth compliant transcripts; citing it without an explicit current compiler reduction does not establish arbitrary-depth chain soundness. A supporting submission must still meet the complete frozen contract threshold.

@@ -1,0 +1,58 @@
+warning: /home/neo/rust/parano1d-v2-correspondence/noid_node/Cargo.toml: file `/home/neo/rust/parano1d-v2-correspondence/noid_node/src/main.rs` found to be present in multiple build targets:
+  * `bin` target `parano1d`
+  * `example` target `isolated_v1_1_node`
+  * `example` target `isolated_v2_node`
+    Finished `release` profile [optimized] target(s) in 0.15s
+     Running unittests src/lib.rs (/home/neo/rust/paranoid/target/release/deps/noid_ivc_core-0b3ac4d48a5aa010)
+
+running 2 tests
+test matrix_claim::sparse_c1::correspondence_audit::independently_reproduce_pinned_release_key_class_0 ... {"column":0,"k_log":22,"milliseconds":34533,"root":"b9d97e4f8d985a9fada8fc3e8a3a86a928f966fe99127a81340164c504fa4bb9","stage":"independent_static_column"}
+{"column":1,"k_log":22,"milliseconds":36879,"root":"631891e27fab64fc3aa52fde831c48f191572d51e56e049f6e624d22608e8426","stage":"independent_static_column"}
+{"column":2,"k_log":22,"milliseconds":40737,"root":"90586476bdf3a4991dfad3365a660b3fa76b452f7dd07a5958bb09b1ed710182","stage":"independent_static_column"}
+{"column":3,"k_log":22,"milliseconds":48554,"root":"360100e2a06df1136d05ea6b4778a9a276c34263d23216505efaf15ae55f3a1a","stage":"independent_static_column"}
+{"column":4,"k_log":22,"milliseconds":45577,"root":"7ac8a7f8259f981620bb965bc8d370afb66deab37f9a2271b12e8d05716eb923","stage":"independent_static_column"}
+{"column":5,"k_log":22,"milliseconds":12523,"root":"563e4e169b9891da0f3df4b3f0c20ac7d306a3eb7615335a1e9f22db7c428041","stage":"independent_static_column"}
+{"column":6,"k_log":22,"milliseconds":5970,"root":"b583457920938933dde329f7e554db9670c3c2d61cd3ed11fa5817ff95d2df37","stage":"independent_static_column"}
+{"all_304_bytes_match":true,"authentication_ms":36648,"canonical_bytes":84771079,"class":0,"elapsed_ms":261425,"entries":28461463,"k_log":22,"key_digest":"0651ce507810b61213cbdc0e9f99436aec3a7922cc662bfba6128b466453c8b2","method":"independent column reconstruction from fully authenticated canonical rows; shared release PCS commitment","padded_entries":33554432,"stage":"independent_release_key"}
+ok
+test matrix_claim::sparse_c1::correspondence_audit::independently_reproduce_pinned_release_key_class_1 ... {"column":0,"k_log":24,"milliseconds":142894,"root":"3ad2755906df35d09170c3f96f24857c4e27c31efebafc6db2ff91f0300afffe","stage":"independent_static_column"}
+{"column":1,"k_log":24,"milliseconds":142040,"root":"c69c4d57b5a6aba9135e84f5c8fde059303deb595738aa989be460d9e3a54f88","stage":"independent_static_column"}
+{"column":2,"k_log":24,"milliseconds":145519,"root":"ec55de1cf192bfaff4680a20df741701af2710504fdcb78b718d2a71f33d7b62","stage":"independent_static_column"}
+{"column":3,"k_log":24,"milliseconds":170385,"root":"0c04995e968fc7a310d6841987a6b1989f2ab3bc0f51e6d52dda85d8337f0639","stage":"independent_static_column"}
+{"column":4,"k_log":24,"milliseconds":241440,"root":"e23ce0ae909f462c9973a263d30a8a8e1451041662e52dfd0a153524ac3b8641","stage":"independent_static_column"}
+{"column":5,"k_log":24,"milliseconds":59225,"root":"ebd0fa555a4845c4a72f59cc20ebdb82384f08bf461a828e8278ec1983bdd7ac","stage":"independent_static_column"}
+{"column":6,"k_log":24,"milliseconds":32517,"root":"6abf146619f32e6144bc067bc8b2e35df03962d96a586f93b352a9b8f565fab8","stage":"independent_static_column"}
+{"all_304_bytes_match":true,"authentication_ms":217924,"canonical_bytes":386877460,"class":1,"elapsed_ms":1151947,"entries":124071078,"k_log":24,"key_digest":"c301274d50dc02fd5c383f2e71629075729a954a768f5051388ec2040bce0267","method":"independent column reconstruction from fully authenticated canonical rows; shared release PCS commitment","padded_entries":134217728,"stage":"independent_release_key"}
+ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 485 filtered out; finished in 1413.76s
+
+     Running tests/deep_chain_family.rs (/home/neo/rust/paranoid/target/release/deps/deep_chain_family-41648173acc67f30)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 3 filtered out; finished in 0.00s
+
+	Command being timed: "env CARGO_BUILD_JOBS=2 RAYON_NUM_THREADS=3 CARGO_TARGET_DIR=/home/neo/rust/paranoid/target NOID_CORRESPONDENCE_INPUTS=/home/neo/rust/noid-network-ops/v2-correspondence-20261008/inputs cargo test --release --locked -p noid-ivc-core independently_reproduce_pinned_release_key -- --ignored --nocapture --test-threads=1"
+	User time (seconds): 3553.54
+	System time (seconds): 47.30
+	Percent of CPU this job got: 254%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 23:33.98
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 11919456
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 15
+	Minor (reclaiming a frame) page faults: 19635618
+	Voluntary context switches: 40478
+	Involuntary context switches: 134358
+	Swaps: 0
+	File system inputs: 757888
+	File system outputs: 104
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

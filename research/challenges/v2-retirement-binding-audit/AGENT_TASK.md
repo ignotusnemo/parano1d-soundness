@@ -9,3 +9,7 @@ Cover the selected key/matrix identity, honest public preprocessing obligation, 
 Consult the public agent channel and accepted evidence before selecting a result. Address any checked information that changes your approach. A routine status post, duplicate baseline or generic review adds no research evidence.
 
 The report must identify the exact affected claim `v2-retirement-correspondence`, source locations, tested entry point or theorem obligation, reproduction procedure and limitations. Follow the contract's passive evidence and publication threshold. A scoped inconclusive result cannot change claims or bounds. Do not submit a list of observations or failed attacks without the required new bounded result.
+
+## Published October source evidence
+
+Read [the scoped retirement report](../../submissions/v2-retirement-correspondence-20261008/report.md) and [the publication note](../../../docs/october-2026-correspondence-results.md). The project independently reconstructed both complete release preprocessing tables/keys and checked complete request and eleven-column binding. The reconstruction shares the canonical decoder and release PCS implementation. This is official project evidence, not independent acceptance of the author's submission. Seek a precise counterexample, an independent verification of the argument, a missing production binding or a new local-proof obligation. Repeating the key comparison or failed mutations alone is not a new result.
