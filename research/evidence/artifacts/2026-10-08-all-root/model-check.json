@@ -1,0 +1,172 @@
+{
+  "allFiniteChecksPassed": true,
+  "checks": [
+    {
+      "classification": "finite_corollary_of_written_conditional_lemma",
+      "name": "disjoint_namespace_maximum",
+      "outputAssignmentsChecked": 20480,
+      "passed": true,
+      "propertyPairs": 256,
+      "reverseFlipsObserved": 2048
+    },
+    {
+      "cellCount": 1,
+      "classification": "counterexample_to_unqualified_model_implication",
+      "digestCollisions": 0,
+      "name": "shared_cell_maximum_countermodel",
+      "passed": true,
+      "singleStatementDensity": "1/8",
+      "unionDensity": "1/2"
+    },
+    {
+      "atomicVectorDensity": "1/16",
+      "classification": "counterexample_to_unqualified_model_implication",
+      "exampleAcceptingOutputPair": [
+        0,
+        64
+      ],
+      "favorablePrefixCostIsNotAnAttackBound": true,
+      "lastCellFlipDensityAtFavorablePrefix": "1/4",
+      "naiveDensityPlusFiniteAtTwoQueries": "21/256",
+      "name": "atomic_vector_to_cell_countermodel",
+      "passed": true,
+      "rawOutputSupportSize": 256,
+      "vectorAssignmentsEnumerated": 65536,
+      "winningFlipHasOutputCollision": false
+    },
+    {
+      "childAcceptedAfterDifferentIdealAnswer": false,
+      "childInitiallyRepresented": false,
+      "classification": "counterexample_to_unqualified_model_implication",
+      "digestCollisions": 0,
+      "name": "fixed_replay_does_not_imply_same_database_closure",
+      "outerFixedRelationAccepts": true,
+      "passed": true
+    },
+    {
+      "assignmentCount": 16,
+      "batchWidth": 2,
+      "classification": "counterexample_to_automatic_parallel_hypothesis",
+      "doesNotRefuteAnyProductionProbabilityBound": true,
+      "name": "parallel_conjunction_has_no_one_local_strong_cover",
+      "nonemptyLocalPropertiesChecked": 30,
+      "passed": true,
+      "strongCoverAfterAdjoiningCollisionsExists": false,
+      "strongCoverExists": false
+    },
+    {
+      "classification": "finite_corollary_of_written_conditional_ledger",
+      "distinctAddresses": 3,
+      "incorrectDoubleCharge": 7,
+      "name": "query_occurrences_and_output_verification",
+      "passed": true,
+      "postMeasurementOracleQueries": 0,
+      "representationClosureIsAHypothesis": true,
+      "totalCallOccurrences": 4
+    },
+    {
+      "classification": "source_receipt_only",
+      "eventCount": 20,
+      "events": [
+        "history.b25.proximity",
+        "history.b255.proximity",
+        "history.candidate-switching",
+        "history.joint-sidecar",
+        "history.query",
+        "retirement.b25.pcs-scalar",
+        "retirement.b25.proximity",
+        "retirement.b25.query",
+        "retirement.b25.reduction",
+        "retirement.b255.pcs-scalar",
+        "retirement.b255.proximity",
+        "retirement.b255.query",
+        "retirement.b255.reduction",
+        "v2.candidate-switching",
+        "v2.joint-sidecar",
+        "v2.large.proximity",
+        "v2.query",
+        "v2.small.proximity",
+        "wallet.field",
+        "wallet.query"
+      ],
+      "name": "frozen_twenty_event_inventory",
+      "passed": true
+    }
+  ],
+  "correspondenceArgumentCommit": "b159eb8c7c5d509ccbfc2102667769703272cd7c",
+  "frontierMetricChanges": [],
+  "fullAllRootContractSatisfied": false,
+  "productionForgery": false,
+  "schema": "parano1d-all-root-model-diagnostics-v1",
+  "scriptSha256": "185cef11d5974dcb6dd05193e1cdb6a5e4e6a39cb51df5f67df33a061498e6b2",
+  "sourceCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "sourceReceipts": [
+    {
+      "bytes": 44813,
+      "matchesFrozenSource": true,
+      "path": "noid_ivc_core/src/challenger.rs",
+      "sha256": "a1c77f6cf7c6d26a03a2c40078c55a7f6d3f9b80f665195ec638c6fd096fc3f7"
+    },
+    {
+      "bytes": 121390,
+      "matchesFrozenSource": true,
+      "path": "noid_ivc_core/src/field_circuit.rs",
+      "sha256": "87bb024daa53b85e64a31a898151604082cdf63bf8d4d2490569077fad35c555"
+    },
+    {
+      "bytes": 6490,
+      "matchesFrozenSource": true,
+      "path": "noid_ivc_core/src/proof.rs",
+      "sha256": "aabb573dd84173a4133d927029e31907a97bf62893f916da4af2a123b39ab824"
+    },
+    {
+      "bytes": 14825,
+      "matchesFrozenSource": true,
+      "path": "noid_ivc_core/src/public_io.rs",
+      "sha256": "5687a93253b8129443b72d1626e26295244aa3747aed88e1cb2a9f7dc9e4388c"
+    },
+    {
+      "bytes": 97432,
+      "matchesFrozenSource": true,
+      "path": "noid_ivc_core/src/pcs/basefold.rs",
+      "sha256": "d130f129891ae08ec18b0d476a74ec0d5de561ddf56ef7ce732d3a02ea8413f6"
+    },
+    {
+      "bytes": 244047,
+      "matchesFrozenSource": true,
+      "path": "noid_recursive/src/acceptance/trace/self_verify.rs",
+      "sha256": "1098729a57e8d5b1aa1684de87f9f6378b6ed113900eb6d30551719bf1e4bbdc"
+    },
+    {
+      "bytes": 19737,
+      "matchesFrozenSource": true,
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked/assembly.rs",
+      "sha256": "f75871ebceab088b6cf803eec8e7aa25ca4f4523e17dbf6ee5f9df96027eba49"
+    },
+    {
+      "bytes": 39500,
+      "matchesFrozenSource": true,
+      "path": "noid_recursive/src/region_sidecar/recording_duplex.rs",
+      "sha256": "1f77a3fb9cb3bddf3a5545e6b7de00639ce53ee2c3ea3b44fd77bc78cd2e6fcf"
+    },
+    {
+      "bytes": 72308,
+      "matchesFrozenSource": true,
+      "path": "noid_gkr/src/zk_authorization.rs",
+      "sha256": "5169ae6c7431171abb02f30867c88ce99bf4c3a5854257a0883a3900d8521a44"
+    },
+    {
+      "bytes": 20969,
+      "matchesFrozenSource": true,
+      "path": "noid_soundness/src/resource.rs",
+      "sha256": "edb0e844f534b75982e6734a1edc405ea2e6ab99246ed133fcc95ab6eba50e5e"
+    },
+    {
+      "bytes": 10827,
+      "matchesFrozenSource": true,
+      "path": "noid_soundness/src/v2.rs",
+      "sha256": "92b57853801d7f8c1ecd36978f3d26d1fb2c37be1207f345911d43c2dd921be2"
+    }
+  ],
+  "status": "partial_mathematical_result"
+}
