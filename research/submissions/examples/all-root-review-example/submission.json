@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "all-root-review-example",
   "track": "recursive-all-root-proof",
-  "contractVersion": "1.2.0",
+  "contractVersion": "1.3.0",
   "title": "Independent all-root theorem review template",
   "note": "This example shows the exact passive-data format for a source-pinned cryptographic report entering contract-specific expert review.",
   "attribution": {
@@ -16,7 +16,7 @@
   },
   "payload": {
     "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
-    "certificateCommit": "a5c7e11720117aba5cc28411d8b6916627183616",
+    "certificateCommit": "5e6951555dd67d37ede40b6e272561cd7022089d",
     "reportPath": "report.md",
     "reportSha256": "ee86fa32c52014b95c3cb549fcd245283cf3d1bd156124c608d2a60529387548",
     "affectedClaimId": "adaptive-all-root-qrom",

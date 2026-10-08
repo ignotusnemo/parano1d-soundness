@@ -51,12 +51,12 @@ export interface Frontier {
 export const FRONTIER_MODELS: FrontierModel[] = [
   {
     id: "category-one",
-    shortTitle: "End-to-end C1",
-    title: "End-to-end Category 1 gate-depth",
-    description: "The proved lower frontier is the minimum gate-depth required for invalid terminal State success above one half in the pinned end-to-end game. A concrete end-to-end attack would establish an upper frontier.",
+    shortTitle: "Legacy v1 C1",
+    title: "Legacy v1 Category 1 gate-depth",
+    description: "The line is the dominant-term gate-depth floor for the historical v1 profile under the declared response-cost premise. A concrete end-to-end attack in that same game would establish an upper frontier. The separate v2 accounting must not be merged into this series.",
     unit: "bits",
     axisLabel: "log2 logical gate-depth",
-    lowerLabel: "Proved soundness lower",
+    lowerLabel: "Conditional dominant-term floor",
     upperLabel: "Concrete attack upper",
     lowerMetrics: [{ id: "category-one.gate-depth-floor" }],
     upperMetrics: [{ id: "category-one.attack-gate-depth-upper" }],
@@ -103,6 +103,19 @@ export const FRONTIER_MODELS: FrontierModel[] = [
       label: "Block-Tiwari conjecture, not a result",
       qualification: "excluded from the certificate and both frontiers"
     }
+  },
+  {
+    id: "v2-category-one",
+    shortTitle: "Mainnet v2 C1",
+    title: "Mainnet v2 conditional Category 1 accounting",
+    description: "The current joint-bank calculation includes wallet, legacy History, v2 History and sparse retirement. The line is its dominant-term gate-depth floor under the declared composition, compiler, fixed-Poseidon2b, preprocessing and response-price conditions. The complete ideal envelope is about 0.04937388373372754. This separate v2 baseline does not replace or improve the legacy profile.",
+    unit: "bits",
+    axisLabel: "log2 logical gate-depth",
+    lowerLabel: "Conditional dominant-term floor",
+    upperLabel: "Concrete attack upper",
+    lowerMetrics: [{ id: "v2.category-one.gate-depth-floor" }],
+    upperMetrics: [{ id: "v2.category-one.attack-gate-depth-upper" }],
+    reference: { value: 170, label: "NIST Category 1 reference" }
   }
 ];
 

@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "official-matrix-reference-20261008",
+  "recordType": "official-baseline",
+  "trackId": "official-certificate",
+  "acceptedAt": "2026-10-08T14:31:00.000Z",
+  "title": "296 production parameters match the Poseidon2b reference",
+  "note": "ignotusnemo September research reproduced on v2.0.3 with Codex on October 8. All 264 round constants and both 16-entry matrices match authors' commit 7072a9438cf48f1b38ad0092cda5452626914068. Canonical u128 little-endian digest: f7b7ea4bae01d0a62c1d51372046325b4781c641b0ce395ced5ab16c510e6e9b. This verifies reference correspondence, not absence of a weakness in the reference and not a new security bound. The September resultant remains screening only. Reproduction: https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7e08aaae29e0d6bec18b803303882172922783ce/docs/october-2026-certificate-refresh.md",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "codex",
+      "displayName": "Codex",
+      "agent": "Codex"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "7e08aaae29e0d6bec18b803303882172922783ce",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7e08aaae29e0d6bec18b803303882172922783ce/docs/october-2026-certificate-refresh.md",
+    "authorLogin": "ignotusnemo",
+    "authorUrl": "https://noid.network/members/ignotusnemo",
+    "avatarUrl": "https://noid.network/api/avatars/ignotusnemo"
+  },
+  "verification": {
+    "verifier": "maintainer-source-reproduction",
+    "verifierVersion": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "resultDigest": "bf30cfbc1ad8bf4e7430c88b4a0cdf2925c95c0fcd55a5bdfb7bf5a7c0d3235b",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "poseidon2b-reference-correspondence",
+      "status": "verified",
+      "metrics": [
+        {
+          "id": "poseidon2b.reference-values",
+          "label": "Matching reference parameters",
+          "value": "296",
+          "unit": "u128 values",
+          "kind": "resource-count",
+          "scope": "264 round constants, 16 external and 16 internal matrix entries"
+        }
+      ]
+    }
+  ]
+}

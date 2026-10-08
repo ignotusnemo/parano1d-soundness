@@ -10,7 +10,7 @@
     "sources": [
       {
         "label": "Parameter provenance",
-        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/parameter-provenance.md"
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/5e6951555dd67d37ede40b6e272561cd7022089d/docs/parameter-provenance.md"
       }
     ]
   },
@@ -31,7 +31,7 @@
     "sources": [
       {
         "label": "Exact local theorem",
-        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/category-one.md#exact-local-theorem"
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/5e6951555dd67d37ede40b6e272561cd7022089d/docs/category-one.md#exact-local-theorem"
       }
     ]
   },
@@ -52,7 +52,7 @@
     "sources": [
       {
         "label": "One all-root event",
-        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/category-one.md#one-all-root-event"
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/5e6951555dd67d37ede40b6e272561cd7022089d/docs/category-one.md#one-all-root-event"
       }
     ]
   },
@@ -73,7 +73,7 @@
     "sources": [
       {
         "label": "Sequential ideal-QROM theorem",
-        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/category-one.md#sequential-ideal-qrom-theorem"
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/5e6951555dd67d37ede40b6e272561cd7022089d/docs/category-one.md#sequential-ideal-qrom-theorem"
       }
     ]
   },
@@ -94,7 +94,7 @@
     "sources": [
       {
         "label": "Typed parallel-QROM resource theorem",
-        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/category-one.md#typed-parallel-qrom-resource-theorem"
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/5e6951555dd67d37ede40b6e272561cd7022089d/docs/category-one.md#typed-parallel-qrom-resource-theorem"
       }
     ]
   },
@@ -115,7 +115,7 @@
     "sources": [
       {
         "label": "Complete construction and executable field-circuit checks",
-        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/response-accounting.md"
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/5e6951555dd67d37ede40b6e272561cd7022089d/docs/response-accounting.md"
       }
     ]
   },
@@ -136,7 +136,7 @@
     "sources": [
       {
         "label": "Declared resource premise",
-        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/category-one.md#coherent-response-cost"
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/5e6951555dd67d37ede40b6e272561cd7022089d/docs/category-one.md#coherent-response-cost"
       }
     ]
   },
@@ -162,7 +162,7 @@
     "sources": [
       {
         "label": "Category 1 calculation",
-        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/category-one.md#category-1-calculation"
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/5e6951555dd67d37ede40b6e272561cd7022089d/docs/category-one.md#category-1-calculation"
       }
     ]
   },
@@ -183,7 +183,7 @@
     "sources": [
       {
         "label": "Current Poseidon2b cryptanalysis",
-        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/category-one.md#current-poseidon2b-cryptanalysis"
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/5e6951555dd67d37ede40b6e272561cd7022089d/docs/category-one.md#current-poseidon2b-cryptanalysis"
       },
       {
         "label": "September 2026 ePrint review",
@@ -208,13 +208,13 @@
     "sources": [
       {
         "label": "Fixed Poseidon2b boundary",
-        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/category-one.md#fixed-poseidon2b-boundary"
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/5e6951555dd67d37ede40b6e272561cd7022089d/docs/category-one.md#fixed-poseidon2b-boundary"
       }
     ]
   },
   {
     "id": "current-production-correspondence",
-    "title": "Pinned production acceptance correspondence",
+    "title": "Legacy v1 production acceptance correspondence",
     "statement": "The certificate theorem and production verifier are source-mapped across ordinary blocks, exact live suffixes, reorgs, snapshots and the local-producer trust boundary for Parano1d v1.0.4.",
     "scope": "Every production path capable of accepting or materializing a terminal State at the pinned revision.",
     "initialStatus": "verified",
@@ -229,13 +229,13 @@
     "sources": [
       {
         "label": "Production acceptance correspondence",
-        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/parameter-provenance.md#production-acceptance-correspondence"
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/5e6951555dd67d37ede40b6e272561cd7022089d/docs/parameter-provenance.md#production-acceptance-correspondence"
       }
     ]
   },
   {
     "id": "production-category-one",
-    "title": "End-to-end post-quantum Category 1 result",
+    "title": "Legacy v1 end-to-end post-quantum Category 1 result",
     "statement": "The certificate covers the complete chain from genesis to the accepted State. Under its two stated production assumptions, an attacker limited to NIST post-quantum Category 1 resources has less than a 50% chance of making Parano1d accept an invalid State.",
     "scope": "Wallet authorization, block relation, parent links, exact State transitions, recursive verification and complete adversarial ancestry from genesis for pinned Parano1d v1.0.4.",
     "initialStatus": "proved",
@@ -260,7 +260,7 @@
     "sources": [
       {
         "label": "End-to-end security game and result",
-        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/category-one.md#result"
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/5e6951555dd67d37ede40b6e272561cd7022089d/docs/category-one.md#result"
       }
     ]
   },
@@ -281,7 +281,131 @@
     "sources": [
       {
         "label": "Block-Tiwari calculation",
-        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/a5c7e11720117aba5cc28411d8b6916627183616/docs/block-tiwari.md"
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/5e6951555dd67d37ede40b6e272561cd7022089d/docs/block-tiwari.md"
+      }
+    ]
+  },
+  {
+    "id": "poseidon2b-reference-correspondence",
+    "title": "Production Poseidon2b parameter provenance",
+    "statement": "All 264 round constants and both 16-entry linear matrices in v2.0.3 match the authors' pinned reference byte for byte.",
+    "scope": "Exact comparison of 296 u128 values. This does not prove that the public reference is free of weaknesses.",
+    "initialStatus": "under-review",
+    "derived": false,
+    "dependencies": [],
+    "sources": [
+      {
+        "label": "October reproduction and limitations",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7e08aaae29e0d6bec18b803303882172922783ce/docs/october-2026-certificate-refresh.md"
+      }
+    ]
+  },
+  {
+    "id": "v2-joint-bank-accounting",
+    "title": "Mainnet v2 joint-bank soundness accounting",
+    "statement": "The source-linked v2.0.3 calculator reproduces the September exact report for wallet, legacy History, v2 History and sparse retirement. Its dominant work floor is 173.3897612554174 descriptive bits and ideal Category 1 envelope is approximately 0.04937388373372754.",
+    "scope": "Parano1d v2.0.3 mainnet bank c2a6df73 at activation height 210537. Verified conditional arithmetic; no new proof of preprocessing or production correspondence.",
+    "initialStatus": "under-review",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "coherent-response-minimum",
+        "role": "premise",
+        "note": "The existing scalar and batch resource prices remain declared conditions."
+      },
+      {
+        "claimId": "v2-compiler-correspondence",
+        "role": "premise",
+        "note": "Concrete recursive compiler correspondence remains a separate scoped review target."
+      },
+      {
+        "claimId": "v2-retirement-correspondence",
+        "role": "premise",
+        "note": "Honest public preprocessing, authenticated keys and sparse request binding remain explicit conditions."
+      },
+      {
+        "claimId": "v2-all-root-composition",
+        "role": "premise",
+        "note": "The v2 typed inventory retains ancestry and uses the existing all-root lifting once."
+      },
+      {
+        "claimId": "v2-fixed-poseidon2b-delta",
+        "role": "premise",
+        "note": "Use the v2 event-specific headroom, not the different legacy profile threshold."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Integrated v2 accounting and premises",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/v2-retirement.md"
+      },
+      {
+        "label": "Exact v2.0.3 reproduction",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7e08aaae29e0d6bec18b803303882172922783ce/docs/october-2026-certificate-refresh.md"
+      }
+    ]
+  },
+  {
+    "id": "v2-retirement-correspondence",
+    "title": "V2 sparse-retirement correspondence",
+    "statement": "The v2 sparse-retirement verifier must bind its accepted openings to the authenticated legacy matrix, independently pinned preprocessing key, complete matrix point/value, request context and dynamic roots.",
+    "scope": "Parano1d v2.0.3 sparse evaluation and the legacy-to-v2 boundary. A source-linked calculator and matching key digests do not independently prove honest matrix preprocessing.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [],
+    "sources": [
+      {
+        "label": "Sparse-retirement obligations",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/v2-retirement.md"
+      }
+    ]
+  },
+  {
+    "id": "v2-compiler-correspondence",
+    "title": "V2 concrete recursive Fiat-Shamir correspondence",
+    "statement": "The concrete recursive relation must preserve the transcript and statement bindings assumed by the all-root analysis even when an adversary selects contract data and earlier proofs.",
+    "scope": "Parano1d v2.0.3 fixed HistoryStep bank, public transcript framing and bounded contract interpreter. Domain separation alone does not rule out every self-reference attack.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [],
+    "sources": [
+      {
+        "label": "September concrete-compiler review",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/4a80aa54ddf8522978665be77ca174ebeea7aabf/docs/september-2026-eprint-review.md"
+      },
+      {
+        "label": "V2 composition assumptions",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/v2-retirement.md"
+      }
+    ]
+  },
+  {
+    "id": "v2-all-root-composition",
+    "title": "V2 all-root composition condition",
+    "statement": "The terminating all-root worklist must cover wallet, legacy History, v2 History and sparse evaluation under one adversarial budget, retaining every legacy ancestry obligation.",
+    "scope": "Current v2 joint-bank conditional accounting. This condition is not discharged by the October arithmetic reproduction.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [],
+    "sources": [
+      {
+        "label": "V2 composition and fixed-compiler premises",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/v2-retirement.md"
+      }
+    ]
+  },
+  {
+    "id": "v2-fixed-poseidon2b-delta",
+    "title": "V2 fixed Poseidon2b deviation condition",
+    "statement": "For the exact v2 joint-bank event, the fixed Poseidon2b compiler deviation must fit within the exact headroom remaining below one half after the ideal Category 1 envelope of approximately 0.04937388373372754.",
+    "scope": "Current v2 joint-bank conditional accounting. This condition is not discharged by the October arithmetic reproduction.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [],
+    "sources": [
+      {
+        "label": "V2 composition and fixed-compiler premises",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/v2-retirement.md"
       }
     ]
   }

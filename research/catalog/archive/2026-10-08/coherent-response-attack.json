@@ -5,11 +5,11 @@
   "kind": "attack",
   "direction": "bidirectional",
   "targetClaimId": "coherent-response-minimum",
-  "contractVersion": "1.3.0",
+  "contractVersion": "1.2.0",
   "validator": "manual-audit",
   "state": "active",
   "acceptance": "The submission must bind to the exact production response relation and declared reversible cost model. Schema and source pins are checked automatically. The authenticated noid.network maintainer reviews equivalence and resource accounting and signs the final decision. Inconclusive results have no effects. External reviews retain their contract approval policy.",
-  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/coherent-response-minimum-v1.3.0.md",
+  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/coherent-response-minimum-v1.2.0.md",
   "reviewPolicy": {
     "minimumApprovals": 2,
     "minimumIndependentApprovals": 1,
@@ -43,13 +43,8 @@
       }
     ]
   },
-  "legacyContractVersions": [
-    "1.0.0",
-    "1.1.0",
-    "1.2.0"
-  ],
   "expected": {
     "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
-    "certificateCommit": "5e6951555dd67d37ede40b6e272561cd7022089d"
+    "certificateCommit": "a5c7e11720117aba5cc28411d8b6916627183616"
   }
 }

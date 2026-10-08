@@ -16,7 +16,7 @@ test("the published end-to-end corollary is proved with explicit production prem
   assert.equal(state.claims.find((claim) => claim.id === "adaptive-all-root-qrom")?.status, "proved");
   assert.equal(state.metrics.find((metric) => metric.id === "category-one.margin-over-reference")?.value, "+3.391078499301");
   assert.equal(state.leaderboard[0]?.login, "ignotusnemo");
-  assert.equal(state.leaderboard[0]?.accepted, 4);
+  assert.equal(state.leaderboard[0]?.accepted, state.records.filter((record) => record.source.authorLogin === "ignotusnemo").length);
   assert.ok((state.leaderboard[0]?.frontierMoves ?? 0) > 0);
 });
 

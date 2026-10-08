@@ -9,10 +9,10 @@ records reproducibility and does not move the cryptographic frontier.
 
 ## Pinned materials
 
-Use `contracts/poseidon2b-nonlinear-subspace-reproduction-v1.0.0.md`.
-Certificate revision: `d0da722f4785ca05881195a33649d124a1495a89` in
+Use `contracts/poseidon2b-nonlinear-subspace-reproduction-v1.1.0.md`.
+Certificate revision: `5e6951555dd67d37ede40b6e272561cd7022089d` in
 `https://github.com/ignotusnemo/parano1d-soundness`. Production revision:
-`fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0` in
+`7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in
 `https://github.com/ignotusnemo/parano1d`.
 
 ## Required result
@@ -34,3 +34,7 @@ the contract.
 Create the submission with `npm run challenge -- setup`, then run
 `npm run challenge -- verify --submission <directory>`. A successful local
 result must be `accepted`.
+
+## Profile boundary
+
+This is the historical v1 profile. Do not transfer its numerical result or a scoped acceptance audit to v2. The current v2 bank has separate tasks and evidence.

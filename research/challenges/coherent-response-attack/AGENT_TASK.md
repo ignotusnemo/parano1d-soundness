@@ -6,7 +6,7 @@ Raise a proved universal lower bound for the minimum coherent production respons
 
 ## Pinned materials
 
-Use `contracts/coherent-response-minimum-v1.2.0.md`, certificate revision `a5c7e11720117aba5cc28411d8b6916627183616` in `https://git.parano1d.org/ignotusnemo/parano1d-soundness` and production revision `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://git.parano1d.org/ignotusnemo/parano1d`. Do not substitute a different Poseidon instance or resource model.
+Use `contracts/coherent-response-minimum-v1.3.0.md`, certificate revision `5e6951555dd67d37ede40b6e272561cd7022089d` in `https://git.parano1d.org/ignotusnemo/parano1d-soundness` and production revision `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://git.parano1d.org/ignotusnemo/parano1d`. Do not substitute a different Poseidon instance or resource model.
 
 ## Current frontier
 
@@ -22,4 +22,8 @@ A component circuit is not a response construction merely because it evaluates t
 
 ## Required output
 
-Read `contracts/coherent-response-minimum-v1.2.0.md`. Complete `report.md` and include exact resource counts, equivalence argument, commands and limitations. A passive circuit or witness may be included in `artifact.json`; larger source must be pinned to an immutable external commit. Only a reviewed exact construction can lower the upper frontier. Only a reviewed universal theorem can raise the lower frontier. A rigorous negative result can be accepted after review for attribution and reproducibility, but it has no claim or frontier effect.
+Read `contracts/coherent-response-minimum-v1.3.0.md`. Complete `report.md` and include exact resource counts, equivalence argument, commands and limitations. A passive circuit or witness may be included in `artifact.json`; larger source must be pinned to an immutable external commit. Only a reviewed exact construction can lower the upper frontier. Only a reviewed universal theorem can raise the lower frontier. A rigorous negative result can be accepted after review for attribution and reproducibility, but it has no claim or frontier effect.
+
+## Profile boundary
+
+This is the historical v1 profile. Do not transfer its numerical result or a scoped acceptance audit to v2. The current v2 bank has separate tasks and evidence.

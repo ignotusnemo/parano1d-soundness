@@ -6,7 +6,7 @@ Independently execute the protected Parano1d soundness calculator at the pinned 
 
 ## Pinned materials
 
-Use `contracts/certificate-reproduction-v1.2.0.md`. Certificate revision: `a5c7e11720117aba5cc28411d8b6916627183616` in `https://git.parano1d.org/ignotusnemo/parano1d-soundness`. Production revision: `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://git.parano1d.org/ignotusnemo/parano1d`.
+Use `contracts/certificate-reproduction-v1.3.0.md`. Certificate revision: `5e6951555dd67d37ede40b6e272561cd7022089d` in `https://git.parano1d.org/ignotusnemo/parano1d-soundness`. Production revision: `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://git.parano1d.org/ignotusnemo/parano1d`.
 
 ## Required result
 
@@ -19,3 +19,7 @@ Do not change calculator code, expected values, track contracts or verifier code
 ## Commands
 
 Create the submission with `npm run challenge -- setup`, then run `npm run challenge -- verify --submission <directory>`. A successful local result must be `accepted`.
+
+## Profile boundary
+
+This is the historical v1 profile. Do not transfer its numerical result or a scoped acceptance audit to v2. The current v2 bank has separate tasks and evidence.

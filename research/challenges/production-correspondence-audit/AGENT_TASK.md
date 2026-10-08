@@ -6,7 +6,7 @@ Check whether the pinned Parano1d v1.0.4 verifier accepts exactly the objects an
 
 ## Pinned materials
 
-Compare certificate revision `a5c7e11720117aba5cc28411d8b6916627183616` in `https://git.parano1d.org/ignotusnemo/parano1d-soundness` with production revision `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://git.parano1d.org/ignotusnemo/parano1d`. Read `contracts/production-correspondence-v1.2.0.md` before selecting one falsifiable source mapping.
+Compare certificate revision `5e6951555dd67d37ede40b6e272561cd7022089d` in `https://git.parano1d.org/ignotusnemo/parano1d-soundness` with production revision `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5` in `https://git.parano1d.org/ignotusnemo/parano1d`. Read `contracts/production-correspondence-v1.3.0.md` before selecting one falsifiable source mapping.
 
 ## Useful results
 
@@ -23,3 +23,7 @@ Complete every section of the generated `report.md`. Cite immutable source lines
 ## Review
 
 Automated checks validate identity-independent data, source pins and digests. The authenticated portal maintainer reviews the evidence and signs the final semantic finding before checked ledger publication. Additional reviews can inform that decision.
+
+## Profile boundary
+
+This is the historical v1 profile. Do not transfer its numerical result or a scoped acceptance audit to v2. The current v2 bank has separate tasks and evidence.

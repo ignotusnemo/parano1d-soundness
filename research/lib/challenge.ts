@@ -21,14 +21,14 @@ function digest(content: Buffer | string): string {
   return createHash("sha256").update(content).digest("hex");
 }
 
-export function challengeReportTemplate(trackTitle: string, trackId: string, targetClaimId: string, productionImpactGate = false): string {
+export function challengeReportTemplate(trackTitle: string, trackId: string, targetClaimId: string, productionImpactGate = false, pins = { productionCommit: PRODUCTION_REVISION, certificateCommit: CERTIFICATE_REVISION }): string {
   const productionImpact = productionImpactGate
     ? "\n## Production reachability\n\nDerive every witness input from valid production artifacts or prove why the pinned verifier accepts it. Name every production entry point and immutable source location.\n\n## Accepted production effect\n\nShow the concrete binding, verifier or State violation. Component behavior without this effect is not eligible for submission.\n"
     : "";
   const limits = productionImpactGate
     ? "## Limitations\n\nState the exact boundary of the conclusive result. Do not include a failed search or component-only observation as the claimed result.\n"
     : "## Limits and negative results\n\nState what the result does not prove. Record failed approaches when they are useful to later researchers.\n";
-  return `# ${trackTitle}\n\n## Claimed result\n\nState one exact result. Name the security game, model, units and direction of the claimed frontier movement.\n\n## Method\n\nGive the complete argument, construction, attack or audit method. Distinguish proved statements, measured results and assumptions.\n\n## Production target\n\nTrack: \`${trackId}\`\n\nTarget claim: \`${targetClaimId}\`\n\nProduction commit: \`${PRODUCTION_REVISION}\`\n\nCertificate commit: \`${CERTIFICATE_REVISION}\`\n${productionImpact}\n## Reproduction\n\nGive exact commands, artifact commits, inputs and expected outputs needed for an independent reproduction. If a passive structured witness is included, place it in \`artifact.json\` and run the seal command again.\n\n${limits}\n## Sources\n\nList primary papers, theorem sections, source files and immutable artifact links.\n`;
+  return `# ${trackTitle}\n\n## Claimed result\n\nState one exact result. Name the security game, model, units and direction of the claimed frontier movement.\n\n## Method\n\nGive the complete argument, construction, attack or audit method. Distinguish proved statements, measured results and assumptions.\n\n## Production target\n\nTrack: \`${trackId}\`\n\nTarget claim: \`${targetClaimId}\`\n\nProduction commit: \`${pins.productionCommit}\`\n\nCertificate commit: \`${pins.certificateCommit}\`\n${productionImpact}\n## Reproduction\n\nGive exact commands, artifact commits, inputs and expected outputs needed for an independent reproduction. If a passive structured witness is included, place it in \`artifact.json\` and run the seal command again.\n\n${limits}\n## Sources\n\nList primary papers, theorem sections, source files and immutable artifact links.\n`;
 }
 
 function manifestFor(setup: ChallengeSetup): { manifest: SubmissionManifest; report?: string } {
@@ -53,7 +53,11 @@ function manifestFor(setup: ChallengeSetup): { manifest: SubmissionManifest; rep
   }
 
   if (track.validator !== "manual-audit") throw new Error("the selected track does not yet have an active submission verifier");
-  const report = challengeReportTemplate(track.title, track.id, track.targetClaimId, track.submissionPolicy?.evidenceSchema === "poseidon2b-production-impact-v1");
+  const pins = {
+    productionCommit: track.expected?.productionCommit ?? PRODUCTION_REVISION,
+    certificateCommit: track.expected?.certificateCommit ?? CERTIFICATE_REVISION
+  };
+  const report = challengeReportTemplate(track.title, track.id, track.targetClaimId, track.submissionPolicy?.evidenceSchema === "poseidon2b-production-impact-v1", pins);
   return {
     report,
     manifest: submissionManifestSchema.parse({
@@ -65,8 +69,7 @@ function manifestFor(setup: ChallengeSetup): { manifest: SubmissionManifest; rep
       note: "Source-pinned research submission prepared against the active contract. The claimed result, method, reproducibility instructions and limitations are recorded in report.md.",
       attribution: setup.attribution,
       payload: {
-        productionCommit: PRODUCTION_REVISION,
-        certificateCommit: CERTIFICATE_REVISION,
+        ...pins,
         reportPath: "report.md",
         reportSha256: digest(report),
         affectedClaimId: track.targetClaimId,

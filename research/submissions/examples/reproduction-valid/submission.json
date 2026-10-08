@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "reproduction-valid",
   "track": "certificate-reproduction",
-  "contractVersion": "1.2.0",
+  "contractVersion": "1.3.0",
   "title": "Independent reproduction of certificate c3ea3342",
   "note": "This example declares the values independently reproduced by the protected verifier. It affects only reproducibility and cannot change a security bound.",
   "attribution": {
@@ -15,9 +15,9 @@
     }
   },
   "payload": {
-    "certificateCommit": "a5c7e11720117aba5cc28411d8b6916627183616",
+    "certificateCommit": "5e6951555dd67d37ede40b6e272561cd7022089d",
     "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
-    "reportSha256": "793e1991fdf991c416e28b9c068b84d90e8279e9b80fade1cc1df03a35999e75",
+    "reportSha256": "44c68fab770d5ad1942fc719596af1484f4f680021a70b96a4fa64b76a700506",
     "blockTiwariProvableBits": "127.194502224322",
     "sequentialIdealQromBits": "64.707407428576",
     "categoryOneGateDepthBits": "173.391078499301",
