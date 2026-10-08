@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "v2-selected-parent-transcript-20261008",
+  "track": "v2-recursive-fiat-shamir-audit",
+  "contractVersion": "1.0.0",
+  "title": "V2 selected-parent transcript binding and exact inactive carry",
+  "note": "Source-pinned algebraic and state-machine proof supports the selected-parent obligation and excludes relation substitution through contract data. Fixed-hash instantiation, complete adaptive compiler closure and universal response prices remain conditions. No numerical effect.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-6",
+      "displayName": "GPT-6",
+      "agent": "Codex"
+    }
+  },
+  "payload": {
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "reportPath": "report.md",
+    "reportSha256": "aef0d740d481dcd3c30a50f767e0e3fdff273afec5b45afb1473c540a1cdaa77",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "b9f76fe355afc4d9abda9c4879d373648127b9bcb1ee246d4e994c0161e6a965",
+    "affectedClaimId": "v2-compiler-correspondence",
+    "finding": "supports"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "reviewState": "pending-semantic-review",
+  "claimEffects": [],
+  "method": "source-pinned algebraic and state-machine proof; existing regressions corroborate the named obligation",
+  "argument": {
+    "commit": "b159eb8c7c5d509ccbfc2102667769703272cd7c",
+    "path": "noid_soundness/docs/v2-correspondence-2026-10.md",
+    "sha256": "fdcbf6d441d69ef8149abf7915e815c508ad1c7a854c20478e81c750329aeedf"
+  },
+  "sources": [
+    {
+      "path": "noid_ivc_core/src/challenger.rs",
+      "bytes": 44813,
+      "sha256": "a1c77f6cf7c6d26a03a2c40078c55a7f6d3f9b80f665195ec638c6fd096fc3f7",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/challenger.rs"
+    },
+    {
+      "path": "noid_ivc_core/src/field_circuit.rs",
+      "bytes": 121390,
+      "sha256": "87bb024daa53b85e64a31a898151604082cdf63bf8d4d2490569077fad35c555",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/field_circuit.rs"
+    },
+    {
+      "path": "noid_ivc_core/src/field/gf2_256.rs",
+      "bytes": 11890,
+      "sha256": "db231270794bc5a123c487c9b70d49a0d9b6479d5287c504b4ac86d94b986659",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/field/gf2_256.rs"
+    },
+    {
+      "path": "noid_ivc_core/src/verifier.rs",
+      "bytes": 53364,
+      "sha256": "36a7e01c9add8446f463f7cb815ec3ebabe2bc4a94a4c762566896abdbbfb69d",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/verifier.rs"
+    },
+    {
+      "path": "noid_ivc_core/src/proof.rs",
+      "bytes": 6490,
+      "sha256": "aabb573dd84173a4133d927029e31907a97bf62893f916da4af2a123b39ab824",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/proof.rs"
+    },
+    {
+      "path": "noid_ivc_core/src/public_io.rs",
+      "bytes": 14825,
+      "sha256": "5687a93253b8129443b72d1626e26295244aa3747aed88e1cb2a9f7dc9e4388c",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/public_io.rs"
+    },
+    {
+      "path": "noid_ivc_core/src/matrix_claim/c1.rs",
+      "bytes": 52498,
+      "sha256": "82a89c77884e6180fe4217605e22e80ea924cfcdc73deddb4ead11ee685b8987",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/matrix_claim/c1.rs"
+    },
+    {
+      "path": "noid_poseidon2b/src/native/permutation.rs",
+      "bytes": 11683,
+      "sha256": "3d03be3e9277d307e2f78e157e7d0da553c78d4501da13e66c9d251c6fed34d9",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_poseidon2b/src/native/permutation.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/trace/mod.rs",
+      "bytes": 24343,
+      "sha256": "5731e809a8e04654d4ad4b90589cac7f3dc02a2f543c63c8b1a62e8c06190e5a",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/trace/mod.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/trace/matrix_fold.rs",
+      "bytes": 23200,
+      "sha256": "567b7a2e1e263b7d9b10ad4b1f567e03a60e83ef2428889507e88587da990227",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/trace/matrix_fold.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/trace/self_verify.rs",
+      "bytes": 244047,
+      "sha256": "1098729a57e8d5b1aa1684de87f9f6378b6ed113900eb6d30551719bf1e4bbdc",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/trace/self_verify.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/trace/r_pcs_region.rs",
+      "bytes": 65447,
+      "sha256": "8944b8a936da6df80d80f8501ca535314ff86f3c256f329027c7fcf8493d7618",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/trace/r_pcs_region.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/trace/integer_program.rs",
+      "bytes": 19685,
+      "sha256": "cf0189444c3d7f1045550c35048c527648a6263652fd3d5f5db9e300941eecb4",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/trace/integer_program.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/gated_recorder.rs",
+      "bytes": 13834,
+      "sha256": "436b194ece7d4b80372cb29b7223d1517349c502cfdc8c8c36ecd602dfab3725",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/gated_recorder.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked.rs",
+      "bytes": 6626,
+      "sha256": "eb640a9829c10b9a8b24aca6f5f49e2637e3cda0a16ee5b2131cf547e3f5012c",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/config.rs",
+      "bytes": 7932,
+      "sha256": "046f656162241476a14139c115089d7d5a802d5cd4a7c460c0c1cd500dfd21b2",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/config.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked/config.rs",
+      "bytes": 5890,
+      "sha256": "c62e853b0283e0cc9d1ee39fccb771e1d6a7ca990c207a006b51b01907622e9d",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/config.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked/bank.rs",
+      "bytes": 19617,
+      "sha256": "270793c8ad70be07082732f3fd6987384826cfa0db6bd02d07e155021fd531a8",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/bank.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked/parent.rs",
+      "bytes": 10118,
+      "sha256": "44138455cd92cfaafcfeaf8f9cd94ffed844e844165d2172d12ac707bf87728a",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/parent.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked/assembly.rs",
+      "bytes": 19737,
+      "sha256": "f75871ebceab088b6cf803eec8e7aa25ca4f4523e17dbf6ee5f9df96027eba49",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/assembly.rs"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked/decision.rs",
+      "bytes": 6497,
+      "sha256": "10b62a9fe4058e090af9e870a21e2e096a7a848ae9645c5bdda1a811b98ec8da",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/decision.rs"
+    },
+    {
+      "path": "noid_recursive/src/region_sidecar/joint_c1.rs",
+      "bytes": 22401,
+      "sha256": "7350d057951eeb15f4ec73ab8dad4766be1cbb00bcd4fb3e32f4f033ec89af34",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/region_sidecar/joint_c1.rs"
+    },
+    {
+      "path": "noid_tx/src/experimental_object/integer_program.rs",
+      "bytes": 17833,
+      "sha256": "dbdf5e3075252325f42c990fb89268855be5825235f6e4ae50495e2d61034f57",
+      "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_tx/src/experimental_object/integer_program.rs"
+    }
+  ],
+  "primarySources": [
+    {
+      "url": "https://eprint.iacr.org/2019/834",
+      "pdfSha256": "c3258e2faa339bdc441403d73aba9fee7d03687121c3369ef007ccce71cd2b41"
+    },
+    {
+      "url": "https://eprint.iacr.org/2019/1076",
+      "pdfSha256": "d152c8d0d625a1ffb7cd3ad86ccc410b4dfa8f77aea82309dde1e8824236fb42"
+    },
+    {
+      "url": "https://eprint.iacr.org/2020/1305",
+      "pdfSha256": "58939a8ee49f5346b69b01662f870c5ea089d508ccc33371ed641873ca2841fc"
+    }
+  ],
+  "regressions": {
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "auditCommit": "9c8136e4482cbba2a6fd5f469ac668c789ea1e01",
+    "method": "existing compiled audit test binary; documentation-only changes do not alter its runtime code",
+    "binarySha256": "661525884cef4c836a46b2aa5cb55747eac0f02e5eef22a6f64bcb4dae523f66",
+    "checks": [
+      {
+        "test": "field_circuit::tests::c1_channel_trace_locksteps_native_wide_operations",
+        "exitCode": 0,
+        "elapsedMilliseconds": 25
+      },
+      {
+        "test": "field_circuit::tests::c1_layout_and_union_recorders_bind_raw_wide_sponge_lanes",
+        "exitCode": 0,
+        "elapsedMilliseconds": 4
+      },
+      {
+        "test": "field_circuit::tests::layout_recording_challenger_rejects_layout_drift",
+        "exitCode": 0,
+        "elapsedMilliseconds": 3
+      },
+      {
+        "test": "field_circuit::tests::poseidon2b_permute_matches_native",
+        "exitCode": 0,
+        "elapsedMilliseconds": 20
+      }
+    ],
+    "logSha256": "78686699e3b56d64f63fb259530eadbaa86aee86af20061b74029863c6814110"
+  },
+  "scope": "selected recursive parent, exact inactive carry, transcript operation encoding and native/trace source correspondence; not the full adaptive compiler",
+  "axioms": [
+    "exact finite-field arithmetic and basis conversion",
+    "trusted frozen relation and authenticated runtime bank",
+    "digest/commitment binding condition",
+    "existing local PCS and sidecar extraction conditions"
+  ],
+  "unresolvedCompilerObligations": [
+    "statement-exclusive one-cell database transitions",
+    "same measured database representation of every required child",
+    "one total budget including embedded-verifier oracle calls"
+  ]
+}
