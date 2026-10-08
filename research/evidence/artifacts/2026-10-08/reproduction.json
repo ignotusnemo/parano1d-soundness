@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-08",
+  "researcher": "ignotusnemo",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "codex",
+      "displayName": "Codex",
+      "agent": "Codex"
+    }
+  },
+  "standalone": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "5e6951555dd67d37ede40b6e272561cd7022089d",
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "testsPassed": 42,
+    "reportSha256": "44c68fab770d5ad1942fc719596af1484f4f680021a70b96a4fa64b76a700506"
+  },
+  "integrated": {
+    "repository": "ignotusnemo/parano1d",
+    "commit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "version": "v2.0.3",
+    "testsPassed": 41,
+    "reportSha256": "f99af13256d02f4cbd6554367a234725fc551806a163624e4cc892ccf0abbebd",
+    "matchesSeptemberReport": true,
+    "inputs": [
+      {
+        "path": "history-step-pack-v1/v1/history-step.runtime",
+        "bytes": 2214607,
+        "sha256": "8fab1225073d658bc1988573c79b0520ce141d2ac4a0e7c8cc2562be0e6767a5",
+        "protocolPin": "ad463bd76e27df3c0f414f4fd7640cfb5c45cc7f3a09e44a2f7bc7a8b869485b"
+      },
+      {
+        "path": "history-step-pack-v2/v2-runtime-metadata.bin",
+        "bytes": 2258540,
+        "sha256": "04e969990958520dbc865e0fddb8ef946dae23f670dc9cb56efaadc5ccebfed2",
+        "protocolPin": "c2a6df736b0d0da22e285b6930b11cf44b520d65b52c7dfe78f44fe0cd48e76e"
+      },
+      {
+        "path": "history-step-pack-v2/retirement-keys/class-0.key",
+        "bytes": 304,
+        "sha256": "02421f91a13d34480e71e3f8a88071d7e8dcb10ac9ca2339f8a2dea7cb8a689c",
+        "protocolPin": "0651ce507810b61213cbdc0e9f99436aec3a7922cc662bfba6128b466453c8b2"
+      },
+      {
+        "path": "history-step-pack-v2/retirement-keys/class-1.key",
+        "bytes": 304,
+        "sha256": "c655cbb3c3f485b3654d4a0c5d69f108eda504a3a34769a5579aad1fe3b9e8c8",
+        "protocolPin": "c301274d50dc02fd5c383f2e71629075729a954a768f5051388ec2040bce0267"
+      }
+    ],
+    "negativeControls": [
+      {
+        "name": "wrong-v2-bank",
+        "exitCode": 1,
+        "stderr": "v2 soundness accounting failed: v2 runtime differs from the independently supplied bank pin"
+      },
+      {
+        "name": "wrong-retirement-key-0",
+        "exitCode": 1,
+        "stderr": "v2 soundness accounting failed: v2 HistoryStep: Retirement(\"sparse evaluation matrix identity mismatch\")"
+      },
+      {
+        "name": "wrong-retirement-key-1",
+        "exitCode": 1,
+        "stderr": "v2 soundness accounting failed: v2 HistoryStep: Retirement(\"sparse evaluation matrix identity mismatch\")"
+      }
+    ]
+  },
+  "packs": [
+    {
+      "name": "history-step-pack-v1.tar.gz",
+      "sha256": "a1c2cd4b1ced85e155b35d92d5b93a86fef1a457f8a5b9c54f665e729be6030f"
+    },
+    {
+      "name": "history-step-pack-v2.tar.gz",
+      "sha256": "b69c08bedd459d0a92195a85df5a5936affa4bbf6e151898cd9bf2b9b636abce"
+    }
+  ]
+}

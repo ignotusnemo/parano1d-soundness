@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "referenceCommit": "7072a9438cf48f1b38ad0092cda5452626914068",
+  "referenceFileSha256": "6a32a107ab40974d259aa0bdd9a11df62c7f42ecd44f48d905b614d0b958fa88",
+  "serialization": "ROUND_CONSTANTS, MDS_FULL, MDS_PARTIAL; row-major; u128 little-endian",
+  "parts": [
+    {
+      "production": "ROUND_CONSTANTS",
+      "reference": "RC",
+      "values": 264,
+      "sha256_u128_le": "6682238bde558ebc057ed5575681da7372b9f5c6b89ed1c0de18cd37ca640166",
+      "match": true
+    },
+    {
+      "production": "MDS_FULL",
+      "reference": "MDS_FULL",
+      "values": 16,
+      "sha256_u128_le": "11f7928483663d5540f01ea4c516047430a633521e5ecc8e23b98675f939ee7c",
+      "match": true
+    },
+    {
+      "production": "MDS_PARTIAL",
+      "reference": "MDS_PARTIAL",
+      "values": 16,
+      "sha256_u128_le": "df1e37a91b47a2e24a33deae2587ad9488ba3635190640ba0ce01bcfc2de4e12",
+      "match": true
+    }
+  ],
+  "values": 296,
+  "sha256": "f7b7ea4bae01d0a62c1d51372046325b4781c641b0ce395ced5ab16c510e6e9b",
+  "scope": "Exact parameter correspondence only; not a security proof for the reference parameters."
+}
