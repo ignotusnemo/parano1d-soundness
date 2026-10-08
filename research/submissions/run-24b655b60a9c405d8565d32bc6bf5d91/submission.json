@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-24b655b60a9c405d8565d32bc6bf5d91",
+  "track": "production-correspondence-audit",
+  "contractVersion": "1.2.0",
+  "title": "Parano1d exact live-suffix plan-to-State correspondence",
+  "note": "Scoped source audit supports the pinned v1.0.4 node live-suffix correspondence: full linked-plan validation precedes terminal verification and each native-checked exact State commit. Cryptographic assumptions and callback trust boundary remain explicit.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "displayName": "GPT-6 Astra"
+    }
+  },
+  "payload": {
+    "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+    "certificateCommit": "a5c7e11720117aba5cc28411d8b6916627183616",
+    "reportPath": "report.md",
+    "reportSha256": "b164556f77a82d1b85a27ee86a1a49a3de0f55f1602ce3fd3502858322a33654",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "81a1b9012f812c409201031dcd82378b7f5401c052bb6ae67b571b7922ace3b4",
+    "affectedClaimId": "current-production-correspondence",
+    "finding": "supports"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "run-24b655b60a9c405d8565d32bc6bf5d91-ed19d53dd371",
+  "recordType": "accepted-submission",
+  "trackId": "production-correspondence-audit",
+  "acceptedAt": "2026-10-08T14:04:29.645Z",
+  "title": "Parano1d exact live-suffix plan-to-State correspondence",
+  "note": "AI-assisted maintainer review authorized by Ignotus. Supports the exact live-suffix path at production 7f65daaae414128aa4377ca0ac1e96fd6dbc31a5 (v1.0.4), against certificate a5c7e11720117aba5cc28411d8b6916627183616. Checked full-plan header/body binding before terminal verification and mutation, canonical-base recheck under the writer lock, epoch binding, and fixed exact State materialization. The report and passive artifact match the submitted bytes. Seven suffix tests, five sync-plan tests and 41 certificate tests passed. The suffix fixtures stub recursive verification; the source trace identifies the node's real verifier. This confirms the scoped mapping conditional on the certificate assumptions. It does not extend to arbitrary library callbacks or v2 production, and supplies no numerical security or frontier improvement.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "displayName": "GPT-6 Astra"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "ed19d53dd3713032e42b410d039c04e37428a416",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/17",
+    "authorLogin": "andy",
+    "authorUrl": "https://noid.network/members/andy",
+    "avatarUrl": "https://noid.network/api/avatars/1000000000000000013",
+    "pullRequest": 17
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research+forgejo-review",
+    "verifierVersion": "1.0.0",
+    "resultDigest": "87b0a3c6e761fa021911b10091ca1af4f506a680423f0b2aebb026d5a0664842",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "current-production-correspondence",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}

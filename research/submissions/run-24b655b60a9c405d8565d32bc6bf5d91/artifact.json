@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "claim": "Exact live-suffix node admission binds every committed body to the linked immutable plan ending at the verified HistoryStep tip, and uses native checks plus exact State materialization.",
+  "productionCommit": "7f65daaae414128aa4377ca0ac1e96fd6dbc31a5",
+  "certificateCommit": "a5c7e11720117aba5cc28411d8b6916627183616",
+  "finding": "supports",
+  "scope": "SyncPlanKind::LiveSuffix in noid_node::apply_exact_suffix_offthread",
+  "sources": [
+    {
+      "path": "noid_node/src/networking/sync_plan.rs",
+      "firstLine": 149,
+      "lastLine": 223,
+      "sha256": "d749e65133a972975334eaef960c77389c116cc6636445be2faaab7d94163d0c"
+    },
+    {
+      "path": "noid_node/src/networking/suffix_sync.rs",
+      "firstLine": 764,
+      "lastLine": 834,
+      "sha256": "ee40215922d20da7832248bb4cda791832a8960dae6681f3b79860f51cd10812"
+    },
+    {
+      "path": "noid_node/src/main.rs",
+      "firstLine": 4084,
+      "lastLine": 4101,
+      "sha256": "8d3b8ebb25d1fc0e1c699cd8c56a0e198e90cb1375b9566539f3a2a2062cbd2f"
+    },
+    {
+      "path": "noid_node/src/main.rs",
+      "firstLine": 4176,
+      "lastLine": 4389,
+      "sha256": "8d3b8ebb25d1fc0e1c699cd8c56a0e198e90cb1375b9566539f3a2a2062cbd2f"
+    },
+    {
+      "path": "noid_chain/src/storage/mdbx_context.rs",
+      "firstLine": 201,
+      "lastLine": 255,
+      "sha256": "48ac90760fd8cf97003ea9e492c0ab85b647b5060e266fbf7dd3145c76d5736b"
+    },
+    {
+      "path": "noid_chain/src/storage/mdbx_context.rs",
+      "firstLine": 1454,
+      "lastLine": 1610,
+      "sha256": "48ac90760fd8cf97003ea9e492c0ab85b647b5060e266fbf7dd3145c76d5736b"
+    },
+    {
+      "path": "noid_chain/src/storage/mdbx_context.rs",
+      "firstLine": 2413,
+      "lastLine": 2519,
+      "sha256": "48ac90760fd8cf97003ea9e492c0ab85b647b5060e266fbf7dd3145c76d5736b"
+    },
+    {
+      "path": "noid_chain/src/block.rs",
+      "firstLine": 159,
+      "lastLine": 248,
+      "sha256": "ecabaf3ba771b0a8354199ee12aa8fc3a41741cdc35502b9bf6337d0cbe39ace"
+    },
+    {
+      "path": "noid_recursive/src/accumulator.rs",
+      "firstLine": 174,
+      "lastLine": 263,
+      "sha256": "3aac90b4194eac14e9ca62a417ff12c053008f90394cffdeef6823c60a4cb145"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/relation.rs",
+      "firstLine": 791,
+      "lastLine": 814,
+      "sha256": "205d017079aad91e4e97bc7d732135e2b444cee81ef5ca1981b02be90b943f1f"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/relation.rs",
+      "firstLine": 1540,
+      "lastLine": 1608,
+      "sha256": "205d017079aad91e4e97bc7d732135e2b444cee81ef5ca1981b02be90b943f1f"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/wire.rs",
+      "firstLine": 641,
+      "lastLine": 649,
+      "sha256": "825a1d090ab51350b6103a4e0d73f5e269c248fcda4f2cb9be6c6b0aa3ff7224"
+    },
+    {
+      "path": "noid_chain/src/consensus/validation.rs",
+      "firstLine": 320,
+      "lastLine": 440,
+      "sha256": "4a05a661732eaa375ed238ca2897597f20aa6b4ac873287f0ad75d76ee2b9bb3"
+    },
+    {
+      "path": "noid_chain/src/consensus/header.rs",
+      "firstLine": 155,
+      "lastLine": 208,
+      "sha256": "70206eae6a5f4ae7b31dc3906d2caf5cef51a00d7a0595ac96a49ca3eed641e7"
+    }
+  ],
+  "assumptions": [
+    "Pinned recursive verifier soundness and typed binding assumptions from the certificate",
+    "Trusted node code and storage; no malicious injected library callback"
+  ],
+  "excluded": [
+    "Universal library API soundness with arbitrary verifier or materializer callbacks",
+    "Complete reorg, snapshot, producer or ordinary block audits",
+    "End-to-end generation and verification of a fresh HistoryStep proof"
+  ],
+  "tests": [
+    {
+      "command": "cargo test --locked -p noid_chain recursive_suffix -- --nocapture",
+      "passed": 7,
+      "failed": 0,
+      "logSha256": "6fbb1a81da9fc02f9d4eb77d5d6aaff0fb4967e46ffdf215d83accff022df86a"
+    },
+    {
+      "command": "cargo test --locked -p noid_node --lib networking::sync_plan::tests -- --nocapture",
+      "passed": 5,
+      "failed": 0,
+      "logSha256": "71ee1278cf6ab6d5062b16655b42ecaca4cece32275adcb0e3426c72a7fa3c91"
+    },
+    {
+      "command": "cargo test --release --locked",
+      "passed": 41,
+      "failed": 0,
+      "logSha256": "5d103c7a5b0e2b808c042b7cf023b422a979bce55afb9e0b907361a9e2fd88a1"
+    }
+  ]
+}
