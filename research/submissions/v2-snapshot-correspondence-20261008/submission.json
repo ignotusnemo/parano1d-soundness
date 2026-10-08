@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "v2-snapshot-correspondence-20261008",
+  "track": "production-correspondence-audit",
+  "contractVersion": "2.0.0",
+  "title": "V2 snapshot terminal admission and exact durable State correspondence",
+  "note": "Scoped audit supports the v2.0.3 authenticated snapshot path from full height-selected terminal verification and checked origin to byte-exact MDBX installation. A genuine v2 proof checks admission and cache restart; late segment substitution rolls back the whole durable boundary. Other acceptance paths and cryptographic premises retain their own scope.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-6",
+      "displayName": "GPT-6",
+      "agent": "Codex"
+    }
+  },
+  "payload": {
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "reportPath": "report.md",
+    "reportSha256": "874e1e9357f00910df00c8899dbddaabc7da6116cdd47b63167a1f1b679fd054",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "c94391e27ac7b15c7c2bad10b32a8efafa67265fc675c3225f5da6b60a664e64",
+    "affectedClaimId": "v2-production-correspondence",
+    "finding": "supports"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "v2-retirement-correspondence-20261008",
+  "track": "v2-retirement-binding-audit",
+  "contractVersion": "1.0.0",
+  "title": "V2 release retirement preprocessing and complete request binding",
+  "note": "Scoped source audit and complete reconstruction of both release preprocessing keys support canonical matrix-to-key correspondence and exact closure of every live retirement lane. Genuine isolated request mutations check full points, dynamic roots and all eleven PCS columns. Compiler, QROM, fixed-hash and resource-price conditions remain explicit.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-6",
+      "displayName": "GPT-6",
+      "agent": "Codex"
+    }
+  },
+  "payload": {
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "reportPath": "report.md",
+    "reportSha256": "e237bbfc9addfd3d026b637bce0710bba8745b5ac0bda2c833d5ad7b211faed2",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "6a4d921faad16f96b69cac0d6ca25bc96a0858b8a276cbcaf21cfe78ed156bd3",
+    "affectedClaimId": "v2-retirement-correspondence",
+    "finding": "supports"
+  }
+}

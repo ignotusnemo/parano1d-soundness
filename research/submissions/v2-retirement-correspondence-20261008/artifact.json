@@ -1,0 +1,983 @@
+{
+  "schemaVersion": 1,
+  "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "reviewState": "pending-semantic-review",
+  "claimEffects": [],
+  "harness": {
+    "commit": "9c8136e4482cbba2a6fd5f469ac668c789ea1e01",
+    "baseCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "branch": "research/v2-correspondence-20261008",
+    "sourceFiles": [
+      {
+        "path": "bench_prover/src/bin/noid_retirement_correspondence.rs",
+        "bytes": 14414,
+        "sha256": "4c643012f14af05d072cf104d93d683adc511b6d144bbf7aac35081566391d06"
+      },
+      {
+        "path": "bench_prover/src/bin/noid_v2_snapshot_correspondence.rs",
+        "bytes": 8006,
+        "sha256": "114ba04df21db20d29e89f1891a2c10a89239ceade36282fb52eb31104949000"
+      },
+      {
+        "path": "noid_ivc_core/src/matrix_claim/sparse_c1/correspondence_audit.rs",
+        "bytes": 8354,
+        "sha256": "27c6020de46bfb49e2c63816fbc9d09ac4ae4d6eb4a9bff5d16a50662fcc68e4"
+      },
+      {
+        "path": "noid_ivc_core/src/matrix_claim/sparse_c1.rs",
+        "bytes": 22074,
+        "sha256": "a5d0cd640186af382c2ced5a71f2b5f06ee6814f87f96504fdbef2754262386e"
+      },
+      {
+        "path": "noid_chain/src/storage/mdbx_store.rs",
+        "bytes": 264686,
+        "sha256": "0bd16e1b8e30957a5838015cf7def4abe00acd3a997add8f22ff21260bf0194f"
+      }
+    ],
+    "behavior": "offline audit and cfg(test) regressions only; no production verifier changes"
+  },
+  "inputBundle": {
+    "path": "reproduction-inputs.tar.zst",
+    "bytes": 104837742,
+    "sha256": "25a0f1df8b90b71ff659b76a8e17b3d39f86e1d5bbd784aa4f8db919a7a9cbfa",
+    "availability": "local research evidence; not uploaded or publicly published",
+    "entries": [
+      {
+        "path": "release/history-step-pack-v1/SHA256SUMS",
+        "bytes": 367,
+        "sha256": "7616c42624a86d5f41a01361d7882d58c352023658b812f297bc5dea50fb49d6"
+      },
+      {
+        "path": "release/history-step-pack-v1/pins.env",
+        "bytes": 280,
+        "sha256": "e7d0269bcbdcfb36f739d1cd53e464cdae8fb1a1fffa4b231e38e11562162758"
+      },
+      {
+        "path": "release/history-step-pack-v1/v1/history-step.runtime",
+        "bytes": 2214607,
+        "sha256": "8fab1225073d658bc1988573c79b0520ce141d2ac4a0e7c8cc2562be0e6767a5"
+      },
+      {
+        "path": "release/history-step-pack-v1/v1/history-step-c00.field-r1cs.zst",
+        "bytes": 3865200,
+        "sha256": "72adc8770c2acb10fc67e844a2e96d92dac358ec2b6db781888733e25662d6bc"
+      },
+      {
+        "path": "release/history-step-pack-v1/v1/history-step-c01.field-r1cs.zst",
+        "bytes": 13240352,
+        "sha256": "6bc11c87595edff1e0f85857b20ed9c3554d0d331f0b1d1604dfed18963414f9"
+      },
+      {
+        "path": "release/history-step-pack-v2/SHA256SUMS",
+        "bytes": 533,
+        "sha256": "334782212384193d0e5749b6065658f187e415bc30e790362aabd93f41932720"
+      },
+      {
+        "path": "release/history-step-pack-v2/pins.env",
+        "bytes": 268,
+        "sha256": "cd91ec5ed5dd81bd572c33f729f670514c438c747c82163f7c72769be8b88bff"
+      },
+      {
+        "path": "release/history-step-pack-v2/v2-runtime-metadata.bin",
+        "bytes": 2258540,
+        "sha256": "04e969990958520dbc865e0fddb8ef946dae23f670dc9cb56efaadc5ccebfed2"
+      },
+      {
+        "path": "release/history-step-pack-v2/v2-small.field-r1cs.zst",
+        "bytes": 10465911,
+        "sha256": "83abfdc69bffb154efce2452715773cfa4750a94e8f6238470cd82a01c6bf317"
+      },
+      {
+        "path": "release/history-step-pack-v2/v2-large.field-r1cs.zst",
+        "bytes": 21478342,
+        "sha256": "45ff8187894d976f56dcb7bd14b3bb6a6caef2752f93c8312234449956d21db5"
+      },
+      {
+        "path": "release/history-step-pack-v2/retirement-keys/class-0.key",
+        "bytes": 304,
+        "sha256": "02421f91a13d34480e71e3f8a88071d7e8dcb10ac9ca2339f8a2dea7cb8a689c"
+      },
+      {
+        "path": "release/history-step-pack-v2/retirement-keys/class-1.key",
+        "bytes": 304,
+        "sha256": "c655cbb3c3f485b3654d4a0c5d69f108eda504a3a34769a5579aad1fe3b9e8c8"
+      },
+      {
+        "path": "isolated/pack/v2-runtime-metadata.bin",
+        "bytes": 2258540,
+        "sha256": "5b2f7967483a8ee596c83c65ae7c99bf38b14197b4a774cb5a1ddb181e0c0958"
+      },
+      {
+        "path": "isolated/pack/v2-small.field-r1cs.zst",
+        "bytes": 10464568,
+        "sha256": "a677b1c464377cf2b7f27c77cd53006d4fb6c67ac082bc217157ae06e7706f59"
+      },
+      {
+        "path": "isolated/pack/v2-large.field-r1cs.zst",
+        "bytes": 21475021,
+        "sha256": "c69d9194520d61a8b6cd12799fc181a23dc376bc2e0671fd56989355878a6213"
+      },
+      {
+        "path": "isolated/retirement/retired-v2-origin.bin",
+        "bytes": 15093850,
+        "sha256": "fea3c5578d467c1c319db17d29aa7b38197732b575891265322580a03ebf6b77"
+      },
+      {
+        "path": "isolated/retirement/reduction.bin",
+        "bytes": 3273,
+        "sha256": "3a4b19619b2aaaf9af7354e3ccda8d49a967c39509da5848ccf43cba8ccab117"
+      },
+      {
+        "path": "isolated/retirement/class-0.proof",
+        "bytes": 6478232,
+        "sha256": "aa92dcfc83b95c4b7b055b253dfc76e88c593dbfda127f4e1b792d06ea55a4c9"
+      },
+      {
+        "path": "isolated/retirement/class-1.proof",
+        "bytes": 7628536,
+        "sha256": "e75281033f695055c0f1033d7341652389d6d97fb76ec78b597360d427a0e1d0"
+      },
+      {
+        "path": "isolated/retirement/class-0.key",
+        "bytes": 304,
+        "sha256": "02421f91a13d34480e71e3f8a88071d7e8dcb10ac9ca2339f8a2dea7cb8a689c"
+      },
+      {
+        "path": "isolated/retirement/class-1.key",
+        "bytes": 304,
+        "sha256": "c655cbb3c3f485b3654d4a0c5d69f108eda504a3a34769a5579aad1fe3b9e8c8"
+      },
+      {
+        "path": "isolated/postfork/h000017.block",
+        "bytes": 540,
+        "sha256": "d7ef88f17e1ec8641d0dabe68c98e7316b029f04b50b1b4c4fac49f0a83edaae"
+      },
+      {
+        "path": "isolated/postfork/h000017.terminal",
+        "bytes": 916916,
+        "sha256": "1afbe36f40d57f733ae0fac652f53e97effca29396e869db4789933df8e8c46d"
+      }
+    ]
+  },
+  "releaseAuthentication": {
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "release": "v2.0.3",
+    "all_release_sha256_match": true,
+    "inputs": [
+      {
+        "path": "history-step-pack-v1/v1/history-step.runtime",
+        "sha256": "8fab1225073d658bc1988573c79b0520ce141d2ac4a0e7c8cc2562be0e6767a5",
+        "bytes": 2214607
+      },
+      {
+        "path": "history-step-pack-v1/v1/history-step-c00.field-r1cs.zst",
+        "sha256": "72adc8770c2acb10fc67e844a2e96d92dac358ec2b6db781888733e25662d6bc",
+        "bytes": 3865200
+      },
+      {
+        "path": "history-step-pack-v1/v1/history-step-c01.field-r1cs.zst",
+        "sha256": "6bc11c87595edff1e0f85857b20ed9c3554d0d331f0b1d1604dfed18963414f9",
+        "bytes": 13240352
+      },
+      {
+        "path": "history-step-pack-v1/pins.env",
+        "sha256": "e7d0269bcbdcfb36f739d1cd53e464cdae8fb1a1fffa4b231e38e11562162758",
+        "bytes": 280
+      },
+      {
+        "path": "history-step-pack-v2/v2-runtime-metadata.bin",
+        "sha256": "04e969990958520dbc865e0fddb8ef946dae23f670dc9cb56efaadc5ccebfed2",
+        "bytes": 2258540
+      },
+      {
+        "path": "history-step-pack-v2/v2-small.field-r1cs.zst",
+        "sha256": "83abfdc69bffb154efce2452715773cfa4750a94e8f6238470cd82a01c6bf317",
+        "bytes": 10465911
+      },
+      {
+        "path": "history-step-pack-v2/v2-large.field-r1cs.zst",
+        "sha256": "45ff8187894d976f56dcb7bd14b3bb6a6caef2752f93c8312234449956d21db5",
+        "bytes": 21478342
+      },
+      {
+        "path": "history-step-pack-v2/pins.env",
+        "sha256": "cd91ec5ed5dd81bd572c33f729f670514c438c747c82163f7c72769be8b88bff",
+        "bytes": 268
+      },
+      {
+        "path": "history-step-pack-v2/retirement-keys/class-0.key",
+        "sha256": "02421f91a13d34480e71e3f8a88071d7e8dcb10ac9ca2339f8a2dea7cb8a689c",
+        "bytes": 304
+      },
+      {
+        "path": "history-step-pack-v2/retirement-keys/class-1.key",
+        "sha256": "c655cbb3c3f485b3654d4a0c5d69f108eda504a3a34769a5579aad1fe3b9e8c8",
+        "bytes": 304
+      },
+      {
+        "path": "/home/neo/rust/noid-network-ops/v2-correspondence-20261008/inputs/history-step-c00.field-r1cs",
+        "sha256": "e10930cc232e385589a031992a13054a9e120ae23e2f62847eaaa3e8b1fc6d04",
+        "bytes": 84771079
+      },
+      {
+        "path": "/home/neo/rust/noid-network-ops/v2-correspondence-20261008/inputs/history-step-c01.field-r1cs",
+        "sha256": "4bc0ff64592ea45f4571decec79f72b0da23ab8f36948252b184a7c14c9f60f7",
+        "bytes": 386877460
+      }
+    ]
+  },
+  "sourceManifest": {
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "sources": [
+      {
+        "path": "noid_node/build.rs",
+        "sha256": "1a727c3aaebc2845865e2deae7fe8898ebfc28273fec2ffd6d8f83985a66b126",
+        "bytes": 17879,
+        "anchors": [
+          {
+            "symbol": "fn embed_retirement_keys(",
+            "lines": [
+              249
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_node/build.rs"
+      },
+      {
+        "path": "noid_node/src/embedded_history_step_pack.rs",
+        "sha256": "0664ee45c7483488d4302856d804947f2dc9efd5ae73f912a22847c9684b1a63",
+        "bytes": 6973,
+        "anchors": [
+          {
+            "symbol": "pub fn embedded_retirement_keys(",
+            "lines": [
+              81
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_node/src/embedded_history_step_pack.rs"
+      },
+      {
+        "path": "noid_node/src/main.rs",
+        "sha256": "c00d7e1d3767a4c439c79b7afd78b32f0b02e3e9f427ab39216ee65b604eeb3f",
+        "bytes": 698402,
+        "anchors": [
+          {
+            "symbol": "fn verify_terminal_against_validated_snapshot_headers(",
+            "lines": [
+              4027
+            ]
+          },
+          {
+            "symbol": "fn verify_history_step_terminal(",
+            "lines": [
+              4217
+            ]
+          },
+          {
+            "symbol": "async fn apply_verified_snapshot_boundary(",
+            "lines": [
+              15637
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_node/src/main.rs"
+      },
+      {
+        "path": "noid_node/src/snapshot_header_staging.rs",
+        "sha256": "1d068dfa16fa594b140690ec4b528ec6d272730776e44ae0b320e3da51c6cc01",
+        "bytes": 67887,
+        "anchors": [
+          {
+            "symbol": "pub fn append_batch(",
+            "lines": [
+              435
+            ]
+          },
+          {
+            "symbol": "pub fn validate_complete(",
+            "lines": [
+              607
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_node/src/snapshot_header_staging.rs"
+      },
+      {
+        "path": "noid_miner/src/history_protocol.rs",
+        "sha256": "6d7ecb84995bd87d2465e9c0fcf604641fe276a139e83c6015120e9880a84426",
+        "bytes": 20059,
+        "anchors": [
+          {
+            "symbol": "pub fn new(",
+            "lines": [
+              47
+            ]
+          },
+          {
+            "symbol": "pub fn with_retirement_keys(",
+            "lines": [
+              97
+            ]
+          },
+          {
+            "symbol": "pub fn install_origin_bytes(",
+            "lines": [
+              210
+            ]
+          },
+          {
+            "symbol": "fn verified_origin(",
+            "lines": [
+              361
+            ]
+          },
+          {
+            "symbol": "pub fn verify_terminal(",
+            "lines": [
+              422
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_miner/src/history_protocol.rs"
+      },
+      {
+        "path": "noid_miner/src/v2_artifacts.rs",
+        "sha256": "fb4dc8e476d0b34cd607bd9fc9b030206a38c522d8a816ded1e6f21f61c03410",
+        "bytes": 8368,
+        "anchors": [
+          {
+            "symbol": "pub fn into_runtime(",
+            "lines": [
+              46
+            ]
+          },
+          {
+            "symbol": "pub fn preflight_build_matrix(",
+            "lines": [
+              64
+            ]
+          },
+          {
+            "symbol": "pub unsafe fn into_embedded_runtime(",
+            "lines": [
+              88
+            ]
+          },
+          {
+            "symbol": "pub fn decode_v2_runtime_metadata_pinned(",
+            "lines": [
+              134
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_miner/src/v2_artifacts.rs"
+      },
+      {
+        "path": "noid_recursive/src/acceptance/history_step/relation.rs",
+        "sha256": "209ac9076996fcca596ebb7dcf9c2cb5b4f40f7d5b5d5986a9038f78bce79032",
+        "bytes": 106641,
+        "anchors": [
+          {
+            "symbol": "pub fn prepare_history_step_retirement(",
+            "lines": [
+              1716
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/relation.rs"
+      },
+      {
+        "path": "noid_recursive/src/acceptance/history_step_bank/retirement.rs",
+        "sha256": "15b64763e33587ea7750b6952b897d9ecf71295bdc5cefcda416654ce70afa7e",
+        "bytes": 20014,
+        "anchors": [
+          {
+            "symbol": "pub(crate) fn from_pending(",
+            "lines": [
+              127
+            ]
+          },
+          {
+            "symbol": "fn compute_binding(",
+            "lines": [
+              205
+            ]
+          },
+          {
+            "symbol": "pub fn verify_reduction(",
+            "lines": [
+              319
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step_bank/retirement.rs"
+      },
+      {
+        "path": "noid_recursive/src/acceptance/history_step_bank/retirement/evaluation.rs",
+        "sha256": "7b6a55f4423637d60a9886055030cd16b7bffed2811b807033de49f814be754b",
+        "bytes": 4170,
+        "anchors": [
+          {
+            "symbol": "pub fn verify_matrix_evaluations(",
+            "lines": [
+              49
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step_bank/retirement/evaluation.rs"
+      },
+      {
+        "path": "noid_recursive/src/acceptance/history_step/v2/banked/retirement_codec.rs",
+        "sha256": "e96813d08a82498e007bb7421590cd70c8857fbde41f7ad02f6ba09db280c47e",
+        "bytes": 15339,
+        "anchors": [
+          {
+            "symbol": "pub fn from_release(",
+            "lines": [
+              34
+            ]
+          },
+          {
+            "symbol": "pub fn verify(",
+            "lines": [
+              134
+            ]
+          },
+          {
+            "symbol": "pub fn from_bytes(",
+            "lines": [
+              232
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/retirement_codec.rs"
+      },
+      {
+        "path": "noid_recursive/src/acceptance/history_step/v2/banked/bank.rs",
+        "sha256": "270793c8ad70be07082732f3fd6987384826cfa0db6bd02d07e155021fd531a8",
+        "bytes": 19617,
+        "anchors": [
+          {
+            "symbol": "pub(super) fn parse(",
+            "lines": [
+              138
+            ]
+          },
+          {
+            "symbol": "fn from_boundary(",
+            "lines": [
+              244
+            ]
+          },
+          {
+            "symbol": "pub fn from_retirement(",
+            "lines": [
+              358
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/bank.rs"
+      },
+      {
+        "path": "noid_recursive/src/acceptance/history_step/v2/banked/decision.rs",
+        "sha256": "10b62a9fe4058e090af9e870a21e2e096a7a848ae9645c5bdda1a811b98ec8da",
+        "bytes": 6497,
+        "anchors": [
+          {
+            "symbol": "fn check_claims(",
+            "lines": [
+              54
+            ]
+          },
+          {
+            "symbol": "pub fn verify_terminal(",
+            "lines": [
+              98
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/decision.rs"
+      },
+      {
+        "path": "noid_recursive/src/acceptance/history_step/v2/banked/parent.rs",
+        "sha256": "44138455cd92cfaafcfeaf8f9cd94ffed844e844165d2172d12ac707bf87728a",
+        "bytes": 10118,
+        "anchors": [
+          {
+            "symbol": "pub(super) fn replay(",
+            "lines": [
+              224
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/parent.rs"
+      },
+      {
+        "path": "noid_recursive/src/acceptance/history_step/v2/banked/assembly.rs",
+        "sha256": "f75871ebceab088b6cf803eec8e7aa25ca4f4523e17dbf6ee5f9df96027eba49",
+        "bytes": 19737,
+        "anchors": [],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/acceptance/history_step/v2/banked/assembly.rs"
+      },
+      {
+        "path": "noid_recursive/src/accumulator.rs",
+        "sha256": "3aac90b4194eac14e9ca62a417ff12c053008f90394cffdeef6823c60a4cb145",
+        "bytes": 20132,
+        "anchors": [
+          {
+            "symbol": "pub fn validate_local_header_boundary(",
+            "lines": [
+              228
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_recursive/src/accumulator.rs"
+      },
+      {
+        "path": "noid_ivc_core/src/matrix_claim/sparse_c1.rs",
+        "sha256": "24f1ad28c0231085101062e47b6efbfc418baf0285d246da782225ff81cc7926",
+        "bytes": 22034,
+        "anchors": [
+          {
+            "symbol": "fn channel(",
+            "lines": [
+              127
+            ]
+          },
+          {
+            "symbol": "pub fn verify(",
+            "lines": [
+              413
+            ]
+          },
+          {
+            "symbol": "fn observe_opening_column(",
+            "lines": [
+              453
+            ]
+          },
+          {
+            "symbol": "fn reduce(",
+            "lines": [
+              546
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/matrix_claim/sparse_c1.rs"
+      },
+      {
+        "path": "noid_ivc_core/src/matrix_claim/sparse_c1/preprocess.rs",
+        "sha256": "a8b1461a54ad53e8ee3bd0b10bef3eaf0fb1a46a340f8350f8864ef58ddf8398",
+        "bytes": 11745,
+        "anchors": [
+          {
+            "symbol": "pub fn digest(",
+            "lines": [
+              100
+            ]
+          },
+          {
+            "symbol": "pub fn from_resident(",
+            "lines": [
+              150
+            ]
+          },
+          {
+            "symbol": "pub fn from_compact(",
+            "lines": [
+              197
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/matrix_claim/sparse_c1/preprocess.rs"
+      },
+      {
+        "path": "noid_ivc_core/src/matrix_claim/sparse_c1/wire.rs",
+        "sha256": "41b9704ebdacb50d3e9ffdda918c2af4aca072e352d9d4e24e4c4e5b9ef9637c",
+        "bytes": 16615,
+        "anchors": [
+          {
+            "symbol": "pub fn from_bytes_pinned(",
+            "lines": [
+              106
+            ]
+          },
+          {
+            "symbol": "pub fn from_bytes(",
+            "lines": [
+              421
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/matrix_claim/sparse_c1/wire.rs"
+      },
+      {
+        "path": "noid_chain/src/consensus/params.rs",
+        "sha256": "7cc71b47e934409cc36d2f72f2258c76f2756335c5e0efbd27f64c807c8a708e",
+        "bytes": 17759,
+        "anchors": [
+          {
+            "symbol": "pub const MAINNET_V2_ACTIVATION_HEIGHT:",
+            "lines": [
+              19
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_chain/src/consensus/params.rs"
+      },
+      {
+        "path": "noid_chain/src/storage/mdbx_context.rs",
+        "sha256": "943c0f62b47b27eb10a9e4f59f5f88c940aa4481f2b92b7d07b5363b4158acba",
+        "bytes": 161223,
+        "anchors": [
+          {
+            "symbol": "pub fn verify_snapshot_boundary",
+            "lines": [
+              2354
+            ]
+          },
+          {
+            "symbol": "pub fn apply_staged_state_snapshot",
+            "lines": [
+              2587
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_chain/src/storage/mdbx_context.rs"
+      },
+      {
+        "path": "noid_chain/src/storage/mdbx_store.rs",
+        "sha256": "57f618330caf5f80f7784d878d8ebd2af8e471c9d6c844715bfce9be56d772f6",
+        "bytes": 260173,
+        "anchors": [
+          {
+            "symbol": "pub(crate) fn install_finalized_snapshot_staging",
+            "lines": [
+              2490
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_chain/src/storage/mdbx_store.rs"
+      },
+      {
+        "path": "noid_chain/src/storage/snapshot_staging.rs",
+        "sha256": "2c2f7bdfd2c73686e4fc050df1a83540eab6cc7c801e15406a3b4280525e6fde",
+        "bytes": 59956,
+        "anchors": [
+          {
+            "symbol": "pub fn from_authenticated_header(",
+            "lines": [
+              49
+            ]
+          },
+          {
+            "symbol": "pub fn finalize(",
+            "lines": [
+              552
+            ]
+          },
+          {
+            "symbol": "pub fn read_encoded(",
+            "lines": [
+              751
+            ]
+          },
+          {
+            "symbol": "fn decode_and_verify_segment<'a>(",
+            "lines": [
+              828
+            ]
+          }
+        ],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_chain/src/storage/snapshot_staging.rs"
+      },
+      {
+        "path": "noid_soundness/docs/v2-retirement.md",
+        "sha256": "704137df7874e8913936ba7b5539aa2ac48ce55468db908d2fa2c1bef4cc0ba3",
+        "bytes": 7717,
+        "anchors": [],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/v2-retirement.md"
+      },
+      {
+        "path": "noid_soundness/docs/category-one.md",
+        "sha256": "2e8be9951b1d8dc2eae9d14f41e893bd759d0f183f372d18e30f510302ca22f4",
+        "bytes": 34859,
+        "anchors": [],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/category-one.md"
+      },
+      {
+        "path": "noid_soundness/src/v2.rs",
+        "sha256": "92b57853801d7f8c1ecd36978f3d26d1fb2c37be1207f345911d43c2dd921be2",
+        "bytes": 10827,
+        "anchors": [],
+        "url": "https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/src/v2.rs"
+      }
+    ]
+  },
+  "tests": [
+    {
+      "path": "state-snapshot-tests.log",
+      "bytes": 4558,
+      "sha256": "06a55ec9927572aa88eeefb8178a34e3681a263297c2d3b2dd2ef21c228e3f50",
+      "passed": 35,
+      "failed": 0
+    },
+    {
+      "path": "key-constructor-check.log",
+      "bytes": 1412,
+      "sha256": "d0f3f402e3195b78afd66ce8f1ed0b5fb9d202dbc39cc508821fd1fd4670e340",
+      "passed": 1,
+      "failed": 0
+    },
+    {
+      "path": "v2-boundary-tests.log",
+      "bytes": 5966,
+      "sha256": "08821ee6fe7b84a863fcecf7dccbe19195fad531e4b249b197c4995ff0738c54",
+      "passed": 12,
+      "failed": 0
+    },
+    {
+      "path": "release-key-reproduction.log",
+      "bytes": 5081,
+      "sha256": "5372893fa755d5a65d198cc099de896a07cfa5832478bf1542727fc3f1314063",
+      "passed": 2,
+      "failed": 0
+    }
+  ],
+  "assumptions": [
+    "Correct trusted executable and independent release pins.",
+    "Safe Rust capability/module boundaries and correct native consensus.",
+    "Canonical field and matrix decoding.",
+    "The declared commitment, hash, algebraic and recursive proof conditions.",
+    "MDBX atomicity and the node-owned complete verification callback."
+  ],
+  "excludedConclusions": [
+    "No universal recursive Fiat-Shamir/compiler theorem.",
+    "No new all-root QROM theorem or same-budget extraction proof.",
+    "No fixed Poseidon2b delta bound or minimum response-cost lower bound.",
+    "No mainnet origin established from isolated evidence.",
+    "No frontier/security-bit change or automatic evidence acceptance."
+  ],
+  "scope": "concrete release preprocessing instance and request-to-origin binding",
+  "keyReconstruction": {
+    "keys": [
+      {
+        "all_304_bytes_match": true,
+        "authentication_ms": 36648,
+        "canonical_bytes": 84771079,
+        "class": 0,
+        "elapsed_ms": 261425,
+        "entries": 28461463,
+        "k_log": 22,
+        "key_digest": "0651ce507810b61213cbdc0e9f99436aec3a7922cc662bfba6128b466453c8b2",
+        "method": "independent column reconstruction from fully authenticated canonical rows; shared release PCS commitment",
+        "padded_entries": 33554432,
+        "stage": "independent_release_key"
+      },
+      {
+        "all_304_bytes_match": true,
+        "authentication_ms": 217924,
+        "canonical_bytes": 386877460,
+        "class": 1,
+        "elapsed_ms": 1151947,
+        "entries": 124071078,
+        "k_log": 24,
+        "key_digest": "c301274d50dc02fd5c383f2e71629075729a954a768f5051388ec2040bce0267",
+        "method": "independent column reconstruction from fully authenticated canonical rows; shared release PCS commitment",
+        "padded_entries": 134217728,
+        "stage": "independent_release_key"
+      }
+    ],
+    "staticColumns": [
+      {
+        "column": 0,
+        "k_log": 22,
+        "milliseconds": 34533,
+        "root": "b9d97e4f8d985a9fada8fc3e8a3a86a928f966fe99127a81340164c504fa4bb9",
+        "stage": "independent_static_column"
+      },
+      {
+        "column": 1,
+        "k_log": 22,
+        "milliseconds": 36879,
+        "root": "631891e27fab64fc3aa52fde831c48f191572d51e56e049f6e624d22608e8426",
+        "stage": "independent_static_column"
+      },
+      {
+        "column": 2,
+        "k_log": 22,
+        "milliseconds": 40737,
+        "root": "90586476bdf3a4991dfad3365a660b3fa76b452f7dd07a5958bb09b1ed710182",
+        "stage": "independent_static_column"
+      },
+      {
+        "column": 3,
+        "k_log": 22,
+        "milliseconds": 48554,
+        "root": "360100e2a06df1136d05ea6b4778a9a276c34263d23216505efaf15ae55f3a1a",
+        "stage": "independent_static_column"
+      },
+      {
+        "column": 4,
+        "k_log": 22,
+        "milliseconds": 45577,
+        "root": "7ac8a7f8259f981620bb965bc8d370afb66deab37f9a2271b12e8d05716eb923",
+        "stage": "independent_static_column"
+      },
+      {
+        "column": 5,
+        "k_log": 22,
+        "milliseconds": 12523,
+        "root": "563e4e169b9891da0f3df4b3f0c20ac7d306a3eb7615335a1e9f22db7c428041",
+        "stage": "independent_static_column"
+      },
+      {
+        "column": 6,
+        "k_log": 22,
+        "milliseconds": 5970,
+        "root": "b583457920938933dde329f7e554db9670c3c2d61cd3ed11fa5817ff95d2df37",
+        "stage": "independent_static_column"
+      },
+      {
+        "column": 0,
+        "k_log": 24,
+        "milliseconds": 142894,
+        "root": "3ad2755906df35d09170c3f96f24857c4e27c31efebafc6db2ff91f0300afffe",
+        "stage": "independent_static_column"
+      },
+      {
+        "column": 1,
+        "k_log": 24,
+        "milliseconds": 142040,
+        "root": "c69c4d57b5a6aba9135e84f5c8fde059303deb595738aa989be460d9e3a54f88",
+        "stage": "independent_static_column"
+      },
+      {
+        "column": 2,
+        "k_log": 24,
+        "milliseconds": 145519,
+        "root": "ec55de1cf192bfaff4680a20df741701af2710504fdcb78b718d2a71f33d7b62",
+        "stage": "independent_static_column"
+      },
+      {
+        "column": 3,
+        "k_log": 24,
+        "milliseconds": 170385,
+        "root": "0c04995e968fc7a310d6841987a6b1989f2ab3bc0f51e6d52dda85d8337f0639",
+        "stage": "independent_static_column"
+      },
+      {
+        "column": 4,
+        "k_log": 24,
+        "milliseconds": 241440,
+        "root": "e23ce0ae909f462c9973a263d30a8a8e1451041662e52dfd0a153524ac3b8641",
+        "stage": "independent_static_column"
+      },
+      {
+        "column": 5,
+        "k_log": 24,
+        "milliseconds": 59225,
+        "root": "ebd0fa555a4845c4a72f59cc20ebdb82384f08bf461a828e8278ec1983bdd7ac",
+        "stage": "independent_static_column"
+      },
+      {
+        "column": 6,
+        "k_log": 24,
+        "milliseconds": 32517,
+        "root": "6abf146619f32e6144bc067bc8b2e35df03962d96a586f93b352a9b8f565fab8",
+        "stage": "independent_static_column"
+      }
+    ],
+    "canonicalEntryCount": 152532541,
+    "keyByteComparisons": 2,
+    "independentPart": "static columns and access-chain tags",
+    "sharedComponents": [
+      "authenticated canonical decoder",
+      "release PCS commitment"
+    ],
+    "memoryLimitBytes": 17179869184,
+    "cpuQuota": "300%",
+    "rayonThreads": 3,
+    "swapLimitBytes": 0,
+    "elapsedMilliseconds": 1413760,
+    "maximumResidentKiB": 11919456
+  },
+  "retirementMutations": {
+    "elapsed_ms": 31356,
+    "observations": [
+      {
+        "accepted": true,
+        "check": "valid_full_origin",
+        "isolated_activation": 10,
+        "isolated_bank": "be82f3bec102f03c63715dac9bb4a939cb9aa5b21d013e38402b321fd8a41fa9",
+        "isolated_origin_rejected_by_mainnet_bank": true,
+        "live_classes": [
+          0,
+          1
+        ],
+        "mainnet_activation": 210537,
+        "mainnet_bank": "c2a6df736b0d0da22e285b6930b11cf44b520d65b52c7dfe78f44fe0cd48e76e",
+        "origin": "b7fdcbd39c1c4ddd157acd683ac3a95db49743df5c4b12c17d5f2f6019381755",
+        "parent_height": 9,
+        "request": "0ccf5d1af3a0008e10d30ce206949eaccf48ee4e84ae1da2df4ad940393746bc",
+        "tip_class": 1
+      },
+      {
+        "check": "request_and_opening_mutations",
+        "class": 0,
+        "dynamic_root_changes_rejected_at_full_origin_entry": 4,
+        "independent_pcs_columns": 11,
+        "key_or_context_changes_rejected": 2,
+        "pcs_leaf_or_path_changes_rejected": 22,
+        "point_coordinates": 45,
+        "point_limb_changes_rejected": 90,
+        "value_limb_changes_rejected": 2,
+        "wire_bytes": 6478232
+      },
+      {
+        "check": "request_and_opening_mutations",
+        "class": 1,
+        "dynamic_root_changes_rejected_at_full_origin_entry": 4,
+        "independent_pcs_columns": 11,
+        "key_or_context_changes_rejected": 2,
+        "pcs_leaf_or_path_changes_rejected": 22,
+        "point_coordinates": 49,
+        "point_limb_changes_rejected": 98,
+        "value_limb_changes_rejected": 2,
+        "wire_bytes": 7628536
+      },
+      {
+        "both_single_lane_omissions_rejected": true,
+        "check": "coverage_and_authority",
+        "class_substitution_rejected": true,
+        "duplicates_rejected": true,
+        "legacy_row_load_attempts": 0,
+        "origin_boundary_preserved": true,
+        "reduction_request_substitution_rejected": true,
+        "reordering_rejected": true
+      }
+    ],
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "scope": "archived valid isolated-network request, release legacy matrices and preprocessing keys, pinned production verifier code; not a mainnet origin or a QROM proof"
+  },
+  "reproduction": {
+    "build": "cargo build --release --locked -p bench_prover --bin noid_retirement_correspondence --features noid_chain/isolated-v2-fork-testnet",
+    "program": "target/release/noid_retirement_correspondence",
+    "argumentsRelativeToInputBundle": [
+      "release/history-step-pack-v1/v1/history-step.runtime",
+      "isolated/pack/v2-runtime-metadata.bin",
+      "release/history-step-pack-v2/v2-runtime-metadata.bin",
+      "isolated/retirement",
+      "retirement-mutations.json"
+    ],
+    "fullKeyTest": "cargo test --release --locked -p noid-ivc-core independently_reproduce_pinned_release_key -- --ignored --nocapture --test-threads=1",
+    "keyInputDirectory": "decompress release legacy matrices; copy the two release retirement keys",
+    "environment": {
+      "RAYON_NUM_THREADS": "3",
+      "NOID_CORRESPONDENCE_INPUTS": "canonical input directory"
+    }
+  }
+}
