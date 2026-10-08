@@ -8,7 +8,7 @@ import { loadCatalog, loadTrack } from "@/lib/catalog";
 import { createChallengeSubmission } from "@/lib/challenge";
 import { buildFrontier, FRONTIER_MODELS } from "@/lib/frontier";
 import { verifySubmission } from "@/lib/verifier";
-import { readV2Inputs, V2_CERTIFICATE_REVISION } from "@/lib/v2-certificate-runner";
+import { readV2Inputs, readV2ObservationCache, writeV2ObservationCache, V2_CERTIFICATE_REVISION } from "@/lib/v2-certificate-runner";
 
 const root = path.resolve(".");
 
@@ -48,6 +48,32 @@ test("a v2 reproduction rejects altered bank, event inventory and historical sou
       assert.ok(result.reasons.some((reason) => reason.includes(key!)));
     }
   } finally { rmSync(temporary, { recursive: true, force: true }); }
+});
+
+test("cached protected observations cannot bypass frozen contract checks", () => {
+  const temporary = mkdtempSync(path.join(tmpdir(), "v2-observation-check-"));
+  const cache = path.join(temporary, "cache");
+  const previous = process.env.PARANO1D_CERTIFICATE_OBSERVATIONS_DIR;
+  const destination = path.join(temporary, "v2-observation-check");
+  try {
+    const expected = loadTrack(root, "certificate-reproduction").expected!;
+    writeV2ObservationCache(cache, V2_CERTIFICATE_REVISION, "mainnet-v2", expected);
+    assert.deepEqual(readV2ObservationCache(cache, V2_CERTIFICATE_REVISION, "mainnet-v2"), expected);
+    assert.equal(readV2ObservationCache(cache, "1".repeat(40), "mainnet-v2"), undefined);
+    assert.equal(readV2ObservationCache(cache, V2_CERTIFICATE_REVISION, "mainnet-v2-poseidon2b"), undefined);
+    createChallengeSubmission({ root, destination, id: "v2-observation-check", trackId: "certificate-reproduction", attribution: { mode: "human" } });
+    process.env.PARANO1D_CERTIFICATE_OBSERVATIONS_DIR = cache;
+    const check = () => verifySubmission({ root, submissionDirectory: destination, context: { repository: "local/reproduction", commit: "0".repeat(40), actor: "researcher" } });
+    assert.equal(check().status, "accepted");
+    writeV2ObservationCache(cache, V2_CERTIFICATE_REVISION, "mainnet-v2", { ...expected, eventCount: "19" });
+    const rejected = check();
+    assert.equal(rejected.status, "rejected");
+    assert.ok(rejected.reasons.includes("protected observation eventCount differs from the frozen contract"));
+  } finally {
+    if (previous === undefined) delete process.env.PARANO1D_CERTIFICATE_OBSERVATIONS_DIR;
+    else process.env.PARANO1D_CERTIFICATE_OBSERVATIONS_DIR = previous;
+    rmSync(temporary, { recursive: true, force: true });
+  }
 });
 
 test("v2 evidence keeps exact report hashes and a separate conditional frontier", () => {

@@ -29,6 +29,10 @@ The pack digests, exact file lengths, SHA-256 values and independent protocol pi
 
 The stored keys are checked against their independent pins and matrix identities. This reproduction does not regenerate matrix preprocessing. The exact report includes all stated composition, compiler, fixed-Poseidon2b, response-price and honest-preprocessing conditions. Reproducibility does not discharge those conditions.
 
+## Hosted observation cache
+
+An operator may set `PARANO1D_CERTIFICATE_OBSERVATIONS_DIR` to a private directory outside all contributor workspaces. It stores only completed protected observations, keyed by production commit, profile and the complete input manifest. The verifier validates source availability, current input digests, cache schema and every frozen result field on each submission. Corrupt or stale observations cannot change the accepted values. This avoids repeating deterministic cryptographic input authentication for every HTTP request on hosts without hardware crypto instructions. Participants independently reproduce the certificate with this optional host cache unset.
+
 ## Historical replay
 
 Earlier contracts in `catalog/archive/` are accepted only by explicit historical ledger replay. New runs use the active v2 contracts. Existing accepted results, signatures and original source scopes are unchanged.

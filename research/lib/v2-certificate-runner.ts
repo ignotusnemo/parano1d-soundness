@@ -1,9 +1,11 @@
-import { createHash } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import { spawnSync } from "node:child_process";
-import { lstatSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, lstatSync, mkdirSync, mkdtempSync, readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { gunzipSync } from "node:zlib";
+import { v2ReproductionPayloadSchema, v2PoseidonReproductionPayloadSchema } from "@/lib/schemas";
+import { parseStrictJson } from "@/lib/strict-json";
 
 export const V2_CERTIFICATE_REVISION = "50d6dac5a37b9f1be425b5e6cd823de48f843b50";
 export const V2_INPUTS = [
@@ -15,6 +17,39 @@ export const V2_INPUTS = [
 export type V2CertificateProfile = "mainnet-v2" | "mainnet-v2-poseidon2b";
 const observations = new Map<string, Record<string, string>>();
 const digest = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
+
+function observationSchema(profile: V2CertificateProfile) {
+  return profile === "mainnet-v2" ? v2ReproductionPayloadSchema : v2PoseidonReproductionPayloadSchema;
+}
+
+function observationFile(directory: string, revision: string, profile: V2CertificateProfile): string {
+  const key = digest(JSON.stringify({ version: 1, revision, profile, inputs: V2_INPUTS }));
+  return path.join(directory, `${key}.json`);
+}
+
+// Optional operator-owned cache, outside all contributor workspaces. The caller
+// still compares every field with the protected contract on every submission.
+export function readV2ObservationCache(directory: string, revision: string, profile: V2CertificateProfile): Record<string, string> | undefined {
+  const filename = observationFile(directory, revision, profile);
+  if (!existsSync(filename)) return undefined;
+  const stat = lstatSync(filename);
+  if (!stat.isFile() || stat.size > 16_384) throw new Error("invalid protected observation cache file");
+  const observed = observationSchema(profile).parse(parseStrictJson(readFileSync(filename, "utf8")));
+  if (observed.certificateCommit !== revision || observed.productionCommit !== revision) throw new Error("protected observation cache revision mismatch");
+  return observed;
+}
+
+export function writeV2ObservationCache(directory: string, revision: string, profile: V2CertificateProfile, value: Record<string, string>): void {
+  const observed = observationSchema(profile).parse(value);
+  if (observed.certificateCommit !== revision || observed.productionCommit !== revision) throw new Error("protected observation cache revision mismatch");
+  mkdirSync(directory, { recursive: true, mode: 0o700 });
+  const filename = observationFile(directory, revision, profile);
+  const temporary = `${filename}.${randomUUID()}.tmp`;
+  try {
+    writeFileSync(temporary, `${JSON.stringify(observed)}\n`, { mode: 0o600, flag: "wx" });
+    renameSync(temporary, filename);
+  } finally { rmSync(temporary, { force: true }); }
+}
 
 // These inputs come from the protected workspace, never the submitted artifact.
 // The calculator separately authenticates each protocol pin after this SHA check.
@@ -77,6 +112,12 @@ export function runV2Certificate(root: string, revision: string, profile: V2Cert
   const production = process.env.PARANO1D_PRODUCTION_DIR;
   if (!production) throw new Error("PARANO1D_PRODUCTION_DIR must point to the pinned Parano1d production Git repository");
   const inputs = profile === "mainnet-v2" ? readV2Inputs(root) : [];
+  execute(production, "git", ["cat-file", "-e", `${revision}^{commit}`]);
+  const observationDirectory = process.env.PARANO1D_CERTIFICATE_OBSERVATIONS_DIR;
+  if (observationDirectory) {
+    const cached = readV2ObservationCache(observationDirectory, revision, profile);
+    if (cached) return { ...cached };
+  }
   const cacheKey = `${path.resolve(root)}:${path.resolve(production)}:${revision}:${profile}`;
   const previous = observations.get(cacheKey);
   if (previous) return { ...previous };
@@ -103,6 +144,7 @@ export function runV2Certificate(root: string, revision: string, profile: V2Cert
       observed = v2PoseidonObservation(report, revision);
     }
     observations.set(cacheKey, observed);
+    if (observationDirectory) writeV2ObservationCache(observationDirectory, revision, profile, observed);
     return { ...observed };
   } finally {
     rmSync(directory, { recursive: true, force: true });
