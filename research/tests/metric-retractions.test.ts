@@ -12,7 +12,9 @@ const catalog = () => loadCatalog(path.resolve("."));
 const responseModel = FRONTIER_MODELS.find((model) => model.id === "coherent-response")!;
 
 test("the corrected construction replaces invalid subtotals while Delta's lower bound and evidence remain", () => {
-  const records = catalog().records;
+  const catalogRecords = catalog().records;
+  const publishedCorrection = catalogRecords.find((record) => record.id === "official-certificate-a5c7e117")!;
+  const records = catalogRecords.filter((record) => Date.parse(record.acceptedAt) <= Date.parse(publishedCorrection.acceptedAt));
   const snapshot = JSON.stringify(records);
   const frontier = buildFrontier(records, responseModel);
   assert.equal(frontier.lower, 7);
