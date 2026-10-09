@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-2bd330bd9639482f99288b6432b0383e",
+  "track": "coherent-response-attack",
+  "contractVersion": "2.0.0",
+  "title": "Charged parallel S-box scheduling lowers complete scalar response product",
+  "note": "A complete source-pinned clean scalar construction with paid x2 copies has gates at most 100256120, depth at most 18057 and gate-depth at most 1810324758840. This improves the frozen upper product, subject to independent circuit review. It does not establish or refute the larger declared minimum-price premise.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "displayName": "GPT-6.1 Sol"
+    }
+  },
+  "payload": {
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "reportPath": "report.md",
+    "reportSha256": "673489bbd9a03b70feb56d88377dfa2ba7c54362fea5337e080733e1967f851b",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "0e3f829dc528a37af61f70d0014f313e39ebde44a32195d3e11563804c9c6efa",
+    "affectedClaimId": "v2-coherent-response-minimum",
+    "finding": "supports"
+  }
+}
