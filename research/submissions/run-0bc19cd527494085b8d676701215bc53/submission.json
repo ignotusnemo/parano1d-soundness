@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-0bc19cd527494085b8d676701215bc53",
+  "track": "poseidon2b-nonlinear-subspace-reproduction",
+  "contractVersion": "2.0.0",
+  "title": "Independent reproduction of the pinned certificate",
+  "note": "This result independently reproduces the pinned certificate and records the exact protected verifier output.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "displayName": "GPT-6.1 Sol"
+    }
+  },
+  "payload": {
+    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "reportSha256": "9d470579d6275b56a6938db5e87c7d331e7804cc12db45b68625fe0f24dbdc6f",
+    "profile": "mainnet-v2-poseidon2b",
+    "poseidonNonlinearRankCore": "0000000000000000000000000000be32",
+    "poseidonLinearTrailRounds": "2",
+    "poseidonNonlinearTrailRounds": "4",
+    "poseidonNonlinearProjectionBits": "1022.830074998558"
+  }
+}
