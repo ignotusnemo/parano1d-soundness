@@ -1,0 +1,44 @@
+{
+  "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "toolchain": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+  "cargo": "cargo 1.96.0 (30a34c682 2026-05-25)",
+  "cargoBuildJobs": 2,
+  "sourceExport": "git archive --format=tar 50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "commands": [
+    {
+      "command": [
+        "cargo",
+        "run",
+        "--release",
+        "--locked",
+        "-p",
+        "noid_soundness",
+        "--",
+        "--exact"
+      ],
+      "startedAt": "2026-10-10T17:10:52.086525+00:00",
+      "finishedAt": "2026-10-10T17:10:52.949643+00:00",
+      "exitCode": 0,
+      "stdoutSha256": "56704f41c6140721728fddc2f1d65d377469b282da88c49b9dffe8bd56c92596"
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--release",
+        "--locked",
+        "-p",
+        "noid_soundness"
+      ],
+      "startedAt": "2026-10-10T17:10:52.950383+00:00",
+      "finishedAt": "2026-10-10T17:11:19.454524+00:00",
+      "exitCode": 0,
+      "stdoutSha256": "f6dc600e7e82edd3b1a7fc3455c501f2778e663009c54fd9c934ccd8be6832dc"
+    }
+  ],
+  "unitTests": {
+    "passed": 41,
+    "failed": 0,
+    "crate": "noid_soundness"
+  }
+}
