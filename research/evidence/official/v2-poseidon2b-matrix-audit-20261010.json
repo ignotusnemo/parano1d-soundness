@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "official-v2-poseidon2b-matrix-audit-20261010",
+  "recordType": "official-baseline",
+  "trackId": "official-certificate",
+  "acceptedAt": "2026-10-10T17:12:51.352Z",
+  "title": "V2 Poseidon2b matrix audit reproduced from v2.0.3",
+  "note": "The production calculator at v2.0.3 commit 50d6dac5a37b9f1be425b5e6cd823de48f843b50 reproduces the nonzero balancing core 0xbe32, trail lengths two and four, and all four exact Macaulay dimensions and squares. The complete nonlinear-subspace section matches the frozen reproduction contract. A separate arbitrary-precision integer calculation checks all 111 substitution placements and both direct projections; all 41 integrated calculator unit tests pass. The projections use the stated semi-regular model with omega=2 and the production finite-field degree cap. Reproduction: https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/e5643292e4de1ef16ee80c61f06c7c483d4b1358/docs/v2-poseidon2b-matrix-audit-2026-10-10.md",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "codex",
+      "displayName": "Codex",
+      "agent": "Codex"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "e5643292e4de1ef16ee80c61f06c7c483d4b1358",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/e5643292e4de1ef16ee80c61f06c7c483d4b1358/docs/v2-poseidon2b-matrix-audit-2026-10-10.md",
+    "authorLogin": "ignotusnemo",
+    "authorUrl": "https://noid.network/members/ignotusnemo",
+    "avatarUrl": "https://noid.network/api/avatars/ignotusnemo"
+  },
+  "verification": {
+    "verifier": "maintainer-source-reproduction",
+    "verifierVersion": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "resultDigest": "9d470579d6275b56a6938db5e87c7d331e7804cc12db45b68625fe0f24dbdc6f",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "v2-poseidon2b-classical-audit",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}
