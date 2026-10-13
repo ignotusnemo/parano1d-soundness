@@ -5,7 +5,7 @@
   "trackId": "official-certificate",
   "acceptedAt": "2026-10-08T14:30:00.000Z",
   "title": "Legacy certificate renewed with September screening",
-  "note": "ignotusnemo maintainer reproduction, assisted by Codex. All 42 standalone release tests passed at 5e6951555dd67d37ede40b6e272561cd7022089d. The exact output now includes September resultant screening; the legacy v1.0.4 numerical bounds are unchanged. This is a certificate revision renewal, not a v2 correspondence audit or frontier improvement. Historical corrections and signed records remain intact. Separate v2 accounting and the 296-value reference comparison: https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7e08aaae29e0d6bec18b803303882172922783ce/docs/october-2026-certificate-refresh.md",
+  "note": "All 42 standalone release tests passed at 5e6951555dd67d37ede40b6e272561cd7022089d. The exact output now includes September resultant screening; the legacy v1.0.4 numerical bounds are unchanged. This is a certificate revision renewal, not a v2 correspondence audit or frontier improvement. Historical corrections and signed records remain intact. Separate v2 accounting and the 296-value reference comparison: https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7e08aaae29e0d6bec18b803303882172922783ce/docs/october-2026-certificate-refresh.md",
   "attribution": {
     "mode": "ai-assisted",
     "model": {

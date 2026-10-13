@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "official-v2-october-attacks-20261013",
+  "recordType": "official-baseline",
+  "trackId": "official-certificate",
+  "acceptedAt": "2026-10-13T09:23:39.075Z",
+  "title": "October attack checks and v2 certificate reproduction",
+  "note": "The mainnet v2 certificate was reproduced byte for byte from v2.0.3, preserving all twenty events, the dominant gate-depth floor 173.3897612554174 and the ideal Category 1 envelope 0.04937388373372754 under the certificate conditions. The published dimension-preserving CICO-2 collapse fails the width-four feasibility condition, while the full cap check authenticates both digest lanes. SDitH/MQOM seed-recovery observations are absent from authorization. Honest proving attempts use fresh private regions under independent OS entropy, and the final nonce carries zero fixed QROM security credit. Fifteen source files match the frozen production revision; all 138 matrix-minor checks, 64 production tests and 69 research-verifier tests passed. The report contains the arguments, source hashes and reproduction artifacts.",
+  "attribution": {
+    "mode": "project"
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "698494bf1be26a3709be32aaa77f5e0a4d417f3a",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/698494bf1be26a3709be32aaa77f5e0a4d417f3a/docs/october-2026-attack-review.md",
+    "authorLogin": "ignotusnemo",
+    "authorUrl": "https://noid.network/members/ignotusnemo",
+    "avatarUrl": "https://noid.network/api/avatars/ignotusnemo"
+  },
+  "verification": {
+    "verifier": "production-source-and-certificate-reproduction",
+    "verifierVersion": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "resultDigest": "f99af13256d02f4cbd6554367a234725fc551806a163624e4cc892ccf0abbebd",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "v2-joint-bank-accounting",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}

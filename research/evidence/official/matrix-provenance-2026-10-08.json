@@ -5,7 +5,7 @@
   "trackId": "official-certificate",
   "acceptedAt": "2026-10-08T14:31:00.000Z",
   "title": "296 production parameters match the Poseidon2b reference",
-  "note": "ignotusnemo September research reproduced on v2.0.3 with Codex on October 8. All 264 round constants and both 16-entry matrices match authors' commit 7072a9438cf48f1b38ad0092cda5452626914068. Canonical u128 little-endian digest: f7b7ea4bae01d0a62c1d51372046325b4781c641b0ce395ced5ab16c510e6e9b. This verifies reference correspondence, not absence of a weakness in the reference and not a new security bound. The September resultant remains screening only. Reproduction: https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7e08aaae29e0d6bec18b803303882172922783ce/docs/october-2026-certificate-refresh.md",
+  "note": "All 264 round constants and both 16-entry matrices match authors' commit 7072a9438cf48f1b38ad0092cda5452626914068. Canonical u128 little-endian digest: f7b7ea4bae01d0a62c1d51372046325b4781c641b0ce395ced5ab16c510e6e9b. This verifies reference correspondence, not absence of a weakness in the reference and not a new security bound. The September resultant remains screening only. Reproduction: https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7e08aaae29e0d6bec18b803303882172922783ce/docs/october-2026-certificate-refresh.md",
   "attribution": {
     "mode": "ai-assisted",
     "model": {

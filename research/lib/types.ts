@@ -117,7 +117,7 @@ export interface EvidenceRecord {
   acceptedAt: string;
   title: string;
   note: string;
-  attribution: ResearchAttribution;
+  attribution: ResearchAttribution | { mode: "project" };
   source: EvidenceSource;
   verification: {
     verifier: string;

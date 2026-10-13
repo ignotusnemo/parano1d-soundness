@@ -201,7 +201,7 @@ export const evidenceRecordSchema = z
     acceptedAt: z.string().datetime({ offset: true }),
     title: safeTitle,
     note: z.string().min(20).max(8_000),
-    attribution: researchAttributionSchema,
+    attribution: z.union([researchAttributionSchema, z.object({ mode: z.literal("project") }).strict()]),
     source: z
       .object({
         repository: z.string().regex(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/),
@@ -226,6 +226,7 @@ export const evidenceRecordSchema = z
   })
   .strict()
   .superRefine((record, context) => {
+    if (record.attribution.mode === "project" && (record.recordType !== "official-baseline" || record.trackId !== "official-certificate")) context.addIssue({ code: "custom", path: ["attribution"], message: "project publications must be official certificate records" });
     if (record.metricRetractions && (record.recordType !== "official-baseline" || record.trackId !== "official-certificate")) context.addIssue({ code: "custom", path: ["metricRetractions"], message: "only an official certificate may retract a metric" });
   });
 
