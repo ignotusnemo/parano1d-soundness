@@ -2,7 +2,7 @@
 
 ## Reproduced targets
 
-This maintainer refresh by ignotusnemo, assisted by Codex, records the September matrix-provenance audit and repeats its calculations on October 8, 2026. It adds evidence and current research targets. It does not change consensus parameters or claim a new security improvement.
+The September matrix-provenance audit and certificate calculations were reproduced on October 8, 2026. This report records the source revisions, authenticated inputs, results and current research targets.
 
 There are two distinct profiles. The standalone certificate at `5e6951555dd67d37ede40b6e272561cd7022089d` still models the historical Parano1d v1.0.4 production commit `7f65daaae414128aa4377ca0ac1e96fd6dbc31a5`. The integrated v2 calculator and release inputs are pinned to Parano1d v2.0.3 commit `50d6dac5a37b9f1be425b5e6cd823de48f843b50`. A unified dependency map can show the theorem framework, current v2 specialization and historical evidence together. Their numerical results retain separate production scopes and must not be substituted for each other or described as the same production snapshot.
 

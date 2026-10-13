@@ -1,0 +1,1599 @@
+{
+  "window": {
+    "from": "2026-10-01",
+    "through": "2026-10-13"
+  },
+  "uniqueUpdatedPapers": 262,
+  "cataloguePages": [
+    {
+      "url": "https://eprint.iacr.org/days/31",
+      "sha256": "930ac5f581062e651129737eaafa19beb4796142bdbf3c75affe4a466d3c0a38"
+    },
+    {
+      "url": "https://eprint.iacr.org/days/31?offset=100",
+      "sha256": "12869a032010cd366dd2407ab4fba283727eac65bd423c28a13c6eb1e4e4c3f3"
+    },
+    {
+      "url": "https://eprint.iacr.org/days/31?offset=200",
+      "sha256": "e3f0fe7b977504cdc1a3246e8f205fb75d03be1426f7ad0ab57d4e7932e8aa01"
+    },
+    {
+      "url": "https://eprint.iacr.org/days/31?offset=300",
+      "sha256": "7bbf6b990ac65ffbb85ee8bced365de3c16de6dafeddc3edc905f1037afc56ea"
+    }
+  ],
+  "papers": [
+    {
+      "id": "2026/703",
+      "url": "https://eprint.iacr.org/2026/703",
+      "updated": "2026-10-13",
+      "title": "Quick Draw Queries: Lightweight Searchable Public-key Ciphertexts with Hidden Structures via Non-Interactive Key Exchange"
+    },
+    {
+      "id": "2026/2434",
+      "url": "https://eprint.iacr.org/2026/2434",
+      "updated": "2026-10-13",
+      "title": "Witness-Succinct UC-Secure SNARKs with Weaker Trust Assumptions"
+    },
+    {
+      "id": "2026/1778",
+      "url": "https://eprint.iacr.org/2026/1778",
+      "updated": "2026-10-13",
+      "title": "HOVER: Higher-Order Vanishing Endomorphism Recovery"
+    },
+    {
+      "id": "2024/2073",
+      "url": "https://eprint.iacr.org/2024/2073",
+      "updated": "2026-10-13",
+      "title": "Succinct Homomorphic MACs from Groups and Applications"
+    },
+    {
+      "id": "2026/2405",
+      "url": "https://eprint.iacr.org/2026/2405",
+      "updated": "2026-10-12",
+      "title": "Game-Theoretically Fair Coin Toss from Random Walk Against $n-1$ Corruptions"
+    },
+    {
+      "id": "2026/2392",
+      "url": "https://eprint.iacr.org/2026/2392",
+      "updated": "2026-10-12",
+      "title": "Fair and Efficient Helper-Aided MPC with Cheater Identification"
+    },
+    {
+      "id": "2026/2184",
+      "url": "https://eprint.iacr.org/2026/2184",
+      "updated": "2026-10-12",
+      "title": "Static Group Signature with Post-Compromise Accountability"
+    },
+    {
+      "id": "2026/2134",
+      "url": "https://eprint.iacr.org/2026/2134",
+      "updated": "2026-10-12",
+      "title": "ANSA-IBS: Identity-Based Signatures from Annular NTRU Trapdoors and Bimodal Fiat-Shamir with Aborts"
+    },
+    {
+      "id": "2026/1808",
+      "url": "https://eprint.iacr.org/2026/1808",
+      "updated": "2026-10-12",
+      "title": "Cross-Signature Signing-Key Recovery and Domain-Separation Repair for SDitH v2"
+    },
+    {
+      "id": "2026/1701",
+      "url": "https://eprint.iacr.org/2026/1701",
+      "updated": "2026-10-12",
+      "title": "DTRU: A Versatile, Compact, Simple, and Robust NTRU KEM with Double $E_8$ Encoding"
+    },
+    {
+      "id": "2026/1679",
+      "url": "https://eprint.iacr.org/2026/1679",
+      "updated": "2026-10-12",
+      "title": "Critical-Round Special Soundness for Multi-Round Proofs"
+    },
+    {
+      "id": "2026/1542",
+      "url": "https://eprint.iacr.org/2026/1542",
+      "updated": "2026-10-12",
+      "title": "Signing-Key Recovery from Unsalted Root Expansion and Salt-Binding Repair for MQOM v2"
+    },
+    {
+      "id": "2026/1541",
+      "url": "https://eprint.iacr.org/2026/1541",
+      "updated": "2026-10-12",
+      "title": "Batched Oblivious Transfer with Square-Root Communication"
+    },
+    {
+      "id": "2026/1198",
+      "url": "https://eprint.iacr.org/2026/1198",
+      "updated": "2026-10-12",
+      "title": "A Note on Splittings and Endomorphisms"
+    },
+    {
+      "id": "2025/318",
+      "url": "https://eprint.iacr.org/2025/318",
+      "updated": "2026-10-12",
+      "title": "Accountable Verifiable Secret Sharing and Applications"
+    },
+    {
+      "id": "2026/676",
+      "url": "https://eprint.iacr.org/2026/676",
+      "updated": "2026-10-11",
+      "title": "An Efficient SM9-Compatible Identity-Based Blind Signature Scheme for One-Time Issuance Identities"
+    },
+    {
+      "id": "2026/2057",
+      "url": "https://eprint.iacr.org/2026/2057",
+      "updated": "2026-10-11",
+      "title": "Low-Space Quantum Discrete Logarithms on Genus-Two Jacobians"
+    },
+    {
+      "id": "2026/1983",
+      "url": "https://eprint.iacr.org/2026/1983",
+      "updated": "2026-10-11",
+      "title": "Akita: A High-Performance Lattice-Based Polynomial Commitment Scheme"
+    },
+    {
+      "id": "2026/1881",
+      "url": "https://eprint.iacr.org/2026/1881",
+      "updated": "2026-10-11",
+      "title": "Constant-Time Conditions for Left-to-Right Scalar Multiplication"
+    },
+    {
+      "id": "2026/1375",
+      "url": "https://eprint.iacr.org/2026/1375",
+      "updated": "2026-10-11",
+      "title": "MPC with Weighted and Fluid Participation"
+    },
+    {
+      "id": "2024/2035",
+      "url": "https://eprint.iacr.org/2024/2035",
+      "updated": "2026-10-11",
+      "title": "A Note on P $\\neq$ NP"
+    },
+    {
+      "id": "2022/1060",
+      "url": "https://eprint.iacr.org/2022/1060",
+      "updated": "2026-10-11",
+      "title": "Programmable Distributed Point Functions"
+    },
+    {
+      "id": "2026/813",
+      "url": "https://eprint.iacr.org/2026/813",
+      "updated": "2026-10-09",
+      "title": "Practical Post-Quantum Secure Publicly Verifiable Secret Sharing and Applications"
+    },
+    {
+      "id": "2026/686",
+      "url": "https://eprint.iacr.org/2026/686",
+      "updated": "2026-10-09",
+      "title": "Secure MSM Outsourcing Computation for Zero-knowledge Proof Generation"
+    },
+    {
+      "id": "2026/309",
+      "url": "https://eprint.iacr.org/2026/309",
+      "updated": "2026-10-09",
+      "title": "Hash Function Constructions from Lightweight Block Ciphers for Fully Homomorphic Encryption"
+    },
+    {
+      "id": "2026/2433",
+      "url": "https://eprint.iacr.org/2026/2433",
+      "updated": "2026-10-09",
+      "title": "Succinct Arguments with (almost) Minimal Time and Space Overheads from Symmetric-Key Primitives"
+    },
+    {
+      "id": "2026/2432",
+      "url": "https://eprint.iacr.org/2026/2432",
+      "updated": "2026-10-09",
+      "title": "Lattice Bingo: Asynchrony and One-Shot Adaptivity in Verifiable Secret Sharing via Erasure Code Commitments"
+    },
+    {
+      "id": "2026/2431",
+      "url": "https://eprint.iacr.org/2026/2431",
+      "updated": "2026-10-09",
+      "title": "Flying, Not Floating: Precise Fixed-Point Falcon on Embedded Processors"
+    },
+    {
+      "id": "2026/2430",
+      "url": "https://eprint.iacr.org/2026/2430",
+      "updated": "2026-10-09",
+      "title": "Distinguishers for the Squeezing of the Alternating Sponge and Duet"
+    },
+    {
+      "id": "2026/2429",
+      "url": "https://eprint.iacr.org/2026/2429",
+      "updated": "2026-10-09",
+      "title": "Rapid mixing in superspecial isogeny graphs"
+    },
+    {
+      "id": "2026/2428",
+      "url": "https://eprint.iacr.org/2026/2428",
+      "updated": "2026-10-09",
+      "title": "Beyond-Birthday MAC Security for Encrypted Wegman-Carter and EWCDMD"
+    },
+    {
+      "id": "2026/2427",
+      "url": "https://eprint.iacr.org/2026/2427",
+      "updated": "2026-10-09",
+      "title": "RM-KLPT: Algebraic Pathfinding for Superspecial Abelian Surfaces with Maximal Real Multiplication"
+    },
+    {
+      "id": "2026/2426",
+      "url": "https://eprint.iacr.org/2026/2426",
+      "updated": "2026-10-09",
+      "title": "Provably Subexponential Algorithms for Bounded-Error LWE with Few Samples"
+    },
+    {
+      "id": "2026/2425",
+      "url": "https://eprint.iacr.org/2026/2425",
+      "updated": "2026-10-09",
+      "title": "Sample-Preserving Search-to-Decision Reduction for Noisy Linear Equations over Large Moduli"
+    },
+    {
+      "id": "2026/2424",
+      "url": "https://eprint.iacr.org/2026/2424",
+      "updated": "2026-10-09",
+      "title": "Counterexamples to Beyond-Johnson Proximity Gaps over Binary Fields"
+    },
+    {
+      "id": "2026/2423",
+      "url": "https://eprint.iacr.org/2026/2423",
+      "updated": "2026-10-09",
+      "title": "Magnetar: High-speed post-quantum RV64 zkVM from standard hashes"
+    },
+    {
+      "id": "2026/2422",
+      "url": "https://eprint.iacr.org/2026/2422",
+      "updated": "2026-10-09",
+      "title": "Verifiable Computation on Encrypted Data from Homomorphic Encryption over Random Encodings"
+    },
+    {
+      "id": "2026/240",
+      "url": "https://eprint.iacr.org/2026/240",
+      "updated": "2026-10-09",
+      "title": "Revisiting Generic Transforms for Committing Authenticated Encryption"
+    },
+    {
+      "id": "2026/2280",
+      "url": "https://eprint.iacr.org/2026/2280",
+      "updated": "2026-10-09",
+      "title": "Natural Barriers to Quantum Extraction: On the Post-Quantum (In)security of (O)EKE and Masny-Rindal OT"
+    },
+    {
+      "id": "2026/2053",
+      "url": "https://eprint.iacr.org/2026/2053",
+      "updated": "2026-10-09",
+      "title": "Weighted Batch Threshold Encryption with Efficient DKG"
+    },
+    {
+      "id": "2026/1650",
+      "url": "https://eprint.iacr.org/2026/1650",
+      "updated": "2026-10-09",
+      "title": "D-James: Ultra Short Multivariate Signatures"
+    },
+    {
+      "id": "2026/1571",
+      "url": "https://eprint.iacr.org/2026/1571",
+      "updated": "2026-10-09",
+      "title": "LAMP: Linear Verification of Matrix Multiplication via Proximity Testing"
+    },
+    {
+      "id": "2026/1059",
+      "url": "https://eprint.iacr.org/2026/1059",
+      "updated": "2026-10-09",
+      "title": "Threshold Traitor Tracing with Partial-Insider Resilience"
+    },
+    {
+      "id": "2025/650",
+      "url": "https://eprint.iacr.org/2025/650",
+      "updated": "2026-10-09",
+      "title": "ADC-BE: Optimizing Worst-Case Bandwidth in Broadcast Encryption with Boolean Functions"
+    },
+    {
+      "id": "2022/1343",
+      "url": "https://eprint.iacr.org/2022/1343",
+      "updated": "2026-10-09",
+      "title": "Refined Strategy for Solving LWE in Two-step Mode"
+    },
+    {
+      "id": "2026/460",
+      "url": "https://eprint.iacr.org/2026/460",
+      "updated": "2026-10-08",
+      "title": "A Resource-Efficient Hardware Accelerator for Large-Size NTT via Algorithm–Architecture Co-Design"
+    },
+    {
+      "id": "2026/377",
+      "url": "https://eprint.iacr.org/2026/377",
+      "updated": "2026-10-08",
+      "title": "Perfectly Secure Network-Agnostic MPC Comes for Free"
+    },
+    {
+      "id": "2026/2421",
+      "url": "https://eprint.iacr.org/2026/2421",
+      "updated": "2026-10-08",
+      "title": "Efficient Unbiasable Verifiable Random Functions via (Non-)Black-Box Reductions"
+    },
+    {
+      "id": "2026/2420",
+      "url": "https://eprint.iacr.org/2026/2420",
+      "updated": "2026-10-08",
+      "title": "Provable Subexponential Algorithms for Module-SIS and Module-LWE"
+    },
+    {
+      "id": "2026/2419",
+      "url": "https://eprint.iacr.org/2026/2419",
+      "updated": "2026-10-08",
+      "title": "Optimal Statistical Oblivious RAM and Search Tree in the External-Memory Model"
+    },
+    {
+      "id": "2026/2418",
+      "url": "https://eprint.iacr.org/2026/2418",
+      "updated": "2026-10-08",
+      "title": "Individual Cryptography from Iterated Squaring"
+    },
+    {
+      "id": "2026/2417",
+      "url": "https://eprint.iacr.org/2026/2417",
+      "updated": "2026-10-08",
+      "title": "Unpredictability from Parity: Understanding Linear Correctors for Markovian Sources"
+    },
+    {
+      "id": "2026/2416",
+      "url": "https://eprint.iacr.org/2026/2416",
+      "updated": "2026-10-08",
+      "title": "New Constructions of Quadratic and Cubic Permutations Admitting Optimal Threshold Implementations"
+    },
+    {
+      "id": "2026/2415",
+      "url": "https://eprint.iacr.org/2026/2415",
+      "updated": "2026-10-08",
+      "title": "The Power of Multislices in Monotone Computation"
+    },
+    {
+      "id": "2026/2414",
+      "url": "https://eprint.iacr.org/2026/2414",
+      "updated": "2026-10-08",
+      "title": "Reverse-Bleichenbacher: Bleichenbacher Attacks are Practical Again"
+    },
+    {
+      "id": "2026/2413",
+      "url": "https://eprint.iacr.org/2026/2413",
+      "updated": "2026-10-08",
+      "title": "Fast Polynomial Arithmetic in the Exponent without Roots of Unity"
+    },
+    {
+      "id": "2026/2412",
+      "url": "https://eprint.iacr.org/2026/2412",
+      "updated": "2026-10-08",
+      "title": "Barely Sublinear RAM-FHE from Plain LWE"
+    },
+    {
+      "id": "2026/2411",
+      "url": "https://eprint.iacr.org/2026/2411",
+      "updated": "2026-10-08",
+      "title": "Average-Case Hardness of Lattice Problems in Special Genera of Fixed Rank"
+    },
+    {
+      "id": "2026/2410",
+      "url": "https://eprint.iacr.org/2026/2410",
+      "updated": "2026-10-08",
+      "title": "KIFA: Kernel-based Integral Fault Analysis on GIFT-Family Ciphers"
+    },
+    {
+      "id": "2026/2409",
+      "url": "https://eprint.iacr.org/2026/2409",
+      "updated": "2026-10-08",
+      "title": "Mercury: Fuzzy Private Set Intersection with Communication and Computation Logarithmic in the Threshold"
+    },
+    {
+      "id": "2026/2408",
+      "url": "https://eprint.iacr.org/2026/2408",
+      "updated": "2026-10-08",
+      "title": "Separating One-Way Functions from Verifiable Delay Functions"
+    },
+    {
+      "id": "2026/2407",
+      "url": "https://eprint.iacr.org/2026/2407",
+      "updated": "2026-10-08",
+      "title": "Language Modeling is Monotone Compression"
+    },
+    {
+      "id": "2026/2386",
+      "url": "https://eprint.iacr.org/2026/2386",
+      "updated": "2026-10-08",
+      "title": "Provable Subexponential Algorithms for NIST Third-Round Lattice Families"
+    },
+    {
+      "id": "2026/2312",
+      "url": "https://eprint.iacr.org/2026/2312",
+      "updated": "2026-10-08",
+      "title": "ECLIPSE: Strongly Unforgeable Isogeny Signatures from the Prime-Degree Variant of PRISM"
+    },
+    {
+      "id": "2026/2302",
+      "url": "https://eprint.iacr.org/2026/2302",
+      "updated": "2026-10-08",
+      "title": "CAROUSEL: GPU-Accelerated Private Vector Search via Homomorphic Sketching"
+    },
+    {
+      "id": "2026/2297",
+      "url": "https://eprint.iacr.org/2026/2297",
+      "updated": "2026-10-08",
+      "title": "An Analysis of the ITU-T Multiple Cryptographic Algorithms X.509 Extensions for PQC Migration"
+    },
+    {
+      "id": "2026/2270",
+      "url": "https://eprint.iacr.org/2026/2270",
+      "updated": "2026-10-08",
+      "title": "UC PAKE and Concrete Security"
+    },
+    {
+      "id": "2026/2175",
+      "url": "https://eprint.iacr.org/2026/2175",
+      "updated": "2026-10-08",
+      "title": "$\\mathsf{Rotor}$: SNARKs for Power-of-Two Rings"
+    },
+    {
+      "id": "2026/1992",
+      "url": "https://eprint.iacr.org/2026/1992",
+      "updated": "2026-10-08",
+      "title": "Bridging the Cryptographic Transition: A Unified Framework for Post-Quantum Key Exchange"
+    },
+    {
+      "id": "2026/1683",
+      "url": "https://eprint.iacr.org/2026/1683",
+      "updated": "2026-10-08",
+      "title": "Fully-Succinct Multi-Key FHE & Rate-1 Simulatable Threshold Decryption from LWE"
+    },
+    {
+      "id": "2026/1591",
+      "url": "https://eprint.iacr.org/2026/1591",
+      "updated": "2026-10-08",
+      "title": "A Polynomial-Time Quantum Algorithm for the Dihedral Coset Problem"
+    },
+    {
+      "id": "2026/1451",
+      "url": "https://eprint.iacr.org/2026/1451",
+      "updated": "2026-10-08",
+      "title": "Lightweight Hardware Accelerator for the UOV Signature Scheme with Oil Space Blinding"
+    },
+    {
+      "id": "2026/1036",
+      "url": "https://eprint.iacr.org/2026/1036",
+      "updated": "2026-10-08",
+      "title": "Resettable Non-Interactive Zero-Knowledge: Attacks and Defenses"
+    },
+    {
+      "id": "2026/1011",
+      "url": "https://eprint.iacr.org/2026/1011",
+      "updated": "2026-10-08",
+      "title": "Can We Tolerate Small Side-Channel Leakages: The Role of Registers in Glitch-Stopping Circuits"
+    },
+    {
+      "id": "2026/898",
+      "url": "https://eprint.iacr.org/2026/898",
+      "updated": "2026-10-07",
+      "title": "Bluestreak: Uncertified DAG BFT with Sparse Metadata"
+    },
+    {
+      "id": "2026/872",
+      "url": "https://eprint.iacr.org/2026/872",
+      "updated": "2026-10-07",
+      "title": "Privacy Coins Under Viewing Key Compromise"
+    },
+    {
+      "id": "2026/408",
+      "url": "https://eprint.iacr.org/2026/408",
+      "updated": "2026-10-07",
+      "title": "Smoothing the degree of regularity for polynomial systems"
+    },
+    {
+      "id": "2026/406",
+      "url": "https://eprint.iacr.org/2026/406",
+      "updated": "2026-10-07",
+      "title": "Putting the OPTI in Round Optimal IA-MPC in the Plain Model"
+    },
+    {
+      "id": "2026/2406",
+      "url": "https://eprint.iacr.org/2026/2406",
+      "updated": "2026-10-07",
+      "title": "Time-Space Tradeoffs For Probabilistic Proofs"
+    },
+    {
+      "id": "2026/2404",
+      "url": "https://eprint.iacr.org/2026/2404",
+      "updated": "2026-10-07",
+      "title": "The Geometry of Collusion Leakage in Inner-Product Functional Encryption"
+    },
+    {
+      "id": "2026/2403",
+      "url": "https://eprint.iacr.org/2026/2403",
+      "updated": "2026-10-07",
+      "title": "Practical and Efficient MPC from FHE, without ZKPoKs"
+    },
+    {
+      "id": "2026/2402",
+      "url": "https://eprint.iacr.org/2026/2402",
+      "updated": "2026-10-07",
+      "title": "Revisiting Lattice-based Blind Signatures Again"
+    },
+    {
+      "id": "2026/2401",
+      "url": "https://eprint.iacr.org/2026/2401",
+      "updated": "2026-10-07",
+      "title": "New infinite families of APN functions from the switching construction in even dimension"
+    },
+    {
+      "id": "2026/2400",
+      "url": "https://eprint.iacr.org/2026/2400",
+      "updated": "2026-10-07",
+      "title": "Simple Byzantine Lattice Agreement in $O(\\frac{\\log f}{\\log \\log f})$ Rounds"
+    },
+    {
+      "id": "2026/2399",
+      "url": "https://eprint.iacr.org/2026/2399",
+      "updated": "2026-10-07",
+      "title": "A Note on Extractable Witness Encryption in Generic Groups"
+    },
+    {
+      "id": "2026/2398",
+      "url": "https://eprint.iacr.org/2026/2398",
+      "updated": "2026-10-07",
+      "title": "Note on Extractability of PST Polynomial Commitment Scheme"
+    },
+    {
+      "id": "2026/2397",
+      "url": "https://eprint.iacr.org/2026/2397",
+      "updated": "2026-10-07",
+      "title": "Hashing Beats Trees: Practical Oblivious Dictionaries in SGX"
+    },
+    {
+      "id": "2026/2396",
+      "url": "https://eprint.iacr.org/2026/2396",
+      "updated": "2026-10-07",
+      "title": "Hide Now, Trace Later: Retrospective Attribution in Issuer-Hiding Credentials"
+    },
+    {
+      "id": "2026/2395",
+      "url": "https://eprint.iacr.org/2026/2395",
+      "updated": "2026-10-07",
+      "title": "The Price of Privacy: Randomness Complexity of Graph-Based Multi-Secret Sharing"
+    },
+    {
+      "id": "2026/2394",
+      "url": "https://eprint.iacr.org/2026/2394",
+      "updated": "2026-10-07",
+      "title": "Post-Quantum Dropout-Resilient Verifiable Secure Aggregation for Federated Learning"
+    },
+    {
+      "id": "2026/2393",
+      "url": "https://eprint.iacr.org/2026/2393",
+      "updated": "2026-10-07",
+      "title": "Round Optimal MPC With Provable Cheater Identification"
+    },
+    {
+      "id": "2026/2391",
+      "url": "https://eprint.iacr.org/2026/2391",
+      "updated": "2026-10-07",
+      "title": "Retention Choices for Quantum CHAM Key Search under a Global Qubit Budget"
+    },
+    {
+      "id": "2026/2390",
+      "url": "https://eprint.iacr.org/2026/2390",
+      "updated": "2026-10-07",
+      "title": "A Universal Forgery Attack on the Origami Signature Scheme from the Public Key Alone"
+    },
+    {
+      "id": "2026/2389",
+      "url": "https://eprint.iacr.org/2026/2389",
+      "updated": "2026-10-07",
+      "title": "Lifting Bounded-Collusion Security to Full Security in Pairing-Based Encryption Schemes"
+    },
+    {
+      "id": "2026/2388",
+      "url": "https://eprint.iacr.org/2026/2388",
+      "updated": "2026-10-07",
+      "title": "Faster Provable Lattice Sieving with Spherical Codes"
+    },
+    {
+      "id": "2026/2294",
+      "url": "https://eprint.iacr.org/2026/2294",
+      "updated": "2026-10-07",
+      "title": "Deniable Secret Sharing: Towards Practical Faking"
+    },
+    {
+      "id": "2026/1957",
+      "url": "https://eprint.iacr.org/2026/1957",
+      "updated": "2026-10-07",
+      "title": "More Efficient Secret-Shared Joins with Multiplicity via  Oblivious Sort Expansion"
+    },
+    {
+      "id": "2026/1747",
+      "url": "https://eprint.iacr.org/2026/1747",
+      "updated": "2026-10-07",
+      "title": "Extending Distinguishing to Key Recovery for Subfield Subcodes of GRS codes"
+    },
+    {
+      "id": "2026/1723",
+      "url": "https://eprint.iacr.org/2026/1723",
+      "updated": "2026-10-07",
+      "title": "De-SyRIS: A Decentralized Sybil-Resistant Identity System Using Mutual Facial Biometric Verification and Social Graph Analysis"
+    },
+    {
+      "id": "2026/1534",
+      "url": "https://eprint.iacr.org/2026/1534",
+      "updated": "2026-10-07",
+      "title": "Masking, Sequences, and FALCON: A Theoretical Study on Masking Strategies Using Sequences for Non-Linear Operators in the FALCON Post-Quantum Signature"
+    },
+    {
+      "id": "2026/1492",
+      "url": "https://eprint.iacr.org/2026/1492",
+      "updated": "2026-10-07",
+      "title": "Proof of Demand Is Not Proof of Work: On the Limits of Demand-Weighted Consensus under Free Pseudonyms"
+    },
+    {
+      "id": "2026/1456",
+      "url": "https://eprint.iacr.org/2026/1456",
+      "updated": "2026-10-07",
+      "title": "QuantumScouter: Reinforcement Learning-Based Optimization of Variational Quantum Circuits for Differential Cryptanalysis"
+    },
+    {
+      "id": "2025/2305",
+      "url": "https://eprint.iacr.org/2025/2305",
+      "updated": "2026-10-07",
+      "title": "A New Approach to Large Party Beaver-Style MPC with Small Computational Overhead"
+    },
+    {
+      "id": "2025/2164",
+      "url": "https://eprint.iacr.org/2025/2164",
+      "updated": "2026-10-07",
+      "title": "Hardness and Algorithms for Batch LPN under Dependent Noise"
+    },
+    {
+      "id": "2025/2159",
+      "url": "https://eprint.iacr.org/2025/2159",
+      "updated": "2026-10-07",
+      "title": "One Fell Swoop: A Single-Trace Key-Recovery Attack on the Falcon Signing Algorithm"
+    },
+    {
+      "id": "2025/2135",
+      "url": "https://eprint.iacr.org/2025/2135",
+      "updated": "2026-10-07",
+      "title": "Improved Robust Secret-Sharing for Honest-Majority Preprocessing-MPC"
+    },
+    {
+      "id": "2025/1752",
+      "url": "https://eprint.iacr.org/2025/1752",
+      "updated": "2026-10-07",
+      "title": "Foundations of Dynamic Group Signatures: The Case of Malicious Openers and Issuers"
+    },
+    {
+      "id": "2025/138",
+      "url": "https://eprint.iacr.org/2025/138",
+      "updated": "2026-10-07",
+      "title": "On the Preprocessing Security of Nonzero Schnorr Signatures with Adaptive Corruptions"
+    },
+    {
+      "id": "2026/892",
+      "url": "https://eprint.iacr.org/2026/892",
+      "updated": "2026-10-06",
+      "title": "Adaptive Distributed Key Generation for Discrete-Log Cryptosystems"
+    },
+    {
+      "id": "2026/548",
+      "url": "https://eprint.iacr.org/2026/548",
+      "updated": "2026-10-06",
+      "title": "Post-Quantum Cryptography from Quantum Stabilizer Decoding"
+    },
+    {
+      "id": "2026/436",
+      "url": "https://eprint.iacr.org/2026/436",
+      "updated": "2026-10-06",
+      "title": "Post-Quantum Anonymous Signatures from the Lattice Isomorphism Group Action"
+    },
+    {
+      "id": "2026/2387",
+      "url": "https://eprint.iacr.org/2026/2387",
+      "updated": "2026-10-06",
+      "title": "Quantum Time-Lock Puzzles in the Quantum Random Oracle Model"
+    },
+    {
+      "id": "2026/2385",
+      "url": "https://eprint.iacr.org/2026/2385",
+      "updated": "2026-10-06",
+      "title": "SkrrtPIR: Doubly-Stateless Batch PIR from Single-Key RLWE Unpacking"
+    },
+    {
+      "id": "2026/2384",
+      "url": "https://eprint.iacr.org/2026/2384",
+      "updated": "2026-10-06",
+      "title": "A Security-Aware PQC Benchmarking Framework on Dual-Core Xtensa Silicon"
+    },
+    {
+      "id": "2026/2383",
+      "url": "https://eprint.iacr.org/2026/2383",
+      "updated": "2026-10-06",
+      "title": "The Post-Quantum Cost of Garbled-Circuit Bitcoin Bridges"
+    },
+    {
+      "id": "2026/2382",
+      "url": "https://eprint.iacr.org/2026/2382",
+      "updated": "2026-10-06",
+      "title": "Differential-Neural Cryptanalysis of ChaCha and Related ARX Stream Ciphers"
+    },
+    {
+      "id": "2026/2381",
+      "url": "https://eprint.iacr.org/2026/2381",
+      "updated": "2026-10-06",
+      "title": "The Lattice Isomorphism Problem with Hints"
+    },
+    {
+      "id": "2026/2380",
+      "url": "https://eprint.iacr.org/2026/2380",
+      "updated": "2026-10-06",
+      "title": "The Graded Monoidal Action for Cryptography"
+    },
+    {
+      "id": "2026/2379",
+      "url": "https://eprint.iacr.org/2026/2379",
+      "updated": "2026-10-06",
+      "title": "Settling Conjectures on Linear Structures of Inverse ChiChi Generalizations Four Proofs and a Counterexample"
+    },
+    {
+      "id": "2026/2378",
+      "url": "https://eprint.iacr.org/2026/2378",
+      "updated": "2026-10-06",
+      "title": "AsyncLS: an iUC Framework for Wallet-Based Asynchronous Ledger Services"
+    },
+    {
+      "id": "2026/2377",
+      "url": "https://eprint.iacr.org/2026/2377",
+      "updated": "2026-10-06",
+      "title": "MIKE: a fast and compact post-quantum NIKE"
+    },
+    {
+      "id": "2026/2376",
+      "url": "https://eprint.iacr.org/2026/2376",
+      "updated": "2026-10-06",
+      "title": "Truffle: Maliciously Secure Three-Party Shuffles with Applications to Parsing"
+    },
+    {
+      "id": "2026/2375",
+      "url": "https://eprint.iacr.org/2026/2375",
+      "updated": "2026-10-06",
+      "title": "PoP! Goes the VOLE: Shorter Proofs of Possession for KEM Certificates"
+    },
+    {
+      "id": "2026/2374",
+      "url": "https://eprint.iacr.org/2026/2374",
+      "updated": "2026-10-06",
+      "title": "Shorter Few-Time Signatures from Hash Chains and Blockwise Forced Pruning"
+    },
+    {
+      "id": "2026/2373",
+      "url": "https://eprint.iacr.org/2026/2373",
+      "updated": "2026-10-06",
+      "title": "PairSwitch: Efficient Galois-Paired Key Switching for Gentry–Lee Matrix FHE"
+    },
+    {
+      "id": "2026/2372",
+      "url": "https://eprint.iacr.org/2026/2372",
+      "updated": "2026-10-06",
+      "title": "K-LMS: Design, Implementation, and Evaluation of Leighton–Micali Signatures with Korean Cryptographic Primitives"
+    },
+    {
+      "id": "2026/2371",
+      "url": "https://eprint.iacr.org/2026/2371",
+      "updated": "2026-10-06",
+      "title": "DP-Guided Schedule Selection for $\\mathbb{F}_2[x]$ Multiplication across ISAs"
+    },
+    {
+      "id": "2026/2370",
+      "url": "https://eprint.iacr.org/2026/2370",
+      "updated": "2026-10-06",
+      "title": "Extract-Amplify-Measure: Single-Sided and Tight O2H with Applications to CCA Security in the Quantum Random Oracle Model"
+    },
+    {
+      "id": "2026/2369",
+      "url": "https://eprint.iacr.org/2026/2369",
+      "updated": "2026-10-06",
+      "title": "StOMR: Stateful Oblivious Message Retrieval"
+    },
+    {
+      "id": "2026/2318",
+      "url": "https://eprint.iacr.org/2026/2318",
+      "updated": "2026-10-06",
+      "title": "Beyond Mosca’s Heuristic: Supported Is Not Protected in Post-Quantum Migration"
+    },
+    {
+      "id": "2026/2048",
+      "url": "https://eprint.iacr.org/2026/2048",
+      "updated": "2026-10-06",
+      "title": "Linear list size bounds for Reed-Solomon beyond the Johnson radius"
+    },
+    {
+      "id": "2026/1984",
+      "url": "https://eprint.iacr.org/2026/1984",
+      "updated": "2026-10-06",
+      "title": "Improving GIJS Key Recovery for Classic McEliece"
+    },
+    {
+      "id": "2026/1688",
+      "url": "https://eprint.iacr.org/2026/1688",
+      "updated": "2026-10-06",
+      "title": "Hell’s Bells: A Neural Network Pipeline for Ternary Fast Matrix Multiplication Algorithms"
+    },
+    {
+      "id": "2026/1660",
+      "url": "https://eprint.iacr.org/2026/1660",
+      "updated": "2026-10-06",
+      "title": "Transient Quantum Resistance, with Application to Ethereum Consensus"
+    },
+    {
+      "id": "2026/1520",
+      "url": "https://eprint.iacr.org/2026/1520",
+      "updated": "2026-10-06",
+      "title": "Quintus: Two-round Good-case Information Theoretic BFT for $n=5f+1$"
+    },
+    {
+      "id": "2026/141",
+      "url": "https://eprint.iacr.org/2026/141",
+      "updated": "2026-10-06",
+      "title": "Minimizing Mempool Dependency in PoW Mining on Blockchain: Scaling Blockchain Throughput via Asynchronous Pipeline Consensus"
+    },
+    {
+      "id": "2026/1090",
+      "url": "https://eprint.iacr.org/2026/1090",
+      "updated": "2026-10-06",
+      "title": "How To Track Qubits Through Space and Time (Or: Sailing in a Quantum Boat)"
+    },
+    {
+      "id": "2025/2126",
+      "url": "https://eprint.iacr.org/2025/2126",
+      "updated": "2026-10-06",
+      "title": "Decentralized Proposer-as-a-Service (DPaaS): Improving Decentralization and Trustworthiness in Ethereum PBS"
+    },
+    {
+      "id": "2026/870",
+      "url": "https://eprint.iacr.org/2026/870",
+      "updated": "2026-10-05",
+      "title": "Issuer-Hiding Anonymous Tokens and Credentials from Key-Randomizable Signatures"
+    },
+    {
+      "id": "2026/413",
+      "url": "https://eprint.iacr.org/2026/413",
+      "updated": "2026-10-05",
+      "title": "On Best-Possible One-Time Programs"
+    },
+    {
+      "id": "2026/383",
+      "url": "https://eprint.iacr.org/2026/383",
+      "updated": "2026-10-05",
+      "title": "HCTR$^{++}$ : A Beyond Birthday Bound Secure HCTR2 Variant"
+    },
+    {
+      "id": "2026/2368",
+      "url": "https://eprint.iacr.org/2026/2368",
+      "updated": "2026-10-05",
+      "title": "Low-Latency Parallel Digit Decomposition and Sign Evaluation for CKKS"
+    },
+    {
+      "id": "2026/2367",
+      "url": "https://eprint.iacr.org/2026/2367",
+      "updated": "2026-10-05",
+      "title": "Simple Extremely Lossy Functions from Small-Exponent Hashing"
+    },
+    {
+      "id": "2026/2366",
+      "url": "https://eprint.iacr.org/2026/2366",
+      "updated": "2026-10-05",
+      "title": "Multiplying Not-So-Big Integers with FFTs: Finding and Pushing the Crossover on Large Modern OoO ARM CPUs"
+    },
+    {
+      "id": "2026/2365",
+      "url": "https://eprint.iacr.org/2026/2365",
+      "updated": "2026-10-05",
+      "title": "On the Instantiability of the Fujisaki–Okamoto Transform for Trapdoor Functions"
+    },
+    {
+      "id": "2026/2364",
+      "url": "https://eprint.iacr.org/2026/2364",
+      "updated": "2026-10-05",
+      "title": "Comparative Evaluation of Open-Source Gröbner Basis Implementations for Small-Scale AES Polynomial Systems over GF(2)"
+    },
+    {
+      "id": "2026/2363",
+      "url": "https://eprint.iacr.org/2026/2363",
+      "updated": "2026-10-05",
+      "title": "MiniSHAKE"
+    },
+    {
+      "id": "2026/2362",
+      "url": "https://eprint.iacr.org/2026/2362",
+      "updated": "2026-10-05",
+      "title": "The Geometry of Witness-Update Tradeoffs in Additive Positive Accumulators"
+    },
+    {
+      "id": "2026/2361",
+      "url": "https://eprint.iacr.org/2026/2361",
+      "updated": "2026-10-05",
+      "title": "Optimized LLL Algorithm"
+    },
+    {
+      "id": "2026/2360",
+      "url": "https://eprint.iacr.org/2026/2360",
+      "updated": "2026-10-05",
+      "title": "One-Round Threshold XMSS and SPHINCS+ from Fully Homomorphic Encryption"
+    },
+    {
+      "id": "2026/2359",
+      "url": "https://eprint.iacr.org/2026/2359",
+      "updated": "2026-10-05",
+      "title": "Area-Efficient Hardware Architecture of the Post-Quantum HQC Cryptosystem with Side-Channel Protection"
+    },
+    {
+      "id": "2026/2358",
+      "url": "https://eprint.iacr.org/2026/2358",
+      "updated": "2026-10-05",
+      "title": "Glimpsing the Leakage Flow for Deep Learning-Based Side-Channel Analysis using Stochastic Leakage Model"
+    },
+    {
+      "id": "2026/2357",
+      "url": "https://eprint.iacr.org/2026/2357",
+      "updated": "2026-10-05",
+      "title": "Rare-Event Decorrelation for Linear Tests of Low-Complexity Pseudorandom Functions"
+    },
+    {
+      "id": "2026/2356",
+      "url": "https://eprint.iacr.org/2026/2356",
+      "updated": "2026-10-05",
+      "title": "BOLT-FHE: An Efficient Unified Framework for GPU-based TFHE Bootstrapping via On-Chip Local Tiling Strategies"
+    },
+    {
+      "id": "2026/2355",
+      "url": "https://eprint.iacr.org/2026/2355",
+      "updated": "2026-10-05",
+      "title": "GPU-Assisted FAEST v3 Signing: Challenge Grinding and CPU–GPU Pipelining"
+    },
+    {
+      "id": "2026/2354",
+      "url": "https://eprint.iacr.org/2026/2354",
+      "updated": "2026-10-05",
+      "title": "Processing-Time Effects on PQC-Based Over-the-Air Rekeying over CCSDS TC/TM Links"
+    },
+    {
+      "id": "2026/2353",
+      "url": "https://eprint.iacr.org/2026/2353",
+      "updated": "2026-10-05",
+      "title": "N2SF-Based Post-Quantum Cryptography Migration Framework for Data in National and Public Institutions"
+    },
+    {
+      "id": "2026/2352",
+      "url": "https://eprint.iacr.org/2026/2352",
+      "updated": "2026-10-05",
+      "title": "X-Wing on Cortex-M85: Architecture-Aware Integration and End-to-End Evaluation"
+    },
+    {
+      "id": "2026/2351",
+      "url": "https://eprint.iacr.org/2026/2351",
+      "updated": "2026-10-05",
+      "title": "Batched LSH on ARMv8 NEON and Its Application to K-SPHINCS+"
+    },
+    {
+      "id": "2026/2350",
+      "url": "https://eprint.iacr.org/2026/2350",
+      "updated": "2026-10-05",
+      "title": "Optimized NEON Implementation of MAYO on Apple M1"
+    },
+    {
+      "id": "2026/2349",
+      "url": "https://eprint.iacr.org/2026/2349",
+      "updated": "2026-10-05",
+      "title": "Output Policies for Anomaly Detection with Homomorphic Encryption: Threshold Resolution, Decision Preservation, and Numerical Stability"
+    },
+    {
+      "id": "2026/2348",
+      "url": "https://eprint.iacr.org/2026/2348",
+      "updated": "2026-10-05",
+      "title": "Verifier-Aligned Canonical Source Binding for Homomorphic Encryption Computations"
+    },
+    {
+      "id": "2026/2347",
+      "url": "https://eprint.iacr.org/2026/2347",
+      "updated": "2026-10-05",
+      "title": "HyBind: Structural Analysis of PQ/T Hybrid Cryptographic Usage"
+    },
+    {
+      "id": "2026/2346",
+      "url": "https://eprint.iacr.org/2026/2346",
+      "updated": "2026-10-05",
+      "title": "Public-coin Differing-input Obfuscation from KOALA and iO"
+    },
+    {
+      "id": "2026/2345",
+      "url": "https://eprint.iacr.org/2026/2345",
+      "updated": "2026-10-05",
+      "title": "Randomness-Anchored Runtime Discovery of Cryptographic Operations on Linux Using eBPF"
+    },
+    {
+      "id": "2026/2344",
+      "url": "https://eprint.iacr.org/2026/2344",
+      "updated": "2026-10-05",
+      "title": "Role-Specific Signature Placement in TLS 1.3: Cost Propagation and PQC Migration"
+    },
+    {
+      "id": "2026/2343",
+      "url": "https://eprint.iacr.org/2026/2343",
+      "updated": "2026-10-05",
+      "title": "Post-Quantum Command Authentication for Unmanned Systems: A KpqC Feasibility Study under Real-Time and Bandwidth Constraints"
+    },
+    {
+      "id": "2026/2342",
+      "url": "https://eprint.iacr.org/2026/2342",
+      "updated": "2026-10-05",
+      "title": "Deploying Native-Rust KpqC: Pluggable Post-Quantum KEMs and Signatures across TLS, Space Links, and the OQS Ecosystem"
+    },
+    {
+      "id": "2026/2341",
+      "url": "https://eprint.iacr.org/2026/2341",
+      "updated": "2026-10-05",
+      "title": "Measuring Parallel Execution of Classical–PQC Component Pairs in Hybrid TLS 1.3"
+    },
+    {
+      "id": "2026/2340",
+      "url": "https://eprint.iacr.org/2026/2340",
+      "updated": "2026-10-05",
+      "title": "Optimizing Montgomery Arithmetic for RSA on Cortex-M0+ and Cortex-M3"
+    },
+    {
+      "id": "2026/2339",
+      "url": "https://eprint.iacr.org/2026/2339",
+      "updated": "2026-10-05",
+      "title": "Pseudorandom Codes from LWE"
+    },
+    {
+      "id": "2026/2320",
+      "url": "https://eprint.iacr.org/2026/2320",
+      "updated": "2026-10-05",
+      "title": "Explicit Nonlinear Functions beyond the Fourier bound"
+    },
+    {
+      "id": "2026/2306",
+      "url": "https://eprint.iacr.org/2026/2306",
+      "updated": "2026-10-05",
+      "title": "Post-Quantum Time-Lock Puzzle from Isogenies"
+    },
+    {
+      "id": "2026/2296",
+      "url": "https://eprint.iacr.org/2026/2296",
+      "updated": "2026-10-05",
+      "title": "iX3DH: Post-Quantum Subversion-Resilient X3DH Key-Exchange from Isogenies"
+    },
+    {
+      "id": "2026/2283",
+      "url": "https://eprint.iacr.org/2026/2283",
+      "updated": "2026-10-05",
+      "title": "A Kleptographic Attack on CSIDH"
+    },
+    {
+      "id": "2026/2279",
+      "url": "https://eprint.iacr.org/2026/2279",
+      "updated": "2026-10-05",
+      "title": "A Cryptographic Perspective on Fingerprinting Machine Learning Model Weights"
+    },
+    {
+      "id": "2026/1833",
+      "url": "https://eprint.iacr.org/2026/1833",
+      "updated": "2026-10-05",
+      "title": "On the Fault Injection Security of White-box Ciphers"
+    },
+    {
+      "id": "2026/1648",
+      "url": "https://eprint.iacr.org/2026/1648",
+      "updated": "2026-10-05",
+      "title": "Deniability for Signed Credentials: Revisiting the Authenticated Channel vs. Signed Data Debate in the EUDI Wallet"
+    },
+    {
+      "id": "2026/1484",
+      "url": "https://eprint.iacr.org/2026/1484",
+      "updated": "2026-10-05",
+      "title": "The SecureDrop Protocol: End-to-End Encrypted Whistleblowing for All"
+    },
+    {
+      "id": "2026/1305",
+      "url": "https://eprint.iacr.org/2026/1305",
+      "updated": "2026-10-05",
+      "title": "Auxiliary Isogeny Freedom in SQIsign's Two-Dimensional Representation"
+    },
+    {
+      "id": "2026/065",
+      "url": "https://eprint.iacr.org/2026/065",
+      "updated": "2026-10-05",
+      "title": "BABE: Verifying Proofs on Bitcoin Made 1000x Cheaper"
+    },
+    {
+      "id": "2025/455",
+      "url": "https://eprint.iacr.org/2025/455",
+      "updated": "2026-10-05",
+      "title": "StaMAC: Fault Protection via Stable-MAC Tags"
+    },
+    {
+      "id": "2025/2190",
+      "url": "https://eprint.iacr.org/2025/2190",
+      "updated": "2026-10-05",
+      "title": "Game-Theoretically Fair Distributed Coin Tossing With Private Preferences"
+    },
+    {
+      "id": "2025/1692",
+      "url": "https://eprint.iacr.org/2025/1692",
+      "updated": "2026-10-05",
+      "title": "Combined Stability: Protecting against Combined Attacks"
+    },
+    {
+      "id": "2025/1320",
+      "url": "https://eprint.iacr.org/2025/1320",
+      "updated": "2026-10-05",
+      "title": "Picking up the Fallen Mask: Breaking and Fixing the RS-Mask Countermeasure"
+    },
+    {
+      "id": "2024/289",
+      "url": "https://eprint.iacr.org/2024/289",
+      "updated": "2026-10-05",
+      "title": "SoK: Parameterization of Fault Adversary Models - Connecting Theory and Practice"
+    },
+    {
+      "id": "2024/1915",
+      "url": "https://eprint.iacr.org/2024/1915",
+      "updated": "2026-10-05",
+      "title": "MULTISS: Long-Term Secure Distributed Storage over Remote QKD Networks"
+    },
+    {
+      "id": "2026/917",
+      "url": "https://eprint.iacr.org/2026/917",
+      "updated": "2026-10-04",
+      "title": "Obscura: Privacy-Preserving Protocol for the Algorand Blockchain Using LSAG Ring Signatures"
+    },
+    {
+      "id": "2026/908",
+      "url": "https://eprint.iacr.org/2026/908",
+      "updated": "2026-10-04",
+      "title": "Titan: Efficient Polynomial Commitments from IOPs over Groups"
+    },
+    {
+      "id": "2026/450",
+      "url": "https://eprint.iacr.org/2026/450",
+      "updated": "2026-10-04",
+      "title": "A unified toolkit for advanced arithmetic in FHE"
+    },
+    {
+      "id": "2026/279",
+      "url": "https://eprint.iacr.org/2026/279",
+      "updated": "2026-10-04",
+      "title": "On the Concrete Hardness Gap Between MLWE and LWE"
+    },
+    {
+      "id": "2026/2338",
+      "url": "https://eprint.iacr.org/2026/2338",
+      "updated": "2026-10-04",
+      "title": "Plotkin Attacks! On the (Mis)use of Raptor Codes in Asynchronous Verifiable Information Dispersal"
+    },
+    {
+      "id": "2026/2337",
+      "url": "https://eprint.iacr.org/2026/2337",
+      "updated": "2026-10-04",
+      "title": "Bandwidth-Balanced Reliable Broadcast in Stake-Weighted Networks"
+    },
+    {
+      "id": "2026/2336",
+      "url": "https://eprint.iacr.org/2026/2336",
+      "updated": "2026-10-04",
+      "title": "Query-Limited RAM Programs and their Applications"
+    },
+    {
+      "id": "2026/2335",
+      "url": "https://eprint.iacr.org/2026/2335",
+      "updated": "2026-10-04",
+      "title": "Bitwise-Optimal Cryptography: From One-Wayness to Pseudorandomness and Target Collision Resistance"
+    },
+    {
+      "id": "2026/2334",
+      "url": "https://eprint.iacr.org/2026/2334",
+      "updated": "2026-10-04",
+      "title": "Trapdoor Projective Sampling and Identity-Based Anonymous Broadcast"
+    },
+    {
+      "id": "2026/2333",
+      "url": "https://eprint.iacr.org/2026/2333",
+      "updated": "2026-10-04",
+      "title": "The Power of Permutable PRPs: Towards Trapdoor Permutations with Full Key and Message Domains"
+    },
+    {
+      "id": "2026/2332",
+      "url": "https://eprint.iacr.org/2026/2332",
+      "updated": "2026-10-04",
+      "title": "Rotate Once, Read Many Times: on the Output Noise of Multi-Value Bootstrapping"
+    },
+    {
+      "id": "2026/2331",
+      "url": "https://eprint.iacr.org/2026/2331",
+      "updated": "2026-10-04",
+      "title": "Enhancing One-Way to Hiding Theorems with Amplitude Amplification"
+    },
+    {
+      "id": "2026/2330",
+      "url": "https://eprint.iacr.org/2026/2330",
+      "updated": "2026-10-04",
+      "title": "Ziren: Succinct Arguments for MIPS32 Execution"
+    },
+    {
+      "id": "2026/2329",
+      "url": "https://eprint.iacr.org/2026/2329",
+      "updated": "2026-10-04",
+      "title": "What Makes Lattice Key Generation Expensive? Controlled Cost Attribution with Structured LWR, ML-KEM, and HAETAE on Cortex-M4"
+    },
+    {
+      "id": "2026/2328",
+      "url": "https://eprint.iacr.org/2026/2328",
+      "updated": "2026-10-04",
+      "title": "Automorphism-Compatible NTT and its Application to Homomorphic Encryption"
+    },
+    {
+      "id": "2026/2327",
+      "url": "https://eprint.iacr.org/2026/2327",
+      "updated": "2026-10-04",
+      "title": "The Humbert Form of Discriminant 36, and What It Says About Splitting Detection"
+    },
+    {
+      "id": "2026/2288",
+      "url": "https://eprint.iacr.org/2026/2288",
+      "updated": "2026-10-04",
+      "title": "Kettle: Short Post-Quantum Threshold Signatures from the HAWK Signature Scheme"
+    },
+    {
+      "id": "2026/2141",
+      "url": "https://eprint.iacr.org/2026/2141",
+      "updated": "2026-10-04",
+      "title": "BitZ: proofs and commitments in arbitrary rings through binary fields"
+    },
+    {
+      "id": "2026/1852",
+      "url": "https://eprint.iacr.org/2026/1852",
+      "updated": "2026-10-04",
+      "title": "Jacobian Diagnostics for Under-Constrained Zero-Knowledge Circuits"
+    },
+    {
+      "id": "2026/1692",
+      "url": "https://eprint.iacr.org/2026/1692",
+      "updated": "2026-10-04",
+      "title": "How to Attack Poseidon via Smart Subspace Restriction"
+    },
+    {
+      "id": "2026/2326",
+      "url": "https://eprint.iacr.org/2026/2326",
+      "updated": "2026-10-03",
+      "title": "It Takes Two: Proofs of Work for Fiat–Shamir"
+    },
+    {
+      "id": "2026/2325",
+      "url": "https://eprint.iacr.org/2026/2325",
+      "updated": "2026-10-03",
+      "title": "On the hull attacks against Construction A lattices"
+    },
+    {
+      "id": "2026/2324",
+      "url": "https://eprint.iacr.org/2026/2324",
+      "updated": "2026-10-03",
+      "title": "Indistinguishability Lifting for Keyed Oracles, Compressed Ideal Cipher, and More Applications"
+    },
+    {
+      "id": "2026/2323",
+      "url": "https://eprint.iacr.org/2026/2323",
+      "updated": "2026-10-03",
+      "title": "ATLAS: A Compact Module-LWR Signature Scheme"
+    },
+    {
+      "id": "2026/2322",
+      "url": "https://eprint.iacr.org/2026/2322",
+      "updated": "2026-10-03",
+      "title": "Understanding Sigma Protocols via MPC-in-the-Head"
+    },
+    {
+      "id": "2026/2321",
+      "url": "https://eprint.iacr.org/2026/2321",
+      "updated": "2026-10-03",
+      "title": "Mechanized Proofs of ORAM Correctness, Security, and Failure Bounds"
+    },
+    {
+      "id": "2026/2319",
+      "url": "https://eprint.iacr.org/2026/2319",
+      "updated": "2026-10-03",
+      "title": "Automated Search for Periodic Functions in Quantum Attacks: Distinguishers and Key-Recovery Attacks"
+    },
+    {
+      "id": "2026/2240",
+      "url": "https://eprint.iacr.org/2026/2240",
+      "updated": "2026-10-03",
+      "title": "Improved Cryptanalysis of Local PRGs"
+    },
+    {
+      "id": "2026/1824",
+      "url": "https://eprint.iacr.org/2026/1824",
+      "updated": "2026-10-03",
+      "title": "Comparing Privacy-Preserving Revocation for the EUDI Wallet"
+    },
+    {
+      "id": "2026/1635",
+      "url": "https://eprint.iacr.org/2026/1635",
+      "updated": "2026-10-03",
+      "title": "Limber: Low Overhead SNARKs for Integers from Any PCS"
+    },
+    {
+      "id": "2026/1595",
+      "url": "https://eprint.iacr.org/2026/1595",
+      "updated": "2026-10-03",
+      "title": "Fixed-Budget Allocation in Neural Differential Distinguishers"
+    },
+    {
+      "id": "2025/1983",
+      "url": "https://eprint.iacr.org/2025/1983",
+      "updated": "2026-10-03",
+      "title": "SCORE: A SlotToCoeff Optimization for Real-Vector Encryption in CKKS"
+    },
+    {
+      "id": "2026/2317",
+      "url": "https://eprint.iacr.org/2026/2317",
+      "updated": "2026-10-02",
+      "title": "SPIN: Fast Codes for Correlation Generation and Polynomial Commitments"
+    },
+    {
+      "id": "2026/2316",
+      "url": "https://eprint.iacr.org/2026/2316",
+      "updated": "2026-10-02",
+      "title": "Fast Linear Codes over Large Fields: Addition-Only and Small-Coefficient Encoders"
+    },
+    {
+      "id": "2026/2315",
+      "url": "https://eprint.iacr.org/2026/2315",
+      "updated": "2026-10-02",
+      "title": "Expander-Based Codes at the Gilbert–Varshamov Bound"
+    },
+    {
+      "id": "2026/2314",
+      "url": "https://eprint.iacr.org/2026/2314",
+      "updated": "2026-10-02",
+      "title": "An Input-Fed AES-Round Family for Fixed-Length Hashing"
+    },
+    {
+      "id": "2026/2313",
+      "url": "https://eprint.iacr.org/2026/2313",
+      "updated": "2026-10-02",
+      "title": "When Masking Preimage Computation Isn’t Enough: A Power Analysis Attack on Masked Implementations of Falcon"
+    },
+    {
+      "id": "2026/2311",
+      "url": "https://eprint.iacr.org/2026/2311",
+      "updated": "2026-10-02",
+      "title": "Breaking the $n^2$ Barrier: Information-Theoretic MPC with Sub-Quadratic Communication"
+    },
+    {
+      "id": "2026/2310",
+      "url": "https://eprint.iacr.org/2026/2310",
+      "updated": "2026-10-02",
+      "title": "Low-Noise Multi-Value Bootstrapping via Log-Unit Lattice Search and LUT Shifting"
+    },
+    {
+      "id": "2026/2309",
+      "url": "https://eprint.iacr.org/2026/2309",
+      "updated": "2026-10-02",
+      "title": "Three-Move Blind Signatures from DL"
+    },
+    {
+      "id": "2026/2308",
+      "url": "https://eprint.iacr.org/2026/2308",
+      "updated": "2026-10-02",
+      "title": "Multiparty Homomorphic Secret Sharing From Distributed Discrete Logarithm"
+    },
+    {
+      "id": "2026/2307",
+      "url": "https://eprint.iacr.org/2026/2307",
+      "updated": "2026-10-02",
+      "title": "Functional Verification of Additive FFT Assembly Implementations in Code-Based PQC"
+    },
+    {
+      "id": "2026/2305",
+      "url": "https://eprint.iacr.org/2026/2305",
+      "updated": "2026-10-02",
+      "title": "Revisiting Partitioning: Output-Adaptive ABE for Circuits from LWE"
+    },
+    {
+      "id": "2026/2157",
+      "url": "https://eprint.iacr.org/2026/2157",
+      "updated": "2026-10-02",
+      "title": "Jolt-QED: Formally Verifying Bytecode Expansions In Lean"
+    },
+    {
+      "id": "2026/1443",
+      "url": "https://eprint.iacr.org/2026/1443",
+      "updated": "2026-10-02",
+      "title": "SENTRA:Privacy-Preserving Training in Outsourced Cloud Environments"
+    },
+    {
+      "id": "2026/075",
+      "url": "https://eprint.iacr.org/2026/075",
+      "updated": "2026-10-02",
+      "title": "From $\\textsf{TS-SUF-2}$ to $\\textsf{TS-SUF-4}$: Practical Security Enhancements for $\\textsf{FROST2}$ Threshold Signatures"
+    },
+    {
+      "id": "2025/2294",
+      "url": "https://eprint.iacr.org/2025/2294",
+      "updated": "2026-10-02",
+      "title": "Fully Distributed Multi-Point Functions for PCGs and Beyond"
+    },
+    {
+      "id": "2025/2018",
+      "url": "https://eprint.iacr.org/2025/2018",
+      "updated": "2026-10-02",
+      "title": "Batched and Packed (Publicly) Verifiable Secret Sharing: A Unified Framework and Applications"
+    },
+    {
+      "id": "2026/777",
+      "url": "https://eprint.iacr.org/2026/777",
+      "updated": "2026-10-01",
+      "title": "How Strong is the FO-Calypse, Really? Instantiating Plaintext-Checking Oracles against Masked Software Implementations of ML-KEM"
+    },
+    {
+      "id": "2026/431",
+      "url": "https://eprint.iacr.org/2026/431",
+      "updated": "2026-10-01",
+      "title": "Revisiting the Security of Sparkle"
+    },
+    {
+      "id": "2026/2304",
+      "url": "https://eprint.iacr.org/2026/2304",
+      "updated": "2026-10-01",
+      "title": "Gram Moments and Pairwise Mixing of AES"
+    },
+    {
+      "id": "2026/2303",
+      "url": "https://eprint.iacr.org/2026/2303",
+      "updated": "2026-10-01",
+      "title": "On the pseudorandomness of simple quantum processes"
+    },
+    {
+      "id": "2026/2301",
+      "url": "https://eprint.iacr.org/2026/2301",
+      "updated": "2026-10-01",
+      "title": "Breaking the Bounded Entanglement Barrier for Quantum Position Verification"
+    },
+    {
+      "id": "2026/2300",
+      "url": "https://eprint.iacr.org/2026/2300",
+      "updated": "2026-10-01",
+      "title": "DuraShare: BIP39-native secret sharing with full manual fallback"
+    },
+    {
+      "id": "2026/2299",
+      "url": "https://eprint.iacr.org/2026/2299",
+      "updated": "2026-10-01",
+      "title": "Can AI Oversight Be Zero Knowledge?"
+    },
+    {
+      "id": "2026/2298",
+      "url": "https://eprint.iacr.org/2026/2298",
+      "updated": "2026-10-01",
+      "title": "Pseudorandom Correlation Generators for Matrix Triples"
+    },
+    {
+      "id": "2026/2295",
+      "url": "https://eprint.iacr.org/2026/2295",
+      "updated": "2026-10-01",
+      "title": "Context-Blind Device-Bound Anonymous Credentials from Signatures and Proofs"
+    },
+    {
+      "id": "2026/2293",
+      "url": "https://eprint.iacr.org/2026/2293",
+      "updated": "2026-10-01",
+      "title": "Nonce Misuse Resilience of GCM with Rijndael-256-256"
+    },
+    {
+      "id": "2026/2292",
+      "url": "https://eprint.iacr.org/2026/2292",
+      "updated": "2026-10-01",
+      "title": "Nonstop Multihop? Constructions and Lower Bounds for Re-Aggregatable Multisignatures"
+    },
+    {
+      "id": "2026/2291",
+      "url": "https://eprint.iacr.org/2026/2291",
+      "updated": "2026-10-01",
+      "title": "Evidence on Demand: Selectively Disclosable Watermarks for Generative AI"
+    },
+    {
+      "id": "2026/2290",
+      "url": "https://eprint.iacr.org/2026/2290",
+      "updated": "2026-10-01",
+      "title": "Jambon: Asynchronous Universally Composable Threshold FHE with Low Communication"
+    },
+    {
+      "id": "2026/2289",
+      "url": "https://eprint.iacr.org/2026/2289",
+      "updated": "2026-10-01",
+      "title": "A Subexponential Algorithm for Binary LWE with Sublinear Samples"
+    },
+    {
+      "id": "2026/2287",
+      "url": "https://eprint.iacr.org/2026/2287",
+      "updated": "2026-10-01",
+      "title": "Knuth–Yao masked (Gaussian) sampling"
+    },
+    {
+      "id": "2026/2286",
+      "url": "https://eprint.iacr.org/2026/2286",
+      "updated": "2026-10-01",
+      "title": "Non-Interactive Black-Box Witness-Indistinguishable Commit-and-Prove via Targeted Hitting-Set Generators"
+    },
+    {
+      "id": "2026/2271",
+      "url": "https://eprint.iacr.org/2026/2271",
+      "updated": "2026-10-01",
+      "title": "Exact SVP on Haar-Random Lattices at the Heuristic Sieving Exponents"
+    },
+    {
+      "id": "2026/2256",
+      "url": "https://eprint.iacr.org/2026/2256",
+      "updated": "2026-10-01",
+      "title": "Affine-Padding Rabin-Oracle Factoring in $L_n\\!\\left(\\frac{1}{3},\\sqrt[3]{\\frac{32}{9}}\\right)$"
+    },
+    {
+      "id": "2026/2232",
+      "url": "https://eprint.iacr.org/2026/2232",
+      "updated": "2026-10-01",
+      "title": "Cryptanalysis of the ICCS NGCC Round-1 Public-Key Candidates"
+    },
+    {
+      "id": "2026/2145",
+      "url": "https://eprint.iacr.org/2026/2145",
+      "updated": "2026-10-01",
+      "title": "Fully Anonymous Perfect Secret-Sharing"
+    },
+    {
+      "id": "2026/1997",
+      "url": "https://eprint.iacr.org/2026/1997",
+      "updated": "2026-10-01",
+      "title": "LibFWHT: From Exact Walsh Spectra to Key Dependence in Differential-Linear Correlations"
+    },
+    {
+      "id": "2026/1795",
+      "url": "https://eprint.iacr.org/2026/1795",
+      "updated": "2026-10-01",
+      "title": "On Removing Interaction from Quantum Proofs"
+    },
+    {
+      "id": "2026/1457",
+      "url": "https://eprint.iacr.org/2026/1457",
+      "updated": "2026-10-01",
+      "title": "IBE and PIR from Isogenies"
+    },
+    {
+      "id": "2026/122",
+      "url": "https://eprint.iacr.org/2026/122",
+      "updated": "2026-10-01",
+      "title": "The Motte-and-Bailey Framework for Leakage-Resilient Accordion Modes: Featuring Qaitbay and Alicante"
+    },
+    {
+      "id": "2025/286",
+      "url": "https://eprint.iacr.org/2025/286",
+      "updated": "2026-10-01",
+      "title": "Verifiable Computation for Approximate Homomorphic Encryption Schemes"
+    },
+    {
+      "id": "2024/1583",
+      "url": "https://eprint.iacr.org/2024/1583",
+      "updated": "2026-10-01",
+      "title": "Efficient Pairing-Free Adaptable k-out-of-N Oblivious Transfer Protocols"
+    },
+    {
+      "id": "2024/1383",
+      "url": "https://eprint.iacr.org/2024/1383",
+      "updated": "2026-10-01",
+      "title": "Self-Orthogonal Minimal Codes From (Vectorial) p-ary Plateaued Functions"
+    }
+  ]
+}

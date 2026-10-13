@@ -78,12 +78,15 @@ claim of 1022-bit security. The exact calculation and scope are in the
 
 The [September 2026 ePrint review](docs/september-2026-eprint-review.md) adds a reproducible CICO-2 resultant screening calculation, confirms the v2 production constants against the authors' pinned reference, and checks the scope of new Fiat-Shamir, quantum permutation and Reed-Solomon work. The standalone calculator still pins its historical v1 production snapshot, which uses the same Poseidon2b tuple; its Category 1 numbers are not the v2 joint-bank numbers.
 
+The [October 2026 attack review](docs/october-2026-attack-review.md) establishes parameter and interface exclusions for the revised Poseidon collapse, Fiat-Shamir PoW, randomness resets, SDitH/MQOM seed recovery, code and lattice key recovery, Raptor dispersal and circuit diagnostics. Fifteen frozen source hashes, 138 matrix-minor checks and 64 production tests accompany the arguments. The exact mainnet v2 certificate was reproduced byte for byte; its Category 1 assessment and twenty-event inventory are preserved under the stated conditions.
+
 The complete derivations are in:
 
 - [Block-Tiwari FS-FRI security](docs/block-tiwari.md);
 - [end-to-end QROM soundness and the Category 1 assessment](docs/category-one.md);
 - [August 2026 Poseidon2b cryptanalysis review](docs/poseidon2b-august-2026.md);
 - [September 2026 ePrint review](docs/september-2026-eprint-review.md);
+- [October 2026 attack review](docs/october-2026-attack-review.md);
 - [production snapshot provenance](docs/parameter-provenance.md).
 
 ## Block-Tiwari comparison

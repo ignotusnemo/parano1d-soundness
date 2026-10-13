@@ -1,0 +1,29 @@
+{
+  "reviewedAt": "2026-10-13",
+  "productionRevision": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "commands": [
+    {
+      "command": "cargo test --release --locked -p noid_gkr zk_authorization::tests::",
+      "passed": 11
+    },
+    {
+      "command": "cargo test --release --locked -p noid_fri_binius zk_capsule_pcs::tests::",
+      "passed": 12
+    },
+    {
+      "command": "cargo test --release --locked -p noid_soundness",
+      "passed": 41
+    }
+  ],
+  "totalPassed": 64,
+  "matrixMinorsChecked": 138,
+  "sourceReceipts": "attack-screening.json",
+  "literatureWindow": "literature-window.json",
+  "scope": "Exact algebra, native tamper and randomness-boundary controls, frozen-source correspondence, and integrated calculator tests",
+  "researchVerifier": {
+    "typecheck": "passed",
+    "testsPassed": 69,
+    "acceptedLedgerVerification": "passed"
+  },
+  "certificateReproduction": "certificate-reproduction.json"
+}

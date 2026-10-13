@@ -141,10 +141,9 @@ excludes a fixed standardized instance from its scope. Production fixes its
 matrices and constants independently, so that paper supplies no transferable
 witness or cost for this target.
 
-ePrint 2026/1692 studies the ordinary Poseidon CICO-k model. For the closest
-full two-lane production output geometry, its new partial-round skip is zero.
-It also does not model the feed-forward output equations, so it supplies no new
-production cost below the already instantiated ePrint 2026/306 result.
+The August version of ePrint 2026/1692 studies the ordinary Poseidon CICO-k model. Its baseline partial-round skip is `t-2k=0` at `t=4, k=2`. The reviewed PDF is archive version `20260815:020031`, SHA-256 `d2d712449b7e179d04e44c7eb8da4bf32f37e54b8f323fb5eadcaf05807d6077`.
+
+The October 4 revision adds `(k+1)`-wise collapsing and structured solving. The [October attack review](october-2026-attack-review.md) establishes the width-four CICO-2 exclusion and CICO-1 boundary, derives the actual feed-forward equations and verifies complete two-lane cap authentication. The August calculation above retains its exact reviewed-version scope.
 
 ePrint 2026/1760 requires an MDS matrix chosen after the round constants and a
 prime field of odd characteristic. Production fixes both matrices and all

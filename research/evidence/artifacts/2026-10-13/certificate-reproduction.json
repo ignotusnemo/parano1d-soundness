@@ -1,0 +1,37 @@
+{
+  "executedAt": "2026-10-13",
+  "productionRevision": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "binarySha256": "903ebd8ab4784d0d24cfa25a24becae789a12147b7e0a95425adfc0ff2676638",
+  "inputs": [
+    {
+      "file": "history-step.runtime",
+      "bytes": 2214607,
+      "sha256": "8fab1225073d658bc1988573c79b0520ce141d2ac4a0e7c8cc2562be0e6767a5",
+      "protocolPin": "ad463bd76e27df3c0f414f4fd7640cfb5c45cc7f3a09e44a2f7bc7a8b869485b"
+    },
+    {
+      "file": "v2-runtime-metadata.bin",
+      "bytes": 2258540,
+      "sha256": "04e969990958520dbc865e0fddb8ef946dae23f670dc9cb56efaadc5ccebfed2",
+      "protocolPin": "c2a6df736b0d0da22e285b6930b11cf44b520d65b52c7dfe78f44fe0cd48e76e"
+    },
+    {
+      "file": "class-0.key",
+      "bytes": 304,
+      "sha256": "02421f91a13d34480e71e3f8a88071d7e8dcb10ac9ca2339f8a2dea7cb8a689c",
+      "protocolPin": "0651ce507810b61213cbdc0e9f99436aec3a7922cc662bfba6128b466453c8b2"
+    },
+    {
+      "file": "class-1.key",
+      "bytes": 304,
+      "sha256": "c655cbb3c3f485b3654d4a0c5d69f108eda504a3a34769a5579aad1fe3b9e8c8",
+      "protocolPin": "c301274d50dc02fd5c383f2e71629075729a954a768f5051388ec2040bce0267"
+    }
+  ],
+  "reportSha256": "f99af13256d02f4cbd6554367a234725fc551806a163624e4cc892ccf0abbebd",
+  "matchesOctober8ReportByteForByte": true,
+  "eventCount": 20,
+  "limitingEvent": "retirement.b25.query",
+  "dominantHalfSuccessGateDepthBits": 173.3897612554174,
+  "categoryOneIdealEnvelope": "0.049373883733727537476616126637309763374280300856473073419837237536446487795553505501245513"
+}
