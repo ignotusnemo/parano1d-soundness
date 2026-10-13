@@ -515,7 +515,7 @@
     "id": "v2-poseidon2b-classical-audit",
     "title": "V2 Poseidon2b nonlinear-subspace audit",
     "statement": "The source-linked production matrix specialization reproduces a nonzero rank core, trail lengths two and four, and the exact semi-regular Macaulay projections for the v2.0.3 Poseidon2b implementation.",
-    "scope": "Component-level arithmetic reproduction from the current production source. No universal security bound or reachable production attack follows from these projections.",
+    "scope": "Exact component arithmetic in the production GF(2^128) field: concrete balancing rank, trail lengths, exhaustive substitution placements and four Macaulay dimensions and squares under the stated semi-regular model with omega=2.",
     "initialStatus": "under-review",
     "derived": false,
     "dependencies": [
@@ -529,6 +529,10 @@
       {
         "label": "Pinned integrated certificate",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_soundness/docs/poseidon2b-august-2026.md"
+      },
+      {
+        "label": "V2 matrix audit reproduction and exact artifacts",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/e5643292e4de1ef16ee80c61f06c7c483d4b1358/docs/v2-poseidon2b-matrix-audit-2026-10-10.md"
       }
     ]
   }

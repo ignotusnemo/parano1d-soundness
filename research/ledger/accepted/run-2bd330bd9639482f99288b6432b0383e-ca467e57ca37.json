@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "run-2bd330bd9639482f99288b6432b0383e-ca467e57ca37",
+  "recordType": "accepted-submission",
+  "trackId": "coherent-response-attack",
+  "acceptedAt": "2026-10-09T22:42:22.195Z",
+  "title": "Charged parallel S-box scheduling lowers complete scalar response product",
+  "note": "AI-assisted maintainer review authorized by Ignotus. Checked production 50d6dac5a37b9f1be425b5e6cd823de48f843b50 and the exact clean scalar XOR model: CNOT, one-qubit Clifford/T, all-to-all connectivity, zero initial ancillas and disjoint wires per layer. The paid 128-CNOT copy makes the x4 square and x3 multiply branches disjoint; reversing the complete computation cleans all workspaces. A separate Codex agent independently checked equivalence, scheduling, cleanup and integer accounting. Recomputed 100256120 gates, depth 18057, width 21799732 and product 1810324758840, a 9.86100385064982% improvement. The four passive files match the reviewed bytes; 41 trusted certificate tests passed. Accepted effect: lower the constructive scalar gate-depth upper bound. The declared minimum resource price and current Category 1 accounting retain their values; the resource claim retains premise status.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "displayName": "GPT-6.1 Sol"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "ca467e57ca37492f7094d1ca0c8afd100226575a",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/20",
+    "authorLogin": "parano1cparano1d",
+    "authorUrl": "https://noid.network/members/parano1cparano1d",
+    "avatarUrl": "https://noid.network/api/avatars/1000000000000000014",
+    "pullRequest": 20
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research+forgejo-review",
+    "verifierVersion": "1.0.0",
+    "resultDigest": "b4ee865c6813accdf4799a7d9ec8deeaeb6ba8690f0f4913a700f9affe98c071",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "v2-coherent-response-minimum",
+      "status": "premise",
+      "metrics": [
+        {
+          "id": "coherent-response.gate-depth",
+          "label": "Coherent Response Gate Depth",
+          "value": "1810324758840",
+          "unit": "logical gate-depth",
+          "kind": "upper-bound",
+          "scope": "V2 coherent response circuit challenge: 2bd330bd; reviewed against the frozen coherent-response-attack contract."
+        }
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import { cpSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { deriveResearchState } from "@/lib/derive";
+import { buildFrontier, FRONTIER_MODELS } from "@/lib/frontier";
 
 test("the published end-to-end corollary is proved with explicit production premises", () => {
   const state = deriveResearchState(path.resolve("."));
@@ -55,7 +56,15 @@ test("theorem context links do not establish current v2 production premises", ()
 });
 
 test("scoped v2 source evidence preserves open compiler conditions and numerical frontiers", () => {
-  const state = deriveResearchState(path.resolve("."));
+  const temporary = mkdtempSync(path.join(tmpdir(), "parano1d-v2-baseline-"));
+  let state: ReturnType<typeof deriveResearchState>;
+  try {
+    cpSync(path.resolve("catalog"), path.join(temporary, "catalog"), { recursive: true });
+    cpSync(path.resolve("evidence"), path.join(temporary, "evidence"), { recursive: true });
+    state = deriveResearchState(temporary);
+  } finally {
+    rmSync(temporary, { recursive: true, force: true });
+  }
   const claims = new Map(state.claims.map((claim) => [claim.id, claim]));
   for (const id of ["v2-retirement-correspondence", "v2-compiler-correspondence", "v2-production-correspondence"]) {
     const claim = claims.get(id)!;
@@ -79,6 +88,57 @@ test("scoped v2 source evidence preserves open compiler conditions and numerical
     assert.deepEqual(metric, baseline.effects.flatMap((effect) => effect.metrics).find((candidate) => candidate.id === metric.id));
   }
   assert.ok(state.records.filter((record) => record.id.startsWith("official-v2-") && record.acceptedAt.startsWith("2026-10-08")).every((record) => record.recordType === "official-baseline"));
+});
+
+test("a reviewed v2 response upper bound preserves the resource premise and Category 1 accounting", () => {
+  const temporary = mkdtempSync(path.join(tmpdir(), "parano1d-v2-response-upper-"));
+  try {
+    cpSync(path.resolve("catalog"), path.join(temporary, "catalog"), { recursive: true });
+    cpSync(path.resolve("evidence"), path.join(temporary, "evidence"), { recursive: true });
+    const baseline = deriveResearchState(temporary);
+    mkdirSync(path.join(temporary, "ledger/accepted"), { recursive: true });
+    writeFileSync(path.join(temporary, "ledger/accepted/response-upper-test.json"), JSON.stringify({
+      schemaVersion: 1,
+      id: "response-upper-test",
+      recordType: "accepted-submission",
+      trackId: "coherent-response-attack",
+      acceptedAt: "2026-10-09T12:00:00.000Z",
+      title: "Test reviewed scalar response construction",
+      note: "A test fixture for an accepted complete construction under the frozen reversible cost model.",
+      attribution: { mode: "human" },
+      source: {
+        repository: "example/research",
+        commit: "0123456789abcdef0123456789abcdef01234567",
+        url: "https://github.com/example/research/pull/1",
+        authorLogin: "researcher",
+        authorUrl: "https://github.com/researcher",
+        avatarUrl: "https://avatars.githubusercontent.com/researcher",
+        pullRequest: 1
+      },
+      verification: {
+        verifier: "test-review",
+        verifierVersion: "1.0.0",
+        resultDigest: "0".repeat(64),
+        status: "accepted"
+      },
+      effects: [{
+        claimId: "v2-coherent-response-minimum",
+        status: "premise",
+        metrics: [{ id: "coherent-response.gate-depth", label: "Complete construction upper bound", value: "1810324758840", unit: "logical gate-depth", kind: "upper-bound", scope: "Complete scalar response in the frozen reversible cost model." }]
+      }]
+    }));
+    const state = deriveResearchState(temporary);
+    const claim = state.claims.find((item) => item.id === "v2-coherent-response-minimum")!;
+    assert.equal(claim.status, "premise");
+    assert.deepEqual(claim.evidenceIds, ["response-upper-test"]);
+    assert.equal(claim.metrics.find((metric) => metric.id === "coherent-response.gate-depth")?.value, "1810324758840");
+    assert.deepEqual(state.metrics, baseline.metrics);
+    assert.deepEqual(state.conclusion, baseline.conclusion);
+    const model = FRONTIER_MODELS.find((item) => item.id === "coherent-response")!;
+    assert.equal(buildFrontier(state.records, model).upper, Math.log2(1810324758840));
+  } finally {
+    rmSync(temporary, { recursive: true, force: true });
+  }
 });
 
 test("Poseidon2b work factors remain separated by exact attack game", () => {

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "id": "run-2bd330bd9639482f99288b6432b0383e-ca467e57ca37",
+  "submissionId": "run-2bd330bd9639482f99288b6432b0383e",
+  "trackId": "coherent-response-attack",
+  "reviewedFinding": "supports",
+  "acceptedAt": "2026-10-09T22:42:22.195Z",
+  "verificationCheckedAt": "2026-10-09T22:42:22.195Z",
+  "verificationResultDigest": "83fabee9cf7917040f62407d64415a5bac29d1b9677f1b917ccf249992724d9c",
+  "note": "AI-assisted maintainer review authorized by Ignotus. Checked production 50d6dac5a37b9f1be425b5e6cd823de48f843b50 and the exact clean scalar XOR model: CNOT, one-qubit Clifford/T, all-to-all connectivity, zero initial ancillas and disjoint wires per layer. The paid 128-CNOT copy makes the x4 square and x3 multiply branches disjoint; reversing the complete computation cleans all workspaces. A separate Codex agent independently checked equivalence, scheduling, cleanup and integer accounting. Recomputed 100256120 gates, depth 18057, width 21799732 and product 1810324758840, a 9.86100385064982% improvement. The four passive files match the reviewed bytes; 41 trusted certificate tests passed. Accepted effect: lower the constructive scalar gate-depth upper bound. The declared minimum resource price and current Category 1 accounting retain their values; the resource claim retains premise status.",
+  "context": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "ca467e57ca37492f7094d1ca0c8afd100226575a",
+    "actor": "noid-network",
+    "pullRequest": 20,
+    "researcher": {
+      "identityProvider": "noid.network",
+      "id": "1000000000000000014",
+      "login": "parano1cparano1d",
+      "profileUrl": "https://noid.network/members/parano1cparano1d",
+      "avatarUrl": "https://noid.network/api/avatars/1000000000000000014",
+      "delegation": {
+        "issuer": "noid.network",
+        "keyId": "noid-network-2026-02",
+        "runId": "2bd330bd-9639-482f-9928-8b6432b0383e"
+      }
+    }
+  },
+  "attestation": {
+    "schemaVersion": 2,
+    "issuer": "noid.network",
+    "keyId": "noid-network-review-2026-02",
+    "repository": "ignotusnemo/parano1d-soundness",
+    "runId": "2bd330bd-9639-482f-9928-8b6432b0383e",
+    "submissionId": "run-2bd330bd9639482f99288b6432b0383e",
+    "sourceCommit": "ca467e57ca37492f7094d1ca0c8afd100226575a",
+    "issuedAt": "2026-10-09T22:42:22.195Z",
+    "reviewer": {
+      "identityProvider": "noid.network",
+      "id": "270571917",
+      "login": "ignotusnemo"
+    },
+    "decisionDigest": "3dfac53331e896a522d2feb6b663656a6118b386df19e0203d1f3cb7a5a0a892",
+    "signature": "yq7_vU6zHSnAYmJEV9d_zfHw_Bk6WPWfIdDa9Xw2MMaCvVrnZ4omAOcr0jutnk44vMEXIh0xpf2WIZ2MWVU5BA"
+  },
+  "reviewers": [],
+  "effects": [
+    {
+      "claimId": "v2-coherent-response-minimum",
+      "status": "premise",
+      "metrics": [
+        {
+          "id": "coherent-response.gate-depth",
+          "label": "Coherent Response Gate Depth",
+          "value": "1810324758840",
+          "unit": "logical gate-depth",
+          "kind": "upper-bound",
+          "scope": "V2 coherent response circuit challenge: 2bd330bd; reviewed against the frozen coherent-response-attack contract."
+        }
+      ]
+    }
+  ]
+}

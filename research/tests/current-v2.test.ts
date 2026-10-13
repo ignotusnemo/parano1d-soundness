@@ -6,11 +6,35 @@ import path from "node:path";
 import test from "node:test";
 import { loadCatalog, loadTrack } from "@/lib/catalog";
 import { createChallengeSubmission } from "@/lib/challenge";
+import { deriveResearchState } from "@/lib/derive";
 import { buildFrontier, FRONTIER_MODELS } from "@/lib/frontier";
 import { verifySubmission } from "@/lib/verifier";
-import { readV2Inputs, readV2ObservationCache, writeV2ObservationCache, V2_CERTIFICATE_REVISION } from "@/lib/v2-certificate-runner";
+import { readV2Inputs, readV2ObservationCache, writeV2ObservationCache, v2PoseidonObservation, V2_CERTIFICATE_REVISION } from "@/lib/v2-certificate-runner";
 
 const root = path.resolve(".");
+
+test("current v2 matrix audit evidence authenticates the exact component reproduction", () => {
+  const state = deriveResearchState(root);
+  const claim = state.claims.find((item) => item.id === "v2-poseidon2b-classical-audit")!;
+  const record = state.records.find((item) => item.id === "official-v2-poseidon2b-matrix-audit-20261010")!;
+  const report = readFileSync(path.join(root, "evidence/artifacts/2026-10-10/poseidon2b-nonlinear-subspace-exact.txt"));
+  const track = loadTrack(root, "poseidon2b-nonlinear-subspace-reproduction");
+  assert.equal(claim.status, "verified");
+  assert.equal(claim.initialStatus, "under-review");
+  assert.deepEqual(claim.evidenceIds, [record.id]);
+  assert.equal(record.verification.verifierVersion, V2_CERTIFICATE_REVISION);
+  assert.equal(record.verification.resultDigest, createHash("sha256").update(report).digest("hex"));
+  assert.deepEqual(v2PoseidonObservation(report.toString(), V2_CERTIFICATE_REVISION), track.expected);
+  assert.deepEqual(record.effects, [{ claimId: claim.id, status: "verified", metrics: [] }]);
+  const projections = JSON.parse(readFileSync(path.join(root, "evidence/artifacts/2026-10-10/projection-cross-check.json"), "utf8"));
+  assert.equal(projections.productionCommit, V2_CERTIFICATE_REVISION);
+  assert.equal(projections.reportSha256, record.verification.resultDigest);
+  assert.equal(projections.projections.length, 4);
+  for (const projection of projections.projections) {
+    assert.equal(BigInt(projection.macaulayDimension) ** 2n, BigInt(projection.quadraticProjection));
+    assert.ok(report.includes(`Macaulay matrix dimension exact: ${projection.macaulayDimension}\n`));
+  }
+});
 
 test("all active work targets the current v2 certificate and distinct claims", () => {
   const tracks = loadCatalog(root).tracks.filter((track) => track.state === "active" && track.id !== "official-certificate");

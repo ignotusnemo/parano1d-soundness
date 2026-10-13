@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "type": "compositional-scalar-schedule-v1",
+  "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "relation": "clean fixed-register scalar XOR of pi_0(P(s))",
+  "model": "exact unitary CNOT / one-qubit Clifford / T; all-to-all; zero ancillas; no measurements",
+  "sboxStages": [
+    {
+      "operation": "input-preserving square x to x2",
+      "gateUpper": "32768",
+      "depthUpper": "16"
+    },
+    {
+      "operation": "128 disjoint CNOTs x2 to fresh c",
+      "gateCount": "128",
+      "depthCount": "1"
+    },
+    {
+      "operation": "parallel disjoint square(c) and reduced multiply(x,x2)",
+      "gateUpper": "82299",
+      "depthUpper": "49"
+    },
+    {
+      "operation": "reduced multiply(x3,x4)",
+      "gateUpper": "49531",
+      "depthUpper": "49"
+    }
+  ],
+  "sboxUpper": {
+    "gates": "164726",
+    "depth": "115",
+    "additionalWires": "45762"
+  },
+  "inventory": {
+    "sboxes": "90",
+    "rounds": "66",
+    "matrixLayers": "67",
+    "basisMaps": "5",
+    "constantGateUpper": "11520",
+    "outputCopyGates": "128"
+  },
+  "forwardUpper": {
+    "gates": "50127996",
+    "depth": "9028"
+  },
+  "completeUpper": {
+    "gates": "100256120",
+    "depth": "18057",
+    "gateDepth": "1810324758840",
+    "totalWires": "21799732",
+    "zeroAncillas": "21799092"
+  },
+  "metric": {
+    "id": "coherent-response.gate-depth",
+    "value": "1810324758840",
+    "unit": "logical gate-depth",
+    "kind": "upper-bound"
+  },
+  "limitations": "Compositional construction requiring independent review; no universal minimum or batch price conclusion."
+}
