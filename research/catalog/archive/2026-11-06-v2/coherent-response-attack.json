@@ -1,0 +1,50 @@
+{
+  "id": "coherent-response-attack",
+  "title": "V2 coherent response circuit challenge",
+  "description": "Test the exact scalar and batch resource-price premises used by the v2 joint-bank calculator with cheaper coherent constructions, universal lower bounds or resource-model corrections.",
+  "kind": "attack",
+  "direction": "bidirectional",
+  "targetClaimId": "v2-coherent-response-minimum",
+  "contractVersion": "2.0.0",
+  "validator": "manual-audit",
+  "state": "active",
+  "acceptance": "The submission must bind to the exact production response relation and declared reversible cost model. Schema and source pins are checked automatically. The authenticated noid.network maintainer reviews equivalence and resource accounting and signs the final decision. Inconclusive results have no effects. External reviews retain their contract approval policy.",
+  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/coherent-response-minimum-v2.0.0.md",
+  "reviewPolicy": {
+    "minimumApprovals": 2,
+    "minimumIndependentApprovals": 1,
+    "maintainerLogins": [
+      "ignotusnemo"
+    ],
+    "statusRules": {
+      "supports": [
+        "premise",
+        "proved"
+      ],
+      "challenges": [
+        "premise",
+        "refuted"
+      ]
+    },
+    "metricRules": [
+      {
+        "id": "coherent-response.gate-depth",
+        "kind": "upper-bound",
+        "direction": "minimize",
+        "unit": "logical gate-depth",
+        "valueFormat": "non-negative-integer"
+      },
+      {
+        "id": "coherent-response.minimum-gate-depth-lower",
+        "kind": "lower-bound",
+        "direction": "maximize",
+        "unit": "logical gate-depth",
+        "valueFormat": "non-negative-integer"
+      }
+    ]
+  },
+  "expected": {
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50"
+  }
+}

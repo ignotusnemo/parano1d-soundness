@@ -6,7 +6,7 @@ The service at [noid.network](https://noid.network/) prepares submissions and re
 
 ## Verify the research layer
 
-All active tasks use the integrated v2.0.3 certificate and production source at `50d6dac5a37b9f1be425b5e6cd823de48f843b50`. Follow [`certificates/README.md`](certificates/README.md) to obtain that complete checkout and configure `PARANO1D_PRODUCTION_DIR` before running reproductions or the trusted suite. Current exact joint-bank results and authenticated inputs are recorded in `evidence/artifacts/2026-10-08/`. The standalone historical calculator remains available only for replaying earlier accepted work.
+Active tasks target Parano1d v2.1.0 at `848209d5db75137483cb41a94b310ad11463473f`. The joint-ancestry certificate implementation is pinned separately to `7ead11a3afb452fb14eea505cfa913ce20a87f9a` in this repository. The component Poseidon2b reproduction uses the integrated calculator at the production pin. Follow [`certificates/README.md`](certificates/README.md). The current exact report and native replay receipts are in `evidence/artifacts/2026-11-06/`. Earlier calculators remain available for explicit historical replay.
 
 Active challenges use renewed versioned contracts. `catalog/archive/` retains preceding source pins and reproduction values for explicit accepted-ledger replay. New submissions must use the active contract and cannot present an old certificate as a reproduction of the new one. Earlier reviews remain evidence about their original revisions. Response-circuit costs are not end-to-end security bits; the conditional Category 1 probability envelope is also distinct from its dominant-term gate-depth floor.
 

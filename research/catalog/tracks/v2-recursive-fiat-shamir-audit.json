@@ -1,18 +1,18 @@
 {
   "id": "v2-recursive-fiat-shamir-audit",
-  "title": "V2 recursive Fiat-Shamir audit",
-  "description": "Investigate the September recursive Fiat-Shamir question in the fixed v2 bank. Map one adversarial choice to a transcript binding or a concrete self-reference surface, with exact production reachability.",
+  "title": "V2.1 recursive Fiat-Shamir audit",
+  "description": "Resolve a precise v2.1 native-to-ideal compiler obligation, including arithmetized child correspondence, transcript reconstruction and quantum extractor access in one coupled experiment.",
   "kind": "audit",
   "direction": "non-ranked",
-  "targetClaimId": "v2-compiler-correspondence",
-  "contractVersion": "1.0.0",
+  "targetClaimId": "v21-compiler-correspondence",
+  "contractVersion": "2.0.0",
   "validator": "manual-audit",
   "state": "active",
   "acceptance": "Exact source pins and passive file digests are checked automatically. A scoped source-to-model result requires semantic review and a signed maintainer decision. Repeated baselines, paper summaries and arbitrary helper inputs do not qualify. Inconclusive results cannot change claims or bounds.",
-  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/v2-recursive-fiat-shamir-audit-v1.0.0.md",
+  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/v2-recursive-fiat-shamir-audit-v2.0.0.md",
   "expected": {
-    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
-    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50"
+    "productionCommit": "848209d5db75137483cb41a94b310ad11463473f",
+    "certificateCommit": "7ead11a3afb452fb14eea505cfa913ce20a87f9a"
   },
   "reviewPolicy": {
     "minimumApprovals": 2,

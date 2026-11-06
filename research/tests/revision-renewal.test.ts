@@ -29,8 +29,8 @@ test("the renewed official record matches protected execution and preserves the 
   const state = deriveResearchState(root);
   assert.equal(state.productionRevision, PRODUCTION_REVISION);
   assert.equal(state.certificateRevision, CERTIFICATE_REVISION);
-  assert.equal(state.metrics.find((metric) => metric.id === "v2.category-one.gate-depth-floor")?.value, "173.3897612554174");
-  assert.equal(state.metrics.find((metric) => metric.id === "v2.category-one.ideal-envelope")?.value, loadTrack(root, "certificate-reproduction").expected?.categoryOneIdealEnvelope);
+  assert.equal(state.metrics.find((metric) => metric.id === "v21.category-one.gate-depth-floor")?.value, "173.3897612554174");
+  assert.equal(state.metrics.find((metric) => metric.id === "v21.category-one.ideal-envelope")?.value, loadTrack(root, "certificate-reproduction").expected?.categoryOneIdealEnvelope);
 });
 
 test("old reproduction contracts are replayable but cannot stand in for the current certificate", () => {
@@ -63,7 +63,7 @@ test("archived manual review contracts retain their original source pair", () =>
     const archived = loadVerificationTrack(root, id, "1.0.0", true);
     assert.equal(current.expected?.productionCommit, PRODUCTION_REVISION);
     assert.equal(current.expected?.certificateCommit, CERTIFICATE_REVISION);
-    assert.ok(current.targetClaimId.startsWith("v2-"));
+    assert.ok(current.targetClaimId.startsWith("v21-"));
     assert.notEqual(archived.targetClaimId, current.targetClaimId);
     assert.equal(archived.expected?.productionCommit, "fedbe6e3c0ddf8b8372546017bb9bc341acb8ab0");
     assert.equal(archived.expected?.certificateCommit, "c3ea3342fbe27111c84046613010f14f13b917c6");

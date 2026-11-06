@@ -30,7 +30,8 @@ function publicRecords(root: string, records: EvidenceRecord[]): PublicEvidenceR
   return records.map((record) => {
     const decision = decisions.get(record.id);
     if (!decision) return record;
-    const submitted = manualAuditPayloadSchema.parse(loadSubmission(path.join(root, "submissions", decision.submissionId)).payload).finding;
+    const payload = manualAuditPayloadSchema.parse(loadSubmission(path.join(root, "submissions", decision.submissionId)).payload);
+    const submitted = payload.finding;
     const reviewers = [
       ...(decision.attestation ? [{
         login: decision.attestation.reviewer.login,
@@ -44,6 +45,7 @@ function publicRecords(root: string, records: EvidenceRecord[]): PublicEvidenceR
     return {
       ...record,
       review: {
+        targetClaimId: payload.affectedClaimId,
         finalFinding: decision.reviewedFinding ?? submitted,
         note: decision.note,
         reviewers
@@ -266,11 +268,11 @@ function modelLeaderboard(records: EvidenceRecord[], tracks: TrackDefinition[]):
 export function deriveResearchState(root: string): ResearchState {
   const catalog = loadCatalog(root);
   const claims = deriveClaims(catalog.records, catalog.claims);
-  const conclusion = claims.find((claim) => claim.id === "v2-joint-bank-accounting");
+  const conclusion = claims.find((claim) => claim.id === "v21-joint-bank-accounting");
   if (!conclusion) throw new Error("missing production conclusion claim");
   const headlineMetricIds = [
-    "v2.category-one.gate-depth-floor",
-    "v2.category-one.ideal-envelope",
+    "v21.category-one.gate-depth-floor",
+    "v21.category-one.ideal-envelope",
   ];
   const allMetrics = claims.flatMap((claim) => claim.metrics);
   const metrics = headlineMetricIds.map((id) => allMetrics.find((metric) => metric.id === id)).filter((metric) => metric !== undefined);

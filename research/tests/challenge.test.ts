@@ -92,7 +92,7 @@ test("the nonlinear-subspace reproduction is machine checked and promoted withou
     assert.equal(result.observed.poseidonNonlinearRankCore, "0000000000000000000000000000be32");
     assert.equal(result.observed.poseidonNonlinearProjectionBits, "1022.830074998558");
     const record = evidenceFromAcceptedResult(loadSubmission(destination), result);
-    assert.deepEqual(record.effects, [{ claimId: "v2-poseidon2b-classical-audit", status: "verified", metrics: [] }]);
+    assert.deepEqual(record.effects, [{ claimId: "v21-poseidon2b-classical-audit", status: "verified", metrics: [] }]);
     assert.equal(record.source.authorLogin, "ignotusnemo");
   } finally {
     rmSync(temporary, { recursive: true, force: true });
@@ -104,11 +104,11 @@ function productionImpactArtifact() {
     schemaVersion: 1,
     artifactType: "poseidon2b-production-impact-v1",
     finding: "challenges",
-    productionCommit: "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    productionCommit: "848209d5db75137483cb41a94b310ad11463473f",
     game: "poseidon2b.compression-collision-work-bits",
     productionPath: {
       entryPoints: ["noid_ivc_core::merkle::hash_pair"],
-      sourceLocations: ["https://github.com/ignotusnemo/parano1d/blob/50d6dac5a37b9f1be425b5e6cd823de48f843b50/noid_ivc_core/src/merkle.rs"],
+      sourceLocations: ["https://github.com/ignotusnemo/parano1d/blob/848209d5db75137483cb41a94b310ad11463473f/noid_ivc_core/src/merkle.rs"],
       validInputDerivation: "Both colliding child digests are derived from complete valid production leaf encodings and lower node evaluations at the pinned commit, with every intermediate digest included in the witness.",
       observedEffect: "The independently replayed valid production artifacts contain different committed data but produce the same accepted PCS root at the exact verifier entry point named above."
     },

@@ -535,5 +535,271 @@
         "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/e5643292e4de1ef16ee80c61f06c7c483d4b1358/docs/v2-poseidon2b-matrix-audit-2026-10-10.md"
       }
     ]
+  },
+  {
+    "id": "v21-joint-bank-accounting",
+    "title": "Mainnet v2.1 joint-bank soundness accounting",
+    "statement": "The exact v2.1 calculation covers three current classes and retains all earlier ancestry. Its 26 typed events preserve the dominant work floor 173.3897612554174 descriptive bits and ideal Category 1 envelope approximately 0.04937388373372754.",
+    "scope": "Parano1d v2.1.0 mainnet bank 6c280ae8 at height 279370. Verified conditional arithmetic under source-linked extraction, RS-specific grouped agreement, coupled all-root compilation, fixed-Poseidon2b deviation, honest preprocessing and response-price conditions.",
+    "initialStatus": "under-review",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "v21-coherent-response-minimum",
+        "role": "premise",
+        "note": "The existing scalar and batch resource prices remain declared conditions."
+      },
+      {
+        "claimId": "v21-compiler-correspondence",
+        "role": "premise",
+        "note": "The selected-parent and transcript source bindings are verified within their declared local hypotheses. Complete adaptive compiler closure remains in the all-root and fixed-hash conditions."
+      },
+      {
+        "claimId": "v21-retirement-correspondence",
+        "role": "premise",
+        "note": "Both release preprocessing keys and complete origin request bindings are verified; the underlying local algebraic, commitment and extraction conditions remain explicit."
+      },
+      {
+        "claimId": "v21-all-root-composition",
+        "role": "premise",
+        "note": "The v2 typed inventory retains ancestry and uses the existing all-root lifting once."
+      },
+      {
+        "claimId": "v21-fixed-poseidon2b-delta",
+        "role": "premise",
+        "note": "Use the v2 event-specific headroom, not the different legacy profile threshold."
+      },
+      {
+        "claimId": "v21-production-correspondence",
+        "role": "premise",
+        "note": "The snapshot admission and installation path is verified. Other production acceptance paths remain distinct correspondence targets."
+      },
+      {
+        "claimId": "sequential-ideal-qrom",
+        "role": "context",
+        "note": "The current inventory applies the existing ideal-QROM lifting once. This context link does not transfer the historical numerical query cap."
+      },
+      {
+        "claimId": "typed-parallel-qrom",
+        "role": "context",
+        "note": "The current accounting specializes the existing typed resource framework to its own inventory and prices. The v1 numerical bound remains historical."
+      },
+      {
+        "claimId": "v21-rs-grouped-agreement",
+        "role": "premise",
+        "note": "RS-specific grouped agreement is required in addition to the numerical candidate-list envelope."
+      }
+    ],
+    "sources": [
+      {
+        "label": "V2.1 exact derivation and conditions",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/v2.1-certificate.md"
+      },
+      {
+        "label": "October 2026 full-month review",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      }
+    ]
+  },
+  {
+    "id": "v21-retirement-correspondence",
+    "title": "V2.1 preprocessing and retirement binding",
+    "statement": "Authenticated preprocessing keys, runtime metadata and matrix identities correspond to their declared relations throughout the legacy, v2 and v2.1 ancestry boundaries.",
+    "scope": "Pinned v2.1.0 production and its retained historical preprocessing obligations. Public setup is honest and independently authenticated. Scope includes matrix selection and the authorization transition.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "local-rbr-extraction",
+        "role": "context",
+        "note": "Sparse openings reuse the C1/BaseFold local-bound framework. This link does not discharge honest preprocessing or current request bindings."
+      }
+    ],
+    "sources": [
+      {
+        "label": "V2.1 exact derivation and conditions",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/v2.1-certificate.md"
+      },
+      {
+        "label": "October 2026 full-month review",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      }
+    ]
+  },
+  {
+    "id": "v21-compiler-correspondence",
+    "title": "V2.1 selected-parent transcript correspondence",
+    "statement": "One coupled compiler relates native Fiat-Shamir verification and arithmetized children to ideal records, local extraction and accepted roots in the same adaptive experiment.",
+    "scope": "Parano1d v2.1.0. Transcript reconstruction, persistent simulator state, child idealization and quantum oracle access must meet the precise extractor interface.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "adaptive-all-root-qrom",
+        "role": "context",
+        "note": "The existing theorem framework supplies the extraction and binding requirements to be checked for the current concrete recursive relation."
+      }
+    ],
+    "sources": [
+      {
+        "label": "V2.1 exact derivation and conditions",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/v2.1-certificate.md"
+      },
+      {
+        "label": "October 2026 full-month review",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      }
+    ]
+  },
+  {
+    "id": "v21-all-root-composition",
+    "title": "V2.1 all-root composition condition",
+    "statement": "A complete coupled all-root argument covers authorization, legacy History, v2 History, all three v2.1 classes and sparse retirement under one total charged adversarial budget.",
+    "scope": "Source-linked v2.1.0 with shared oracle history, adaptive scheduling, recognized child relations and a decreasing-height ancestry worklist. The compiler and local extraction conditions apply jointly.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "adaptive-all-root-qrom",
+        "role": "context",
+        "note": "The v2 extension uses the existing all-root theorem framework with an expanded inventory. This context is not a completed proof of the current specialization."
+      }
+    ],
+    "sources": [
+      {
+        "label": "V2.1 exact derivation and conditions",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/v2.1-certificate.md"
+      },
+      {
+        "label": "October 2026 full-month review",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      }
+    ]
+  },
+  {
+    "id": "v21-fixed-poseidon2b-delta",
+    "title": "V2.1 fixed Poseidon2b deviation condition",
+    "statement": "The event-specific deviation between the fixed Poseidon2b implementation and the declared ideal game stays below the exact v2.1 certificate headroom.",
+    "scope": "Pinned v2.1.0. The interface includes canonical framing, domain tags, both digest lanes, feed-forward, primitive access and all charged adversarial preprocessing. Free oracle-dependent advice requires a separately quantified model.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "fixed-poseidon2b-delta",
+        "role": "context",
+        "note": "The fixed-hash production condition is retained with the current v2 event and its own exact headroom. The historical threshold is not substituted."
+      }
+    ],
+    "sources": [
+      {
+        "label": "V2.1 exact derivation and conditions",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/v2.1-certificate.md"
+      },
+      {
+        "label": "October 2026 full-month review",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      }
+    ]
+  },
+  {
+    "id": "v21-production-correspondence",
+    "title": "V2.1 authenticated snapshot correspondence",
+    "statement": "The source-pinned native acceptance paths implement the declared v2.1 relations, selected context and trusted State transitions.",
+    "scope": "Parano1d v2.1.0 source 848209d5, including activation, three-class bank selection, authorization, ancestry, snapshot admission, reorgs and durable installation. Each result names its exact covered path.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "current-production-correspondence",
+        "role": "context",
+        "note": "The earlier source-mapped audit is historical evidence and an audit reference. It does not establish correspondence for the current v2 revision."
+      }
+    ],
+    "sources": [
+      {
+        "label": "V2.1 exact derivation and conditions",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/v2.1-certificate.md"
+      },
+      {
+        "label": "October 2026 full-month review",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      }
+    ]
+  },
+  {
+    "id": "v21-coherent-response-minimum",
+    "title": "V2.1 coherent response cost premise",
+    "statement": "Every permitted scalar and batched coherent response circuit meets the lower gate and gate-depth charges used by the v2.1 resource envelope.",
+    "scope": "Current v2.1.0 response relation in the declared logical cost model. Minimum scalar support and all verification queries are included in the shared budget.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "coherent-response-minimum",
+        "role": "context",
+        "note": "The existing scalar and batch price conditions are retained for the current response interfaces and inventory."
+      },
+      {
+        "claimId": "coherent-response-schedule",
+        "role": "context",
+        "note": "The published coherent construction is component evidence. Its upper bound does not establish the declared minimum prices."
+      }
+    ],
+    "sources": [
+      {
+        "label": "V2.1 exact derivation and conditions",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/v2.1-certificate.md"
+      },
+      {
+        "label": "October 2026 full-month review",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      }
+    ]
+  },
+  {
+    "id": "v21-poseidon2b-classical-audit",
+    "title": "V2.1 Poseidon2b nonlinear-subspace audit",
+    "statement": "The source-linked v2.1.0 Poseidon2b implementation reproduces the exact nonlinear-subspace rank core, trail lengths and semi-regular Macaulay projections.",
+    "scope": "Component arithmetic at production 848209d5. Fixed-permutation event security and end-to-end resource charges are separate conditions.",
+    "initialStatus": "under-review",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "poseidon2b-classical-audit",
+        "role": "context",
+        "note": "The current component reproduction supplements the published cryptanalysis. Their distinct attack games and source scopes remain explicit."
+      }
+    ],
+    "sources": [
+      {
+        "label": "V2.1 exact derivation and conditions",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/v2.1-certificate.md"
+      },
+      {
+        "label": "October 2026 full-month review",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      }
+    ]
+  },
+  {
+    "id": "v21-rs-grouped-agreement",
+    "title": "V2.1 RS grouped agreement and restoration",
+    "statement": "The RS-specific grouped common-agreement and source-restoration theorem applies at the exact selected radii, finite domains, fold schedule and candidate convention.",
+    "scope": "Binary-field authorization at agreement 1/5 and rate 1/32, plus rate-1/4 History and sparse-opening families above their finite Johnson agreement thresholds. List size and shared agreement have separate hypotheses.",
+    "initialStatus": "premise",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "local-rbr-extraction",
+        "role": "context",
+        "note": "Instantiate the required grouped agreement and restoration statement for each typed family."
+      }
+    ],
+    "sources": [
+      {
+        "label": "October binary-field and MCA review",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      }
+    ]
   }
 ]

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "official-v21-poseidon2b-matrix-audit-20261106",
+  "recordType": "official-baseline",
+  "trackId": "official-certificate",
+  "acceptedAt": "2026-11-06T21:40:00.000Z",
+  "title": "V2.1 Poseidon2b exact component audit reproduced",
+  "note": "The integrated noid_soundness calculator was built in release mode with locked dependencies from the exact published v2.1.0 source. Its full nonlinear-subspace section matches SHA-256 9d470579d6275b56a6938db5e87c7d331e7804cc12db45b68625fe0f24dbdc6f, preserving the nonzero rank core, two- and four-round trails and all four exact Macaulay projections. The current native permutation and field arithmetic also match the previously audited source bytes. This verifies the source-linked component calculation in its stated semi-regular model.",
+  "attribution": {
+    "mode": "project"
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d",
+    "commit": "848209d5db75137483cb41a94b310ad11463473f",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d/src/commit/848209d5db75137483cb41a94b310ad11463473f/noid_soundness/src/poseidon2b_cryptanalysis.rs",
+    "authorLogin": "ignotusnemo",
+    "authorUrl": "https://noid.network/members/ignotusnemo",
+    "avatarUrl": "https://noid.network/api/avatars/ignotusnemo"
+  },
+  "verification": {
+    "verifier": "maintainer-source-reproduction",
+    "verifierVersion": "848209d5db75137483cb41a94b310ad11463473f",
+    "resultDigest": "9d470579d6275b56a6938db5e87c7d331e7804cc12db45b68625fe0f24dbdc6f",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "v21-poseidon2b-classical-audit",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}

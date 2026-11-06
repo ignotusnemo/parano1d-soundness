@@ -1,0 +1,33 @@
+{
+  "id": "production-correspondence-audit",
+  "title": "V2 production correspondence audit",
+  "description": "Audit a precise acceptance or trusted-State materialization path in v2.0.3 against the current integrated certificate, including activation, bank selection and recursive ancestry.",
+  "kind": "audit",
+  "direction": "non-ranked",
+  "targetClaimId": "v2-production-correspondence",
+  "contractVersion": "2.0.0",
+  "validator": "manual-audit",
+  "state": "active",
+  "acceptance": "The schema and source pin are checked automatically. The authenticated noid.network maintainer reviews the scoped correspondence result and signs the final decision before checked publication. Inconclusive audits have no claim or frontier effects. External reviews retain their contract approval policy.",
+  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/production-correspondence-v2.0.0.md",
+  "reviewPolicy": {
+    "minimumApprovals": 2,
+    "minimumIndependentApprovals": 1,
+    "maintainerLogins": [
+      "ignotusnemo"
+    ],
+    "statusRules": {
+      "supports": [
+        "verified"
+      ],
+      "challenges": [
+        "refuted"
+      ]
+    },
+    "metricRules": []
+  },
+  "expected": {
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50"
+  }
+}

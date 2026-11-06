@@ -1,3 +1,21 @@
+# Current v2.1 certificate
+
+The current joint-ancestry calculation covers the published v2.1.0 source at `848209d5db75137483cb41a94b310ad11463473f`. Its certificate implementation is pinned to `7ead11a3afb452fb14eea505cfa913ce20a87f9a` in this public repository. The [profile](v2.1.0/profile.json) authenticates the bank, metadata, three classes, V4 authorization configuration and retained exact historical report.
+
+From the repository root, run:
+
+```sh
+python3 research/tools/v21_certificate.py --json
+python3 research/tools/october_2026_checks.py
+python3 -m unittest discover -s research/tools -p 'test_*.py' -v
+```
+
+The calculator uses Python's standard library and runs no prover. To replay the production-native parameter extraction, use `python3 research/tools/replay_v21_profile.py --production /path/to/parano1d`. This additional step compiles trusted source with one worker and verifies its dependency lock. The [derivation](../../docs/v2.1-certificate.md) and [October review](../../docs/october-2026-security-review.md) state the conditions and research obligations.
+
+For research-verifier and accepted-ledger replay, set `PARANO1D_SOUNDNESS_DIR` to a complete Git checkout of this repository. Set `PARANO1D_PRODUCTION_DIR` to a complete production Git repository containing the current and archived source pins. The current joint calculator is exported from its fixed commit before execution. The current Poseidon2b task builds the integrated calculator from production `848209d5` and checks its exact component section. Archived v2 reproductions retain their original source and inputs.
+
+## Historical v2.0.3 replay
+
 # Current v2 certificate reproduction
 
 All active research tasks target Parano1d v2.0.3 at production and integrated certificate commit `50d6dac5a37b9f1be425b5e6cd823de48f843b50`. The current calculator is in the production repository, not the historical standalone crate in the root of this research workspace.

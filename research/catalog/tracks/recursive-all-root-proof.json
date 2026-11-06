@@ -1,15 +1,15 @@
 {
   "id": "recursive-all-root-proof",
-  "title": "V2 all-root composition review",
-  "description": "Review or formalize all-root composition for the current wallet, History and sparse-retirement inventory under one adversarial budget, including the v1-to-v2 ancestry boundary.",
+  "title": "V2.1 all-root composition review",
+  "description": "Formalize the coupled all-root compiler and RS-specific grouped agreement for v2.1 authorization, three current History classes, retained ancestry and sparse retirement under one total charged budget.",
   "kind": "proof",
   "direction": "non-ranked",
-  "targetClaimId": "v2-all-root-composition",
-  "contractVersion": "2.0.0",
+  "targetClaimId": "v21-all-root-composition",
+  "contractVersion": "3.0.0",
   "validator": "manual-audit",
   "state": "active",
   "acceptance": "The submission is source-pinned and schema-checked automatically. The authenticated noid.network maintainer reviews whether the argument supports or challenges the exact published theorem and signs the final decision before checked ledger promotion. External reviews retain their contract approval policy.",
-  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/adaptive-all-root-qrom-v2.0.0.md",
+  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/recursive-all-root-proof-v3.0.0.md",
   "reviewPolicy": {
     "minimumApprovals": 2,
     "minimumIndependentApprovals": 1,
@@ -21,19 +21,14 @@
         "proved"
       ],
       "challenges": [
+        "premise",
         "refuted"
       ]
     },
     "metricRules": []
   },
-  "legacyContractVersions": [
-    "1.0.0",
-    "1.1.0",
-    "1.2.0",
-    "1.3.0"
-  ],
   "expected": {
-    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
-    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50"
+    "productionCommit": "848209d5db75137483cb41a94b310ad11463473f",
+    "certificateCommit": "7ead11a3afb452fb14eea505cfa913ce20a87f9a"
   }
 }

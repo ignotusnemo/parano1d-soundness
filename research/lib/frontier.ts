@@ -106,15 +106,28 @@ export const FRONTIER_MODELS: FrontierModel[] = [
   },
   {
     id: "v2-category-one",
-    shortTitle: "Mainnet v2 C1",
-    title: "Mainnet v2 conditional Category 1 accounting",
-    description: "The current joint-bank calculation includes wallet, legacy History, v2 History and sparse retirement. The line is its dominant-term gate-depth floor under the declared composition, compiler, fixed-Poseidon2b, preprocessing and response-price conditions. The complete ideal envelope is about 0.04937388373372754. This separate v2 baseline does not replace or improve the legacy profile.",
+    shortTitle: "Historical v2 C1",
+    title: "Historical v2 conditional Category 1 accounting",
+    description: "The historical joint-bank calculation includes wallet, legacy History, v2 History and sparse retirement. The line is its dominant-term gate-depth floor under the declared composition, compiler, fixed-Poseidon2b, preprocessing and response-price conditions. The complete ideal envelope is about 0.04937388373372754. This separate v2 baseline does not replace or improve the legacy profile.",
     unit: "bits",
     axisLabel: "log2 logical gate-depth",
     lowerLabel: "Conditional dominant-term floor",
     upperLabel: "Concrete attack upper",
     lowerMetrics: [{ id: "v2.category-one.gate-depth-floor" }],
     upperMetrics: [{ id: "v2.category-one.attack-gate-depth-upper" }],
+    reference: { value: 170, label: "NIST Category 1 reference" }
+  },
+  {
+    id: "v21-category-one",
+    shortTitle: "Mainnet v2.1 C1",
+    title: "Mainnet v2.1 conditional Category 1 accounting",
+    description: "The exact v2.1 calculation covers Small, Large and Native with all retained ancestry, 26 typed events in total. Its dominant floor and ideal envelope are conditional on local extraction, RS-specific grouped agreement, coupled native/ideal compilation, fixed-Poseidon2b deviation, honest preprocessing and response prices. The separate current series preserves the exact prior numerical envelope.",
+    unit: "bits",
+    axisLabel: "log2 logical gate-depth",
+    lowerLabel: "Conditional dominant-term floor",
+    upperLabel: "Concrete attack upper",
+    lowerMetrics: [{ id: "v21.category-one.gate-depth-floor" }],
+    upperMetrics: [{ id: "v21.category-one.attack-gate-depth-upper" }],
     reference: { value: 170, label: "NIST Category 1 reference" }
   }
 ];

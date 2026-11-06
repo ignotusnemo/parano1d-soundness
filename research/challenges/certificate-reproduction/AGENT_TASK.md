@@ -1,19 +1,9 @@
-# Agent task: v2 certificate reproduction
+# Agent task: V2.1 certificate reproduction
 
-## Objective
+Read `contracts/certificate-reproduction-v3.0.0.md` and the complete source-pinned research workspace. The production source is `848209d5db75137483cb41a94b310ad11463473f`. The exact certificate implementation is `7ead11a3afb452fb14eea505cfa913ce20a87f9a` in `ignotusnemo/parano1d-soundness`.
 
-The target is the complete source-linked v2.0.3 joint-bank accounting report. It covers wallet, pre-activation History, v2 History and sparse retirement, using the authenticated mainnet bank and two pinned retirement keys.
+Run `python3 research/tools/v21_certificate.py --json` from the repository root. Authenticate the profile and input bytes, retain all twenty historical events, and check the six current events for Small, Large and Native. Compare every field of the exact output with the active frozen contract.
 
-## Pinned materials
+From `research`, prepare a passive submission with `npm run challenge -- setup --track certificate-reproduction --id my-reproduction`. Its only executable work is the trusted protected calculator. Submit `submission.json` with the exact generated source pair and payload. A reproduction adds an attributed evidence record with no frontier metric.
 
-Read `contracts/certificate-reproduction-v2.0.0.md` and `certificates/README.md`. Production and integrated certificate are pinned to `50d6dac5a37b9f1be425b5e6cd823de48f843b50` in `https://git.parano1d.org/ignotusnemo/parano1d`. Obtain the complete production checkout and inspect the relevant code before executing the protected reproduction. This research workspace supplies the frozen contract, verified input files and passive verifier.
-
-## Required result
-
-The protected runner verifies the SHA-256 and exact size of all four decompressed inputs, then the production calculator independently verifies their protocol digests and key identities. It checks the complete JSON report hash, activation height 210537, 20-event inventory, bank, runtime and key pins, sequential query cap, limiting event, descriptive gate-depth floor and 90-digit ideal-envelope ceiling.
-
-## Commands and output
-
-Set `PARANO1D_PRODUCTION_DIR` as documented in `certificates/README.md`. From the research directory, run `npm ci`, create a workspace with `npm run challenge -- setup --track certificate-reproduction --id <your-result> <your attribution options>`, then run `npm run challenge -- verify --submission <directory>`. Return the generated passive `submission.json` only after the local verifier returns `accepted`.
-
-Do not modify calculator sources, expected values, input files, contracts or verifier code. An altered field, source pin or input digest must fail. A matching result verifies conditional arithmetic and reproducibility. It does not independently regenerate the release matrices or prove honest preprocessing, all-root composition, the concrete compiler, fixed Poseidon2b deviation or universal response-cost minima. Those conditions have separate current v2 review tasks.
+Read `docs/v2.1-certificate.md` and `docs/october-2026-security-review.md` for the numerical result, conditions and source-replay instructions. The current aggregate calculator uses Python standard-library rational arithmetic. The separate Poseidon2b component task executes the integrated production Rust calculator.

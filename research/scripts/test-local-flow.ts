@@ -30,7 +30,7 @@ writeFileSync(
 const state = deriveResearchState(temporaryRoot);
 assert.equal(state.leaderboard.find((entry) => entry.login === "local-verifier")?.accepted, 1);
 assert.equal(state.modelLeaderboard.find((entry) => entry.displayName === "GPT-5")?.accepted, 1);
-assert.deepEqual(record.effects, [{ claimId: "v2-joint-bank-accounting", status: "verified", metrics: [] }]);
+assert.deepEqual(record.effects, [{ claimId: "v21-joint-bank-accounting", status: "verified", metrics: [] }]);
 assert.equal(state.conclusion.status, "verified");
 const invalid = verifySubmission({
   root: temporaryRoot,

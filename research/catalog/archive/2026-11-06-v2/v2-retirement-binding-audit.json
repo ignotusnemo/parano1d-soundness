@@ -1,0 +1,35 @@
+{
+  "id": "v2-retirement-binding-audit",
+  "title": "V2 sparse-retirement binding audit",
+  "description": "Trace one sparse-retirement obligation from the pinned canonical matrix and preprocessing key through the exact verifier request and legacy-to-v2 acceptance boundary. Establish a new binding result or a reachable mismatch.",
+  "kind": "audit",
+  "direction": "non-ranked",
+  "targetClaimId": "v2-retirement-correspondence",
+  "contractVersion": "1.0.0",
+  "validator": "manual-audit",
+  "state": "active",
+  "acceptance": "Exact source pins and passive file digests are checked automatically. A scoped source-to-model result requires semantic review and a signed maintainer decision. Repeated baselines, paper summaries and arbitrary helper inputs do not qualify. Inconclusive results cannot change claims or bounds.",
+  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/v2-retirement-binding-audit-v1.0.0.md",
+  "expected": {
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50"
+  },
+  "reviewPolicy": {
+    "minimumApprovals": 2,
+    "minimumIndependentApprovals": 1,
+    "maintainerLogins": [
+      "ignotusnemo"
+    ],
+    "statusRules": {
+      "supports": [
+        "verified",
+        "premise"
+      ],
+      "challenges": [
+        "refuted",
+        "premise"
+      ]
+    },
+    "metricRules": []
+  }
+}

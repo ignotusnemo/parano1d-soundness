@@ -13,6 +13,7 @@ import {
 } from "@/lib/schemas";
 import { runCertificate } from "@/lib/certificate-runner";
 import { runV2Certificate } from "@/lib/v2-certificate-runner";
+import { runV21Certificate } from "@/lib/v21-certificate-runner";
 import { CERTIFICATE_REVISION, PRODUCTION_REVISION } from "@/lib/pins";
 import type { SubmissionManifest, VerificationContext, VerificationResult } from "@/lib/types";
 import { DELEGATION_FILE_NAME, verifyServiceDelegation } from "@/lib/delegation";
@@ -134,7 +135,9 @@ export function verifySubmission(options: VerificationOptions): VerificationResu
     let observed: Record<string, string>;
     try {
       const profile = track.expected?.profile;
-      observed = profile === "mainnet-v2" || profile === "mainnet-v2-poseidon2b"
+      observed = profile === "mainnet-v21"
+        ? runV21Certificate(certificateDirectory, certificateCommit)
+        : profile === "mainnet-v2" || profile === "mainnet-v2-poseidon2b" || profile === "mainnet-v21-poseidon2b"
         ? runV2Certificate(options.root, certificateCommit, profile)
         : { ...runCertificate(certificateDirectory, certificateCommit) };
     } catch (error) {

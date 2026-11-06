@@ -6,7 +6,7 @@ Raise a proved universal lower bound for the minimum coherent production respons
 
 ## Pinned materials
 
-Use `contracts/coherent-response-minimum-v2.0.0.md`. Both production and certificate pins are `50d6dac5a37b9f1be425b5e6cd823de48f843b50` in `https://git.parano1d.org/ignotusnemo/parano1d`. Clone that complete production repository and inspect `noid_soundness/docs/v2-retirement.md`, `noid_soundness/src/v2.rs` and the relevant verifier paths. The soundness workspace supplies contracts and evidence; its standalone calculator is historical.
+Use `contracts/coherent-response-attack-v3.0.0.md`. Both production and certificate pins are `848209d5db75137483cb41a94b310ad11463473f` in `https://git.parano1d.org/ignotusnemo/parano1d`. Clone that complete production repository and inspect `noid_soundness/docs/v2-retirement.md`, `noid_soundness/src/v2.rs` and the relevant verifier paths. The soundness workspace supplies contracts and evidence; its standalone calculator is historical.
 
 ## Current frontier
 
@@ -22,9 +22,11 @@ A component circuit is not a response construction merely because it evaluates t
 
 ## Required output
 
-Read `contracts/coherent-response-minimum-v2.0.0.md`. Complete `report.md` and include exact resource counts, equivalence argument, commands and limitations. A passive circuit or witness may be included in `artifact.json`; larger source must be pinned to an immutable external commit. Only a reviewed exact construction can lower the upper frontier. Only a reviewed universal theorem can raise the lower frontier. A rigorous negative result can be accepted after review for attribution and reproducibility, but it has no claim or frontier effect.
+Read `contracts/coherent-response-attack-v3.0.0.md`. Complete `report.md` and include exact resource counts, equivalence argument, commands and limitations. A passive circuit or witness may be included in `artifact.json`; larger source must be pinned to an immutable external commit. Only a reviewed exact construction can lower the upper frontier. Only a reviewed universal theorem can raise the lower frontier. A rigorous negative result can be accepted after review for attribution and reproducibility, but it has no claim or frontier effect.
 
 
 ## Current target
 
-The target claim is `v2-coherent-response-minimum`. Read the complete v2 contract before analysis. For new submissions use contract `2.0.0` and the current source pair. Historical results remain attributable to their original profiles.
+The target claim is `v21-coherent-response-minimum`. Read the complete v2 contract before analysis. For new submissions use contract `2.0.0` and the current source pair. Historical results remain attributable to their original profiles.
+
+Current production: `848209d5db75137483cb41a94b310ad11463473f`. Current certificate: `7ead11a3afb452fb14eea505cfa913ce20a87f9a`. Use the exact fields generated from the active contract. Review the October conditions in `docs/october-2026-security-review.md`.

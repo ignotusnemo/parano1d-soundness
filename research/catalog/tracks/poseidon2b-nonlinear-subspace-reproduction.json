@@ -1,27 +1,23 @@
 {
   "id": "poseidon2b-nonlinear-subspace-reproduction",
-  "title": "V2 Poseidon2b nonlinear-subspace reproduction",
-  "description": "Reproduce the matrix rank, trail lengths and exact Macaulay projections from the Poseidon2b implementation shipped in v2.0.3. This is a component audit, not an end-to-end security bound.",
+  "title": "V2.1 Poseidon2b nonlinear-subspace reproduction",
+  "description": "Reproduce the exact nonlinear-subspace component audit from the Poseidon2b source shipped in v2.1.0, including rank, trails and Macaulay projections.",
   "kind": "reproduction",
   "direction": "non-ranked",
-  "targetClaimId": "v2-poseidon2b-classical-audit",
-  "contractVersion": "2.0.0",
+  "targetClaimId": "v21-poseidon2b-classical-audit",
+  "contractVersion": "3.0.0",
   "validator": "certificate-reproduction",
   "state": "active",
   "acceptance": "The trusted verifier archives the pinned production commit, builds the integrated calculator with locked release dependencies and compares its authenticated inputs and exact output with every frozen contract field. Contributor code is never executed.",
-  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/poseidon2b-nonlinear-subspace-reproduction-v2.0.0.md",
+  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/poseidon2b-nonlinear-subspace-reproduction-v3.0.0.md",
   "expected": {
-    "profile": "mainnet-v2-poseidon2b",
-    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
-    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "profile": "mainnet-v21-poseidon2b",
+    "certificateCommit": "848209d5db75137483cb41a94b310ad11463473f",
+    "productionCommit": "848209d5db75137483cb41a94b310ad11463473f",
     "reportSha256": "9d470579d6275b56a6938db5e87c7d331e7804cc12db45b68625fe0f24dbdc6f",
     "poseidonNonlinearRankCore": "0000000000000000000000000000be32",
     "poseidonLinearTrailRounds": "2",
     "poseidonNonlinearTrailRounds": "4",
     "poseidonNonlinearProjectionBits": "1022.830074998558"
-  },
-  "legacyContractVersions": [
-    "1.0.0",
-    "1.1.0"
-  ]
+  }
 }

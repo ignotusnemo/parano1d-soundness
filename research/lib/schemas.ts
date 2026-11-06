@@ -287,7 +287,25 @@ export const v2PoseidonReproductionPayloadSchema = z.object({
   poseidonNonlinearTrailRounds: z.string().regex(/^[0-9]+$/),
   poseidonNonlinearProjectionBits: z.string().regex(/^[0-9]+\.[0-9]{12}$/)
 }).strict();
-export const reproductionPayloadSchema = z.union([v2ReproductionPayloadSchema, v2PoseidonReproductionPayloadSchema, legacyReproductionPayloadSchema]);
+export const v21ReproductionPayloadSchema = z.object({
+  ...currentCertificateBase,
+  profile: z.literal("mainnet-v21"),
+  profileSha256: sha256,
+  bankDigest: sha256,
+  predecessorBankDigest: sha256,
+  legacyRuntimeDigest: sha256,
+  activationHeight: z.string().regex(/^[0-9]+$/),
+  classCount: z.string().regex(/^[0-9]+$/),
+  retainedEventCount: z.string().regex(/^[0-9]+$/),
+  addedEventCount: z.string().regex(/^[0-9]+$/),
+  eventCount: z.string().regex(/^[0-9]+$/),
+  categoryOneGateDepthBits: z.string().regex(/^[0-9]+\.[0-9]{1,16}$/),
+  categoryOneIdealEnvelope: z.string().regex(/^0\.[0-9]{90}$/),
+  sequentialLargestQueryCap: z.string().regex(/^[0-9]+$/),
+  limitingEvent: metricIdentifier
+}).strict();
+export const v21PoseidonReproductionPayloadSchema = v2PoseidonReproductionPayloadSchema.extend({ profile: z.literal("mainnet-v21-poseidon2b") });
+export const reproductionPayloadSchema = z.union([v21ReproductionPayloadSchema, v21PoseidonReproductionPayloadSchema, v2ReproductionPayloadSchema, v2PoseidonReproductionPayloadSchema, legacyReproductionPayloadSchema]);
 
 export const manualAuditPayloadSchema = z
   .object({

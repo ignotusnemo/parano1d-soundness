@@ -10,7 +10,7 @@
   "scripts": {
     "state": "tsx scripts/export-state.ts",
     "typecheck": "tsc --noEmit",
-    "pretest": "cargo --version",
+    "pretest": "cargo --version && python3 -m unittest discover -s tools -p 'test_*.py' -v",
     "test": "tsx --test tests/**/*.test.ts",
     "verify": "tsx scripts/verify-submission.ts",
     "verify:github-pr": "tsx scripts/verify-github-pr.ts",

@@ -1,14 +1,18 @@
 # Parano1d soundness certificate
 
+The current [v2.1 certificate](docs/v2.1-certificate.md) covers three proof classes and retained ancestry with 26 exact typed events. The [October 2026 security review](docs/october-2026-security-review.md) records the full-month literature analysis, native source replay, applicability checks and mathematical obligations. Current inputs and contracts are in [`research/`](research/README.md).
+
 This standalone repository instantiates the security analysis for a pinned Parano1d production proof profile. Cross-component invariants and security inequalities are evaluated with arbitrary-precision integer or rational arithmetic.
 
 The public claim graph, open research contracts, accepted evidence and contributor record are versioned in [`research/`](research/). The service at [noid.network](https://noid.network/) uses this public verification layer but is not part of the certificate or its acceptance boundary.
 
-All active research tasks target the current v2.0.3 production source and integrated certificate. Start with [the v2 reproduction instructions](research/certificates/README.md). The standalone calculator and numerical profile below retain the historical v1 snapshot for replay of accepted evidence; they are not active research targets.
+All active research tasks target the published v2.1.0 source and the separately pinned current certificate. Start with [the reproduction instructions](research/certificates/README.md). The standalone calculator and numerical profile below retain the historical v1 snapshot for replay of accepted evidence; they are not active research targets.
 
 Submission verification, the trusted certificate and research test suite, and accepted-evidence publication run on the noid.network application host against the [canonical Forgejo repository](https://git.parano1d.org/ignotusnemo/parano1d-soundness). GitHub serves as a source mirror. Local reproduction commands are documented below and in [`research/README.md`](research/README.md).
 
-The analysis inputs and production acceptance correspondence are pinned to Parano1d commit [`7f65daaae414128aa4377ca0ac1e96fd6dbc31a5`](https://github.com/ignotusnemo/parano1d/commit/7f65daaae414128aa4377ca0ac1e96fd6dbc31a5), including the analysis-only wallet Johnson refinement. The complete standalone snapshot is [`model/production.toml`](model/production.toml), and its repository-relative source-symbol and acceptance-path map is [`docs/parameter-provenance.md`](docs/parameter-provenance.md). The executable embeds this snapshot and does not import another checkout. A later production revision requires an explicit snapshot and provenance renewal.
+## Historical standalone profile
+
+The following standalone analysis inputs and acceptance correspondence are pinned to Parano1d commit [`7f65daaae414128aa4377ca0ac1e96fd6dbc31a5`](https://github.com/ignotusnemo/parano1d/commit/7f65daaae414128aa4377ca0ac1e96fd6dbc31a5), including the analysis-only wallet Johnson refinement. The complete standalone snapshot is [`model/production.toml`](model/production.toml), and its repository-relative source-symbol and acceptance-path map is [`docs/parameter-provenance.md`](docs/parameter-provenance.md). The executable embeds this snapshot and does not import another checkout. A later production revision requires an explicit snapshot and provenance renewal.
 
 The repository pins the same Rust `1.96.0` toolchain used by the source revision.
 

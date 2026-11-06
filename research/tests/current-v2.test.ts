@@ -4,11 +4,12 @@ import { cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:f
 import { tmpdir } from "node:os";
 import path from "node:path";
 import test from "node:test";
-import { loadCatalog, loadTrack } from "@/lib/catalog";
+import { loadCatalog, loadTrack, loadVerificationTrack } from "@/lib/catalog";
 import { createChallengeSubmission } from "@/lib/challenge";
 import { deriveResearchState } from "@/lib/derive";
 import { buildFrontier, FRONTIER_MODELS } from "@/lib/frontier";
 import { verifySubmission } from "@/lib/verifier";
+import { V21_CERTIFICATE_REVISION, V21_PRODUCTION_REVISION } from "@/lib/v21-certificate-runner";
 import { readV2Inputs, readV2ObservationCache, writeV2ObservationCache, v2PoseidonObservation, V2_CERTIFICATE_REVISION } from "@/lib/v2-certificate-runner";
 
 const root = path.resolve(".");
@@ -18,7 +19,7 @@ test("current v2 matrix audit evidence authenticates the exact component reprodu
   const claim = state.claims.find((item) => item.id === "v2-poseidon2b-classical-audit")!;
   const record = state.records.find((item) => item.id === "official-v2-poseidon2b-matrix-audit-20261010")!;
   const report = readFileSync(path.join(root, "evidence/artifacts/2026-10-10/poseidon2b-nonlinear-subspace-exact.txt"));
-  const track = loadTrack(root, "poseidon2b-nonlinear-subspace-reproduction");
+  const track = loadVerificationTrack(root, "poseidon2b-nonlinear-subspace-reproduction", "2.0.0", true);
   assert.equal(claim.status, "verified");
   assert.equal(claim.initialStatus, "under-review");
   assert.deepEqual(claim.evidenceIds, [record.id]);
@@ -36,13 +37,13 @@ test("current v2 matrix audit evidence authenticates the exact component reprodu
   }
 });
 
-test("all active work targets the current v2 certificate and distinct claims", () => {
+test("all active work targets the current v2.1 certificate and distinct claims", () => {
   const tracks = loadCatalog(root).tracks.filter((track) => track.state === "active" && track.id !== "official-certificate");
   assert.equal(tracks.length, 8);
   for (const track of tracks) {
-    assert.equal(track.expected?.productionCommit, V2_CERTIFICATE_REVISION);
-    assert.equal(track.expected?.certificateCommit, V2_CERTIFICATE_REVISION);
-    assert.ok(track.targetClaimId.startsWith("v2-"));
+    assert.equal(track.expected?.productionCommit, V21_PRODUCTION_REVISION);
+    assert.equal(track.expected?.certificateCommit, track.id === "poseidon2b-nonlinear-subspace-reproduction" ? V21_PRODUCTION_REVISION : V21_CERTIFICATE_REVISION);
+    assert.ok(track.targetClaimId.startsWith("v21-"));
     assert.doesNotMatch(track.title, /legacy|v1/i);
   }
 });
@@ -80,14 +81,17 @@ test("cached protected observations cannot bypass frozen contract checks", () =>
   const previous = process.env.PARANO1D_CERTIFICATE_OBSERVATIONS_DIR;
   const destination = path.join(temporary, "v2-observation-check");
   try {
-    const expected = loadTrack(root, "certificate-reproduction").expected!;
+    const expected = loadVerificationTrack(root, "certificate-reproduction", "2.0.0", true).expected!;
     writeV2ObservationCache(cache, V2_CERTIFICATE_REVISION, "mainnet-v2", expected);
     assert.deepEqual(readV2ObservationCache(cache, V2_CERTIFICATE_REVISION, "mainnet-v2"), expected);
     assert.equal(readV2ObservationCache(cache, "1".repeat(40), "mainnet-v2"), undefined);
     assert.equal(readV2ObservationCache(cache, V2_CERTIFICATE_REVISION, "mainnet-v2-poseidon2b"), undefined);
     createChallengeSubmission({ root, destination, id: "v2-observation-check", trackId: "certificate-reproduction", attribution: { mode: "human" } });
+    const file = path.join(destination, "submission.json");
+    const submission = JSON.parse(readFileSync(file, "utf8"));
+    writeFileSync(file, JSON.stringify({ ...submission, contractVersion: "2.0.0", payload: expected }));
     process.env.PARANO1D_CERTIFICATE_OBSERVATIONS_DIR = cache;
-    const check = () => verifySubmission({ root, submissionDirectory: destination, context: { repository: "local/reproduction", commit: "0".repeat(40), actor: "researcher" } });
+    const check = () => verifySubmission({ root, submissionDirectory: destination, allowLegacyContractVersion: true, context: { repository: "local/reproduction", commit: "0".repeat(40), actor: "researcher" } });
     assert.equal(check().status, "accepted");
     writeV2ObservationCache(cache, V2_CERTIFICATE_REVISION, "mainnet-v2", { ...expected, eventCount: "19" });
     const rejected = check();

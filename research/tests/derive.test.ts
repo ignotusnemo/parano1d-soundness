@@ -10,8 +10,8 @@ test("the published end-to-end corollary is proved with explicit production prem
   const state = deriveResearchState(path.resolve("."));
   assert.equal(state.claims.find((claim) => claim.id === "production-category-one")?.status, "proved");
   assert.deepEqual(state.claims.find((claim) => claim.id === "production-category-one")?.blockingClaims, []);
-  assert.ok(state.conclusion.premiseClaims.includes("v2-coherent-response-minimum"));
-  assert.ok(state.conclusion.premiseClaims.includes("v2-fixed-poseidon2b-delta"));
+  assert.ok(state.conclusion.premiseClaims.includes("v21-coherent-response-minimum"));
+  assert.ok(state.conclusion.premiseClaims.includes("v21-fixed-poseidon2b-delta"));
   assert.equal(state.claims.find((claim) => claim.id === "adaptive-all-root-qrom")?.status, "proved");
   assert.equal(state.claims.flatMap((claim) => claim.metrics).find((metric) => metric.id === "category-one.margin-over-reference")?.value, "+3.391078499301");
   assert.equal(state.leaderboard[0]?.login, "ignotusnemo");
@@ -51,8 +51,8 @@ test("theorem context links do not establish current v2 production premises", ()
     assert.deepEqual(extension.evidenceIds, []);
   }
   assert.equal(claims.get("v2-joint-bank-accounting")?.status, "verified");
-  assert.ok(state.conclusion.premiseClaims.includes("v2-all-root-composition"));
-  assert.ok(state.conclusion.premiseClaims.includes("v2-production-correspondence"));
+  assert.ok(state.conclusion.premiseClaims.includes("v21-all-root-composition"));
+  assert.ok(state.conclusion.premiseClaims.includes("v21-production-correspondence"));
 });
 
 test("scoped v2 source evidence preserves open compiler conditions and numerical frontiers", () => {
@@ -84,7 +84,7 @@ test("scoped v2 source evidence preserves open compiler conditions and numerical
   assert.match(claims.get("v2-production-correspondence")!.scope, /does not cover every ordinary-block/);
   assert.match(claims.get("v2-all-root-composition")!.scope, /embedded-verifier oracle queries/);
   const baseline = state.records.find((record) => record.id === "official-v2-accounting-20261008")!;
-  for (const metric of state.metrics) {
+  for (const metric of claims.get("v2-joint-bank-accounting")!.metrics) {
     assert.deepEqual(metric, baseline.effects.flatMap((effect) => effect.metrics).find((candidate) => candidate.id === metric.id));
   }
   assert.ok(state.records.filter((record) => record.id.startsWith("official-v2-") && record.acceptedAt.startsWith("2026-10-08")).every((record) => record.recordType === "official-baseline"));
@@ -159,7 +159,7 @@ test("the applicable nonlinear-subspace result has one non-ranked reproduction t
   assert.equal(tracks.length, 1);
   assert.equal(tracks[0]?.kind, "reproduction");
   assert.equal(tracks[0]?.direction, "non-ranked");
-  assert.equal(tracks[0]?.targetClaimId, "v2-poseidon2b-classical-audit");
+  assert.equal(tracks[0]?.targetClaimId, "v21-poseidon2b-classical-audit");
   assert.equal(tracks[0]?.scoreMetricId, undefined);
 });
 

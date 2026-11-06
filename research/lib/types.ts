@@ -131,6 +131,7 @@ export interface EvidenceRecord {
 
 export interface PublicEvidenceRecord extends EvidenceRecord {
   review?: {
+    targetClaimId?: string;
     finalFinding: "supports" | "challenges" | "inconclusive";
     note: string;
     reviewers: Array<{

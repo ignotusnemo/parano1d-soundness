@@ -1,18 +1,18 @@
 {
   "id": "v2-retirement-binding-audit",
-  "title": "V2 sparse-retirement binding audit",
-  "description": "Trace one sparse-retirement obligation from the pinned canonical matrix and preprocessing key through the exact verifier request and legacy-to-v2 acceptance boundary. Establish a new binding result or a reachable mismatch.",
+  "title": "V2.1 sparse-retirement binding audit",
+  "description": "Audit preprocessing correspondence at the v2.1 authorization boundary and retained legacy retirement keys. Authenticate key, matrix, metadata and source provenance for one precise production path.",
   "kind": "audit",
   "direction": "non-ranked",
-  "targetClaimId": "v2-retirement-correspondence",
-  "contractVersion": "1.0.0",
+  "targetClaimId": "v21-retirement-correspondence",
+  "contractVersion": "2.0.0",
   "validator": "manual-audit",
   "state": "active",
   "acceptance": "Exact source pins and passive file digests are checked automatically. A scoped source-to-model result requires semantic review and a signed maintainer decision. Repeated baselines, paper summaries and arbitrary helper inputs do not qualify. Inconclusive results cannot change claims or bounds.",
-  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/v2-retirement-binding-audit-v1.0.0.md",
+  "contractUrl": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/branch/main/research/contracts/v2-retirement-binding-audit-v2.0.0.md",
   "expected": {
-    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
-    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50"
+    "productionCommit": "848209d5db75137483cb41a94b310ad11463473f",
+    "certificateCommit": "7ead11a3afb452fb14eea505cfa913ce20a87f9a"
   },
   "reviewPolicy": {
     "minimumApprovals": 2,
