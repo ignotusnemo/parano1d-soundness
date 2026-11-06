@@ -1,0 +1,96 @@
+{
+  "schema": "parano1d-recursive-ideal-dilemma-v1",
+  "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "researchCommit": "135733b04f123631ae38aaf0e5a8ec7e6be4adde",
+  "targetClaim": "v2-all-root-composition",
+  "challengedStep": "noid_soundness/docs/category-one.md:360-363 closed-world MissRep=false",
+  "toy": {
+    "Y": 4,
+    "X": 4,
+    "true": [
+      0
+    ],
+    "bad": {
+      "1": 2,
+      "2": 3,
+      "3": 1
+    },
+    "fixedP": {
+      "0": 1,
+      "1": 2,
+      "2": 0,
+      "3": 0
+    },
+    "localDensity": "1/4",
+    "outerKappa": "0"
+  },
+  "enumeration": {
+    "allPassed": true,
+    "checks": [
+      {
+        "Pr_BadAll": "0",
+        "Pr_BadState": "1",
+        "Pr_BadTypedBind": "0",
+        "Pr_MissRep": "1",
+        "falseStatement": 1,
+        "idealBoundIgnoringMissRepAtZeroParentQueries": "0",
+        "name": "fixed_hash_child_is_never_represented",
+        "parentNamespaceQueries": 0
+      },
+      {
+        "Pr_honestRecursiveAccept": "1/4",
+        "name": "ideal_child_answers_break_recursive_completeness",
+        "productionAnalogue": "2^-255 per re-derived C1 challenge"
+      },
+      {
+        "Pr_BadAll_parent": "1",
+        "boundViolated": true,
+        "claimedLocalDensity": "1/4",
+        "name": "programmed_coupling_removes_child_randomness",
+        "oneQueryLiftingBudget": "1/4",
+        "programmedAnswerSupportSize": 1
+      }
+    ],
+    "domain": {
+      "X": 4,
+      "Y": 4,
+      "hAssignments": 256
+    },
+    "schema": "recursive-ideal-dilemma-v1"
+  },
+  "sourceAnchors": [
+    {
+      "path": "noid_recursive/src/acceptance/trace/r_pcs_region.rs",
+      "sha256": "8944b8a936da6df80d80f8501ca535314ff86f3c256f329027c7fcf8493d7618",
+      "fact": "parent PCS leaf sponges and Merkle paths arithmetized on duplex/ff-Merkle walks"
+    },
+    {
+      "path": "noid_recursive/src/region_sidecar.rs",
+      "sha256": "9f74ef80a582ba647f92c668eaaf298b4ec1de0302410111e3cdece155641c93",
+      "fact": "one joint C1 transcript over 3 Link + 6 Block regions"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/zk_auth_capsule_schedule.rs",
+      "sha256": "70d330beadd2f44232f358a8a35110d0f19f74d0a3c7d7afb0cf46ee34448101",
+      "fact": "wallet capsule production duplex schedules consumed by recursive assembly"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked/retirement_codec.rs",
+      "sha256": "e96813d08a82498e007bb7421590cd70c8857fbde41f7ad02f6ba09db280c47e",
+      "fact": "legacy origin terminal and sparse proofs verified natively"
+    },
+    {
+      "path": "noid_soundness/docs/category-one.md",
+      "sha256": "2e8be9951b1d8dc2eae9d14f41e893bd759d0f183f372d18e30f510302ca22f4",
+      "fact": "closed-world MissRep=false; production MissRep routed into Delta_P2b"
+    }
+  ],
+  "unreplayableCitation": {
+    "path": "noid_soundness/docs/adaptive-all-root-v2.md",
+    "sha256": "4bcafcd7b43abd29917fd5808ce7b59d120d8fc24ea85761a3781887af935b97",
+    "commit": "5daad03c7f1049ae28ab10ae1201b00d1e4e1887",
+    "remoteResult": "upload-pack: not our ref"
+  },
+  "productionForgery": false,
+  "frontierMetricChanges": []
+}

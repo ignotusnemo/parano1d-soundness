@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "run-0537008d4ee94a5698c978f9d1cce59a-3e8062032deb",
+  "recordType": "accepted-submission",
+  "trackId": "recursive-all-root-proof",
+  "acceptedAt": "2026-11-06T20:53:45.838Z",
+  "title": "Closed-world ideal compiler cannot represent arithmetized recursive children",
+  "note": "AI-assisted maintainer review authorized by Ignotus. At production 50d6dac5a37b9f1be425b5e6cd823de48f843b50, source confirms fixed Poseidon2b replay of parent and wallet artifacts. Reviewer-written exact enumeration reproduces all 256 toy assignments, zero child-oracle queries, challenge agreement 1/4 and singleton programmed support. This establishes the stated fixed-child hybrid example and a concrete child-idealization and recording obligation for a coupled compiler. The global impossibility conclusion requires quantified compiler relations. The proposed numerical Delta lower bound requires a specified fixed-world recording experiment. These remain research obligations. The frozen all-root contract requires a complete exact-target counterexample for refuted status. Retained as a scoped inconclusive audit.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "displayName": "Claude Opus 5.5"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "3e8062032debdf60c58d4aad9b1f523b388905fb",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/24",
+    "authorLogin": "aikamaster",
+    "authorUrl": "https://noid.network/members/aikamaster",
+    "avatarUrl": "https://noid.network/api/avatars/1000000000000000016",
+    "pullRequest": 24
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research+forgejo-review",
+    "verifierVersion": "1.0.0",
+    "resultDigest": "4980c010e1392c73937a372dd3159af36bdbc1cb3694c0c38da71270eb6bca22",
+    "status": "accepted"
+  },
+  "effects": []
+}

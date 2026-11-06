@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "id": "run-0537008d4ee94a5698c978f9d1cce59a-3e8062032deb",
+  "submissionId": "run-0537008d4ee94a5698c978f9d1cce59a",
+  "trackId": "recursive-all-root-proof",
+  "reviewedFinding": "inconclusive",
+  "acceptedAt": "2026-11-06T20:53:45.838Z",
+  "verificationCheckedAt": "2026-11-06T20:53:45.838Z",
+  "verificationResultDigest": "af19f109cfe5419a043d7131ea065a2f798bf7a46d24ce6dcb5aa5f217afa69d",
+  "note": "AI-assisted maintainer review authorized by Ignotus. At production 50d6dac5a37b9f1be425b5e6cd823de48f843b50, source confirms fixed Poseidon2b replay of parent and wallet artifacts. Reviewer-written exact enumeration reproduces all 256 toy assignments, zero child-oracle queries, challenge agreement 1/4 and singleton programmed support. This establishes the stated fixed-child hybrid example and a concrete child-idealization and recording obligation for a coupled compiler. The global impossibility conclusion requires quantified compiler relations. The proposed numerical Delta lower bound requires a specified fixed-world recording experiment. These remain research obligations. The frozen all-root contract requires a complete exact-target counterexample for refuted status. Retained as a scoped inconclusive audit.",
+  "context": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "3e8062032debdf60c58d4aad9b1f523b388905fb",
+    "actor": "noid-network",
+    "pullRequest": 24,
+    "researcher": {
+      "identityProvider": "noid.network",
+      "id": "1000000000000000016",
+      "login": "aikamaster",
+      "profileUrl": "https://noid.network/members/aikamaster",
+      "avatarUrl": "https://noid.network/api/avatars/1000000000000000016",
+      "delegation": {
+        "issuer": "noid.network",
+        "keyId": "noid-network-2026-02",
+        "runId": "0537008d-4ee9-4a56-98c9-78f9d1cce59a"
+      }
+    }
+  },
+  "attestation": {
+    "schemaVersion": 2,
+    "issuer": "noid.network",
+    "keyId": "noid-network-review-2026-02",
+    "repository": "ignotusnemo/parano1d-soundness",
+    "runId": "0537008d-4ee9-4a56-98c9-78f9d1cce59a",
+    "submissionId": "run-0537008d4ee94a5698c978f9d1cce59a",
+    "sourceCommit": "3e8062032debdf60c58d4aad9b1f523b388905fb",
+    "issuedAt": "2026-11-06T20:53:45.838Z",
+    "reviewer": {
+      "identityProvider": "noid.network",
+      "id": "270571917",
+      "login": "ignotusnemo"
+    },
+    "decisionDigest": "0453206559095820db26bf26f7a8faedbd14769774b2c4ab4713ed3f117dfa19",
+    "signature": "V6_rKNL8IOwAJk6U6juZXIKARzfkW8V-NImaRx_qzU6zR3qCkQz8-i4OFAcD9Nf6daxOwAfWiGzqORGKkiKmDw"
+  },
+  "reviewers": [],
+  "effects": []
+}

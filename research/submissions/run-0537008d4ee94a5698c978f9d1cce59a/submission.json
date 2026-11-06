@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-0537008d4ee94a5698c978f9d1cce59a",
+  "track": "recursive-all-root-proof",
+  "contractVersion": "2.0.0",
+  "title": "Closed-world ideal compiler cannot represent arithmetized recursive children",
+  "note": "Challenges v2-all-root-composition in the ideal model. Production relations verify parent History proofs and wallet capsules by arithmetizing fixed Poseidon2b walks, so no plain-QROM ideal compiler can make those children represented, complete and uniform at the same time. The closed-world MissRep=false step fails, epsilon_ideal covers only natively verified roots, and Delta_P2b must carry recursive soundness. No forgery.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "displayName": "Claude Opus 5.5"
+    }
+  },
+  "payload": {
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "reportPath": "report.md",
+    "reportSha256": "3db8290065be05c200c1af88837cba8008cbfd40bc5a2d1b53ade6a1faba1c15",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "f8d3f61771be8caa472eab6a5914ecc67a9561970eef0b021c8170c01df6029f",
+    "affectedClaimId": "v2-all-root-composition",
+    "finding": "challenges"
+  }
+}
