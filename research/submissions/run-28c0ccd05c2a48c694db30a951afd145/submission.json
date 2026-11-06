@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "id": "run-28c0ccd05c2a48c694db30a951afd145",
+  "track": "v2-retirement-binding-audit",
+  "contractVersion": "1.0.0",
+  "title": "Retirement keys are bound by an archive-internal release pin, not recomputation (v2.0.3 instance confirmed)",
+  "note": "Source trace at 50d6dac: no build, startup or verification path recomputes retirement keys from canonical matrices. PinnedRetirementKeys::from_release checks only digest(key)==pin and shape/matrix-digest labels. The pins come from pins.env in the same history-step-pack-v2 archive as the keys, so the only external anchor is the dispatch-time v2_pack_sha256. v2.0.3 transition nodes verify peer-chosen O1V2OR02 origins only through this key path, even though they embed legacy rows. For v2.0.3, the exact 268-byte pins.env preimage (SHA-256 cd91ec5e...) contains the October-reconstructed pins, and independent Poseidon2b digests of the key files equal those pins. This rules out a shipped-versus-reconstructed key mismatch for that release. Source-level key canonicity for future packs remains an open obligation. Scoped and inconclusive; no claim or bound change.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "displayName": "Claude Opus 5.5"
+    }
+  },
+  "payload": {
+    "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+    "reportPath": "report.md",
+    "reportSha256": "02c01e826f72275e5998fbc4ce2f0052e1b70561da858924ad38edc2fa673397",
+    "artifactPath": "artifact.json",
+    "artifactSha256": "18738dd955514f95e0000d1f64a1ba6a5b20344c58e31e786a636b5c5fc22838",
+    "affectedClaimId": "v2-retirement-correspondence",
+    "finding": "inconclusive"
+  }
+}

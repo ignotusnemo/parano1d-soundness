@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "productionCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "certificateCommit": "50d6dac5a37b9f1be425b5e6cd823de48f843b50",
+  "researchWorkspaceCommit": "135733b04f123631ae38aaf0e5a8ec7e6be4adde",
+  "targetClaimId": "v2-retirement-correspondence",
+  "claimEffects": [],
+  "statements": {
+    "S1": "No production path recomputes or cross-checks retirement keys against canonical matrices; PinnedRetirementKeys::from_release checks only digest(key)==pin and shape/matrix_digest labels; pins come from pins.env in the same release archive as the keys; the external anchor is the dispatch input v2_pack_sha256.",
+    "S2": "Transition v2.0.3 nodes verify peer-chosen O1V2OR02 origin bytes only via RetirementOriginCertificate::verify under the embedded keys, independent of embedded legacy rows.",
+    "S3": "The v2.0.3 pack pins.env equals the October-reconstructed key pins and the mainnet bank pin; key file digests recompute to those pins."
+  },
+  "sourceLocations": [
+    {
+      "path": "bench_prover/src/bin/noid_retire_history.rs",
+      "lines": "251-270"
+    },
+    {
+      "path": "scripts/release_material.py",
+      "lines": "14-40"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "lines": "16,167-176,301-302"
+    },
+    {
+      "path": "scripts/release_common.sh",
+      "lines": "160-191"
+    },
+    {
+      "path": "scripts/build_release.sh",
+      "lines": "110,265-267"
+    },
+    {
+      "path": "noid_node/build.rs",
+      "lines": "62-72,249-263"
+    },
+    {
+      "path": "noid_recursive/src/acceptance/history_step/v2/banked/retirement_codec.rs",
+      "lines": "34-53,73-88,134-199"
+    },
+    {
+      "path": "noid_ivc_core/src/matrix_claim/sparse_c1/wire.rs",
+      "lines": "106-137"
+    },
+    {
+      "path": "noid_ivc_core/src/matrix_claim/sparse_c1/preprocess.rs",
+      "lines": "66-68,100-116,217"
+    },
+    {
+      "path": "noid_node/src/embedded_history_step_pack.rs",
+      "lines": "81-97"
+    },
+    {
+      "path": "noid_node/src/main.rs",
+      "lines": "1048,1068"
+    },
+    {
+      "path": "noid_miner/src/history_protocol.rs",
+      "lines": "97-103,210-226,286-294"
+    },
+    {
+      "path": "noid_node/src/origin_recovery.rs",
+      "lines": "223"
+    },
+    {
+      "path": "noid_ivc_core/src/matrix_claim/c1.rs",
+      "lines": "1099-1176"
+    }
+  ],
+  "observations": {
+    "pinsEnvV2": {
+      "recordedSha256": "cd91ec5ed5dd81bd572c33f729f670514c438c747c82163f7c72769be8b88bff",
+      "recordedBytes": 268,
+      "reconstructedLines": [
+        "NOID_V2_RELEASE_BANK=c2a6df736b0d0da22e285b6930b11cf44b520d65b52c7dfe78f44fe0cd48e76e",
+        "NOID_RETIREMENT_KEY_0_PIN=0651ce507810b61213cbdc0e9f99436aec3a7922cc662bfba6128b466453c8b2",
+        "NOID_RETIREMENT_KEY_1_PIN=c301274d50dc02fd5c383f2e71629075729a954a768f5051388ec2040bce0267"
+      ],
+      "lineTerminator": "LF after each line",
+      "reconstructedSha256": "cd91ec5ed5dd81bd572c33f729f670514c438c747c82163f7c72769be8b88bff",
+      "match": true
+    },
+    "keys": [
+      {
+        "class": 0,
+        "sha256": "02421f91a13d34480e71e3f8a88071d7e8dcb10ac9ca2339f8a2dea7cb8a689c",
+        "bytes": 304,
+        "m": 22,
+        "k_log": 22,
+        "k_skip": 6,
+        "constPinField": 1,
+        "entries": 28461463,
+        "paddedEntries": 33554432,
+        "rowAddresses": 8388608,
+        "rootBound4nr": 167772160,
+        "matrixDigest": "9be6ed118dc0df56d670161569dc8283a2ed5b441bb9476911ead230968b3d8b",
+        "recomputedKeyDigest": "0651ce507810b61213cbdc0e9f99436aec3a7922cc662bfba6128b466453c8b2",
+        "pinMatch": true
+      },
+      {
+        "class": 1,
+        "sha256": "c655cbb3c3f485b3654d4a0c5d69f108eda504a3a34769a5579aad1fe3b9e8c8",
+        "bytes": 304,
+        "m": 24,
+        "k_log": 24,
+        "k_skip": 6,
+        "constPinField": 1,
+        "entries": 124071078,
+        "paddedEntries": 134217728,
+        "rowAddresses": 33554432,
+        "rootBound4nr": 671088640,
+        "matrixDigest": "194a616273a7b2801cdd1b5f9cae14fb0b4ccb3748b5c67ca747268091eb5722",
+        "recomputedKeyDigest": "c301274d50dc02fd5c383f2e71629075729a954a768f5051388ec2040bce0267",
+        "pinMatch": true
+      }
+    ],
+    "keyDigestMethod": "poseidon2b_hash_byte_slices(domain 'NOID/SPARSE-MATRIX-KEY/C1/V1', key wire bytes 8..304) from noid_poseidon2b at the pinned commit, in a scratch copy; key types and verifier not used",
+    "sourceAnchorSearch": "key pins and v2 bank pin occur only in research result JSON, not in Rust sources or consensus parameters"
+  },
+  "inputs": [
+    {
+      "path": "research/evidence/artifacts/2026-10-08-correspondence/input-authentication.json",
+      "workspace": "parano1d-soundness"
+    },
+    {
+      "path": "research/certificates/v2.0.3/class-0.key.gz",
+      "workspace": "parano1d-soundness"
+    },
+    {
+      "path": "research/certificates/v2.0.3/class-1.key.gz",
+      "workspace": "parano1d-soundness"
+    }
+  ],
+  "limitations": [
+    "Not a peer-reachable attack; concerns trusted release-artifact provenance.",
+    "Instance check covers only the v2.0.3 pack recorded in October; GitHub release assets not downloaded directly.",
+    "Canonicity relies on the October reconstruction (shared decoder and PCS) and Poseidon2b binding.",
+    "No claim or bound changes."
+  ]
+}

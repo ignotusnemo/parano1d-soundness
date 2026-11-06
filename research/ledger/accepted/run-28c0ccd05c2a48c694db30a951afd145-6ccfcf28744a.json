@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "run-28c0ccd05c2a48c694db30a951afd145-6ccfcf28744a",
+  "recordType": "accepted-submission",
+  "trackId": "v2-retirement-binding-audit",
+  "acceptedAt": "2026-11-06T20:52:46.748Z",
+  "title": "Retirement keys are bound by an archive-internal release pin, not recomputation (v2.0.3 instance confirmed)",
+  "note": "AI-assisted maintainer review authorized by Ignotus. At production 50d6dac5a37b9f1be425b5e6cd823de48f843b50, the build and startup trace authenticates both 304-byte retirement keys using release-supplied digests and checks bank shape and matrix labels. Replayed the 268-byte pins.env preimage, both file SHA-256 values, decoded geometries, 4(n+r) counts and production Poseidon2b key digests. All match the October reconstruction for v2.0.3. O1V2OR02 follows the sparse origin verifier while legacy rows remain embedded. This establishes the release-provenance dependency at that pin. Canonicity for later release keys requires independently authenticated recomputation or source-pinned digests checked against it. Retained as the submitted scoped inconclusive audit.",
+  "attribution": {
+    "mode": "ai-assisted",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "displayName": "Claude Opus 5.5"
+    }
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "6ccfcf28744a71c51ad8c67d6b057a26ddfb901c",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/pulls/23",
+    "authorLogin": "aikamaster",
+    "authorUrl": "https://noid.network/members/aikamaster",
+    "avatarUrl": "https://noid.network/api/avatars/1000000000000000016",
+    "pullRequest": 23
+  },
+  "verification": {
+    "verifier": "parano1d-soundness-research+forgejo-review",
+    "verifierVersion": "1.0.0",
+    "resultDigest": "64ba9e3a727614a9943124cb3c47f1af97d5a71b010443212e97b346ccef2e8a",
+    "status": "accepted"
+  },
+  "effects": []
+}
