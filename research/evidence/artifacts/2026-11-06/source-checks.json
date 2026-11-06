@@ -1,0 +1,158 @@
+{
+  "authorizationLayout": {
+    "bankCells": 2048,
+    "libraCells": 432,
+    "terminalOffset": 944,
+    "terminalPadCells": 10,
+    "terminalPadGroups": 2,
+    "version": "V4"
+  },
+  "fixedNonceSecurityCreditBits": 0,
+  "honestProvingEntry": "OsRng and fresh PCS commitment under independent OS entropy",
+  "method": "exact field arithmetic and named source correspondence checks",
+  "poseidon2b": {
+    "capComparisonBytes": 32,
+    "cico2RemainingTupleVariables": 0,
+    "cico2RequiredTupleVariables": 2,
+    "externalMinors": 69,
+    "feedForwardLanes": 2,
+    "inverseMinors": 69,
+    "parameters": {
+      "F_ROUNDS": 8,
+      "P_ROUNDS": 58,
+      "SBOX_EXPONENT": 7,
+      "STATE_SIZE": 4
+    },
+    "sboxBijective": true
+  },
+  "productionCommit": "848209d5db75137483cb41a94b310ad11463473f",
+  "schemaVersion": 1,
+  "sourceReceipts": [
+    {
+      "bytes": 27707,
+      "path": "noid_core/src/hardware.rs",
+      "sameAsPreviousAuditedSource": true,
+      "sha256": "9c0cb096cce86fb7a406250329ed79ef5e7f0553835143d54b77c9ccba480e80"
+    },
+    {
+      "bytes": 30453,
+      "path": "noid_fri_binius/src/interleaved_commit.rs",
+      "sameAsPreviousAuditedSource": true,
+      "sha256": "0326ca267a66f65b3caa3ac0df95b588f4f5470d85d004576d73d4d1fd51f49a"
+    },
+    {
+      "bytes": 68836,
+      "path": "noid_fri_binius/src/zk_affine_code.rs",
+      "sameAsPreviousAuditedSource": false,
+      "sha256": "cbdd4c39dbb3e5635228d798434a881fe742c506860fc1558fa52213d5a377da"
+    },
+    {
+      "bytes": 32708,
+      "path": "noid_fri_binius/src/zk_capsule.rs",
+      "sameAsPreviousAuditedSource": null,
+      "sha256": "edc37ff01996366c557fa897197cc6cdbab5aedef106378160ac91150b5e867e"
+    },
+    {
+      "bytes": 69044,
+      "path": "noid_fri_binius/src/zk_capsule_pcs.rs",
+      "sameAsPreviousAuditedSource": true,
+      "sha256": "775eb9ffa72590e358211ec4198173379c70ae8961e6f7c7b3e816d3291126ef"
+    },
+    {
+      "bytes": 986,
+      "path": "noid_gkr/src/authorization_profile.rs",
+      "sameAsPreviousAuditedSource": null,
+      "sha256": "41be41c2e2aa3d69b1919b57459dcfa0ea136e411490daa9ea221a52d740bbbe"
+    },
+    {
+      "bytes": 63329,
+      "path": "noid_gkr/src/zk_auth_capsule.rs",
+      "sameAsPreviousAuditedSource": false,
+      "sha256": "1b71b01e2675b17469238a5e1746f1c73b38d0dbfb7501e43f438fe4a977f6e0"
+    },
+    {
+      "bytes": 180039,
+      "path": "noid_gkr/src/zk_auth_qrom.rs",
+      "sameAsPreviousAuditedSource": false,
+      "sha256": "f9f91cdaa8260a6ce0b5c8784ed72f4c0545b8c423b112b47033fcb73414f127"
+    },
+    {
+      "bytes": 75442,
+      "path": "noid_gkr/src/zk_authorization.rs",
+      "sameAsPreviousAuditedSource": false,
+      "sha256": "e226a9e4021aac68ca2ae40010634502bee2a2c2130f4fa8d9b6796e8f0c2fe8"
+    },
+    {
+      "bytes": 26084,
+      "path": "noid_ivc_core/src/pcs/commit.rs",
+      "sameAsPreviousAuditedSource": null,
+      "sha256": "913a92a1033973175fd30f4e8c7cf51c107af4de996b082516825281e13e2e2f"
+    },
+    {
+      "bytes": 8480,
+      "path": "noid_miner/src/v21_artifacts.rs",
+      "sameAsPreviousAuditedSource": null,
+      "sha256": "d4d1e4a821c0f137d1a5cd50ff83a56df4d69e47ff938150e7ca667c2edbe43b"
+    },
+    {
+      "bytes": 28853,
+      "path": "noid_node/src/networking/snapshot_sync.rs",
+      "sameAsPreviousAuditedSource": false,
+      "sha256": "566adba033d1c7008446c0ead3b4165f77182775abd159fb02957486487a1e56"
+    },
+    {
+      "bytes": 67894,
+      "path": "noid_node/src/snapshot_header_staging.rs",
+      "sameAsPreviousAuditedSource": false,
+      "sha256": "0b7b996c18e9c61d2cf45fde78f2f90088e30f8d8ee04b8b099a09f8ebc8bf2b"
+    },
+    {
+      "bytes": 22560,
+      "path": "noid_node/src/snapshot_tail_staging.rs",
+      "sameAsPreviousAuditedSource": false,
+      "sha256": "8cc66b8168548ba02b98d80c65620972e4c59830ff63a3428e7c0257b423e69f"
+    },
+    {
+      "bytes": 21824,
+      "path": "noid_poseidon2b/src/native/compression.rs",
+      "sameAsPreviousAuditedSource": true,
+      "sha256": "c9e87c200e2af0aa912e56acb781a1e7e3f7c3dca02f82eeadd8119f16851271"
+    },
+    {
+      "bytes": 11683,
+      "path": "noid_poseidon2b/src/native/permutation.rs",
+      "sameAsPreviousAuditedSource": true,
+      "sha256": "3d03be3e9277d307e2f78e157e7d0da553c78d4501da13e66c9d251c6fed34d9"
+    },
+    {
+      "bytes": 13599,
+      "path": "noid_recursive/src/acceptance/history_step/v2/capacity_banked/bank.rs",
+      "sameAsPreviousAuditedSource": null,
+      "sha256": "c7d509fced2ab6ff6d1159d459f3a7668ac281661022bc3f664614952cb63e65"
+    },
+    {
+      "bytes": 5499,
+      "path": "noid_recursive/src/acceptance/history_step/v2/capacity_banked/config.rs",
+      "sameAsPreviousAuditedSource": null,
+      "sha256": "66205c956e0fe1230e89d52a0009f0e6cc6aae49b956e632d0ddbdde198fa92b"
+    },
+    {
+      "bytes": 12277,
+      "path": "noid_soundness/src/local.rs",
+      "sameAsPreviousAuditedSource": true,
+      "sha256": "2588fba76451d0eb145cf91706824c6e861c10af48772f0c4bea2980866f4c20"
+    },
+    {
+      "bytes": 20969,
+      "path": "noid_soundness/src/resource.rs",
+      "sameAsPreviousAuditedSource": true,
+      "sha256": "edb0e844f534b75982e6734a1edc405ea2e6ab99246ed133fcc95ab6eba50e5e"
+    },
+    {
+      "bytes": 10827,
+      "path": "noid_soundness/src/v2.rs",
+      "sameAsPreviousAuditedSource": true,
+      "sha256": "92b57853801d7f8c1ecd36978f3d26d1fb2c37be1207f345911d43c2dd921be2"
+    }
+  ]
+}

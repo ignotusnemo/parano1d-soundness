@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "productionCommit": "848209d5db75137483cb41a94b310ad11463473f",
+  "releaseTag": "v2.1.0",
+  "releaseArchive": {
+    "releaseUrl": "https://github.com/ignotusnemo/parano1d/releases/download/v2.1.0/history-step-pack-v21.tar.gz",
+    "releaseArchiveSha256": "bbf76ff032181d1cce204f8efe52f437f47aa9cf686b5b5c6a2560c4650233ef"
+  },
+  "metadata": {
+    "bytes": 3396424,
+    "sha256": "549c1e23d1fdca9579dd12d571992a5416f6e8e2c250b7dfa21e81ea4e31cdd8"
+  },
+  "independentChecks": [
+    "published GitHub release asset digest matches local release archive",
+    "bounded archive member extraction matches the protected compressed metadata",
+    "published production decoder accepts the independently supplied bank pin"
+  ],
+  "nativeProjection": "native-profile-replay.json"
+}

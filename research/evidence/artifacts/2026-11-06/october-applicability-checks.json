@@ -1,0 +1,3011 @@
+{
+  "certificate": {
+    "dominance": {
+      "resource_maximum_preserved": true,
+      "sequential_maximum_preserved": true
+    },
+    "typedEvents": 26
+  },
+  "genericMcaTransfer": {
+    "finiteListGap": "-19802066042882/171661376953125",
+    "listBound": 17,
+    "listRadius": "4/5",
+    "paper": "2026/2617",
+    "positiveGapCondition": false,
+    "requestedMcaRadius": "4/5",
+    "requiredCondition": "RS-specific grouped agreement and source restoration"
+  },
+  "jacobianDiagnostic": {
+    "certified_line_directions": [
+      0
+    ],
+    "equation": "x^2=0",
+    "field": "GF(4)",
+    "jacobian_tangent_values": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "positive_control_xy_zero_points": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        3,
+        0
+      ]
+    ],
+    "satisfying_values": [
+      0
+    ]
+  },
+  "johnsonLayerCount": 421,
+  "johnsonLayers": [
+    {
+      "agreement": "1/5",
+      "dimension": 16,
+      "domain": 512,
+      "family": "authorization",
+      "squared_johnson_margin": "137/12800"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 32,
+      "domain": 1024,
+      "family": "authorization",
+      "squared_johnson_margin": "249/25600"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 64,
+      "domain": 2048,
+      "family": "authorization",
+      "squared_johnson_margin": "473/51200"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 128,
+      "domain": 4096,
+      "family": "authorization",
+      "squared_johnson_margin": "921/102400"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 256,
+      "domain": 8192,
+      "family": "authorization",
+      "squared_johnson_margin": "1817/204800"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 512,
+      "domain": 16384,
+      "family": "authorization",
+      "squared_johnson_margin": "3609/409600"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 1024,
+      "domain": 32768,
+      "family": "authorization",
+      "squared_johnson_margin": "7193/819200"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 2048,
+      "domain": 65536,
+      "family": "authorization",
+      "squared_johnson_margin": "14361/1638400"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 64,
+      "domain": 256,
+      "family": "v21.class-0",
+      "squared_johnson_margin": "101790984177/26048039497984"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "v21.class-0",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "v21.class-0",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "v21.class-0",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "v21.class-0",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "v21.class-0",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "v21.class-0",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "v21.class-0",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "v21.class-0",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "v21.class-0",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "v21.class-0",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "v21.class-0",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "v21.class-0",
+      "squared_johnson_margin": "268989375537/106692769783742464"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "v21.class-1",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "v21.class-1",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "v21.class-1",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "v21.class-1",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "v21.class-1",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "v21.class-1",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "v21.class-1",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "v21.class-1",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "v21.class-1",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "v21.class-1",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "v21.class-1",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "v21.class-1",
+      "squared_johnson_margin": "268989375537/106692769783742464"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "v21.class-1",
+      "squared_johnson_margin": "436228596785/213385539567484928"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "v21.class-2",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "v21.class-2",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "v21.class-2",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "v21.class-2",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "v21.class-2",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "v21.class-2",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "v21.class-2",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "v21.class-2",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "v21.class-2",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "v21.class-2",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "v21.class-2",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "v21.class-2",
+      "squared_johnson_margin": "268989375537/106692769783742464"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "v21.class-2",
+      "squared_johnson_margin": "436228596785/213385539567484928"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-0",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-0",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-0",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-0",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-0",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-0",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-0",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-0",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-0",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-0",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-0",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-0",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-0",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-1",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-1",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-1",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-1",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-1",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-1",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-1",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-1",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-1",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-1",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-1",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-1",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-1",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-2",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-2",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-2",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-2",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-2",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-2",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-2",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-2",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-2",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-2",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-2",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-2",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-2",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-3",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-3",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-3",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-3",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-3",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-3",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-3",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-3",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-3",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-3",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-3",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-3",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-3",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-4",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-4",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-4",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-4",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-4",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-4",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-4",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-4",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-4",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-4",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-4",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-4",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-4",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.0.column-5",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.0.column-5",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-5",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-5",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-5",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-5",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-5",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-5",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-5",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-5",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-5",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-5",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-5",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32,
+      "domain": 128,
+      "family": "retirement.0.column-6",
+      "squared_johnson_margin": "312700001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.0.column-6",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.0.column-6",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-6",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-6",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-6",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-6",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-6",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-6",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-6",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-6",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-6",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-6",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-7",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-7",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-7",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-7",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-7",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-7",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-7",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-7",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-7",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-7",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-7",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-7",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-7",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-8",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-8",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-8",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-8",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-8",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-8",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-8",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-8",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-8",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-8",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-8",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-8",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-8",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-9",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-9",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-9",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-9",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-9",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-9",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-9",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-9",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-9",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-9",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-9",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-9",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-9",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-10",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-10",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-10",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-10",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-10",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-10",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-10",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-10",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-10",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-10",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-10",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-10",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-10",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-0",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-1",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-2",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-3",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-4",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-5",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-5",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-5",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-5",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-5",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-5",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-5",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-5",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-5",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-5",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-5",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-5",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-5",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-6",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-6",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-6",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-6",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-6",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-6",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-6",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-6",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-6",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-6",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-6",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-6",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-6",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-7",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-8",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-9",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-10",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 64,
+      "domain": 256,
+      "family": "v2.class-0",
+      "squared_johnson_margin": "101790984177/26048039497984"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "v2.class-0",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "v2.class-0",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "v2.class-0",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "v2.class-0",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "v2.class-0",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "v2.class-0",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "v2.class-0",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "v2.class-0",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "v2.class-0",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "v2.class-0",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "v2.class-0",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "v2.class-0",
+      "squared_johnson_margin": "268989375537/106692769783742464"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "v2.class-1",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "v2.class-1",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "v2.class-1",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "v2.class-1",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "v2.class-1",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "v2.class-1",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "v2.class-1",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "v2.class-1",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "v2.class-1",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "v2.class-1",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "v2.class-1",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "v2.class-1",
+      "squared_johnson_margin": "268989375537/106692769783742464"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "v2.class-1",
+      "squared_johnson_margin": "436228596785/213385539567484928"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32,
+      "domain": 128,
+      "family": "history.b25",
+      "squared_johnson_margin": "101770569233/13024019748992"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 64,
+      "domain": 256,
+      "family": "history.b25",
+      "squared_johnson_margin": "101790984177/26048039497984"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "history.b25",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "history.b25",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "history.b25",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "history.b25",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "history.b25",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "history.b25",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "history.b25",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "history.b25",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "history.b25",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "history.b25",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "history.b25",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "history.b255",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "history.b255",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "history.b255",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "history.b255",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "history.b255",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "history.b255",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "history.b255",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "history.b255",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "history.b255",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "history.b255",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "history.b255",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "history.b255",
+      "squared_johnson_margin": "268989375537/106692769783742464"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "history.b255",
+      "squared_johnson_margin": "436228596785/213385539567484928"
+    }
+  ],
+  "method": "exact rational layer checks and independent finite-field enumeration",
+  "productionCommit": "848209d5db75137483cb41a94b310ad11463473f",
+  "queryBudget": {
+    "adversarialPreprocessing": "charged",
+    "oracleDependentAdvice": "requires a separately quantified advice model",
+    "sourceDependentPublicSetup": "honest authenticated preprocessing condition",
+    "verificationQueries": "charged"
+  },
+  "schemaVersion": 1
+}
