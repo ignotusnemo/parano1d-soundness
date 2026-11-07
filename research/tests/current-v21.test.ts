@@ -45,7 +45,7 @@ test("the v2.1 baseline keeps distinct source, claim and metric namespaces", () 
   assert.equal(state.productionRevision, V21_PRODUCTION_REVISION);
   assert.equal(state.certificateRevision, V21_CERTIFICATE_REVISION);
   assert.equal(state.claims.find((claim) => claim.id === "v21-joint-bank-accounting")?.status, "verified");
-  assert.equal(state.claims.find((claim) => claim.id === "v21-rs-grouped-agreement")?.status, "premise");
+  assert.equal(state.claims.find((claim) => claim.id === "v21-rs-grouped-agreement")?.status, "verified");
   const report = readFileSync(path.join(root, "evidence/artifacts/2026-11-06/v21-soundness-mainnet.json"));
   const record = state.records.find((entry) => entry.id === "official-v21-accounting-20261106")!;
   assert.equal(record.source.commit, V21_CERTIFICATE_REVISION);

@@ -613,6 +613,11 @@
         "claimId": "local-rbr-extraction",
         "role": "context",
         "note": "Sparse openings reuse the C1/BaseFold local-bound framework. This link does not discharge honest preprocessing or current request bindings."
+      },
+      {
+        "claimId": "v2-retirement-correspondence",
+        "role": "context",
+        "note": "Accepted reconstruction and complete legacy retirement binding remain verified at their original source. The v2.1 target adds the current metadata and authorization transition."
       }
     ],
     "sources": [
@@ -623,12 +628,16 @@
       {
         "label": "October 2026 full-month review",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      },
+      {
+        "label": "Established scope and current extension",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/d7fc4788810239bd59be8c753bdf6e988d55b6c3/docs/v2.1-proof-continuity.md"
       }
     ]
   },
   {
     "id": "v21-compiler-correspondence",
-    "title": "V2.1 selected-parent transcript correspondence",
+    "title": "V2.1 coupled native-to-ideal compiler",
     "statement": "One coupled compiler relates native Fiat-Shamir verification and arithmetized children to ideal records, local extraction and accepted roots in the same adaptive experiment.",
     "scope": "Parano1d v2.1.0. Transcript reconstruction, persistent simulator state, child idealization and quantum oracle access must meet the precise extractor interface.",
     "initialStatus": "premise",
@@ -638,6 +647,11 @@
         "claimId": "adaptive-all-root-qrom",
         "role": "context",
         "note": "The existing theorem framework supplies the extraction and binding requirements to be checked for the current concrete recursive relation."
+      },
+      {
+        "claimId": "v2-compiler-correspondence",
+        "role": "context",
+        "note": "Accepted selected-parent, transcript and inactive-lane source bindings remain verified. This current target additionally requires the coupled adaptive native-to-ideal compiler."
       }
     ],
     "sources": [
@@ -648,6 +662,10 @@
       {
         "label": "October 2026 full-month review",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      },
+      {
+        "label": "Established scope and current extension",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/d7fc4788810239bd59be8c753bdf6e988d55b6c3/docs/v2.1-proof-continuity.md"
       }
     ]
   },
@@ -703,7 +721,7 @@
   },
   {
     "id": "v21-production-correspondence",
-    "title": "V2.1 authenticated snapshot correspondence",
+    "title": "V2.1 production acceptance correspondence",
     "statement": "The source-pinned native acceptance paths implement the declared v2.1 relations, selected context and trusted State transitions.",
     "scope": "Parano1d v2.1.0 source 848209d5, including activation, three-class bank selection, authorization, ancestry, snapshot admission, reorgs and durable installation. Each result names its exact covered path.",
     "initialStatus": "premise",
@@ -713,6 +731,11 @@
         "claimId": "current-production-correspondence",
         "role": "context",
         "note": "The earlier source-mapped audit is historical evidence and an audit reference. It does not establish correspondence for the current v2 revision."
+      },
+      {
+        "claimId": "v2-production-correspondence",
+        "role": "context",
+        "note": "Accepted authenticated snapshot admission and installation remain verified at their original source. This current target includes broader production acceptance paths."
       }
     ],
     "sources": [
@@ -723,6 +746,10 @@
       {
         "label": "October 2026 full-month review",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      },
+      {
+        "label": "Established scope and current extension",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/d7fc4788810239bd59be8c753bdf6e988d55b6c3/docs/v2.1-proof-continuity.md"
       }
     ]
   },
@@ -785,7 +812,7 @@
     "id": "v21-rs-grouped-agreement",
     "title": "V2.1 RS grouped agreement and restoration",
     "statement": "The RS-specific grouped common-agreement and source-restoration theorem applies at the exact selected radii, finite domains, fold schedule and candidate convention.",
-    "scope": "Binary-field authorization at agreement 1/5 and rate 1/32, plus rate-1/4 History and sparse-opening families above their finite Johnson agreement thresholds. List size and shared agreement have separate hypotheses.",
+    "scope": "Public-coin RS code argument at authorization agreement 1/5 and rate 1/32, plus the rate-1/4 History and sparse-opening families. Universal agreement sets, exact finite hypotheses and grouped deterministic restoration are established. Native adaptive use follows the coupled all-root compiler condition.",
     "initialStatus": "premise",
     "derived": false,
     "dependencies": [
@@ -799,6 +826,10 @@
       {
         "label": "October binary-field and MCA review",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      },
+      {
+        "label": "RS theorem instantiation and grouped restoration proof",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/d7fc4788810239bd59be8c753bdf6e988d55b6c3/docs/v2.1-rs-grouped-restoration.md"
       }
     ]
   }

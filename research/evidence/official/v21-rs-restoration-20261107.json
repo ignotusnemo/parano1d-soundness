@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "official-v21-rs-restoration-20261107",
+  "recordType": "official-baseline",
+  "trackId": "official-certificate",
+  "acceptedAt": "2026-11-07T03:10:00.000Z",
+  "title": "RS common agreement and grouped restoration at the exact production parameters",
+  "note": "BCHKS Theorem 4.6 supplies one exceptional set simultaneous over all agreement sets and later candidate choices. The source argument preserves weighted mass through inverse-butterfly folds, row packing and grouped restoration. Exact rational checks verify the strict Johnson and multiplicity hypotheses on all 421 current and retained finite layers. The result covers the public-coin RS code argument. Its native adaptive application uses the coupled all-root compiler. Existing source proofs, numerical envelopes and response-price conditions retain their stated scopes.",
+  "attribution": {
+    "mode": "project"
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "d7fc4788810239bd59be8c753bdf6e988d55b6c3",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/d7fc4788810239bd59be8c753bdf6e988d55b6c3/docs/v2.1-rs-grouped-restoration.md",
+    "authorLogin": "ignotusnemo",
+    "authorUrl": "https://noid.network/members/ignotusnemo",
+    "avatarUrl": "https://noid.network/api/avatars/ignotusnemo"
+  },
+  "verification": {
+    "verifier": "maintainer-rs-theorem-instantiation-and-exact-parameter-check",
+    "verifierVersion": "d7fc4788810239bd59be8c753bdf6e988d55b6c3",
+    "resultDigest": "899b1c1cf68b2fe7c50969b806bfc5d6a6d1acd30c5f37da263605fc2fae1ffb",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "v21-rs-grouped-agreement",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}
