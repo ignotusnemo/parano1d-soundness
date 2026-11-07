@@ -111,6 +111,8 @@ function deriveClaims(records: EvidenceRecord[], definitions: ReturnType<typeof 
     const premises = declaredPremises.map((dependency) => claims.get(dependency.claimId)!);
     if (dependencies.some((dependency) => dependency.status === "conflicted") || premises.some((premise) => premise.status === "conflicted")) {
       claim.status = "conflicted";
+    } else if (!claim.derived && claim.status === "premise" && dependencies.some((dependency) => dependency.status === "refuted" || dependency.status === "premise-failed")) {
+      claim.status = "premise-failed";
     } else if (!claim.derived && isEstablished(claim.status) && dependencies.some((dependency) => dependency.status === "refuted")) {
       claim.status = "conflicted";
     } else if (!claim.derived && isEstablished(claim.status) && (dependencies.some((dependency) => dependency.status === "premise-failed") || premises.some((premise) => premise.status === "refuted" || premise.status === "premise-failed"))) {

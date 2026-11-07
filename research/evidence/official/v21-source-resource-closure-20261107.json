@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "official-v21-source-resource-closure-20261107",
+  "recordType": "official-baseline",
+  "trackId": "official-certificate",
+  "acceptedAt": "2026-11-07T04:49:00.000Z",
+  "title": "V2.1 source correspondence and resource-aware production lifting",
+  "note": "The source proof establishes authenticated preprocessing and activation, the three-class pointwise native/trace adapter and the fixed node acceptance-to-State interface. Thirty-three native tests passed, including seven appended maintainer audits over byte-identical production source prefixes. The resource theorem proves the charged ideal envelope and the actual-budget fixed-event lifting. Every allowed concrete circuit, shared batch, preprocessing operation and verifier query is included in the fixed-event condition. The current production conclusion has two independent global conditions: coupled all-root composition and resource-aware fixed-Poseidon2b deviation. Exact numerical frontiers and existing contributor evidence are preserved.",
+  "attribution": {
+    "mode": "project"
+  },
+  "source": {
+    "repository": "ignotusnemo/parano1d-soundness",
+    "commit": "53d1e67888693efdbec195a1241ac6702891dc47",
+    "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/53d1e67888693efdbec195a1241ac6702891dc47/docs/v2.1-source-binding-proofs.md",
+    "authorLogin": "ignotusnemo",
+    "authorUrl": "https://noid.network/members/ignotusnemo",
+    "avatarUrl": "https://noid.network/api/avatars/ignotusnemo"
+  },
+  "verification": {
+    "verifier": "maintainer-source-correspondence-native-audits-and-resource-lifting",
+    "verifierVersion": "53d1e67888693efdbec195a1241ac6702891dc47",
+    "resultDigest": "f40567830c73a05e15227ad43163c849877766bda1c0c6379687e70c1892821e",
+    "status": "accepted"
+  },
+  "effects": [
+    {
+      "claimId": "v21-retirement-correspondence",
+      "status": "verified",
+      "metrics": []
+    },
+    {
+      "claimId": "v21-production-correspondence",
+      "status": "verified",
+      "metrics": []
+    },
+    {
+      "claimId": "v21-native-transcript-binding",
+      "status": "verified",
+      "metrics": []
+    },
+    {
+      "claimId": "v21-resource-envelope",
+      "status": "proved",
+      "metrics": []
+    },
+    {
+      "claimId": "v21-joint-bank-accounting",
+      "status": "verified",
+      "metrics": []
+    }
+  ]
+}

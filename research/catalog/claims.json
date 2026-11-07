@@ -540,24 +540,24 @@
     "id": "v21-joint-bank-accounting",
     "title": "Mainnet v2.1 joint-bank soundness accounting",
     "statement": "The exact v2.1 calculation covers three current classes and retains all earlier ancestry. Its 26 typed events preserve the dominant work floor 173.3897612554174 descriptive bits and ideal Category 1 envelope approximately 0.04937388373372754.",
-    "scope": "Parano1d v2.1.0 mainnet bank 6c280ae8 at height 279370. Verified conditional arithmetic under source-linked extraction, RS-specific grouped agreement, coupled all-root compilation, fixed-Poseidon2b deviation, honest preprocessing and response-price conditions.",
+    "scope": "Parano1d v2.1.0 mainnet bank 6c280ae8 at height 279370. Verified exact arithmetic in the declared charged ideal model. The production lifting uses the established source adapters, coupled all-root condition and resource-aware fixed-Poseidon2b event deviation.",
     "initialStatus": "under-review",
     "derived": false,
     "dependencies": [
       {
-        "claimId": "v21-coherent-response-minimum",
-        "role": "premise",
-        "note": "The existing scalar and batch resource prices remain declared conditions."
+        "claimId": "v21-resource-envelope",
+        "role": "required",
+        "note": "The charged ideal envelope and the actual-budget fixed-event lifting are established by the resource-closure theorem."
       },
       {
-        "claimId": "v21-compiler-correspondence",
-        "role": "premise",
-        "note": "The selected-parent and transcript source bindings are verified within their declared local hypotheses. Complete adaptive compiler closure remains in the all-root and fixed-hash conditions."
+        "claimId": "v21-native-transcript-binding",
+        "role": "required",
+        "note": "The three-class parent/source adapter is established. The complete coupled adaptive compiler is contained in the all-root condition."
       },
       {
         "claimId": "v21-retirement-correspondence",
-        "role": "premise",
-        "note": "Both release preprocessing keys and complete origin request bindings are verified; the underlying local algebraic, commitment and extraction conditions remain explicit."
+        "role": "required",
+        "note": "The current authenticated bank, matrix selection, retained preprocessing and authorization transition are covered by the v2.1 source proof."
       },
       {
         "claimId": "v21-all-root-composition",
@@ -567,12 +567,12 @@
       {
         "claimId": "v21-fixed-poseidon2b-delta",
         "role": "premise",
-        "note": "Use the v2 event-specific headroom, not the different legacy profile threshold."
+        "note": "The fixed-event deviation uses actual total gates/depth and includes arbitrary fixed-permutation circuit implementations, preprocessing and verifier queries."
       },
       {
         "claimId": "v21-production-correspondence",
-        "role": "premise",
-        "note": "The snapshot admission and installation path is verified. Other production acceptance paths remain distinct correspondence targets."
+        "role": "required",
+        "note": "The fixed production callbacks and ordinary, suffix, reorg, snapshot and local-producer State-installation routes are covered by the v2.1 source proof."
       },
       {
         "claimId": "sequential-ideal-qrom",
@@ -586,8 +586,8 @@
       },
       {
         "claimId": "v21-rs-grouped-agreement",
-        "role": "premise",
-        "note": "RS-specific grouped agreement is required in addition to the numerical candidate-list envelope."
+        "role": "required",
+        "note": "The RS-specific common-agreement and grouped-restoration argument is instantiated at every selected finite layer."
       }
     ],
     "sources": [
@@ -598,6 +598,10 @@
       {
         "label": "October 2026 full-month review",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      },
+      {
+        "label": "Resource-aware fixed-event lifting proof",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/53d1e67888693efdbec195a1241ac6702891dc47/docs/v2.1-resource-closure.md"
       }
     ]
   },
@@ -616,7 +620,7 @@
       },
       {
         "claimId": "v2-retirement-correspondence",
-        "role": "context",
+        "role": "required",
         "note": "Accepted reconstruction and complete legacy retirement binding remain verified at their original source. The v2.1 target adds the current metadata and authorization transition."
       }
     ],
@@ -632,6 +636,10 @@
       {
         "label": "Established scope and current extension",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/d7fc4788810239bd59be8c753bdf6e988d55b6c3/docs/v2.1-proof-continuity.md"
+      },
+      {
+        "label": "Current source-binding proof and native audits",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/53d1e67888693efdbec195a1241ac6702891dc47/docs/v2.1-source-binding-proofs.md"
       }
     ]
   },
@@ -681,6 +689,11 @@
         "claimId": "adaptive-all-root-qrom",
         "role": "context",
         "note": "The v2 extension uses the existing all-root theorem framework with an expanded inventory. This context is not a completed proof of the current specialization."
+      },
+      {
+        "claimId": "v21-compiler-correspondence",
+        "role": "required",
+        "note": "The complete coupled native/ideal compiler is a component of this all-root condition. The separate current source-adapter theorem establishes its deterministic interface."
       }
     ],
     "sources": [
@@ -691,6 +704,10 @@
       {
         "label": "October 2026 full-month review",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      },
+      {
+        "label": "Established interfaces and coupled composition condition",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/53d1e67888693efdbec195a1241ac6702891dc47/docs/v2.1-proof-continuity.md"
       }
     ]
   },
@@ -698,7 +715,7 @@
     "id": "v21-fixed-poseidon2b-delta",
     "title": "V2.1 fixed Poseidon2b deviation condition",
     "statement": "The event-specific deviation between the fixed Poseidon2b implementation and the declared ideal game stays below the exact v2.1 certificate headroom.",
-    "scope": "Pinned v2.1.0. The interface includes canonical framing, domain tags, both digest lanes, feed-forward, primitive access and all charged adversarial preprocessing. Free oracle-dependent advice requires a separately quantified model.",
+    "scope": "Pinned v2.1.0. Quantify over every allowed adversary within the actual total logical gates/depth budget, including arbitrary coherent implementations of the fixed permutation, adversarial preprocessing and verifier queries. The event is BadAll union MissRep union BadTypedBind. Tags, framing, both digest lanes, feed-forward and the published advice policy are included.",
     "initialStatus": "premise",
     "derived": false,
     "dependencies": [
@@ -716,6 +733,10 @@
       {
         "label": "October 2026 full-month review",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/7ead11a3afb452fb14eea505cfa913ce20a87f9a/docs/october-2026-security-review.md"
+      },
+      {
+        "label": "Resource-aware fixed-event lifting proof",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/53d1e67888693efdbec195a1241ac6702891dc47/docs/v2.1-resource-closure.md"
       }
     ]
   },
@@ -723,7 +744,7 @@
     "id": "v21-production-correspondence",
     "title": "V2.1 production acceptance correspondence",
     "statement": "The source-pinned native acceptance paths implement the declared v2.1 relations, selected context and trusted State transitions.",
-    "scope": "Parano1d v2.1.0 source 848209d5, including activation, three-class bank selection, authorization, ancestry, snapshot admission, reorgs and durable installation. Each result names its exact covered path.",
+    "scope": "Parano1d v2.1.0 source 848209d5. Height/activation dispatch, three-class terminal authority, ordinary block, verified suffix, snapshot, reorg and trusted local producer. Honest authenticated artifacts, exact native primitives and the stated local reductions apply.",
     "initialStatus": "premise",
     "derived": false,
     "dependencies": [
@@ -734,8 +755,18 @@
       },
       {
         "claimId": "v2-production-correspondence",
-        "role": "context",
+        "role": "required",
         "note": "Accepted authenticated snapshot admission and installation remain verified at their original source. This current target includes broader production acceptance paths."
+      },
+      {
+        "claimId": "v21-retirement-correspondence",
+        "role": "required",
+        "note": "The accepted terminal authority uses the authenticated three-class bank and checked authorization boundary."
+      },
+      {
+        "claimId": "v21-native-transcript-binding",
+        "role": "required",
+        "note": "The three-class relation retains the selected transcript and all outstanding matrix obligations."
       }
     ],
     "sources": [
@@ -750,6 +781,10 @@
       {
         "label": "Established scope and current extension",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/d7fc4788810239bd59be8c753bdf6e988d55b6c3/docs/v2.1-proof-continuity.md"
+      },
+      {
+        "label": "Current source-binding proof and native audits",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/53d1e67888693efdbec195a1241ac6702891dc47/docs/v2.1-source-binding-proofs.md"
       }
     ]
   },
@@ -830,6 +865,63 @@
       {
         "label": "RS theorem instantiation and grouped restoration proof",
         "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/d7fc4788810239bd59be8c753bdf6e988d55b6c3/docs/v2.1-rs-grouped-restoration.md"
+      }
+    ]
+  },
+  {
+    "id": "v21-native-transcript-binding",
+    "title": "V2.1 three-class transcript and parent binding",
+    "statement": "The current relation selects one authenticated predecessor, preserves every inactive matrix obligation and binds the selected native transcript, shared m24 replay and PCS source walk to that same predecessor.",
+    "scope": "Pointwise deterministic source correspondence at production 848209d5. Honest authenticated release setup, exact arithmetic and the declared local C1 reductions apply. The coupled adaptive shared-oracle compiler is the all-root condition.",
+    "initialStatus": "under-review",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "v21-retirement-correspondence",
+        "role": "required",
+        "note": "The current source adapter uses the authenticated bank, matrices, origin and activation boundary."
+      },
+      {
+        "claimId": "v2-compiler-correspondence",
+        "role": "required",
+        "note": "The earlier channel and two-class source argument supplies the local recurrence. The v2.1 proof covers the new one-hot selectors and shared-parent implementation."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Current source-binding proof and native audits",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/53d1e67888693efdbec195a1241ac6702891dc47/docs/v2.1-source-binding-proofs.md"
+      }
+    ]
+  },
+  {
+    "id": "v21-resource-envelope",
+    "title": "V2.1 resource envelope and fixed-event lifting",
+    "statement": "The typed charged ideal model gives the exact 26-event resource envelope. Under the coupled all-root condition, the resource-aware fixed-primitive event bound lifts this envelope to every adversary in the declared actual logical resource budget.",
+    "scope": "The scalar and batch charges define the ideal resource model. The fixed-event deviation is quantified over the complete actual-budget adversary class, including circuit shortcuts and batch sharing. The production conclusion uses the two all-root and fixed-event conditions.",
+    "initialStatus": "under-review",
+    "derived": false,
+    "dependencies": [
+      {
+        "claimId": "typed-parallel-qrom",
+        "role": "required",
+        "note": "Cauchy-Schwarz gives the complete typed resource-envelope theorem under the explicitly defined ideal schedule charges."
+      },
+      {
+        "claimId": "v21-rs-grouped-agreement",
+        "role": "required",
+        "note": "The source-linked local RS restoration bounds supply the current finite code-family instantiation."
+      },
+      {
+        "claimId": "v21-coherent-response-minimum",
+        "role": "context",
+        "note": "A universal concrete circuit-minimum theorem is an alternative sufficient route. The current production lifting uses the resource-aware fixed-event condition directly."
+      }
+    ],
+    "sources": [
+      {
+        "label": "Resource-aware fixed-event lifting proof",
+        "url": "https://git.parano1d.org/ignotusnemo/parano1d-soundness/src/commit/53d1e67888693efdbec195a1241ac6702891dc47/docs/v2.1-resource-closure.md"
       }
     ]
   }

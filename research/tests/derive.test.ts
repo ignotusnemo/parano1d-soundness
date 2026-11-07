@@ -10,7 +10,8 @@ test("the published end-to-end corollary is proved with explicit production prem
   const state = deriveResearchState(path.resolve("."));
   assert.equal(state.claims.find((claim) => claim.id === "production-category-one")?.status, "proved");
   assert.deepEqual(state.claims.find((claim) => claim.id === "production-category-one")?.blockingClaims, []);
-  assert.ok(state.conclusion.premiseClaims.includes("v21-coherent-response-minimum"));
+  assert.ok(state.conclusion.premiseClaims.includes("v21-all-root-composition"));
+  assert.equal(state.claims.find((claim) => claim.id === "v21-coherent-response-minimum")?.status, "premise");
   assert.ok(state.conclusion.premiseClaims.includes("v21-fixed-poseidon2b-delta"));
   assert.equal(state.claims.find((claim) => claim.id === "adaptive-all-root-qrom")?.status, "proved");
   assert.equal(state.claims.flatMap((claim) => claim.metrics).find((metric) => metric.id === "category-one.margin-over-reference")?.value, "+3.391078499301");
@@ -52,7 +53,8 @@ test("theorem context links do not establish current v2 production premises", ()
   }
   assert.equal(claims.get("v2-joint-bank-accounting")?.status, "verified");
   assert.ok(state.conclusion.premiseClaims.includes("v21-all-root-composition"));
-  assert.ok(state.conclusion.premiseClaims.includes("v21-production-correspondence"));
+  assert.deepEqual(state.conclusion.premiseClaims, ["v21-all-root-composition", "v21-fixed-poseidon2b-delta"]);
+  assert.equal(claims.get("v21-production-correspondence")?.status, "under-review");
 });
 
 test("scoped v2 source evidence preserves open compiler conditions and numerical frontiers", () => {
