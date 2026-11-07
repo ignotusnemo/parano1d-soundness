@@ -1,0 +1,4221 @@
+{
+  "checkedLayers": 421,
+  "layers": [
+    {
+      "agreement": "1/5",
+      "dimension": 16,
+      "domain": 512,
+      "family": "authorization",
+      "johnsonMargin": "137/12800",
+      "multiplicity": 8,
+      "multiplicityMargin": "2393/12800",
+      "squared_johnson_margin": "137/12800"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 32,
+      "domain": 1024,
+      "family": "authorization",
+      "johnsonMargin": "249/25600",
+      "multiplicity": 8,
+      "multiplicityMargin": "2761/25600",
+      "squared_johnson_margin": "249/25600"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 64,
+      "domain": 2048,
+      "family": "authorization",
+      "johnsonMargin": "473/51200",
+      "multiplicity": 8,
+      "multiplicityMargin": "3497/51200",
+      "squared_johnson_margin": "473/51200"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 128,
+      "domain": 4096,
+      "family": "authorization",
+      "johnsonMargin": "921/102400",
+      "multiplicity": 8,
+      "multiplicityMargin": "4969/102400",
+      "squared_johnson_margin": "921/102400"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 256,
+      "domain": 8192,
+      "family": "authorization",
+      "johnsonMargin": "1817/204800",
+      "multiplicity": 8,
+      "multiplicityMargin": "7913/204800",
+      "squared_johnson_margin": "1817/204800"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 512,
+      "domain": 16384,
+      "family": "authorization",
+      "johnsonMargin": "3609/409600",
+      "multiplicity": 8,
+      "multiplicityMargin": "13801/409600",
+      "squared_johnson_margin": "3609/409600"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 1024,
+      "domain": 32768,
+      "family": "authorization",
+      "johnsonMargin": "7193/819200",
+      "multiplicity": 8,
+      "multiplicityMargin": "25577/819200",
+      "squared_johnson_margin": "7193/819200"
+    },
+    {
+      "agreement": "1/5",
+      "dimension": 2048,
+      "domain": 65536,
+      "family": "authorization",
+      "johnsonMargin": "14361/1638400",
+      "multiplicity": 8,
+      "multiplicityMargin": "49129/1638400",
+      "squared_johnson_margin": "14361/1638400"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 64,
+      "domain": 256,
+      "family": "v21.class-0",
+      "johnsonMargin": "101790984177/26048039497984",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/4",
+      "squared_johnson_margin": "101790984177/26048039497984"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "v21.class-0",
+      "johnsonMargin": "101831814065/52096078995968",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "v21.class-0",
+      "johnsonMargin": "101913473841/104192157991936",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/16",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "v21.class-0",
+      "johnsonMargin": "102076793393/208384315983872",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/32",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "v21.class-0",
+      "johnsonMargin": "102403432497/416768631967744",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/64",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "v21.class-0",
+      "johnsonMargin": "103056710705/833537263935488",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/128",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "v21.class-0",
+      "johnsonMargin": "104363267121/1667074527870976",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/256",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "v21.class-0",
+      "johnsonMargin": "106976379953/3334149055741952",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/512",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "v21.class-0",
+      "johnsonMargin": "112202605617/6668298111483904",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/1024",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "v21.class-0",
+      "johnsonMargin": "122655056945/13336596222967808",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/2048",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "v21.class-0",
+      "johnsonMargin": "143559959601/26673192445935616",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/4096",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "v21.class-0",
+      "johnsonMargin": "185369764913/53346384891871232",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8192",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "v21.class-0",
+      "johnsonMargin": "268989375537/106692769783742464",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/16384",
+      "squared_johnson_margin": "268989375537/106692769783742464"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "v21.class-1",
+      "johnsonMargin": "101831814065/52096078995968",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "v21.class-1",
+      "johnsonMargin": "101913473841/104192157991936",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/16",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "v21.class-1",
+      "johnsonMargin": "102076793393/208384315983872",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/32",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "v21.class-1",
+      "johnsonMargin": "102403432497/416768631967744",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/64",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "v21.class-1",
+      "johnsonMargin": "103056710705/833537263935488",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/128",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "v21.class-1",
+      "johnsonMargin": "104363267121/1667074527870976",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/256",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "v21.class-1",
+      "johnsonMargin": "106976379953/3334149055741952",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/512",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "v21.class-1",
+      "johnsonMargin": "112202605617/6668298111483904",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/1024",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "v21.class-1",
+      "johnsonMargin": "122655056945/13336596222967808",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/2048",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "v21.class-1",
+      "johnsonMargin": "143559959601/26673192445935616",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/4096",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "v21.class-1",
+      "johnsonMargin": "185369764913/53346384891871232",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8192",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "v21.class-1",
+      "johnsonMargin": "268989375537/106692769783742464",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/16384",
+      "squared_johnson_margin": "268989375537/106692769783742464"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "v21.class-1",
+      "johnsonMargin": "436228596785/213385539567484928",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/32768",
+      "squared_johnson_margin": "436228596785/213385539567484928"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "v21.class-2",
+      "johnsonMargin": "101831814065/52096078995968",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "v21.class-2",
+      "johnsonMargin": "101913473841/104192157991936",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/16",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "v21.class-2",
+      "johnsonMargin": "102076793393/208384315983872",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/32",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "v21.class-2",
+      "johnsonMargin": "102403432497/416768631967744",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/64",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "v21.class-2",
+      "johnsonMargin": "103056710705/833537263935488",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/128",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "v21.class-2",
+      "johnsonMargin": "104363267121/1667074527870976",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/256",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "v21.class-2",
+      "johnsonMargin": "106976379953/3334149055741952",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/512",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "v21.class-2",
+      "johnsonMargin": "112202605617/6668298111483904",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/1024",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "v21.class-2",
+      "johnsonMargin": "122655056945/13336596222967808",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/2048",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "v21.class-2",
+      "johnsonMargin": "143559959601/26673192445935616",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/4096",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "v21.class-2",
+      "johnsonMargin": "185369764913/53346384891871232",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8192",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "v21.class-2",
+      "johnsonMargin": "268989375537/106692769783742464",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/16384",
+      "squared_johnson_margin": "268989375537/106692769783742464"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "v21.class-2",
+      "johnsonMargin": "436228596785/213385539567484928",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/32768",
+      "squared_johnson_margin": "436228596785/213385539567484928"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-0",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-0",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-0",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-0",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-0",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-0",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-0",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-0",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-0",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-0",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-0",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-0",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-0",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-1",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-1",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-1",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-1",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-1",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-1",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-1",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-1",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-1",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-1",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-1",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-1",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-1",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-2",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-2",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-2",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-2",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-2",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-2",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-2",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-2",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-2",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-2",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-2",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-2",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-2",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-3",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-3",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-3",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-3",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-3",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-3",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-3",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-3",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-3",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-3",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-3",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-3",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-3",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-4",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-4",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-4",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-4",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-4",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-4",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-4",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-4",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-4",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-4",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-4",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-4",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-4",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.0.column-5",
+      "johnsonMargin": "156450001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/256",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.0.column-5",
+      "johnsonMargin": "78325001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/512",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-5",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-5",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-5",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-5",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-5",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-5",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-5",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-5",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-5",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-5",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-5",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32,
+      "domain": 128,
+      "family": "retirement.0.column-6",
+      "johnsonMargin": "312700001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/128",
+      "squared_johnson_margin": "312700001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.0.column-6",
+      "johnsonMargin": "156450001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/256",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.0.column-6",
+      "johnsonMargin": "78325001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/512",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-6",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-6",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-6",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-6",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-6",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-6",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-6",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-6",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-6",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-6",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-7",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-7",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-7",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-7",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-7",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-7",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-7",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-7",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-7",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-7",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-7",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-7",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-7",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-8",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-8",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-8",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-8",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-8",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-8",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-8",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-8",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-8",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-8",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-8",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-8",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-8",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-9",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-9",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-9",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-9",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-9",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-9",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-9",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-9",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-9",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-9",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-9",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-9",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-9",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.0.column-10",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.0.column-10",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.0.column-10",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.0.column-10",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.0.column-10",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.0.column-10",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.0.column-10",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.0.column-10",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.0.column-10",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.0.column-10",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.0.column-10",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.0.column-10",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.0.column-10",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "156450001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/256",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "78325001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/512",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "419367673/81920000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8388608",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-0",
+      "johnsonMargin": "828969721/163840000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16777216",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "156450001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/256",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "78325001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/512",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "419367673/81920000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8388608",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-1",
+      "johnsonMargin": "828969721/163840000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16777216",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "156450001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/256",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "78325001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/512",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "419367673/81920000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8388608",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-2",
+      "johnsonMargin": "828969721/163840000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16777216",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "156450001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/256",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "78325001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/512",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "419367673/81920000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8388608",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-3",
+      "johnsonMargin": "828969721/163840000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16777216",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "156450001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/256",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "78325001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/512",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "419367673/81920000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8388608",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-4",
+      "johnsonMargin": "828969721/163840000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16777216",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-5",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-5",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-5",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-5",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-5",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-5",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-5",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-5",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-5",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-5",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-5",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-5",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-5",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-6",
+      "johnsonMargin": "78325001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/512",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-6",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-6",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-6",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-6",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-6",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-6",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-6",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-6",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-6",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-6",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-6",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-6",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "156450001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/256",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "78325001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/512",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "419367673/81920000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8388608",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-7",
+      "johnsonMargin": "828969721/163840000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16777216",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "156450001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/256",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "78325001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/512",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "419367673/81920000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8388608",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-8",
+      "johnsonMargin": "828969721/163840000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16777216",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "156450001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/256",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "78325001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/512",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "419367673/81920000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8388608",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-9",
+      "johnsonMargin": "828969721/163840000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16777216",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 64,
+      "domain": 256,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "156450001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/256",
+      "squared_johnson_margin": "156450001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 128,
+      "domain": 512,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "78325001/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/512",
+      "squared_johnson_margin": "78325001/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "39262501/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1024",
+      "squared_johnson_margin": "39262501/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "19731251/40000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2048",
+      "squared_johnson_margin": "19731251/40000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "4982813/20000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4096",
+      "squared_johnson_margin": "4982813/20000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "10165627/80000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8192",
+      "squared_johnson_margin": "10165627/80000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "10565629/160000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16384",
+      "squared_johnson_margin": "10565629/160000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "11365633/320000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/32768",
+      "squared_johnson_margin": "11365633/320000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "12965641/640000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/65536",
+      "squared_johnson_margin": "12965641/640000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "16165657/1280000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/131072",
+      "squared_johnson_margin": "16165657/1280000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "22565689/2560000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/262144",
+      "squared_johnson_margin": "22565689/2560000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "35365753/5120000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/524288",
+      "squared_johnson_margin": "35365753/5120000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "60965881/10240000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/1048576",
+      "squared_johnson_margin": "60965881/10240000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "112166137/20480000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/2097152",
+      "squared_johnson_margin": "112166137/20480000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 1048576,
+      "domain": 4194304,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "214566649/40960000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/4194304",
+      "squared_johnson_margin": "214566649/40960000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 2097152,
+      "domain": 8388608,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "419367673/81920000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/8388608",
+      "squared_johnson_margin": "419367673/81920000000000"
+    },
+    {
+      "agreement": "100001/200000",
+      "dimension": 4194304,
+      "domain": 16777216,
+      "family": "retirement.1.column-10",
+      "johnsonMargin": "828969721/163840000000000",
+      "multiplicity": 100000,
+      "multiplicityMargin": "10000200001/16777216",
+      "squared_johnson_margin": "828969721/163840000000000"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 64,
+      "domain": 256,
+      "family": "v2.class-0",
+      "johnsonMargin": "101790984177/26048039497984",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/4",
+      "squared_johnson_margin": "101790984177/26048039497984"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "v2.class-0",
+      "johnsonMargin": "101831814065/52096078995968",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "v2.class-0",
+      "johnsonMargin": "101913473841/104192157991936",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/16",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "v2.class-0",
+      "johnsonMargin": "102076793393/208384315983872",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/32",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "v2.class-0",
+      "johnsonMargin": "102403432497/416768631967744",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/64",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "v2.class-0",
+      "johnsonMargin": "103056710705/833537263935488",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/128",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "v2.class-0",
+      "johnsonMargin": "104363267121/1667074527870976",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/256",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "v2.class-0",
+      "johnsonMargin": "106976379953/3334149055741952",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/512",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "v2.class-0",
+      "johnsonMargin": "112202605617/6668298111483904",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/1024",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "v2.class-0",
+      "johnsonMargin": "122655056945/13336596222967808",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/2048",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "v2.class-0",
+      "johnsonMargin": "143559959601/26673192445935616",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/4096",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "v2.class-0",
+      "johnsonMargin": "185369764913/53346384891871232",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8192",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "v2.class-0",
+      "johnsonMargin": "268989375537/106692769783742464",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/16384",
+      "squared_johnson_margin": "268989375537/106692769783742464"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "v2.class-1",
+      "johnsonMargin": "101831814065/52096078995968",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "v2.class-1",
+      "johnsonMargin": "101913473841/104192157991936",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/16",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "v2.class-1",
+      "johnsonMargin": "102076793393/208384315983872",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/32",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "v2.class-1",
+      "johnsonMargin": "102403432497/416768631967744",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/64",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "v2.class-1",
+      "johnsonMargin": "103056710705/833537263935488",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/128",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "v2.class-1",
+      "johnsonMargin": "104363267121/1667074527870976",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/256",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "v2.class-1",
+      "johnsonMargin": "106976379953/3334149055741952",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/512",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "v2.class-1",
+      "johnsonMargin": "112202605617/6668298111483904",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/1024",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "v2.class-1",
+      "johnsonMargin": "122655056945/13336596222967808",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/2048",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "v2.class-1",
+      "johnsonMargin": "143559959601/26673192445935616",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/4096",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "v2.class-1",
+      "johnsonMargin": "185369764913/53346384891871232",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8192",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "v2.class-1",
+      "johnsonMargin": "268989375537/106692769783742464",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/16384",
+      "squared_johnson_margin": "268989375537/106692769783742464"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "v2.class-1",
+      "johnsonMargin": "436228596785/213385539567484928",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/32768",
+      "squared_johnson_margin": "436228596785/213385539567484928"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32,
+      "domain": 128,
+      "family": "history.b25",
+      "johnsonMargin": "101770569233/13024019748992",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/2",
+      "squared_johnson_margin": "101770569233/13024019748992"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 64,
+      "domain": 256,
+      "family": "history.b25",
+      "johnsonMargin": "101790984177/26048039497984",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/4",
+      "squared_johnson_margin": "101790984177/26048039497984"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "history.b25",
+      "johnsonMargin": "101831814065/52096078995968",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "history.b25",
+      "johnsonMargin": "101913473841/104192157991936",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/16",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "history.b25",
+      "johnsonMargin": "102076793393/208384315983872",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/32",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "history.b25",
+      "johnsonMargin": "102403432497/416768631967744",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/64",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "history.b25",
+      "johnsonMargin": "103056710705/833537263935488",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/128",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "history.b25",
+      "johnsonMargin": "104363267121/1667074527870976",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/256",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "history.b25",
+      "johnsonMargin": "106976379953/3334149055741952",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/512",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "history.b25",
+      "johnsonMargin": "112202605617/6668298111483904",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/1024",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "history.b25",
+      "johnsonMargin": "122655056945/13336596222967808",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/2048",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "history.b25",
+      "johnsonMargin": "143559959601/26673192445935616",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/4096",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "history.b25",
+      "johnsonMargin": "185369764913/53346384891871232",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8192",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 128,
+      "domain": 512,
+      "family": "history.b255",
+      "johnsonMargin": "101831814065/52096078995968",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8",
+      "squared_johnson_margin": "101831814065/52096078995968"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 256,
+      "domain": 1024,
+      "family": "history.b255",
+      "johnsonMargin": "101913473841/104192157991936",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/16",
+      "squared_johnson_margin": "101913473841/104192157991936"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 512,
+      "domain": 2048,
+      "family": "history.b255",
+      "johnsonMargin": "102076793393/208384315983872",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/32",
+      "squared_johnson_margin": "102076793393/208384315983872"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 1024,
+      "domain": 4096,
+      "family": "history.b255",
+      "johnsonMargin": "102403432497/416768631967744",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/64",
+      "squared_johnson_margin": "102403432497/416768631967744"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 2048,
+      "domain": 8192,
+      "family": "history.b255",
+      "johnsonMargin": "103056710705/833537263935488",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/128",
+      "squared_johnson_margin": "103056710705/833537263935488"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 4096,
+      "domain": 16384,
+      "family": "history.b255",
+      "johnsonMargin": "104363267121/1667074527870976",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/256",
+      "squared_johnson_margin": "104363267121/1667074527870976"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 8192,
+      "domain": 32768,
+      "family": "history.b255",
+      "johnsonMargin": "106976379953/3334149055741952",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/512",
+      "squared_johnson_margin": "106976379953/3334149055741952"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 16384,
+      "domain": 65536,
+      "family": "history.b255",
+      "johnsonMargin": "112202605617/6668298111483904",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/1024",
+      "squared_johnson_margin": "112202605617/6668298111483904"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 32768,
+      "domain": 131072,
+      "family": "history.b255",
+      "johnsonMargin": "122655056945/13336596222967808",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/2048",
+      "squared_johnson_margin": "122655056945/13336596222967808"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 65536,
+      "domain": 262144,
+      "family": "history.b255",
+      "johnsonMargin": "143559959601/26673192445935616",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/4096",
+      "squared_johnson_margin": "143559959601/26673192445935616"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 131072,
+      "domain": 524288,
+      "family": "history.b255",
+      "johnsonMargin": "185369764913/53346384891871232",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/8192",
+      "squared_johnson_margin": "185369764913/53346384891871232"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 262144,
+      "domain": 1048576,
+      "family": "history.b255",
+      "johnsonMargin": "268989375537/106692769783742464",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/16384",
+      "squared_johnson_margin": "268989375537/106692769783742464"
+    },
+    {
+      "agreement": "159492/318983",
+      "dimension": 524288,
+      "domain": 2097152,
+      "family": "history.b255",
+      "johnsonMargin": "436228596785/213385539567484928",
+      "multiplicity": 318983,
+      "multiplicityMargin": "1589856129/32768",
+      "squared_johnson_margin": "436228596785/213385539567484928"
+    }
+  ],
+  "primarySource": "https://eccc.weizmann.ac.il/report/2025/169/download",
+  "productionCommit": "848209d5db75137483cb41a94b310ad11463473f",
+  "proof": "docs/v2.1-rs-grouped-restoration.md",
+  "schemaVersion": 1,
+  "scope": "Public-coin RS common-agreement and deterministic source restoration. Native-to-ideal adaptive composition uses the all-root compiler condition.",
+  "theorem": "BCHKS TR25-169, Theorem 4.6, M=1"
+}

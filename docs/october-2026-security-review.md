@@ -87,3 +87,7 @@ python3 -m unittest discover -s research/tools -p 'test_*.py' -v
 ```
 
 The native projection additionally uses `research/tools/replay_v21_profile.py --production /path/to/parano1d`. Its first run compiles trusted production libraries. The complete monthly record preserves the earlier reports, contracts, claim namespaces and accepted ledger.
+
+## November 7 follow-up: RS theorem instantiation
+
+The [RS grouped-restoration proof](v2.1-rs-grouped-restoration.md) applies BCHKS Theorem 4.6 directly and checks its strict Johnson and multiplicity hypotheses on every one of the 421 authenticated finite layers. The universal agreement-set statement supplies weighted backward restoration through row batches and grouped inverse-butterfly folds. This discharges the code-level RS instantiation identified in the October review. Its native adaptive use remains part of the coupled all-root compiler. The [continuity note](v2.1-proof-continuity.md) preserves the earlier verified source results and their scopes.
