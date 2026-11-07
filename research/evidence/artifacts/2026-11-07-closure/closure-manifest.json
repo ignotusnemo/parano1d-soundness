@@ -1,0 +1,22 @@
+{
+  "artifacts": {
+    "resource-closure.json": "08513872fa29fe0c0c0eab2b009bf7d38fb2d3b297e65787400aad693462b4b8",
+    "source-binding.json": "1c667b0d9ebc8ba0e95615dab66751b411d382a247d601db57922ae964c3d253"
+  },
+  "established": [
+    "authenticated preprocessing and activation",
+    "three-class deterministic transcript/source adapter",
+    "native acceptance and atomic State installation interface",
+    "charged ideal resource envelope and actual-budget fixed-event lifting"
+  ],
+  "globalConditions": [
+    "coupled all-root composition",
+    "resource-aware fixed-Poseidon2b deviation"
+  ],
+  "productionCommit": "848209d5db75137483cb41a94b310ad11463473f",
+  "proofs": [
+    "docs/v2.1-source-binding-proofs.md",
+    "docs/v2.1-resource-closure.md"
+  ],
+  "schemaVersion": 1
+}

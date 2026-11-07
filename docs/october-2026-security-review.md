@@ -91,3 +91,9 @@ The native projection additionally uses `research/tools/replay_v21_profile.py --
 ## November 7 follow-up: RS theorem instantiation
 
 The [RS grouped-restoration proof](v2.1-rs-grouped-restoration.md) applies BCHKS Theorem 4.6 directly and checks its strict Johnson and multiplicity hypotheses on every one of the 421 authenticated finite layers. The universal agreement-set statement supplies weighted backward restoration through row batches and grouped inverse-butterfly folds. This discharges the code-level RS instantiation identified in the October review. Its native adaptive use remains part of the coupled all-root compiler. The [continuity note](v2.1-proof-continuity.md) preserves the earlier verified source results and their scopes.
+
+## November 7 follow-up: current source and resource closure
+
+The [v2.1 source-binding proof](v2.1-source-binding-proofs.md) establishes the current preprocessing/activation, three-class transcript adapter and canonical State-installation interfaces. Native audit modules exercise the actual class-selection, lane-carry and shared-prefix functions. Native channel and State-boundary tests corroborate their exact checked scopes.
+
+The [resource-closure theorem](v2.1-resource-closure.md) proves the charged ideal envelope and the actual-budget fixed-event lifting. The published Delta definition already includes the entire fixed compiler event under the declared resource envelope. Consequently every permitted cheaper circuit and batch-sharing strategy belongs to that fixed-event investigation. The current production conclusion uses the coupled all-root condition and resource-aware fixed-Poseidon2b deviation as its two independent global conditions. The [continuity note](v2.1-proof-continuity.md) records the dependency-preserving proof extensions and the retained alternative circuit-minimum route.
